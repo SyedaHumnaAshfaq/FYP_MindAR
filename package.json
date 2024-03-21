@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "aframe": "^1.5.0",
+    "mind-ar": "^1.2.5"
+  }
+}
