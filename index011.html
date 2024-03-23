@@ -1,0 +1,106 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-face-aframe.prod.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const list = ["earring", "earring1"];
+      const visibles = [false, true];
+      const setVisible = (button, entities, visible) => {
+        if (visible) {
+          button.classList.add("selected");
+        } else {
+          button.classList.remove("selected");
+        }
+        entities.forEach((entity) => {
+          entity.setAttribute("visible", visible);
+        });
+      }
+      list.forEach((item, index) => {
+        const button = document.querySelector("#" + item);
+        const entities = document.querySelectorAll("." + item + "-entity");
+        setVisible(button, entities, visibles[index]);
+        button.addEventListener('click', () => {
+          visibles[index] = !visibles[index];
+          setVisible(button, entities, visibles[index]);
+        });
+      });
+    })
+  </script>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .example-container {
+      overflow: hidden;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .options-panel {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 2;
+    }
+
+    .options-panel img {
+      border: solid 2px;
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .options-panel img.selected {
+      border-color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="example-container">
+    <div class="options-panel">
+      <img id="earring"
+        src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/earring/thumbnail.png" />
+      <img id="earring1"
+        src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/hat/thumbnail.png" /> -->
+    </div>
+    <a-scene mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights"
+      vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <>
+        <a-asset-item id="headModel"
+          src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/sparkar/headOccluder.glb"></a-asset-item>
+        <a-asset-item id="earringModel"
+          src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/earring/scene.gltf"></a-asset-item>
+      <a-asset-item id="earringModel1" src="earing1.gltf"></a-asset-item>
+      <a-asset-item id="earringModel2" src="earing1.gltf"></a-asset-item>
+      </a-assets>
+      <a-camera active="false" position="0 0 0"></a-camera>
+
+
+      <!-- <a-entity mindar-face-target="anchorIndex: 127">
+        <a-gltf-model rotation="-0.1 -0 0" position="0 -0.35 -0.0" scale="0.05 0.05 0.05" src="#earringModel"
+          class="earring-entity" visible="false"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-face-target="anchorIndex: 356">
+        <a-gltf-model rotation="0.1 -0 0" position="0 -0.35 -0.0" scale="0.05 0.05 0.05" src="#earringModel"
+          class="earring-entity" visible="false"></a-gltf-model>
+      </a-entity> -->
+      <a-entity mindar-face-target="anchorIndex: 127">
+        <a-gltf-model rotation="-0.1 -0 0" position="0 -0.35 -0.0" scale="0.05 0.05 0.05" src="#earringModel1"
+          class="earring-entity" visible="false"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-face-target="anchorIndex: 356">
+        <a-gltf-model rotation="0.1 -0 0" position="0 -0.35 -0.0" scale="0.05 0.05 0.05" src="#earringModel2"
+          class="earring-entity" visible="false"></a-gltf-model>
+      </a-entity>
+    </a-scene>
+  </div>
+</body>
+
+</html>
