@@ -8,8 +8,7 @@
 		{
 			"name":"Scene",
 			"nodes":[
-				0,
-				1
+				0
 			]
 		}
 	],
@@ -23,25 +22,15 @@
 				0,
 				0.9994945526123047
 			],
-			"translation":[
-				10.444437026977539,
-				-2.406641960144043,
-				-13.013806343078613
-			]
-		},
-		{
-			"mesh":1,
-			"name":"2",
-			"rotation":[
-				0.7071068286895752,
-				0,
-				0,
-				0.7071068286895752
+			"scale":[
+				0.125,
+				0.125,
+				0.125
 			],
 			"translation":[
-				10.181489944458008,
-				9.709443092346191,
-				-11.416686058044434
+				0.016682088375091553,
+				-2.206981658935547,
+				-0.10834110528230667
 			]
 		}
 	],
@@ -87,12 +76,7 @@
 					},
 					"indices":3,
 					"material":0
-				}
-			]
-		},
-		{
-			"name":"2.001",
-			"primitives":[
+				},
 				{
 					"attributes":{
 						"POSITION":4,
@@ -109,29 +93,29 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":70851,
+			"count":71729,
 			"max":[
-				6.112234592437744,
-				13.438066482543945,
-				6.124495029449463
+				6.099301338195801,
+				9.8557710647583,
+				6.027590751647949
 			],
 			"min":[
-				-6.112234592437744,
-				-5.408897399902344,
-				-6.124495029449463
+				-6.1251678466796875,
+				-8.991192817687988,
+				-6.221399307250977
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":70851,
+			"count":71729,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":70851,
+			"count":71729,
 			"type":"VEC2"
 		},
 		{
@@ -143,29 +127,29 @@
 		{
 			"bufferView":4,
 			"componentType":5126,
-			"count":11631,
+			"count":13397,
 			"max":[
-				1.6438626050949097,
-				1.7200405597686768,
-				1.131487250328064
+				1.7148752212524414,
+				20.907001495361328,
+				2.630284547805786
 			],
 			"min":[
-				-1.6626269817352295,
-				-2.5675039291381836,
-				-12.066530227661133
+				-1.5916143655776978,
+				7.523286819458008,
+				-2.4744224548339844
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":5,
 			"componentType":5126,
-			"count":11631,
+			"count":13397,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":6,
 			"componentType":5126,
-			"count":11631,
+			"count":13397,
 			"type":"VEC2"
 		},
 		{
@@ -178,56 +162,56 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":850212,
+			"byteLength":860748,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":850212,
-			"byteOffset":850212,
+			"byteLength":860748,
+			"byteOffset":860748,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":566808,
-			"byteOffset":1700424,
+			"byteLength":573832,
+			"byteOffset":1721496,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":839856,
-			"byteOffset":2267232,
+			"byteOffset":2295328,
 			"target":34963
 		},
 		{
 			"buffer":0,
-			"byteLength":139572,
-			"byteOffset":3107088,
+			"byteLength":160764,
+			"byteOffset":3135184,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":139572,
-			"byteOffset":3246660,
+			"byteLength":160764,
+			"byteOffset":3295948,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":93048,
-			"byteOffset":3386232,
+			"byteLength":107176,
+			"byteOffset":3456712,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":62244,
-			"byteOffset":3479280,
+			"byteOffset":3563888,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":3541524,
+			"byteLength":3626132,
 			"uri":"golden.bin"
 		}
 	]
