@@ -1,0 +1,104 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-face-aframe.prod.js"></script>
+</head>
+
+<body>
+  <div class="example-container">
+
+    <div class="options-panel">
+      <h2>Earrings</h2>
+      <img id="earring"
+        src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/earring/thumbnail.png" />
+      <img id="earring1"
+        src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/earring/thumbnail.png" />
+      <img id="earring2"
+        src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/earring/thumbnail.png" />
+      <img id="earring3"
+        src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/earring/thumbnail.png" />
+      <h2>Nose pins</h2>
+      <img id="nosepin"
+        src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/earring/thumbnail.png" />
+      <h2>Nose rings</h2>
+      <h2>Glasses</h2>
+      <img id="glasses" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/earring/thumbnail.png"/>
+    </div>
+    <a-scene mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights"
+      vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false"
+      mindar-image="filterMinCF:0.00001; filterBeta: 1500">
+      <>
+        <a-asset-item id="headModel"
+          src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/sparkar/headOccluder.glb"></a-asset-item>
+
+        <a-asset-item id="earringModel1" src="models/hoopEarring.gltf"></a-asset-item>
+        <!-- <a-asset-item id="earringModel2" src="models/hoopEarring.gltf"></a-asset-item> -->
+        <a-asset-item id="earringModel2" src="/models/flower1.glb"></a-asset-item>
+        <a-asset-item id="earringModel3" src="/models/earing011.gltf"></a-asset-item>
+        <a-asset-item id="earringModel4" src="/models/golden.gltf"></a-asset-item>
+        <a-asset-item id="nosePinModel" src="/models/diamondnosepin.gltf"></a-asset-item>
+        <a-asset-item id="noseOccluder" src="/models/noseoccluder.glb"></a-asset-item>
+        <a-asset-item id="glassesModel1" src="/models/blackSG.glb"></a-asset-item>
+
+
+
+        </a-assets>
+        <a-camera active="false" position="0 0 0"></a-camera>
+        <a-entity mindar-face-target="anchorIndex: 168">
+          <a-gltf-model mindar-face-occluder position="0 -0.3 0.15" rotation="0 0 0" scale="0.060 0.060 0.060"
+            src="#headModel"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 127">
+          <a-gltf-model rotation="-0.1 -0 0" position="0 -0.35 -0.0" scale="0.15 0.07 0.07" src="#earringModel1"
+            class="earring-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 356">
+          <a-gltf-model rotation="0.1 -0 0" position="0 -0.35 -0.0" scale="0.15 0.07 0.07" src="#earringModel1"
+            class="earring-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 127">
+          <a-gltf-model rotation="-0.1 -0 0" position="-0.04 -0.27 -0.1" scale="0.15 0.07 0.07" src="#earringModel2"
+            class="earring1-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 356">
+          <a-gltf-model rotation="0.1 -0 0" position="0.04 -0.27 -0.1" scale="0.15 0.07 0.07" src="#earringModel2"
+            class="earring1-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 127">
+          <a-gltf-model rotation="-0.1 -0 0" position="0 -0.35 -0.0" scale="0.15 0.07 0.07" src="#earringModel3"
+            class="earring2-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 356">
+          <a-gltf-model rotation="0.1 -0 0" position="0 -0.35 -0.0" scale="0.15 0.07 0.07" src="#earringModel3"
+            class="earring2-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 127">
+          <a-gltf-model rotation="-0.1 -0 0" position="0 -0.35 -0.0" scale="0.15 0.07 0.07" src="#earringModel4"
+            class="earring3-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 356">
+          <a-gltf-model rotation="0.1 -0 0" position="0 -0.35 -0.0" scale="0.15 0.07 0.07" src="#earringModel4"
+            class="earring3-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 168">
+          <a-gltf-model rotation="0  0" position="0 -0.07 -0.5" scale="0.150 0.150 0.150" src="#glassesModel1"
+            class="glasses-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 1">
+          <a-gltf-model mindar-face-occluder scale="0.02 0.02 0.02 " rotation="-90 0 0"
+            src="#noseOccluder"></a-gltf-model>
+        </a-entity>
+
+        <a-entity mindar-face-target="anchorIndex: 1">
+          <a-gltf-model position="0.07 0.04 -0.1" scale="0.4 0.4 0.4" src="#nosePinModel"
+            class="nosepin-entity"></a-gltf-model>
+        </a-entity>
+    </a-scene>
+  </div>
+</body>
+<script src="scripting.js"></script>
+
+</html>
