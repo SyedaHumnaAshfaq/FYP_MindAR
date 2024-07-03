@@ -281,6 +281,8 @@ justify-content: center;
     margin: 20px;
 }
 
+/* animations */
+
 /* Aframe Styles */
 body {
     margin: 0;
@@ -495,6 +497,52 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
+
+/* sliding cards start  */
+.carousel {
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-inner {
+    display: flex;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+}
+
+
+.card {
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+
+
+/* sliding cards end */
 
 /* Animations */
 @keyframes fadeInDown {

@@ -21,6 +21,15 @@ document.addEventListener("DOMContentLoaded", function () {
             setVisible(button, entities, visibles[index]);
         });
     });
+    {
+        const elements = document.querySelectorAll('.animate');
+        elements.forEach((element, index) => {
+            setTimeout(() => {
+                element.classList.add('visible');
+            }, index * 2000); // Delay each element by 2 seconds
+        });
+    }
 });
+
 
 
