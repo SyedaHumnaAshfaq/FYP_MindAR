@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADORN EASE</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Jewelry Boutique</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#collection">Collection</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="home-section">
+       
+        
+        <div class="slider">
+            <div class="slides">
+                <img src="images/tryon1.jpeg" alt="?">
+                <img src="images/earring1.jpeg" alt="?">
+                <img src="images/tryon3.jpeg" alt="?">
+                <img src="images/glasses.jpeg" alt="?">
+                <img src="images/tryon2.jpeg" alt="?">
+                <img src="images/glasses.jpeg" alt="?">
+            </div>
+            
+        </div>
+        <h1>Exquisite Jewelry for Every Occasion</h1>
+            <p>Discover our stunning collection of handcrafted jewelry.</p>
+            <p>Discover our stunning collection of handcrafted jewelry.</p>
+            <a href="/products" class="cta-button">Shop Now</a>
+        </section>
+            <!-- work on this -->
+        
+        <section id="image-slider" class="image-slider-section">
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card">
+                            <img src="images/tryon1.jpeg" alt="?">
+                            <div class="card-body">
+                                <h5 class="card-title">Elegant Necklace</h5>
+                                <p class="card-text">Beautiful handcrafted necklace for special occasions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <img src="images/tryon2.jpeg" alt="?">
+                            <div class="card-body">
+                                <h5 class="card-title">Classic Earrings</h5>
+                                <p class="card-text">Stylish earrings to complement any outfit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <img src="images/earring.jpeg" alt="?">
+                            <div class="card-body">
+                                <h5 class="card-title">Stylish Bracelet</h5>
+                                <p class="card-text">Trendy bracelet that adds charm to your wrist.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" onclick="moveCarousel(-1)">&#10094;</a>
+                <a class="carousel-control-next" onclick="moveCarousel(1)">&#10095;</a>
+            </div>
+        </section>
+
+        <!-- work -->
+        
+        
+        <!-- <section id="image-slider" class="image-slider-section">
+            <div class="image-slider">
+                <div class="image-slide">
+                    <img src="images/earring.jpeg" alt="Necklace">
+                </div>
+                <div class="image-slide">
+                    <img src="images/earring1.jpeg" alt="Earring">
+                </div>
+                <div class="image-slide">
+                    <img src="images/earring1.jpeg" alt="Bracelet">
+                </div>
+            </div>
+        </section> -->
+        
+        
+    
+        <!-- Sliding Image Cards Section
+        <section id="sliding-images" class="sliding-images-section">
+            <div class="image-card-container">
+                <div class="image-card">
+                    <img src="images/tryon1.jpeg" alt="Image 1">
+                </div>
+                <div class="image-card">
+                    <img src="images/earring1.jpeg" alt="Image 2">
+                </div>
+                <div class="image-card">
+                    <img src="images/tryon3.jpeg" alt="Image 3">
+                </div>
+                <div class="image-card">
+                    <img src="images/glasses.jpeg" alt="Image 4">
+                </div>
+                <div class="image-card">
+                    <img src="images/tryon2.jpeg" alt="Image 5">
+                </div>
+                <div class="image-card">
+                    <img src="images/glasses.jpeg" alt="Image 6">
+                </div>
+            </div>
+        </section> -->
+
+           
+
+            
+
+    
+    
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>At Jewelry Boutique, we believe in the beauty of handcrafted pieces that tell a story. Our jewelry is made with the finest materials and utmost care.</p>
+    </section>
+    
+    <section id="collection" class="collection-section">
+        <h2>Our Collection</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="images/tryon1.jpeg" alt="?">
+                <p>Elegant Necklace</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/tryon1.jpeg" alt="?">
+                <p>Classic Earrings</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/tryon1.jpeg" alt="?">
+                <p>Stylish Bracelet</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Feel free to reach out for any inquiries or custom orders.</p>
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Jewelry Boutique. All rights reserved.</p>
+    </footer>
+
+    <!-- <script src="scripts.js"></script> -->
+   
+</body>
+</html>
