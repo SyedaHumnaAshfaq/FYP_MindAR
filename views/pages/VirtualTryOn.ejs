@@ -26,6 +26,7 @@
       <h2>Nose rings</h2>
       <h2>Glasses</h2>
       <img id="glasses" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/earring/thumbnail.png"/>
+      <img id="glasses1" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/earring/thumbnail.png"/>
     </div>
     <a-scene mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false"
@@ -34,14 +35,15 @@
         <a-asset-item id="headModel"
           src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/sparkar/headOccluder.glb"></a-asset-item>
 
-        <a-asset-item id="earringModel1" src="models/hoopEarring.gltf"></a-asset-item>
+        <a-asset-item id="earringModel1" src="models/earrings/silverleaf.glb"></a-asset-item>
         <!-- <a-asset-item id="earringModel2" src="models/hoopEarring.gltf"></a-asset-item> -->
-        <a-asset-item id="earringModel2" src="/models/flower1.glb"></a-asset-item>
-        <a-asset-item id="earringModel3" src="/models/ballearring.glb"></a-asset-item>
-        <a-asset-item id="earringModel4" src="/models/golden.gltf"></a-asset-item>
-        <a-asset-item id="nosePinModel" src="/models/diamondnosepin.gltf"></a-asset-item>
-        <a-asset-item id="noseOccluder" src="/models/noseoccluder.glb"></a-asset-item>
-        <a-asset-item id="glassesModel1" src="/models/blackSG.glb"></a-asset-item>
+        <a-asset-item id="earringModel2" src="/models/earrings/flower.glb"></a-asset-item>
+        <a-asset-item id="earringModel3" src="/models/earrings/ballearring.glb"></a-asset-item>
+        <a-asset-item id="earringModel4" src="/models/earrings/toruses.glb"></a-asset-item>
+        <a-asset-item id="nosePinModel" src="/models/nosepins/diamondnosepin.gltf"></a-asset-item>
+        <a-asset-item id="noseOccluder" src="/models/occluders/noseoccluder.glb"></a-asset-item>
+        <a-asset-item id="glassesModel1" src="/models/sunglasses/blackSG.glb"></a-asset-item>
+        <a-asset-item id="glassesModel2" src="/models/sunglasses/purpleSG.glb"></a-asset-item>
 
 
 
@@ -52,43 +54,47 @@
             src="#headModel"></a-gltf-model>
         </a-entity>
         <a-entity mindar-face-target="anchorIndex: 127">
-          <a-gltf-model rotation="-0.1 -0 0" position="0 -0.35 -0.0" scale="0.15 0.07 0.07" src="#earringModel1"
+          <a-gltf-model rotation="0 -90 0" position="0 -0.48 -0.0" scale="0.15 0.15 0.15" src="#earringModel1"
             class="earring-entity" visible="false"></a-gltf-model>
         </a-entity>
         <a-entity mindar-face-target="anchorIndex: 356">
-          <a-gltf-model rotation="0.1 -0 0" position="0 -0.35 -0.0" scale="0.15 0.07 0.07" src="#earringModel1"
+          <a-gltf-model rotation="0 -90 0" position="0 -0.48 -0.0" scale="0.15 0.15 0.15" src="#earringModel1"
             class="earring-entity" visible="false"></a-gltf-model>
         </a-entity>
         <a-entity mindar-face-target="anchorIndex: 127">
-          <a-gltf-model rotation="-0.1 -0 0" position="-0.04 -0.27 -0.1" scale="0.15 0.07 0.07" src="#earringModel2"
+          <a-gltf-model rotation="0 0 0" position="-0.04 -0.30 -0.1" scale="0.02 0.02 0.02" src="#earringModel2"
             class="earring1-entity" visible="false"></a-gltf-model>
         </a-entity>
         <a-entity mindar-face-target="anchorIndex: 356">
-          <a-gltf-model rotation="0.1 -0 0" position="0.04 -0.27 -0.1" scale="0.15 0.07 0.07" src="#earringModel2"
+          <a-gltf-model rotation="0 0 0" position="0.04 -0.30 -0.1" scale="0.02 0.02 0.02" src="#earringModel2"
             class="earring1-entity" visible="false"></a-gltf-model>
         </a-entity>
         <a-entity mindar-face-target="anchorIndex: 127">
-          <a-gltf-model rotation="-0.1 -0 0" position="0 -0.35 -0.0" scale="0.15 0.07 0.07" src="#earringModel3"
+          <a-gltf-model rotation="0 -90 0" position="-0.04 -0.32 -0.1" scale="0.05 0.05 0.05" src="#earringModel3"
             class="earring2-entity" visible="false"></a-gltf-model>
         </a-entity>
         <a-entity mindar-face-target="anchorIndex: 356">
-          <a-gltf-model rotation="0.1 -0 0" position="0 -0.35 -0.0" scale="0.15 0.07 0.07" src="#earringModel3"
+          <a-gltf-model rotation="0 -90 0" position="0.04 -0.32 -0.1" scale="0.05 0.05 0.05" src="#earringModel3"
             class="earring2-entity" visible="false"></a-gltf-model>
         </a-entity>
         <a-entity mindar-face-target="anchorIndex: 127">
-          <a-gltf-model rotation="-0.1 -0 0" position="0 -0.35 -0.0" scale="0.15 0.07 0.07" src="#earringModel4"
+          <a-gltf-model rotation="0 -15 0" position="-0.02 -0.43 -0.1" scale="0.07 0.07 0.07" src="#earringModel4"
             class="earring3-entity" visible="false"></a-gltf-model>
         </a-entity>
         <a-entity mindar-face-target="anchorIndex: 356">
-          <a-gltf-model rotation="0.1 -0 0" position="0 -0.35 -0.0" scale="0.15 0.07 0.07" src="#earringModel4"
+          <a-gltf-model rotation="0 -15 0" position="0.02 -0.43 -0.1" scale="0.07 0.07 0.07" src="#earringModel4"
             class="earring3-entity" visible="false"></a-gltf-model>
         </a-entity>
         <a-entity mindar-face-target="anchorIndex: 168">
           <a-gltf-model rotation="0  0" position="0 -0.07 -0.5" scale="0.150 0.150 0.150" src="#glassesModel1"
             class="glasses-entity" visible="false"></a-gltf-model>
         </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 168">
+          <a-gltf-model rotation="0  -90" position="-0.25 -0.07 -0.0005" scale="0.20 0.20 0.20" src="#glassesModel2"
+            class="glasses1-entity" visible="false"></a-gltf-model>
+        </a-entity>
         <a-entity mindar-face-target="anchorIndex: 1">
-          <a-gltf-model mindar-face-occluder scale="0.02 0.02 0.02 " rotation="-90 0 0"
+          <a-gltf-model mindar-face-occluder scale="0.02 0.02 0.02 " rotation="-90 0 0" position="0 -0.02 -0.05"
             src="#noseOccluder"></a-gltf-model>
         </a-entity>
 

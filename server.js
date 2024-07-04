@@ -12,7 +12,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Define route to render the homepage
 app.get('/', (req, res) => {
-  res.render('pages/Home'); // Render the homepage.ejs file in the pages folder
+  res.render('pages/HomePage.ejs'); // Render the homepage.ejs file in the pages folder
 });
 app.get('/products', (req, res) => {
   res.render('pages/products'); // Render the homepage.ejs file in the pages folder
