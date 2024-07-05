@@ -328,7 +328,7 @@ body {
     color: #333;
 }
 
-header {
+/* header {
     background-color: #fff;
     padding: 20px 40px;
     display: flex;
@@ -361,12 +361,74 @@ header nav ul li a {
 
 header nav ul li a:hover {
     color: #f39c12;
-}
+} */
 
 
 
 
 /* navbar section by ayesha */
+header {
+    
+ 
+    background-color: #f8f9fa; /* Example background color */
+    padding: 20px 0; /* Adjust padding as needed */
+    text-align: center;
+    animation: slideFromBottom 1s ease-out forwards; /* Animation properties */
+  opacity: 0; /* Initially hidden */
+  animation-delay: 1s;
+  }
+  
+  .logo {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold;
+    margin-bottom: 10px; /* Optional: adjust margin */
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin: 0 10px; /* Adjust margin between menu items */
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333; /* Adjust link color */
+    font-size: 16px; /* Adjust font size */
+  }
+  
+  nav ul li a:hover {
+    color: #007bff; /* Adjust hover color */
+  }
+
+  
+
+
+
+
+
+  
+  @keyframes slideFromBottom {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+
+
+
+
+
+
+
 
 /* home */
 
@@ -380,6 +442,9 @@ header nav ul li a:hover {
     text-align: center;
     color: #270303;
     position: relative;
+    animation: slideFromBottom 3s ease-out forwards; /* Animation properties */
+  opacity: 0; /* Initially hidden */
+  animation-delay: 1s;
 }
 
 .home-section h1 {
@@ -450,7 +515,7 @@ header nav ul li a:hover {
     padding: 20px; /* Add padding for better readability */
     border-radius: 10px; /* Optional: add rounded corners */
     opacity: 0; /* Start hidden */
-  animation: slideInFromTop 2s 2s forwards; /* 2s animation with a 2s delay */
+  animation: slideInFromTop 4s 4s forwards; /* 2s animation with a 2s delay */
   }
   .slider-text h1 {
     font-size: 3rem;
@@ -650,10 +715,18 @@ footer {
     overflow: hidden;
     justify-content: center;
     background-color:transparent;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); */
     border-radius: px;
     padding: 0px;
+    opacity: 0;
+  transform: translateY(50px); /* Start from below */
+  transition: opacity 0.5s ease, transform 0.8s ease; /* Adjust timing as needed */
 }
+
+.image-slider-section.show {
+    opacity: 1;
+    transform: translateY(0); /* Slide up to its final position */
+  }
 
 .carousel {
     position: relative;
@@ -684,6 +757,7 @@ footer {
     box-shadow: 10px 12px 5px rgba(0, 0, 0, 0.1);
     transition: transform 20s ease-in-out;
     width: 250px; /* Adjust card width */
+    border: 1px solid gray;
 }
 
 .card img {
@@ -716,9 +790,22 @@ footer {
 /* cards 3 */
 
 /* Styles for card section */
+.card1-section.hidden {
+    opacity: 0;
+    transform: translateY(50px); /* Adjust as needed */
+    transition: opacity 0.5s ease, transform 2.5s ease;
+  }
+  
+  .card1-section.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
 .card1-section {
     padding: 1px 0;
     background-color: transparent;
+    transform: translateY(50px); /* Start from below */
+    transition: opacity 0.5s ease, transform 0.8s ease; /* Adjust timing as needed */
     
   }
   
@@ -802,5 +889,89 @@ footer {
   
   .btn:hover {
     background-color: #0056b3;
+  }
+  
+
+  /* about us section */
+  .about-section {
+    background-color: #f8f9fa; /* Light background color */
+    padding: 50px 0; /* Adjust padding as needed */
+    text-align: center;
+    opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.about-section.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+.about-content {
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto; /* Center align within the container */
+}
+
+.about-content h2 {
+    font-size: 32px; /* Heading size */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+.about-content p {
+    font-size: 18px; /* Paragraph font size */
+    line-height: 1.6; /* Line height for readability */
+    font-family: Lucida Handwriting;
+}
+
+.about-content strong {
+    font-size: 20px; /* Larger font size for strong emphasis */
+}
+
+
+/* video style */
+#video-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    text-align: center; /* Center align content */
+    background-color:transparent; /* Example background color */
+  }
+  
+  #video-container {
+    width: 30%; /* Initial smaller size */
+    transition: width 1s ease; /* Smooth transition */
+    text-align: center; /* Center the video within its container */
+    position: relative; /* Ensure relative positioning */
+    display: inline-block; /* Ensure block display for inline positioning */
+    box-shadow:  19px 19px 18px rgba(0, 0, 0, 0.1);
+
+  }
+  
+  #landing-video {
+    max-width: 100%; /* Ensure the video stays within its container */
+    height: auto;
+  }
+  
+  .video-enlarged {
+    width: 60% !important; /* Enlarged size */
+  }
+  
+  .try-now-link {
+    text-align: center; /* Center align the link */
+    margin-top: 20px; /* Adjust margin as needed */
+  }
+  
+  .try-now-link a {
+    display: inline-block; /* Ensure link takes full width */
+    text-decoration: none;
+    color: #0e0e0f; /* Link color */
+    font-size: 18px; /* Example font size */
+    padding: 10px 20px; /* Example padding */
+    border: 1px solid #000000; /* Example border */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  .try-now-link a:hover {
+    background-color: #000000; /* Hover background color */
+    color: #fff; /* Hover text color */
   }
   
