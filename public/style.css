@@ -364,6 +364,10 @@ header nav ul li a:hover {
 }
 
 
+
+
+/* navbar section by ayesha */
+
 /* home */
 
 .home-section {
@@ -390,7 +394,7 @@ header nav ul li a:hover {
     animation: fadeInUp 1s ease-in-out;
 }
 
-.home-section .cta-button {
+/* .home-section .cta-button {
     background-color: #f39c12;
     color: #fff;
     padding: 10px 20px;
@@ -400,11 +404,11 @@ header nav ul li a:hover {
     transition: background-color 0.3s ease;
     animation: fadeInUp 1s ease-in-out;
     margin: 20px;
-}
+} */
 
-.home-section .cta-button:hover {
+/* .home-section .cta-button:hover {
     background-color: #e67e22;
-}
+} */
 
 .slider {
     width:1000px;
@@ -433,6 +437,102 @@ header nav ul li a:hover {
     height: fit-content;
     border-radius: 10px;
 }
+
+.slider-text {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(0, 0, 0);
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.25); /* Semi-transparent background */
+    padding: 20px; /* Add padding for better readability */
+    border-radius: 10px; /* Optional: add rounded corners */
+    opacity: 0; /* Start hidden */
+  animation: slideInFromTop 2s 2s forwards; /* 2s animation with a 2s delay */
+  }
+  .slider-text h1 {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 10px 10px 20px black, 0 0 25px rgb(156, 156, 160), 0 0 5px rgb(128, 128, 134);
+    margin-bottom: 50px;
+  }
+  
+  .slider-text p {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: white;
+    
+    
+    text-shadow: 0 0 13px #161616, 0 0 15px #8f8f92;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    background-color: #241d0d;
+   
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .cta-button:hover {
+    background-color: #0056b3;
+  }
+
+  @keyframes slideInFromTop {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -100%);
+    }
+    /* 25% {
+        opacity: 0.25;
+        transform: translate(-50%, -75%);
+      } */
+      50% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%);
+      }
+      /* 75% {
+        opacity: 0.75;
+        transform: translate(-50%, -25%);
+      } */
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  @keyframes slide-animation {
+    0% {
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateX(-100%);
+    }
+    40% {
+      transform: translateX(-200%);
+    }
+    60% {
+      transform: translateX(-300%);
+    }
+    80% {
+      transform: translateX(-400%);
+    }
+    100% {
+      transform: translateX(-500%);
+    }
+  }
+
+
+
+
+
+
+
+
+
 
 .about-section,
 .collection-section,
@@ -548,10 +648,11 @@ footer {
 .image-slider-section {
     width: 100%;
     overflow: hidden;
-    background-color:rgb(184, 179, 179);
+    justify-content: center;
+    background-color:transparent;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     border-radius: px;
-    padding: 20px;
+    padding: 0px;
 }
 
 .carousel {
@@ -572,12 +673,12 @@ footer {
     flex: 0 0 19%; /* 100% / 6 items */
     box-sizing: border-box;
     margin: 1px;
-    padding: 10px;
+    padding: 20px;
 }
 
 .card {
     background-color: #fff;
-    border: 4px solid #ddd;
+    /* border: 4px solid #000000; */
     border-radius: 1px;
     overflow: hidden;
     box-shadow: 10px 12px 5px rgba(0, 0, 0, 0.1);
@@ -639,8 +740,9 @@ footer {
     height: 300px;
     margin: 0 10px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 19px 19px 18px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    border-left: 1px solid rgb(38, 37, 37);
     position: relative;
   }
   

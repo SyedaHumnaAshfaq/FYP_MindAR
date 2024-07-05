@@ -10,14 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     updateWidth();
     window.addEventListener('resize', updateWidth);
 
-    // // Automatic sliding
-    // function autoSlide() {
-    //     if (isAnimating) return;
-    //     moveCarousel(1); // Move to the next item
-    // }
+    
 
-    // setInterval(autoSlide, 1000); // Change image every 3 seconds
-
+    
 
 
  
