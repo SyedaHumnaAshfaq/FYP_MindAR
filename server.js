@@ -14,6 +14,17 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', (req, res) => {
   res.render('pages/Home.ejs'); // Render the homepage.ejs file in the pages folder
 });
+
+app.get('/SignUp', (req, res) => {
+  res.render('pages/SignUp.ejs'); // Render the homepage.ejs file in the pages folder
+});
+
+app.get('/login', (req, res) => {
+  res.render('pages/login.ejs'); // Render the homepage.ejs file in the pages folder
+});
+
+
+
 app.get('/products', (req, res) => {
   res.render('pages/products'); // Render the homepage.ejs file in the pages folder
 });

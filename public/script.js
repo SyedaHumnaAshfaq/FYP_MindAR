@@ -1,45 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     //moving carousel
-    const carouselInner = document.querySelector('.carousel-inner');
-    const totalItems = carouselInner.children.length;
-    const itemWidth = carouselInner.children[0].clientWidth;
+    // const carouselInner = document.querySelector('.carousel-inner');
+    // const totalItems = carouselInner.children.length;
+    // const itemWidth = carouselInner.children[0].clientWidth;
     
-    function updateWidth() {
-        carouselInner.style.width = `calc(${itemWidth}px * ${carouselInner.children.length})`;
-    }
+    // function updateWidth() {
+    //     carouselInner.style.width = `calc(${itemWidth}px * ${carouselInner.children.length})`;
+    // }
     
-    updateWidth();
-    window.addEventListener('resize', updateWidth);
+    // updateWidth();
+    // window.addEventListener('resize', updateWidth);
+    
+
 //end of moving carousel
 
 
  // Function to show image slider after delay
- const imageSliderSection = document.querySelector("#image-slider");
+//  const imageSliderSection = document.querySelector("#image-slider");
 
- function showImageSlider() {
-     imageSliderSection.classList.add("show");
- }
+//  function showImageSlider() {
+//      imageSliderSection.classList.add("show");
+//  }
 
- function isElementInViewport(el) {
-     const rect = el.getBoundingClientRect();
-     return (
-         rect.top >= 0 &&
-         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-     );
- }
+//  function isElementInViewport(el) {
+//      const rect = el.getBoundingClientRect();
+//      return (
+//          rect.top >= 0 &&
+//          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+//      );
+//  }
 
- function handleScroll() {
-     if (isElementInViewport(imageSliderSection)) {
-         showImageSlider();
-         window.removeEventListener("scroll", handleScroll);
-     }
- }
+//  function handleScroll() {
+//      if (isElementInViewport(imageSliderSection)) {
+//          showImageSlider();
+//          window.removeEventListener("scroll", handleScroll);
+//      }
+//  }
 
- // Delay the function to show after a certain scroll point or time
- setTimeout(function () {
-     window.addEventListener("scroll", handleScroll);
- }, 2000);
+//  // Delay the function to show after a certain scroll point or time
+//  setTimeout(function () {
+//      window.addEventListener("scroll", handleScroll);
+//  }, 2000);
  // End of image slider section
 
  // Function to show card section after delay
@@ -47,6 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
  function showCardSection() {
      cardSection.classList.add("show");
+ }
+  function isElementInViewport(el) {
+     const rect = el.getBoundingClientRect();
+     return (
+         rect.top >= 0 &&
+         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+     );
  }
 
  function handleCardScroll() {
@@ -85,20 +94,14 @@ function handleAboutScroll() {
 window.addEventListener('scroll', handleAboutScroll);
  
     
-// //video
-// const videoContainer = document.getElementById('video-container');
 
-// // Delayed enlargement after 3 seconds
-// setTimeout(() => {
-//   videoContainer.classList.add('video-enlarged');
-// }, 3000);
-
+//video
 
 const videoContainer = document.getElementById('video-container');
   const video = document.getElementById('landing-video');
 
   // Function to check if element is in viewport
-  function isElementInViewport(el) {
+  function isElementInViewports(el) {
     const rect = el.getBoundingClientRect();
     return (
       rect.top >= 0 &&
@@ -110,7 +113,7 @@ const videoContainer = document.getElementById('video-container');
 
   // Function to show and enlarge video
   function handleVideoScroll() {
-    if (isElementInViewport(videoContainer)) {
+    if (isElementInViewports(videoContainer)) {
       // Show the video container
       videoContainer.style.display = 'block';
 
@@ -130,7 +133,67 @@ const videoContainer = document.getElementById('video-container');
 
   // Listen for scroll events to trigger handleVideoScroll function
   window.addEventListener('scroll', handleVideoScroll);
-    
+
+
+
+  //for scrolling images
+  const bestSellingSection = document.querySelector('.best-selling');
+
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function handleimageScroll() {
+    if (isElementInViewport(bestSellingSection)) {
+      bestSellingSection.classList.add('visible');
+      window.removeEventListener('scroll', handleimageScroll);
+    }
+  }
+
+  window.addEventListener('scroll', handleimageScroll);
+
+
+
+
+  //swiper
+  document.getElementById('next').onclick = function(){
+    const widthItem = document.querySelector('.item').offsetWidth;
+    document.getElementById('formList').scrollLeft += widthItem;
+}
+document.getElementById('prev').onclick = function(){
+    const widthItem = document.querySelector('.item').offsetWidth;
+    document.getElementById('formList').scrollLeft -= widthItem;
+}
+  //swiper
+
+  //dropdown
+  document.querySelector('.profile-icon').addEventListener('click', function(event) {
+    event.preventDefault();
+    const dropdown = document.querySelector('.dropdown');
+    dropdown.classList.toggle('show');
+});
+window.addEventListener('click', function(event) {
+  if (!event.target.closest('.dropdown')) {
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(dropdown => {
+          dropdown.classList.remove('show');
+      });
+  }
+});
+
+
+
+       
+
+  
+ 
+  
 });
 
 
