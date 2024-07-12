@@ -27,6 +27,9 @@
       <h2>Glasses</h2>
       <img id="glasses" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/earring/thumbnail.png"/>
       <img id="glasses1" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/earring/thumbnail.png"/>
+      <img id="glasses2" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/earring/thumbnail.png"/>
+      <img id="glasses3" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/earring/thumbnail.png"/>
+    
     </div>
     <a-scene mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false"
@@ -44,6 +47,8 @@
         <a-asset-item id="noseOccluder" src="/models/occluders/noseoccluder.glb"></a-asset-item>
         <a-asset-item id="glassesModel1" src="/models/sunglasses/blackSG.glb"></a-asset-item>
         <a-asset-item id="glassesModel2" src="/models/sunglasses/purpleSG.glb"></a-asset-item>
+        <a-asset-item id="glassesModel3" src="/models/sunglasses/moreblackSG.glb"></a-asset-item>
+        <a-asset-item id="glassesModel4" src="/models/sunglasses/goldSG.glb"></a-asset-item>
 
 
 
@@ -90,8 +95,16 @@
             class="glasses-entity" visible="false"></a-gltf-model>
         </a-entity>
         <a-entity mindar-face-target="anchorIndex: 168">
-          <a-gltf-model rotation="0  -90" position="-0.25 -0.07 -0.0005" scale="0.20 0.20 0.20" src="#glassesModel2"
+          <a-gltf-model rotation="0  -90" position="-0.25 -0.07 -0.0005" scale="0.17 0.17 0.20" src="#glassesModel2"
             class="glasses1-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 168">
+          <a-gltf-model rotation="0  -90" position="-0.06 -0.07 -0.0005" scale="0.40 0.40 0.42" src="#glassesModel3"
+            class="glasses2-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 168">
+          <a-gltf-model rotation="0  -90" position="0.14 -0.12 -0.0005" scale="0.35 0.35 0.37" src="#glassesModel4"
+            class="glasses3-entity" visible="false"></a-gltf-model>
         </a-entity>
         <a-entity mindar-face-target="anchorIndex: 1">
           <a-gltf-model mindar-face-occluder scale="0.02 0.02 0.02 " rotation="-90 0 0" position="0 -0.02 -0.05"
