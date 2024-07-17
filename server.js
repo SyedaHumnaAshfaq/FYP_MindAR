@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const path = require('path');
+const connectDB = require('./db');
 
+connectDB();
 app.set('view engine', 'ejs');
 app.use('/models', express.static(path.join(__dirname, 'models')));
 
