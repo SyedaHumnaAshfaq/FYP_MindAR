@@ -1,5 +1,71 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
+    document.getElementById("signupform").addEventListener("submit", async function handleSignUp(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        const data = {
+            username: formData.get('username'),
+            email: formData.get('email'),
+            password: formData.get('password')
+        };
+        try {
+            const response = await fetch('/api/auth/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
 
+            const result = await response.json();
+            if (response.status === 400) {
+                alert(result.message); // Display popup message
+            } else if (response.status === 201) {
+                alert(result.message);
+                window.location.href = '/'; // Redirect on successful registration
+            } else {
+                alert('An unexpected error occurred');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred during sign up');
+        }
+    });
+  
+
+    document.getElementById("loginform").addEventListener("submit", async function handleLogin(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        const data = {
+            username: formData.get('username'),
+            password: formData.get('password')
+        };
+        try {
+            const response = await fetch('/api/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            if (response.status === 200) {
+                alert(result.message); // Display popup message
+            } else if (response.status == 401) {
+                alert(result.message);
+                window.location.href = '/'; // Redirect on successful login
+            }
+            else {
+                alert('An unexpected error occurred');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred during login');
+        }
+    });
     //moving carousel
     // const carouselInner = document.querySelector('.carousel-inner');
     // const totalItems = carouselInner.children.length;

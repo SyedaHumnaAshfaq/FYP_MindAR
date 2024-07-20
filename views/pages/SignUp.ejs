@@ -7,22 +7,23 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="/script.js"></script>
+    <!-- <script src="/scripting.js"></script> -->
 </head>
 <body class="signup-body">
     <div class="signup-container" id="signup">
         <div class="signup-left">
             <h2>Sign Up for Adorn Ease</h2>
-            <form>
+            <form action="/api/auth/register" method="post" onsubmit="handleSignUp(event)" id="signupform">
                 <div class="input-box">
-                    <input type="text" required>
+                    <input type="text" name="username" required>
                     <label>Username</label>
                 </div>
                 <div class="input-box">
-                    <input type="email" required>
+                    <input type="email" name="email" required>
                     <label>Email</label>
                 </div>
                 <div class="input-box">
-                    <input type="password" required>
+                    <input type="password" name="password" required>
                     <label>Password</label>
                 </div>
                 <button class="signupbutton" type="submit">Sign Up</button>
