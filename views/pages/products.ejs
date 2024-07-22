@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>products</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="/script.js"></script>
+    <link rel="stylesheet" href="/style.css" />
 </head>
 <header>
     <div class="logo">Adorn Ease</div>
     <nav>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="">Virtual Try-On</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#collection">Collection</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="/SignUp">SignUp</a></li>
-        
-      </ul>
-      <div class="nav-icons">
-        
-       
-
-        
-        <a href="#profile" class="icon"><img src="images/icons8-create-order.gif" alt="Track"></a>
-        <a href="/SignUp" class="icon"><img src="images/icons8-cart.gif" alt="cart"></a>
-        
-          <div class="dropdown">
-            <a href="#profile" class="icon profile-icon"><img src="images/profileicon.png" alt="Profile"></a>
-            <div class="dropdown-content">
-              
-              <a href="/login">Login</a>
-              <a href="/SignUp">Sign Up</a>
-            </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="">Virtual Try-On</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#collection">Collection</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="/SignUp">SignUp</a></li>
+            
+        </ul>
+        <div class="nav-icons">
+            
+            
+            
+            
+            <a href="#profile" class="icon"><img src="/images/icons8-create-order.gif" alt="Track"></a>
+            <a href="/SignUp" class="icon"><img src="/images/icons8-cart.gif" alt="cart"></a>
+            
+            <div class="dropdown">
+                <a href="#profile" class="icon profile-icon"><img src="/images/profileicon.png" alt="Profile"></a>
+                <div class="dropdown-content">
+                    
+                    <a href="/login">Login</a>
+                    <a href="/SignUp">Sign Up</a>
+                </div>
             </div>
         </div>
     </nav>
-  </header>
+</header>
+
 <body>
     <div class="wrapper">
         <div class="containerproducts">
@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </label>
-            <input class="input123" type="radio" name="slide" id="c2" >
+            <input class="input123" type="radio" name="slide" id="c2">
             <label for="c2" class="card">
                 <div class="row">
                     <div class="icon">2</div>
@@ -62,7 +62,7 @@
                     </div>
                 </div>
             </label>
-            <input class="input123" type="radio" name="slide" id="c3" >
+            <input class="input123" type="radio" name="slide" id="c3">
             <label for="c3" class="card">
                 <div class="row">
                     <div class="icon">3</div>
@@ -72,7 +72,7 @@
                     </div>
                 </div>
             </label>
-            <input class="input123" type="radio" name="slide" id="c4" >
+            <input class="input123" type="radio" name="slide" id="c4">
             <label for="c4" class="card">
                 <div class="row">
                     <div class="icon">4</div>
@@ -82,7 +82,7 @@
                     </div>
                 </div>
             </label>
-            <input class="input123" type="radio" name="slide" id="c5" >
+            <input class="input123" type="radio" name="slide" id="c5">
             <label for="c5" class="card">
                 <div class="row">
                     <div class="icon">5</div>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
             </label>
-            <input class="input123" type="radio" name="slide" id="c6" >
+            <input class="input123" type="radio" name="slide" id="c6">
             <label for="c6" class="card">
                 <div class="row">
                     <div class="icon">6</div>
@@ -104,9 +104,9 @@
             </label>
         </div>
     </div>
-
-
-
+    
+    
+    
     <main class="products-main">
         <section class="filter-section">
             
@@ -126,110 +126,41 @@
                 </select>
                 
             </div>
-           
+            
         </section>
         
         <section class="products-section">
-           <section class="products">
+            <section class="products">
                 <h2>Our Products</h2>
                 <div class="all-products">
-                    <div class="product" data-id="1" data-name="Pearl Earing" data-price="129" data-image="images/tops.png">
-                        <div class="product-image-container">
-                            <img src="images/tops.png" alt="Product Image">
-                            <a href="/quickview" class="quick-view-btn">Quick View</a>
+                    <% products.forEach(product => { %>
+                        
+                        <!-- <div class="product"></div>  -->
+                        <div class="product">
+                            <div class="product-image-container">
+                                <img src="<%=product.Product_image_url%>"" alt="<%= product.Product_name %>">
+                                <button class="quick-view-btn">Quick View</button>
                         </div>
                         <div class="product-info">
-                            <h4 class="product-title">pearl earing</h4>
-                            <p class="product-price">$129</p>
+                            <h4 class="product-title"><%=product.Product_name%></h4>
+                            <p class="product-price">$<%=product.Product_price%></p>
                             <div class="product-buttons">
                                 <a class="product-btn" href="#">Buy Now</a>
+                                <button class="product-btn add-to-cart-btn">Add to Cart</button>
                                 <a class="product-btn try-now-btn" href="#">Try Now</a>
                                 <span class="heart-icon">&#x2764;</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="product" data-id="2" data-name="Pearl" data-price="140" data-image="images/tops.png">
-                        <div class="product-image-container">
-                            <img src="images/tops.png" alt="Product Image">
-                            <button class="quick-view-btn">Quick View</button>
-                        </div>
-                        <div class="product-info">
-                            <h4 class="product-title">pearl earing</h4>
-                            <p class="product-price">$129</p>
-                            <div class="product-buttons">
-                                <a class="product-btn" href="#">Buy Now</a>
-                                <!-- <button class="product-btn add-to-cart-btn">Add to Cart</button> -->
-                                <a class="product-btn try-now-btn" href="#">Try Now</a>
-                                <span class="heart-icon">&#x2764;</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product " data-id="3" data-name="Earing" data-price="12" data-image="images/tops.png">
-                        <div class="product-image-container">
-                            <img src="images/tops.png" alt="Product Image">
-                            <button class="quick-view-btn">Quick View</button>
-                        </div>
-                        <div class="product-info">
-                            <h4 class="product-title">pearl earing</h4>
-                            <p class="product-price">$129</p>
-                            <div class="product-buttons">
-                                <a class="product-btn" href="#">Buy Now</a>
-                                <a class="product-btn try-now-btn" href="#">Try Now</a>
-                                <span class="heart-icon">&#x2764;</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image-container">
-                            <img src="images/tops.png" alt="Product Image">
-                            <button class="quick-view-btn">Quick View</button>
-                        </div>
-                        <div class="product-info">
-                            <h4 class="product-title">pearl earing</h4>
-                            <p class="product-price">$129</p>
-                            <div class="product-buttons">
-                                <a class="product-btn" href="#">Buy Now</a>
-                                <a class="product-btn try-now-btn" href="#">Try Now</a>
-                                <span class="heart-icon">&#x2764;</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image-container">
-                            <img src="images/tops.png" alt="Product Image">
-                            <button class="quick-view-btn">Quick View</button>
-                        </div>
-                        <div class="product-info">
-                            <h4 class="product-title">pearl earing</h4>
-                            <p class="product-price">$129</p>
-                            <div class="product-buttons">
-                                <a class="product-btn" href="#">Buy Now</a>
-                                <a class="product-btn try-now-btn" href="#">Try Now</a>
-                                <span class="heart-icon">&#x2764;</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image-container">
-                            <img src="images/tops.png" alt="Product Image">
-                            <button class="quick-view-btn">Quick View</button>
-                        </div>
-                        <div class="product-info">
-                            <h4 class="product-title">pearl earing</h4>
-                            <p class="product-price">$129</p>
-                            <div class="product-buttons">
-                                <a class="product-btn" href="#">Buy Now</a>
-                                <a class="product-btn try-now-btn" href="#">Try Now</a>
-                                <span class="heart-icon">&#x2764;</span>
-                            </div>
-                        </div>
-                    </div>
+                    </div> 
+                    <% }) %>
                 </div>
             </section>
         </section>
     </main>
     
-
     
+    
+    <script src="/script.js"></script>
 </body>
+
 </html>
