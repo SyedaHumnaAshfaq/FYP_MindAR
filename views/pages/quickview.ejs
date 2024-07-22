@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/f30fac2c61.js" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@200&family=Courgette&family=Edu+TAS+Beginner:wght@700&family=Lato:wght@300;900&family=Mukta:wght@700&family=Mulish:wght@300&family=Open+Sans&family=PT+Sans:ital,wght@1,700&family=Poppins:wght@300&family=Raleway:wght@100&family=Roboto+Condensed:wght@700&family=Roboto+Slab&family=Roboto:wght@300&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cardquick">
+        <div class="imgquick">
+            <img src="images/tops.png" alt="" onclick="clk(this)"> <br>
+            <img src="images/tops.jpg" alt=""   onclick="clk(this)"> <br>
+            <img src="images/bg2.jpg" alt=""  onclick="clk(this)"> <br>
+            <img src="images/tops1.jpg" alt=""  onclick="clk(this)"> <br>
+            <img src="images/slide3.jpg" alt=""  onclick="clk(this)"> <br>
+
+        </div>
+        <div class="leftquick">
+            <img src="images/dark1.jpg" id="imgs" alt="">
+        </div>
+
+        <div class="rightquick">
+            <h3>QUICK VIEW IN ALL ANGLES</h3>
+            <h1>HUMNA KI MEHNAT KA KANTA</h1>
+            <h1>$314</h1>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+            <h3>Brand : ADORN EASE</h3>
+            <h4>Available Offer's</h4>
+            <p>: Special PriceGet extra 11% off (price inclusive of cashback/coupon)</p>
+            <p>: Partner OfferPurchase now & get a surprise cashback coupon for January / February 2023</p>
+            <p>: Partner OfferSign up for Flipkart Pay Later and get Flipkart Gift Card worth up to ₹1000*</p>
+            <p>: Bank Offer5% Cashback on Flipkart Axis Bank            </p>
+             <!-- <button class="addtocart">Add To Cart</button> -->
+             <button class="addtocart">Buy Now</button>
+             <a href="/addtocart" class="addtocart">Add To Cart</a>
+
+        </div>
+    </div>
+
+    <script>
+        function clk(newImg){
+            let getImg=document.getElementById("imgs");
+            getImg.src=newImg.src;
+        }
+    </script>
+</body>
+</html>

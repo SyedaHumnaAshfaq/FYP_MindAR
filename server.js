@@ -26,6 +26,14 @@ app.get('/', (req, res) => {
   res.render('pages/Home'); // Render the homepage.ejs file in the pages folder
 });
 
+app.get('/quickview', (req, res) => {
+  res.render('pages/quickview.ejs'); // Render the homepage.ejs file in the pages folder
+});
+
+app.get('/products', (req, res) => {
+  res.render('pages/products.ejs'); // Render the homepage.ejs file in the pages folder
+});
+
 app.get('/SignUp', (req, res) => {
   res.render('pages/SignUp'); // Render the homepage.ejs file in the pages folder
 });
@@ -41,6 +49,9 @@ app.get('/products', (req, res) => {
 });
 app.get('/VirtualTryOn', (req, res) => { 
     res.render('pages/VirtualTryOn'); // Render the about.ejs file in the pages folder
+});
+app.get('/addtocart', (req, res) => { 
+  res.render('pages/addtocart'); // Render the about.ejs file in the pages folder
 });
 
 app.listen(PORT, () => {

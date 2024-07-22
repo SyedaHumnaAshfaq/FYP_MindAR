@@ -3,127 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Continuous Sliding Carousel</title>
-    <link rel="stylesheet" href="styling.css">
+    <title>products</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="/script.js"></script>
 </head>
+<header>
+    <div class="logo">Adorn Ease</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="">Virtual Try-On</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="/SignUp">SignUp</a></li>
+        
+      </ul>
+      <div class="nav-icons">
+        
+       
 
-<body>
-    <div id="header-wrapper">
-        <header id="site-header">
-          <div class="title-container">
-            <h1 class="title">ADORN EASE</h1>
-          </div>
-          <nav class="navbar">
-            <ul class="nav-list">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#collection">Collections</a></li>
-              <li><a href="#products">Products</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
-        </header>
-    <section id="image-slider" class="image-slider-section">
-        <div class="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item">
-                    <div class="card">
-                        <img src="images/tryon1.jpeg" alt="Elegant Necklace">
-                        <div class="card-body">
-                            <h5 class="card-title">Elegant Necklace</h5>
-                            <p class="card-text">Beautiful handcrafted necklace for special occasions.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card">
-                        <img src="images/tryon2.jpeg" alt="Classic Earrings">
-                        <div class="card-body">
-                            <h5 class="card-title">Classic Earrings</h5>
-                            <p class="card-text">Stylish earrings to complement any outfit.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card">
-                        <img src="images/earring.jpeg" alt="Stylish Bracelet">
-                        <div class="card-body">
-                            <h5 class="card-title">Stylish Bracelet</h5>
-                            <p class="card-text">Trendy bracelet that adds charm to your wrist.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Repeat items to create an infinite loop -->
-                <div class="carousel-item">
-                    <div class="card">
-                        <img src="images/tryon1.jpeg" alt="Elegant Necklace">
-                        <div class="card-body">
-                            <h5 class="card-title">Elegant Necklace</h5>
-                            <p class="card-text">Beautiful handcrafted necklace for special occasions.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card">
-                        <img src="images/tryon2.jpeg" alt="Classic Earrings">
-                        <div class="card-body">
-                            <h5 class="card-title">Classic Earrings</h5>
-                            <p class="card-text">Stylish earrings to complement any outfit.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card">
-                        <img src="images/earring.jpeg" alt="Stylish Bracelet">
-                        <div class="card-body">
-                            <h5 class="card-title">Stylish Bracelet</h5>
-                            <p class="card-text">Trendy bracelet that adds charm to your wrist.</p>
-                        </div>
-                    </div>
-                </div>
-                 <!-- Repeat items to create an infinite loop -->
-                 <div class="carousel-item">
-                    <div class="card">
-                        <img src="images/tryon1.jpeg" alt="Elegant Necklace">
-                        <div class="card-body">
-                            <h5 class="card-title">Elegant Necklace</h5>
-                            <p class="card-text">Beautiful handcrafted necklace for special occasions.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card">
-                        <img src="images/tryon2.jpeg" alt="Classic Earrings">
-                        <div class="card-body">
-                            <h5 class="card-title">Classic Earrings</h5>
-                            <p class="card-text">Stylish earrings to complement any outfit.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card">
-                        <img src="images/earring.jpeg" alt="Stylish Bracelet">
-                        <div class="card-body">
-                            <h5 class="card-title">Stylish Bracelet</h5>
-                            <p class="card-text">Trendy bracelet that adds charm to your wrist.</p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-
+        
+        <a href="#profile" class="icon"><img src="images/icons8-create-order.gif" alt="Track"></a>
+        <a href="/SignUp" class="icon"><img src="images/icons8-cart.gif" alt="cart"></a>
+        
+          <div class="dropdown">
+            <a href="#profile" class="icon profile-icon"><img src="images/profileicon.png" alt="Profile"></a>
+            <div class="dropdown-content">
+              
+              <a href="/login">Login</a>
+              <a href="/SignUp">Sign Up</a>
+            </div>
             </div>
         </div>
-    </section>
-    <script src="scripttt.js"></script>
-</body>
-</html>
+    </nav>
+  </header>
+<body>
+    <div class="wrapper">
+        <div class="containerproducts">
+            <input class="input123" type="radio" name="slide" id="c1" checked>
+            <label for="c1" class="card">
+                <div class="row">
+                    <div class="icon">1</div>
+                    <div class="description">
+                        <h4>Quick View </h4>
+                        <p>click on the product to have quick view in all angles</p>
+                    </div>
+                </div>
+            </label>
+            <input class="input123" type="radio" name="slide" id="c2" >
+            <label for="c2" class="card">
+                <div class="row">
+                    <div class="icon">2</div>
+                    <div class="description">
+                        <h4>Try Virtually</h4>
+                        <p>if you like the product click on virtual try on</p>
+                    </div>
+                </div>
+            </label>
+            <input class="input123" type="radio" name="slide" id="c3" >
+            <label for="c3" class="card">
+                <div class="row">
+                    <div class="icon">3</div>
+                    <div class="description">
+                        <h4>TRY ON Method</h4>
+                        <p>adjust your screen in centre of screen and see the product on your face</p>
+                    </div>
+                </div>
+            </label>
+            <input class="input123" type="radio" name="slide" id="c4" >
+            <label for="c4" class="card">
+                <div class="row">
+                    <div class="icon">4</div>
+                    <div class="description">
+                        <h4>Add to Cart</h4>
+                        <p>add the product to cart if you want to buy</p>
+                    </div>
+                </div>
+            </label>
+            <input class="input123" type="radio" name="slide" id="c5" >
+            <label for="c5" class="card">
+                <div class="row">
+                    <div class="icon">5</div>
+                    <div class="description">
+                        <h4>Enjoy your TryON on all products</h4>
+                        <p>Dont stop here, try on next product you like</p>
+                    </div>
+                </div>
+            </label>
+            <input class="input123" type="radio" name="slide" id="c6" >
+            <label for="c6" class="card">
+                <div class="row">
+                    <div class="icon">6</div>
+                    <div class="description">
+                        <h4>THANK YOU</h4>
+                        <p>explore the world of new technology with out try on feature</p>
+                    </div>
+                </div>
+            </label>
+        </div>
+    </div>
 
+
+
+    <main class="products-main">
+        <section class="filter-section">
+            
+            <div class="filter-options">
+                <select>
+                    <option value="">Sort by</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                    <option value="rating">Rating</option>
+                </select>
+                <select>
+                    <option value="">Filter by Price</option>
+                    <option value="0-50">$0 - $50</option>
+                    <option value="51-100">$51 - $100</option>
+                    <option value="101-200">$101 - $200</option>
+                    <option value="200+">$200+</option>
+                </select>
+                
+            </div>
+           
+        </section>
+        
+        <section class="products-section">
+           <section class="products">
+                <h2>Our Products</h2>
+                <div class="all-products">
+                    <div class="product" data-id="1" data-name="Pearl Earing" data-price="129" data-image="images/tops.png">
+                        <div class="product-image-container">
+                            <img src="images/tops.png" alt="Product Image">
+                            <a href="/quickview" class="quick-view-btn">Quick View</a>
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">pearl earing</h4>
+                            <p class="product-price">$129</p>
+                            <div class="product-buttons">
+                                <a class="product-btn" href="#">Buy Now</a>
+                                <a class="product-btn try-now-btn" href="#">Try Now</a>
+                                <span class="heart-icon">&#x2764;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product" data-id="2" data-name="Pearl" data-price="140" data-image="images/tops.png">
+                        <div class="product-image-container">
+                            <img src="images/tops.png" alt="Product Image">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">pearl earing</h4>
+                            <p class="product-price">$129</p>
+                            <div class="product-buttons">
+                                <a class="product-btn" href="#">Buy Now</a>
+                                <!-- <button class="product-btn add-to-cart-btn">Add to Cart</button> -->
+                                <a class="product-btn try-now-btn" href="#">Try Now</a>
+                                <span class="heart-icon">&#x2764;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product " data-id="3" data-name="Earing" data-price="12" data-image="images/tops.png">
+                        <div class="product-image-container">
+                            <img src="images/tops.png" alt="Product Image">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">pearl earing</h4>
+                            <p class="product-price">$129</p>
+                            <div class="product-buttons">
+                                <a class="product-btn" href="#">Buy Now</a>
+                                <a class="product-btn try-now-btn" href="#">Try Now</a>
+                                <span class="heart-icon">&#x2764;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-image-container">
+                            <img src="images/tops.png" alt="Product Image">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">pearl earing</h4>
+                            <p class="product-price">$129</p>
+                            <div class="product-buttons">
+                                <a class="product-btn" href="#">Buy Now</a>
+                                <a class="product-btn try-now-btn" href="#">Try Now</a>
+                                <span class="heart-icon">&#x2764;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-image-container">
+                            <img src="images/tops.png" alt="Product Image">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">pearl earing</h4>
+                            <p class="product-price">$129</p>
+                            <div class="product-buttons">
+                                <a class="product-btn" href="#">Buy Now</a>
+                                <a class="product-btn try-now-btn" href="#">Try Now</a>
+                                <span class="heart-icon">&#x2764;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-image-container">
+                            <img src="images/tops.png" alt="Product Image">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">pearl earing</h4>
+                            <p class="product-price">$129</p>
+                            <div class="product-buttons">
+                                <a class="product-btn" href="#">Buy Now</a>
+                                <a class="product-btn try-now-btn" href="#">Try Now</a>
+                                <span class="heart-icon">&#x2764;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
     
-    
+
     
 </body>
 </html>
