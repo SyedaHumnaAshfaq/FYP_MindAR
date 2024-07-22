@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }, index * 2000); // Delay each element by 2 seconds
         });
     }
+    
 });
 
 

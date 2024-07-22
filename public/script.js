@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     document.getElementById("signupform").addEventListener("submit", async function handleSignUp(event) {
         event.preventDefault();
         const form = event.target;
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('An error occurred during sign up');
         }
     });
-  
+
 
     document.getElementById("loginform").addEventListener("submit", async function handleLogin(event) {
         event.preventDefault();
@@ -53,10 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const result = await response.json();
             if (response.status === 200) {
-                alert(result.message); // Display popup message
-            } else if (response.status == 401) {
                 alert(result.message);
-                window.location.href = '/'; // Redirect on successful login
+                window.location.href = '/';// Display popup message
+            } else if (response.status === 401) {
+                alert(result.message);
+                // window.location.href = '/'; // Redirect on successful login
             }
             else {
                 alert('An unexpected error occurred');
@@ -70,196 +71,196 @@ document.addEventListener('DOMContentLoaded', () => {
     // const carouselInner = document.querySelector('.carousel-inner');
     // const totalItems = carouselInner.children.length;
     // const itemWidth = carouselInner.children[0].clientWidth;
-    
+
     // function updateWidth() {
     //     carouselInner.style.width = `calc(${itemWidth}px * ${carouselInner.children.length})`;
     // }
-    
+
     // updateWidth();
     // window.addEventListener('resize', updateWidth);
-    
-
-//end of moving carousel
 
 
- // Function to show image slider after delay
-//  const imageSliderSection = document.querySelector("#image-slider");
+    //end of moving carousel
 
-//  function showImageSlider() {
-//      imageSliderSection.classList.add("show");
-//  }
 
-//  function isElementInViewport(el) {
-//      const rect = el.getBoundingClientRect();
-//      return (
-//          rect.top >= 0 &&
-//          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-//      );
-//  }
+    // Function to show image slider after delay
+    //  const imageSliderSection = document.querySelector("#image-slider");
 
-//  function handleScroll() {
-//      if (isElementInViewport(imageSliderSection)) {
-//          showImageSlider();
-//          window.removeEventListener("scroll", handleScroll);
-//      }
-//  }
+    //  function showImageSlider() {
+    //      imageSliderSection.classList.add("show");
+    //  }
 
-//  // Delay the function to show after a certain scroll point or time
-//  setTimeout(function () {
-//      window.addEventListener("scroll", handleScroll);
-//  }, 2000);
- // End of image slider section
+    //  function isElementInViewport(el) {
+    //      const rect = el.getBoundingClientRect();
+    //      return (
+    //          rect.top >= 0 &&
+    //          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    //      );
+    //  }
 
- // Function to show card section after delay
- const cardSection = document.querySelector(".card1-section");
+    //  function handleScroll() {
+    //      if (isElementInViewport(imageSliderSection)) {
+    //          showImageSlider();
+    //          window.removeEventListener("scroll", handleScroll);
+    //      }
+    //  }
 
- function showCardSection() {
-     cardSection.classList.add("show");
- }
-  function isElementInViewport(el) {
-     const rect = el.getBoundingClientRect();
-     return (
-         rect.top >= 0 &&
-         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-     );
- }
+    //  // Delay the function to show after a certain scroll point or time
+    //  setTimeout(function () {
+    //      window.addEventListener("scroll", handleScroll);
+    //  }, 2000);
+    // End of image slider section
 
- function handleCardScroll() {
-     if (isElementInViewport(cardSection)) {
-         showCardSection();
-         window.removeEventListener("scroll", handleCardScroll);
-     }
- }
+    // Function to show card section after delay
+    const cardSection = document.querySelector(".card1-section");
 
- // Listen for scroll events for card section
- window.addEventListener("scroll", handleCardScroll);
- // End of card section function
-
-// Function to show About Us section after delay
-const aboutSection = document.querySelector('#about');
-
-function showAboutSection() {
-    aboutSection.classList.add('show');
-}
-
-function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-    );
-}
-
-function handleAboutScroll() {
-    if (isElementInViewport(aboutSection)) {
-        setTimeout(showAboutSection, 100); // Delayed appearance after 1 second
-        window.removeEventListener('scroll', handleAboutScroll);
+    function showCardSection() {
+        cardSection.classList.add("show");
     }
-}
-
-window.addEventListener('scroll', handleAboutScroll);
- 
-    
-
-//video
-
-const videoContainer = document.getElementById('video-container');
-  const video = document.getElementById('landing-video');
-
-  // Function to check if element is in viewport
-  function isElementInViewports(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-
-  // Function to show and enlarge video
-  function handleVideoScroll() {
-    if (isElementInViewports(videoContainer)) {
-      // Show the video container
-      videoContainer.style.display = 'block';
-
-      // Delayed enlargement after 3 seconds
-      setTimeout(() => {
-        videoContainer.classList.add('video-enlarged');
-        
-      }, 2000);
-
-      // Remove the scroll event listener once video is shown/enlarged
-      window.removeEventListener('scroll', handleVideoScroll);
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
     }
-  }
 
-  // Initial check on page load
-  handleVideoScroll();
-
-  // Listen for scroll events to trigger handleVideoScroll function
-  window.addEventListener('scroll', handleVideoScroll);
-
-
-
-  //for scrolling images
-  const bestSellingSection = document.querySelector('.best-selling');
-
-  function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-
-  function handleimageScroll() {
-    if (isElementInViewport(bestSellingSection)) {
-      bestSellingSection.classList.add('visible');
-      window.removeEventListener('scroll', handleimageScroll);
+    function handleCardScroll() {
+        if (isElementInViewport(cardSection)) {
+            showCardSection();
+            window.removeEventListener("scroll", handleCardScroll);
+        }
     }
-  }
 
-  window.addEventListener('scroll', handleimageScroll);
+    // Listen for scroll events for card section
+    window.addEventListener("scroll", handleCardScroll);
+    // End of card section function
 
+    // Function to show About Us section after delay
+    const aboutSection = document.querySelector('#about');
 
+    function showAboutSection() {
+        aboutSection.classList.add('show');
+    }
 
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+    }
 
-  //swiper
-  document.getElementById('next').onclick = function(){
-    const widthItem = document.querySelector('.item').offsetWidth;
-    document.getElementById('formList').scrollLeft += widthItem;
-}
-document.getElementById('prev').onclick = function(){
-    const widthItem = document.querySelector('.item').offsetWidth;
-    document.getElementById('formList').scrollLeft -= widthItem;
-}
-  //swiper
+    function handleAboutScroll() {
+        if (isElementInViewport(aboutSection)) {
+            setTimeout(showAboutSection, 100); // Delayed appearance after 1 second
+            window.removeEventListener('scroll', handleAboutScroll);
+        }
+    }
 
-  //dropdown
-  document.querySelector('.profile-icon').addEventListener('click', function(event) {
-    event.preventDefault();
-    const dropdown = document.querySelector('.dropdown');
-    dropdown.classList.toggle('show');
-});
-window.addEventListener('click', function(event) {
-  if (!event.target.closest('.dropdown')) {
-      const dropdowns = document.querySelectorAll('.dropdown');
-      dropdowns.forEach(dropdown => {
-          dropdown.classList.remove('show');
-      });
-  }
-});
+    window.addEventListener('scroll', handleAboutScroll);
 
 
 
-       
+    //video
 
-  
- 
-  
+    const videoContainer = document.getElementById('video-container');
+    const video = document.getElementById('landing-video');
+
+    // Function to check if element is in viewport
+    function isElementInViewports(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    // Function to show and enlarge video
+    function handleVideoScroll() {
+        if (isElementInViewports(videoContainer)) {
+            // Show the video container
+            videoContainer.style.display = 'block';
+
+            // Delayed enlargement after 3 seconds
+            setTimeout(() => {
+                videoContainer.classList.add('video-enlarged');
+
+            }, 2000);
+
+            // Remove the scroll event listener once video is shown/enlarged
+            window.removeEventListener('scroll', handleVideoScroll);
+        }
+    }
+
+    // Initial check on page load
+    handleVideoScroll();
+
+    // Listen for scroll events to trigger handleVideoScroll function
+    window.addEventListener('scroll', handleVideoScroll);
+
+
+
+    //for scrolling images
+    const bestSellingSection = document.querySelector('.best-selling');
+
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    function handleimageScroll() {
+        if (isElementInViewport(bestSellingSection)) {
+            bestSellingSection.classList.add('visible');
+            window.removeEventListener('scroll', handleimageScroll);
+        }
+    }
+
+    window.addEventListener('scroll', handleimageScroll);
+
+
+
+
+    //swiper
+    document.getElementById('next').onclick = function () {
+        const widthItem = document.querySelector('.item').offsetWidth;
+        document.getElementById('formList').scrollLeft += widthItem;
+    }
+    document.getElementById('prev').onclick = function () {
+        const widthItem = document.querySelector('.item').offsetWidth;
+        document.getElementById('formList').scrollLeft -= widthItem;
+    }
+    //swiper
+
+    //dropdown
+    document.querySelector('.profile-icon').addEventListener('click', function (event) {
+        event.preventDefault();
+        const dropdown = document.querySelector('.dropdown');
+        dropdown.classList.toggle('show');
+    });
+    window.addEventListener('click', function (event) {
+        if (!event.target.closest('.dropdown')) {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('show');
+            });
+        }
+    });
+
+
+
+
+
+
+
+
 });
 
 
