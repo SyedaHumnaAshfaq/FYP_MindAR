@@ -10,10 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "aframe": "^1.5.0",
+    "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "mind-ar": "^1.2.5",
-    "mongoose": "^8.3.4"
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.1"
   }
 }
