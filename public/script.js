@@ -1,93 +1,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-<<<<<<< HEAD
   // Function to show card section after delay
   const cardSection = document.querySelector(".card1-section");
 
   function showCardSection() {
       cardSection.classList.add("show");
   }
-=======
-    
-    document.getElementById("signupform").addEventListener("submit", async function handleSignUp(event) {
-        event.preventDefault();
-        const form = event.target;
-        const formData = new FormData(form);
-        const data = {
-            username: formData.get('username'),
-            email: formData.get('email'),
-            password: formData.get('password')
-        };
-        try {
-            const response = await fetch('/api/auth/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
-
-            const result = await response.json();
-            if (response.status === 400) {
-                alert(result.message); // Display popup message
-            } else if (response.status === 201) {
-                alert(result.message);
-                window.location.href = '/'; // Redirect on successful registration
-            } else {
-                alert('An unexpected error occurred');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('An error occurred during sign up');
-        }
-    });
-  
-
-    document.getElementById("loginform").addEventListener("submit", async function handleLogin(event) {
-        event.preventDefault();
-        const form = event.target;
-        const formData = new FormData(form);
-        const data = {
-            username: formData.get('username'),
-            password: formData.get('password')
-        };
-        try {
-            const response = await fetch('/api/auth/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
-
-            const result = await response.json();
-            if (response.status === 200) {
-                alert(result.message); // Display popup message
-            } else if (response.status == 401) {
-                alert(result.message);
-                window.location.href = '/'; // Redirect on successful login
-            }
-            else {
-                alert('An unexpected error occurred');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('An error occurred during login');
-        }
-    });
-    //moving carousel
-    // const carouselInner = document.querySelector('.carousel-inner');
-    // const totalItems = carouselInner.children.length;
-    // const itemWidth = carouselInner.children[0].clientWidth;
-    
-    // function updateWidth() {
-    //     carouselInner.style.width = `calc(${itemWidth}px * ${carouselInner.children.length})`;
-    // }
-    
-    // updateWidth();
-    // window.addEventListener('resize', updateWidth);
-    
->>>>>>> 5eae6d67c99eecfcd93fb96aacc5eeffb44ceb6b
 
   function isElementInViewport(el) {
       const rect = el.getBoundingClientRect();
@@ -195,120 +113,274 @@ document.addEventListener('DOMContentLoaded', () => {
            });
        });
 
-       //addto cart
-    //    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-    // const cartItemsContainer = document.getElementById('cart-items');
-    // const cartSubtotal = document.getElementById('cart-subtotal');
-    // const cartTotal = document.getElementById('cart-total');
+       
+  
+});
 
-    // addToCartButtons.forEach(button => {
-    //     button.addEventListener('click', () => {
-    //         const product = button.closest('.product');
-    //         const productId = product.dataset.id;
-    //         const productName = product.dataset.name;
-    //         const productPrice = product.dataset.price;
-    //         const productImage = product.dataset.image;
-    //         addToCart(productId, productName, productPrice, productImage);
-    //     });
-    // });
 
-    // function addToCart(id, name, price, image) {
-    //     let cart = localStorage.getItem('cart');
-    //     cart = cart ? JSON.parse(cart) : [];
 
-    //     const existingProduct = cart.find(item => item.id === id);
-    //     if (existingProduct) {
-    //         existingProduct.quantity += 1;
-    //     } else {
-    //         cart.push({ id, name, price, image, quantity: 1 });
-    //     }
 
-    //     localStorage.setItem('cart', JSON.stringify(cart));
-    //     alert('Item added to cart');
+document.addEventListener('DOMContentLoaded', () => {
+    
+    document.getElementById("signupform").addEventListener("submit", async function handleSignUp(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        const data = {
+            username: formData.get('username'),
+            email: formData.get('email'),
+            password: formData.get('password')
+        };
+        try {
+            const response = await fetch('/api/auth/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            if (response.status === 400) {
+                alert(result.message); // Display popup message
+            } else if (response.status === 201) {
+                alert(result.message);
+                window.location.href = '/'; // Redirect on successful registration
+            } else {
+                alert('An unexpected error occurred');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred during sign up');
+        }
+    });
+  
+
+    document.getElementById("loginform").addEventListener("submit", async function handleLogin(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        const data = {
+            username: formData.get('username'),
+            password: formData.get('password')
+        };
+        try {
+            const response = await fetch('/api/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            if (response.status === 200) {
+                alert(result.message); // Display popup message
+            } else if (response.status == 401) {
+                alert(result.message);
+                window.location.href = '/'; // Redirect on successful login
+            }
+            else {
+                alert('An unexpected error occurred');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred during login');
+        }
+    });
+    //moving carousel
+    // const carouselInner = document.querySelector('.carousel-inner');
+    // const totalItems = carouselInner.children.length;
+    // const itemWidth = carouselInner.children[0].clientWidth;
+    
+    // function updateWidth() {
+    //     carouselInner.style.width = `calc(${itemWidth}px * ${carouselInner.children.length})`;
     // }
+    
+    // updateWidth();
+    // window.addEventListener('resize', updateWidth);
+    
 
-    // function displayCartItems() {
-    //     let cart = localStorage.getItem('cart');
-    //     cart = cart ? JSON.parse(cart) : [];
-    //     cartItemsContainer.innerHTML = '';
+//end of moving carousel
 
-    //     cart.forEach(item => {
-    //         const total = item.price * item.quantity;
-    //         const row = document.createElement('tr');
-    //         row.innerHTML = `
-    //             <td>
-    //                 <img src="${item.image}" alt="${item.name}">
-    //                 <span>${item.name}</span>
-    //             </td>
-    //             <td>$${item.price}</td>
-    //             <td>
-    //                 <input type="number" value="${item.quantity}" min="1" data-id="${item.id}">
-    //             </td>
-    //             <td>$${total.toFixed(2)}</td>
-    //             <td>
-    //                 <button class="remove-btn" data-id="${item.id}">Remove</button>
-    //             </td>
-    //         `;
-    //         cartItemsContainer.appendChild(row);
-    //     });
 
-    //     updateTotal();
-    // }
+ // Function to show image slider after delay
+//  const imageSliderSection = document.querySelector("#image-slider");
 
-    // function updateTotal() {
-    //     let cart = localStorage.getItem('cart');
-    //     cart = cart ? JSON.parse(cart) : [];
+//  function showImageSlider() {
+//      imageSliderSection.classList.add("show");
+//  }
 
-    //     let subtotal = 0;
-    //     cart.forEach(item => {
-    //         subtotal += item.price * item.quantity;
-    //     });
+//  function isElementInViewport(el) {
+//      const rect = el.getBoundingClientRect();
+//      return (
+//          rect.top >= 0 &&
+//          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+//      );
+//  }
 
-    //     cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
-    //     cartTotal.textContent = `$${subtotal.toFixed(2)}`;
-    // }
+//  function handleScroll() {
+//      if (isElementInViewport(imageSliderSection)) {
+//          showImageSlider();
+//          window.removeEventListener("scroll", handleScroll);
+//      }
+//  }
 
-    // cartItemsContainer.addEventListener('input', (e) => {
-    //     if (e.target.type === 'number') {
-    //         const id = e.target.dataset.id;
-    //         const quantity = parseInt(e.target.value);
-    //         updateCartQuantity(id, quantity);
-    //     }
-    // });
+//  // Delay the function to show after a certain scroll point or time
+//  setTimeout(function () {
+//      window.addEventListener("scroll", handleScroll);
+//  }, 2000);
+ // End of image slider section
 
-    // cartItemsContainer.addEventListener('click', (e) => {
-    //     if (e.target.classList.contains('remove-btn')) {
-    //         const id = e.target.dataset.id;
-    //         removeFromCart(id);
-    //     }
-    // });
+ // Function to show card section after delay
+ const cardSection = document.querySelector(".card1-section");
 
-    // function updateCartQuantity(id, quantity) {
-    //     let cart = localStorage.getItem('cart');
-    //     cart = cart ? JSON.parse(cart) : [];
+ function showCardSection() {
+     cardSection.classList.add("show");
+ }
+  function isElementInViewport(el) {
+     const rect = el.getBoundingClientRect();
+     return (
+         rect.top >= 0 &&
+         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+     );
+ }
 
-    //     const product = cart.find(item => item.id === id);
-    //     if (product) {
-    //         product.quantity = quantity;
-    //         localStorage.setItem('cart', JSON.stringify(cart));
-    //         displayCartItems();
-    //     }
-    // }
+ function handleCardScroll() {
+     if (isElementInViewport(cardSection)) {
+         showCardSection();
+         window.removeEventListener("scroll", handleCardScroll);
+     }
+ }
 
-    // function removeFromCart(id) {
-    //     let cart = localStorage.getItem('cart');
-    //     cart = cart ? JSON.parse(cart) : [];
+ // Listen for scroll events for card section
+ window.addEventListener("scroll", handleCardScroll);
+ // End of card section function
 
-    //     cart = cart.filter(item => item.id !== id);
-    //     localStorage.setItem('cart', JSON.stringify(cart));
-    //     displayCartItems();
-    // }
+// Function to show About Us section after delay
+const aboutSection = document.querySelector('#about');
 
-    // // Display cart items on cart page load
-    // if (cartItemsContainer) {
-    //     displayCartItems();
-    // }
+function showAboutSection() {
+    aboutSection.classList.add('show');
+}
 
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+}
+
+function handleAboutScroll() {
+    if (isElementInViewport(aboutSection)) {
+        setTimeout(showAboutSection, 100); // Delayed appearance after 1 second
+        window.removeEventListener('scroll', handleAboutScroll);
+    }
+}
+
+window.addEventListener('scroll', handleAboutScroll);
+ 
+    
+
+//video
+
+const videoContainer = document.getElementById('video-container');
+  const video = document.getElementById('landing-video');
+
+  // Function to check if element is in viewport
+  function isElementInViewports(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  // Function to show and enlarge video
+  function handleVideoScroll() {
+    if (isElementInViewports(videoContainer)) {
+      // Show the video container
+      videoContainer.style.display = 'block';
+
+      // Delayed enlargement after 3 seconds
+      setTimeout(() => {
+        videoContainer.classList.add('video-enlarged');
+        
+      }, 2000);
+
+      // Remove the scroll event listener once video is shown/enlarged
+      window.removeEventListener('scroll', handleVideoScroll);
+    }
+  }
+
+  // Initial check on page load
+  handleVideoScroll();
+
+  // Listen for scroll events to trigger handleVideoScroll function
+  window.addEventListener('scroll', handleVideoScroll);
+
+
+
+  //for scrolling images
+  const bestSellingSection = document.querySelector('.best-selling');
+
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function handleimageScroll() {
+    if (isElementInViewport(bestSellingSection)) {
+      bestSellingSection.classList.add('visible');
+      window.removeEventListener('scroll', handleimageScroll);
+    }
+  }
+
+  window.addEventListener('scroll', handleimageScroll);
+
+
+
+
+  //swiper
+  document.getElementById('next').onclick = function(){
+    const widthItem = document.querySelector('.item').offsetWidth;
+    document.getElementById('formList').scrollLeft += widthItem;
+}
+document.getElementById('prev').onclick = function(){
+    const widthItem = document.querySelector('.item').offsetWidth;
+    document.getElementById('formList').scrollLeft -= widthItem;
+}
+  //swiper
+
+  //dropdown
+  document.querySelector('.profile-icon').addEventListener('click', function(event) {
+    event.preventDefault();
+    const dropdown = document.querySelector('.dropdown');
+    dropdown.classList.toggle('show');
+});
+window.addEventListener('click', function(event) {
+  if (!event.target.closest('.dropdown')) {
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(dropdown => {
+          dropdown.classList.remove('show');
+      });
+  }
+});
+
+
+
+       
+
+  
+ 
   
 });
 
