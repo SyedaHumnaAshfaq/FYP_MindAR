@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Adorn Ease</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#virtual-try-on">Virtual Try-On</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#collection">Collection</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="/SignUp">SignUp</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#track-order" class="icon"><img src="images/icons8-create-order.gif" alt="Track"></a>
+                <a href="#cart" class="icon"><img src="images/icons8-cart.gif" alt="Cart"></a>
+                <div class="dropdown">
+                    <a href="#profile" class="icon profile-icon"><img src="images/profileicon.png" alt="Profile"></a>
+                    <div class="dropdown-content">
+                        <a href="/login">Login</a>
+                        <a href="/SignUp">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="cart-main">
+        <h1>Your Shopping Cart</h1>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Example Cart Item -->
+                <tr>
+                    <td>
+                        <img src="images/glasses3.jpg" alt="Product Image">
+                        <span>AirPod 2nd Gen</span>
+                    </td>
+                    <td>$129</td>
+                    <td>
+                        <input type="number" value="1" min="1">
+                    </td>
+                    <td>$129</td>
+                    <td>
+                        <button class="remove-btn">Remove</button>
+                    </td>
+                </tr>
+                <!-- Repeat for more items -->
+            </tbody>
+        </table>
+        <div class="cart-summary">
+            <p>Subtotal: <span id="cart-subtotal">$129</span></p>
+            <p>Total: <span id="cart-total">$129</span></p>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
