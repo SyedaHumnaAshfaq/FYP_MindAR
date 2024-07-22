@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 5000;
 const path = require('path');
 const connectDB = require('./db');
 const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
 
 connectDB();
 
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use('/api/auth', userRoutes);
+app.use('/api/product', productRoutes);
 
 // Set the path to your views directory
 app.set('views', path.join(__dirname, 'views'));
@@ -30,9 +32,9 @@ app.get('/quickview', (req, res) => {
   res.render('pages/quickview.ejs'); // Render the homepage.ejs file in the pages folder
 });
 
-app.get('/products', (req, res) => {
-  res.render('pages/products.ejs'); // Render the homepage.ejs file in the pages folder
-});
+// app.get('/products', (req, res) => {
+//   res.render('pages/products.ejs'); // Render the homepage.ejs file in the pages folder
+// });
 
 app.get('/SignUp', (req, res) => {
   res.render('pages/SignUp'); // Render the homepage.ejs file in the pages folder
