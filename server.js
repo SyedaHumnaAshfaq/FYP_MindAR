@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use('/api/auth', userRoutes);
-app.use('/api/product', productRoutes);
+app.use('/', productRoutes);
 
 // Set the path to your views directory
 app.set('views', path.join(__dirname, 'views'));
@@ -32,10 +32,6 @@ app.get('/quickview', (req, res) => {
   res.render('pages/quickview.ejs'); // Render the homepage.ejs file in the pages folder
 });
 
-// app.get('/products', (req, res) => {
-//   res.render('pages/products.ejs'); // Render the homepage.ejs file in the pages folder
-// });
-
 app.get('/SignUp', (req, res) => {
   res.render('pages/SignUp'); // Render the homepage.ejs file in the pages folder
 });
@@ -44,11 +40,6 @@ app.get('/loginpage', (req, res) => {
   res.render('pages/login'); // Render the homepage.ejs file in the pages folder
 });
 
-
-
-app.get('/products', (req, res) => {
-  res.render('pages/products'); // Render the homepage.ejs file in the pages folder
-});
 app.get('/VirtualTryOn', (req, res) => { 
     res.render('pages/VirtualTryOn'); // Render the about.ejs file in the pages folder
 });
