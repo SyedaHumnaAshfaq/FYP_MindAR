@@ -5,6 +5,9 @@ const path = require('path');
 const connectDB = require('./db');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
+const cartRoutes = require('./routes/cartRoutes');
+const cookieParser = require('cookie-parser');
+const {assignCartId}  = require('./middlewares/cartMiddleware');
 
 connectDB();
 
@@ -15,10 +18,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(assignCartId);
 
 
 app.use('/api/auth', userRoutes);
 app.use('/', productRoutes);
+app.use('/', cartRoutes);
 
 // Set the path to your views directory
 app.set('views', path.join(__dirname, 'views'));
@@ -43,10 +49,6 @@ app.get('/loginpage', (req, res) => {
 app.get('/VirtualTryOn', (req, res) => { 
     res.render('pages/VirtualTryOn'); // Render the about.ejs file in the pages folder
 });
-app.get('/addtocart', (req, res) => { 
-  res.render('pages/addtocart'); // Render the about.ejs file in the pages folder
-});
-
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

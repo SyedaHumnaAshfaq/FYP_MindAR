@@ -146,7 +146,7 @@
                             <p class="product-price">$<%=product.Product_price%></p>
                             <div class="product-buttons">
                                 <a class="product-btn" href="#">Buy Now</a>
-                                <button class="product-btn add-to-cart-btn">Add to Cart</button>
+                                <button class="product-btn add-to-cart-btn" data-product-id="<%= product._id %>" data-product-name="<%= product.Product_name %>" data-product-price="<%= product.Product_price %>">Add to Cart</button>
                                 <a class="product-btn try-now-btn" href="#">Try Now</a>
                                 <span class="heart-icon">&#x2764;</span>
                             </div>

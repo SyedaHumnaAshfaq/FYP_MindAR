@@ -1,5 +1,43 @@
 
+
 document.addEventListener('DOMContentLoaded', () => {
+    
+    document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+        button.addEventListener('click', async (event) => {
+            console.log('Add to cart button clicked');
+            const button = event.target;
+            const productId = button.dataset.productId;
+            const productName = button.dataset.productName;
+            const productPrice = button.dataset.productPrice;
+            const quantity = 1; // Default quantity, you can add a quantity selector if needed
+    
+            try {
+                const response = await fetch('/api/cart/add', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ productId, productName, productPrice, quantity })
+                });
+
+    
+                if (response.ok) {
+                    // Optionally, update UI or notify user
+                    window.location.href = '/addtocart'; // Redirect to cart page
+                    console.log('Item added to cart successfully');
+                
+                }
+    
+                else {
+                    console.error('Failed to add item to cart');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    });
+    
+
   // Function to show card section after delay
   const cardSection = document.querySelector(".card1-section");
 
@@ -376,7 +414,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-
 
 
 
