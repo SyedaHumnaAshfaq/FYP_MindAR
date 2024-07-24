@@ -7,5 +7,11 @@ const getAllProducts = async (req, res) => {
 
 
 };
+const getProductsbyCategory = async (req, res) => {
+    const { category } = req.params;
+    console.log(category);
+    const products = await Product.find({ Product_category: category });
+    res.render('pages/products', { products });
+};
 
-module.exports = { getAllProducts };
+module.exports = { getAllProducts,getProductsbyCategory };
