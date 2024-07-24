@@ -36,6 +36,70 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    document.querySelectorAll('input[type="number"]').forEach(input => { 
+        input.addEventListener('change', async (event) => {
+            console.log('Quantity changed');
+            const input = event.target;
+            const productId = input.dataset.id;
+            const quantity = parseInt(input.value);
+    
+            try {
+                const response = await fetch('/api/cart/update', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ productId, quantity })
+                });
+    
+                if (response.ok) {
+                    // Optionally, update UI or notify user
+                    window.location.href = '/addtocart'; // Redirect to cart page
+                    console.log('Quantity updated successfully');
+                } else {
+                    console.error('Failed to update quantity');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    });
+    document.querySelectorAll(".remove-btn").forEach(button => {
+        button.addEventListener("click", async (event) => {
+            console.log("Remove button clicked");
+            const button = event.target;
+            const productId = button.dataset.productId;
+    
+            try {
+                const response = await fetch("/api/cart/delete", {
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ productId })
+                });
+    
+                if (response.ok) {
+                    const result = await response.json();
+                    const { cartItems, grandTotal } = result;
+                    
+    
+                    // Remove the item from the UI
+                    document.querySelector(`#cart-item-${productId}`).remove();
+                    window.location.href = '/addtocart'; 
+                    // Update the grand total
+                    document.querySelector('.cart-grand-total').innerText = `Grand Total: $${grandTotal.toFixed(2)}`;
+                  
+                    
+                    
+                } else {
+                    console.error('Failed to remove item from cart');
+                }
+            } catch (error) {
+                console.error("Error:", error);
+            }
+         });
+     });
     
 
   // Function to show card section after delay

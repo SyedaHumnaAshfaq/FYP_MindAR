@@ -41,15 +41,17 @@ const getCartItems = async (req, res) => {
     
     const { cartId } = req.cookies;
     if (!cartId) {
-        return res.render('cart', { cartItems: [] }); // Render empty cart if no cartId
+        return res.render('cart', { cartItems: [] ,grandTotal:0 }); // Render empty cart if no cartId
     }
 
     try {
         const cart = await Cart.findOne({ cartId: cartId });
         if (!cart) {
-            return res.render('cart', { cartItems: [] }); // Render empty cart if no cart found
+            return res.render('cart', { cartItems: [],grandTotal:0 }); // Render empty cart if no cart found
         }
-        return res.render('pages/addtocart', { cartItems: cart.items });
+        const grandTotal = cart.items.reduce((total, item) => total + item.productPrice * item.quantity, 0);
+
+        return res.render('pages/addtocart', { cartItems: cart.items,grandTotal:grandTotal });
         // res.status(200).json(cart);
     }
     catch (error) {
@@ -57,4 +59,50 @@ const getCartItems = async (req, res) => {
         res.status(500).send('Error getting cart items');
     }
 }
-module.exports = {addItemToCart, getCartItems};
+const updateQuantity = async (req, res) => { 
+    const { cartId } = req.cookies;
+    const { productId, quantity } = req.body;
+
+    try {
+        const cart = await Cart.findOneAndUpdate(
+            { cartId: cartId, 'items.productId': productId },
+            { $set: { 'items.$.quantity': quantity } },
+            { new: true }
+        );
+
+        if (!cart) {
+            return res.status(404).send('Item not found in cart');
+        }
+
+        res.status(200).json(cart);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error updating quantity');
+    }
+};
+const deleteCartItem = async (req, res) => {
+    const { cartId } = req.cookies;
+    const { productId } = req.body;
+
+    try {
+        const cart = await Cart.findOneAndUpdate(
+            { cartId: cartId },
+            { $pull: { items: { productId: productId } } },
+            { new: true }
+        );
+
+        if (!cart) {
+            return res.status(404).send('Item not found in cart');
+        }
+        const cartItems = cart.items;
+        const grandTotal = cartItems.reduce((total, item) => total + item.productPrice * item.quantity, 0);
+
+        res.status(200).json({ cartItems, grandTotal });
+
+        // res.status(200).json(cart);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error deleting item from cart');
+    }
+};
+module.exports = {addItemToCart, getCartItems, updateQuantity,deleteCartItem};

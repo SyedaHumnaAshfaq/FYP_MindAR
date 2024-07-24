@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <div class="logo">Adorn Ease</div>
@@ -31,7 +33,7 @@
             </div>
         </nav>
     </header>
-    
+
     <main class="cart-main">
         <h1>Your Shopping Cart</h1>
         <table class="cart-table">
@@ -46,36 +48,48 @@
             </thead>
             <tbody id="cart-items">
                 <!-- Example Cart Item -->
-                 <%if(cartItems.length===0){%>
-                 <p>Your cart is empty</p>
-                 <% } else { %>
-                    <% cartItems.forEach(item => { %>
-                <tr>
-                    <td>
-                        <!-- <img src="<%=item.product%>" alt="Product Image"> -->
-                        <span><%=item.productName%></span>
-                    </td>
-                    <td><%=item.productPrice%></td>
-                    <td>
-                        <input type="number" value="<%=item.quantity%>" min="1">
-                    </td>
-                    <td><%=item.productPrice*item.quantity%></td>
-                    <td>
-                        <button class="remove-btn">Remove</button>
-                    </td>
-                </tr>
-                <% }) %>
-                <% } %>
-                <!-- Repeat for more items -->
+                <%if(cartItems.length===0){%>
+                    <tr>
+                        <td colspan="5">No items in cart</td>
+                    </tr>
+                    <% } else { %>
+                        <% cartItems.forEach(item=> { %>
+                            <tr class="cart-item" id="cart-item-<%= item.productId %>">
+                                <td>
+                                    <!-- <img src="<%=item.product%>" alt="Product Image"> -->
+                                    <span class="cart-item-name">
+                                        <%=item.productName%>
+                                    </span>
+                                </td>
+                                <td class="cart-item-price">
+                                    <%=item.productPrice%>
+                                </td>
+                                <td>
+                                    <input type="number" id="quantity-<%= item._id %>" value="<%=item.quantity%>"
+                                        min="1" data-id="<%= item.productId %>">
+                                </td>
+                                <td class="cart-item-total">
+                                    <%=(item.productPrice*item.quantity).toFixed(2)%>
+                                </td>
+                                <td>
+                                    <button class="remove-btn" data-product-id="<%= item.productId %>">Remove</button>
+                                </td>
+                            </tr>
+                            <% }) %>
+                                <% } %>
+                                    <!-- Repeat for more items -->
             </tbody>
         </table>
         <div class="cart-summary">
-            <p>Subtotal: <span id="cart-subtotal">$129</span></p>
-            <p>Total: <span id="cart-total">$129</span></p>
-            <button class="checkout-btn">Proceed to Checkout</button>
+            <% if (grandTotal> 0) { %>
+                <!-- <p>Subtotal: <span id="cart-subtotal"></span></p> -->
+                <p>Cart Total: <span id="cart-total">$<%= grandTotal.toFixed(2) %></span></p>
+                <button class="checkout-btn">Proceed to Checkout</button>
+                <% } %>
         </div>
     </main>
 
     <script src="script.js"></script>
 </body>
+
 </html>
