@@ -1,55 +1,89 @@
-*{
-    margin: 0%;
-    padding: 0%;
-    font-family: 'Poppins', sans-serif;
-}
-.cardquick{
+/* Glasses Section */
+.glasses-section {
     display: flex;
-    margin-top: 22px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background: #a28383;
+    position: relative;
 }
-.leftquick img{
-    width: 366px;
-    margin-inline:32px ;
+
+.glasses-text {
+    width: 40%;
+    text-align: left;
 }
-.cardquick .imgquick img{
-    width: 74px;
-    margin-left: 22px;
+
+.glasses-text h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.glasses-image {
+    position: relative;
+    width: 100%;
+}
+
+.glasses-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.glasses-cards {
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 30%;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     cursor: pointer;
+    position: relative;
+    transition: transform 0.3s;
 }
- 
-.card .rightquick {
-    margin-top: 11px;
+
+.card img {
+    max-width: 100%;
+    height: auto;
 }
-.rightquick h3{
-    margin-top: 11px;
-    color: gray;
+
+.card:hover {
+    transform: scale(1.05);
 }
-.rightquick h1{
-    margin-top: 11px;
+
+/* Glasses container styles */
+.glasses {
+    position: absolute;
+    width: 100px; /* Adjust size */
+    height: 60px; /* Adjust size */
+    top: 0;
+    left: 0;
+    transform: scale(0.5); /* Initial scale */
+    opacity: 0; /* Initially hidden */
+    pointer-events: none; /* Ensure it doesn't block clicks */
 }
-.rightquick i{
-    margin-top: 11px;
-    color: green;
+
+/* Animation for glasses movement */
+@keyframes moveGlasses {
+    from {
+        top: 80%; /* Adjust starting position */
+        left: 70%; /* Adjust starting position */
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        top: 50%; /* Adjust to align with face vertically */
+        left: 50%; /* Adjust to align with face horizontally */
+        transform: scale(0.5); /* Adjust size if needed */
+        opacity: 1;
+    }
 }
-.rightquick h4{
-    margin-top: 11px;
-}
-.rightquick p{
-    margin-top: 11px;
-}
-.rightquick button{
-    width: 200px;
-    height: 50px;
-    background-color: rgb(86, 85, 85);
-    color: white;
-    font-size: 25px;
-    border: none;
-    margin-top: 22px;
-    margin-inline: 22px;
-    font-weight: 600;
-    margin-left: 1px;
-}
-.rightquick button:hover{
-    background-color: rgb(0, 0, 0);
-    cursor: pointer;
+
+.glasses.move-card {
+    animation: moveGlasses 2s forwards;
 }
