@@ -34,10 +34,19 @@ const login = async (req, res) => {
     if (user) {
       // const isPasswordMatch = await bcrypt.compare(password, user.password);
       const isPasswordMatch = password === user.password;
+      req.session.user = { id: user._id, username: user.username, role: user.role };
       // If the password matches, log in the user
       if (isPasswordMatch) {
         console.log("Login Successful");
-        return res.status(200).json({ message: 'Login Successful' });
+        console.log(req.session.user);
+        if(user.role === 'admin') {
+          // If the user is an admin, redirect to the admin page
+          return res.redirect('/adminHomePage');
+        } else {
+          // If the user is not an admin, redirect to the user page
+          return res.redirect('/');
+        }
+        // return res.status(200).json({ message: 'Login Successful' });
       } else {
         console.log('Invalid Credentials');
         return res.status(401).json({ message: 'Invalid Credentials' });
