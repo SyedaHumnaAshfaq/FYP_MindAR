@@ -123,50 +123,133 @@ main {
     height: 500px; /* Adjust based on your design */
 }
 
+.glasses-text {
+    position: absolute;
+    top: 0px;
+    left: 350px;
+    color: #000000;
+    font-size: 34px;
+    font-weight: bold;
+}
+
 .glasses-image {
+    margin-top: 50px;
     position: relative;
-    width: 50%;
+    width: 40%;
 }
 
 .glasses-image img {
-    margin-top: 50px;
     max-width: 100%;
-    
     height: auto;
     display: block;
-    overflow: hidden;
 }
 
+/* .glasses {
+    position: absolute;
+    right: 10%;
+    top: 45%;
+    width: 100px;
+    height: 60px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+} */
+
+.glasses-cards {
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 150px;
+}
+
+.card {
+    width: 400px;
+    height: 250px;
+    background:transparent;
+    border: 2px solid #333;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
+    position: relative;
+    overflow: hidden;
+    
+}
+.card .card-text {
+    position: absolute;
+    bottom: 10px; /* Position text at the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Background color with some transparency */
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    opacity: 0; /* Hide the text by default */
+    transition: opacity 0.3s ease; /* Smooth transition */
+}
+.card:hover .card-text {
+    opacity: 1; /* Show text on hover */
+}
+
+.card img {
+    max-width: 180px;
+    height: auto;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+
+/* @keyframes moveGlasses {
+    from {
+        right: 10%;
+        top: 45%;
+        transform: translateY(0);
+        opacity: 0;
+    }
+    to {
+        right: 50%;
+        top: 45%;
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+
+.glasses.move-glasses {
+    animation: moveGlasses 2s forwards;
+} */
+
+/* Glasses */
+
+/* Glasses */
 .glasses {
     position: absolute;
-    right: 30%; /* Start position on the right side */
-    top: 28%;
-    width: 100px; /* Adjust size */
-    height: 100px; /* Adjust size */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.5s ease;
-    /* background-color: #333; */
-}
-.glasses img{
-    width: 240px;
+    right: 160%;
+    top: 5%;
+    width: 230px;
+    height: 60px;
+    opacity: 0;
+    transition: opacity 0.05s ease;
     
 }
 
-.glasses-text {
-    position: absolute;
-    top: 0px; /* Adjust the top position */
-    left: 90px; /* Adjust the left position */
-    color: rgb(15, 12, 12);
-    font-size: 40px;
-    font-weight: bold;
-}
 @keyframes moveGlasses {
     from {
-        right: 50%; /* Starting position */
-        opacity: 1;
+        right: 1%;
+        top: 20%;
+        transform: translateY(0);
+        opacity: 0;
     }
     to {
-        right: 82%; /* Adjust to align with the face horizontally */
+        right: 25%;
+        top: 20%;
+        transform: translateY(-10px);
         opacity: 1;
     }
 }
