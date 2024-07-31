@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const path = require('path');
@@ -7,7 +8,8 @@ const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const cartRoutes = require('./routes/cartRoutes');
 const cookieParser = require('cookie-parser');
-const {assignCartId}  = require('./middlewares/cartMiddleware');
+const { assignCartId } = require('./middlewares/cartMiddleware');
+const { isAdmin,isAuthenticated } = require('./middlewares/authAdminMiddleware');
 
 connectDB();
 
@@ -15,6 +17,11 @@ app.set('view engine', 'ejs');
 app.use('/models', express.static(path.join(__dirname, 'models')));
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: 'your-secret-key',
+  resave: false,
+  saveUninitialized: true,
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -53,6 +60,10 @@ app.get('/loginpage', (req, res) => {
 app.get('/VirtualTryOn', (req, res) => { 
     res.render('pages/VirtualTryOn'); // Render the about.ejs file in the pages folder
 });
+app.get('/adminHomePage',isAuthenticated,isAdmin, (req, res) => { 
+  res.render('pages/adminHomePage'); // Render the about.ejs file in the pages folder
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
