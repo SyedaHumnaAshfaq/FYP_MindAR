@@ -5,7 +5,7 @@ body, html {
     font-family: Arial, sans-serif;
     /* background: linear-gradient(to bottom, #ff7e5f, #feb47b);
     transition: background 0.5s ease; */
-    background: radial-gradient(circle at center, rgba(250,240,230, 0.875) 10%, rgba(255,240,219, 0.933) 50%, rgb(238,217,196) 50%);
+    background: radial-gradient(circle at center, rgba(223,223,222, 0.875) 10%, rgba(162,121,143, 0.933) 50%, rgb(215,198,207) 50%);
     transition: background 0.5s ease;
     
 }
