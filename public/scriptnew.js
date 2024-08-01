@@ -259,3 +259,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 });
+
+
+document.addEventListener("scroll", () => {
+    const scrollPosition = window.scrollY;
+    const maxScroll = document.body.scrollHeight - window.innerHeight;
+    const scrollPercentage = scrollPosition / maxScroll;
+
+    const startColor = { r: 228, g: 213, b: 183 }; // #ff7e5f (228,213,183
+    const endColor = { r: 217, g: 185, b: 155 }; // #feb47b 217,185,155
+
+    const newColor = {
+        r: Math.round(startColor.r + (endColor.r - startColor.r) * scrollPercentage),
+        g: Math.round(startColor.g + (endColor.g - startColor.g) * scrollPercentage),
+        b: Math.round(startColor.b + (endColor.b - startColor.b) * scrollPercentage),
+    };
+
+    const newBackgroundSize = 50 + (scrollPercentage * 100);
+
+    document.body.style.background = `radial-gradient(circle at center, rgba(${newColor.r}, ${newColor.g}, ${newColor.b}, 0) ${newBackgroundSize}%, rgba(${newColor.r}, ${newColor.g}, ${newColor.b}, 1) ${newBackgroundSize}%)`;
+});

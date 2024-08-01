@@ -3,6 +3,11 @@ body, html {
     padding: 0;
     overflow-x: hidden;
     font-family: Arial, sans-serif;
+    /* background: linear-gradient(to bottom, #ff7e5f, #feb47b);
+    transition: background 0.5s ease; */
+    background: radial-gradient(circle at center, rgba(250,240,230, 0.875) 10%, rgba(255,240,219, 0.933) 50%, rgb(238,217,196) 50%);
+    transition: background 0.5s ease;
+    
 }
 
 header {
@@ -43,7 +48,8 @@ main {
     justify-content: center;
     align-items: center;
     position: relative;
-    background-color: #333;
+   
+    /* background-color: #333; */
 }
 
 .top-section h1 {
@@ -70,7 +76,8 @@ main {
     align-items: center;
     padding: 0 50px;
     position: relative;
-    background-color: aqua;
+    border: 1px solid black;
+    /* background-color: aqua; */
 }
 
 .text-left {
@@ -118,7 +125,7 @@ main {
     justify-content: space-between;
     align-items: flex-start; /* Align items at the top */
     padding: 50px;
-    background: #a28383;
+    /* background: #a28383; */
     position: relative;
     height: 500px; /* Adjust based on your design */
 }
