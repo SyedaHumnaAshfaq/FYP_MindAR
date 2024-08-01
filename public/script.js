@@ -219,20 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 });
 
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
-    const params = new URLSearchParams(window.location.search);
-      if (params.has('error')) {
-        const error = params.get('error');
-        if (error === 'unauthorized') {
-          alert('Unauthorized access. Please log in.');
-        } else if (error === 'forbidden') {
-          alert('Forbidden access. Only admins can access this page.');
-        }
-      }
-
     document.getElementById("signupform").addEventListener("submit", async function handleSignUp(event) {
         event.preventDefault();
         const form = event.target;

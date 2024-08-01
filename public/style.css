@@ -1993,3 +1993,18 @@ h1 {
 .remove-btn:hover {
   background-color: #e60000;
 }
+
+.main-admin{
+  display: flex;
+  flex-direction: row;
+
+}
+.sidebar{
+  background-color: blue;
+  width: 20%;
+}
+.main-content{
+  background-color: red;
+  width: 80%;
+  
+}

@@ -42,7 +42,7 @@ app.set('views', path.join(__dirname, 'views'));
 // });
 
 app.get('/', (req, res) => {
-  res.render('pages/AdornHomePage'); // Render the homepage.ejs file in the pages folder
+  res.render('pages/Home'); // Render the homepage.ejs file in the pages folder
 });
 
 app.get('/quickview', (req, res) => {
@@ -60,7 +60,7 @@ app.get('/loginpage', (req, res) => {
 app.get('/VirtualTryOn', (req, res) => { 
     res.render('pages/VirtualTryOn'); // Render the about.ejs file in the pages folder
 });
-app.get('/adminHomePage',isAuthenticated,isAdmin, (req, res) => { 
+app.get('/adminHomePage', (req, res) => { 
   res.render('pages/adminHomePage'); // Render the about.ejs file in the pages folder
 });
 
