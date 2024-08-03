@@ -474,12 +474,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
+    
 
+    
 
 
 
 
 });
 
+function toggleSideBar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('hidden');
+    document.getElementsByClassName('cards-sales').classList.toggle('smaller-view');
+}
 
 

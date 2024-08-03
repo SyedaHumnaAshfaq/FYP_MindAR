@@ -1,26 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css" />
-    <script src="/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
+
 <body>
-    <div class="main-admin">
-        <div class="sidebar">
-            <p>sidebar</p>
-          
+    <div class="navbar">
+        <nav>
+
+            <div class="hamburger-div">
+                <ul>
+                    <span>
+                        <li id="hamburgerMenu" onclick="toggleSideBar()">
+                            <a href="javascript:void(0)"><i class="fa-solid fa-bars"></i></a>
+                        </li>
+                    </span>
+                </ul>
+
+
+            </div>
+            <div class="otheroption-div">
+                <ul>
+
+                    <li>
+                        <a href=""><i class="fa-solid fa-bell"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa-solid fa-user"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="main-and-ham">
+        <div class="sidebar-div hidden" id="sidebar">
+
+            <div class="sideoptions-divs">
+                <li>Dashboard</li>
+            </div>
+            <div class="sideoptions-divs">
+                <li>Customers</li>
+            </div>
+            <div class="sideoptions-divs">
+                <li>Orders</li>
+            </div>
+            <div class="sideoptions-divs">
+                <li>Products</li>
+            </div>
+            <div class="sideoptions-divs">
+                <li>Categories</li>
+            </div>
+            <div class="sideoptions-divs">
+                <li>Our Staff</li>
+            </div>
+
+
         </div>
         <div class="main-content">
-            <p>main content</p>
+            <h2>Dashboard Overview</h2>
+            <div class="sales-div">
+                <div class="cards-sales" id="card-sale-1">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <p>Today Orders</p>
+                    <h5>$414</h5>
+                </div>
+                <div class="cards-sales" id="card-sale-2">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <p>Yesterday Orders</p>
+                    <h5>$414</h5>
+                </div>
+                <div class="cards-sales" id="card-sale-3">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p>This Week</p>
+                    <h5>$414</h5>
+                </div>
+                <div class="cards-sales" id="card-sale-4">
+                    <i class="fa-solid fa-calculator"></i>
+                    <p>This Month</p>
+                    <h5>$414</h5>
+                </div>
+                <div class="cards-sales" id="card-sale-5">
+                    <i class="fa-solid fa-calculator"></i>
+                    <p>This Year</p>
+                    <h5>$414</h5>
+                </div>
+            </div>
+            <div class="orders">
+                <div class="orders-div">
+                    <div class="logo-order"><i class="fa-solid fa-cart-shopping"></i></div>
+                    <div class="details-order">
+                        <h4>Total Orders</h4>
+                        <h3>20</h3>
+                    </div>
+                </div>
+                <div class="orders-div">
+                    <div class="logo-order"><i class="fa-solid fa-rotate-right"></i></div>
+                    <div class="details-order">
+                        <h4>Orders Pending</h4>
+                        <h3>20</h3>
+                    </div>
+                </div>
+                <div class="orders-div">
+                    <div class="logo-order"><i class="fa-solid fa-truck"></i></div>
+                    <div class="details-order">
+                        <h4>Orders Processing</h4>
+                        <h3>20</h3>
+                    </div>
+                </div>
+                <div class="orders-div">
+                    <div class="logo-order"><i class="fa-solid fa-check"></i></div>
+                    <div class="details-order">
+                        <h4>Orders Delivered</h4>
+                        <h3>20</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="graphs">
+                <div  class="graphs-div">
+                    <h3>Weekly Sales</h3>
+                </div>
+                <div class="graphs-div">
+                    <h3>Best Selling Products</h3>
+                </div>
+            </div>
 
         </div>
+
     </div>
 
-    
 </body>
+
+<script src="/script.js"></script>
+
 </html>
