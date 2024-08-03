@@ -64,7 +64,7 @@ app.get('/SignUp', (req, res) => {
   res.render('pages/SignUp'); // Render the homepage.ejs file in the pages folder
 });
 
-app.get('/loginpage', (req, res) => {
+app.get('/login', (req, res) => {
   res.render('pages/login'); // Render the homepage.ejs file in the pages folder
 });
 

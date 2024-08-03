@@ -1,84 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jewelry Website</title>
-    <link rel="stylesheet" href="stylenew.css">
-</head>
-<body>
+    <link rel="stylesheet" href="stylenew.css" />
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#collection">Collection</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+      <!-- <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#collection">Collection</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav> -->
+      <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#collection">Collection</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">
+                    <img src="images/icons8-male-user.gif" alt="Account">
+                </a>
+                <div class="dropdown-content">
+                    <a href="/SignUp">Sign Up</a>
+                    <a href="/login">Login</a>
+                </div>
+            </li>
+            <li class="logo">
+                <a href="#"><img src="images/icons8-create-order.gif" alt="Logo 1"></a>
+            </li>
+            <li class="logo">
+                <a href="#"><img src="images/icons8-cart.gif" alt="Logo 2"></a>
+            </li>
+        </ul>
+    </nav>
     </header>
-    
+
     <main>
-        <div class="top-section">
-            <h1>Jewelry</h1>
-            <div class="earring" id="earring1"></div>
+      <div class="top-section">
+        <h1>Jewelry</h1>
+        <div class="earring" id="earring1"></div>
+      </div>
+      <div class="bottom-section">
+        <div class="text-left">
+          <h3>Earrings</h3>
+          <p>
+            Discover our exquisite collection of earrings that blend timeless
+            elegance with modern design.
+          </p>
         </div>
-        <div class="bottom-section">
-            <div class="text-left">
-                <h3>Earrings</h3>
-                <p>Discover our exquisite collection of earrings that blend timeless elegance with modern design.</p>
-            </div>
-            <div class="woman-right">
-                <img src="images/woman1.png" alt="Woman">
-            </div>
+        <div class="woman-right">
+          <img src="images/woman1.png" alt="Woman" />
+        </div>
+      </div>
+
+      <!-- Glasses Section -->
+      <div class="glasses-section" id="glasses-section">
+        <div class="glasses-text">
+          <h2>
+            Which Glasses <br />
+            Are Best For You?
+          </h2>
+        </div>
+        <div class="glasses-image">
+          <img src="images/woman6.png" alt="Face for Glasses" id="face-image" />
+          <div class="glasses" id="glasses">
+            <img src="images/sung.png" alt="Glasses" />
+          </div>
+        </div>
+
+        <div class="glasses-cards">
+          <div class="card" id="glasses1">
+            <img src="images/sung.png" alt="Glasses 1" />
+            <div class="card-text">Glasses 1 Description</div>
+          </div>
+          <div class="card" id="glasses2">
+            <img src="images/sung2.png" alt="Glasses 2" />
+            <div class="card-text">Glasses 1 Description</div>
+          </div>
+          <div class="card" id="glasses3">
+            <img src="images/sung3.png" alt="Glasses 3" />
+            <div class="card-text">Glasses 1 Description</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nose Pin Section -->
+      <div class="nosepin-section" id="nosepin-section">
+        <div class="nosepin-text">
+          Nosepins To Give You<br />A Complete Look!
+          <br> while we give o<br>access t our virtual try<br>  on feature
+        
+        
         </div>
        
 
-         <!-- Glasses Section -->
-         <div class="glasses-section" id="glasses-section">
-            <div class="glasses-text">
-                <h2>Which Glasses <br>      Are  Best For You?</h2>
-            </div>
-            <div class="glasses-image">
-                <img src="images/woman6.png" alt="Face for Glasses" id="face-image">
-                <div class="glasses" id="glasses">
-                    <img src="images/sung.png" alt="Glasses">
-                </div>
-            </div>
-           
-            <div class="glasses-cards">
-               
-                <div class="card" id="glasses1">
-                    <img src="images/sung.png" alt="Glasses 1">
-                    <div class="card-text">Glasses 1 Description</div>
-                </div>
-                <div class="card" id="glasses2">
-                    <img src="images/sung2.png" alt="Glasses 2">
-                    <div class="card-text">Glasses 1 Description</div>
-                </div>
-                <div class="card" id="glasses3">
-                    <img src="images/sung3.png" alt="Glasses 3">
-                    <div class="card-text">Glasses 1 Description</div>
-                </div>
-            </div>
+        <div class="nosepin-model">
+          <img src="images/nosepin.png" alt="Nose Pin" id="nosepin" />
         </div>
-      
+        <div class="nosepin-woman">
+          <img
+            src="images/woman14.png"
+            alt="Woman with Nose Pin"
+            id="woman-image"
+          />
+        </div>
+      </div>
+  
 
-        <!-- Nose Pin Section -->
-<div class="nosepin-section" id="nosepin-section">
-    <div class="nosepin-text">
-        Nosepins To Give You<br>A Complete Look!
-    </div>
-    <div class="nosepin-model">
-        <img src="images/nosepin.png" alt="Nose Pin" id="nosepin">
-    </div>
-    <div class="nosepin-woman">
-       
-        <img src="images/woman14.png" alt="Woman with Nose Pin" id="woman-image">
-    </div>
-</div>
+
+     
+  
+
+
+
+
+
+
     </main>
 
     <script src="scriptnew.js"></script>
-</body>
+  </body>
 </html>

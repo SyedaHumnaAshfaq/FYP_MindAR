@@ -128,4 +128,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+ 
 
+    // Get elements
+const products = document.querySelectorAll('.product');
+const box = document.getElementById('box');
+
+// Function to animate products
+function animateProducts() {
+  products.forEach((product) => {
+    product.style.transform = `translateX(${box.offsetLeft}px)`;
+  });
+}
+
+// Check if new section is in viewport and animate products
+window.addEventListener('scroll', () => {
+  if (isElementInViewport(document.getElementById('new-section'))) {
+    animateProducts();
+  }
+});
+
+});
