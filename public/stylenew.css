@@ -299,15 +299,47 @@ main {
     z-index: 1;
 }
 .nosepin-text {
-    width: 55%;
+    width: 65%;
     display: flex;
     justify-content:end;
     align-items:top;
     font-size: 44px;
     font-weight: bold;
     color: #0a0808;
-    margin-bottom: 300px ;
+    margin-bottom: 100px ;
+    /* sborder:2px solid black; */
+    box-shadow: 21px solid black;
     
+    
+}
+.nosepin-text p {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 1.6;
+}
+.nosepin-rotating-model {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 70px;
+    margin-left: 10px;
+}
+
+.nosepin-rotating-model img {
+    width: 100px;
+    height: 100px;
+    animation: rotate 5s linear infinite;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 .nosepin-woman {
     width: 40%;
