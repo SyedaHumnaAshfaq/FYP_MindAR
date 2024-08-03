@@ -124,9 +124,10 @@ main {
     display: flex;
     justify-content: space-between;
     border-top: 2px dotted teal;
+    border-bottom:  2px dotted teal;;
     box-shadow: 5px teal;
     align-items: flex-start; /* Align items at the top */
-    padding: 50px;
+    padding: 25px;
     margin-top: 65px;
     /* background: #a28383; */
     position: relative;
@@ -145,7 +146,7 @@ main {
 .glasses-image {
     margin-top: 50px;
     position: relative;
-    width: 40%;
+    width: 90%;
 }
 
 .glasses-image img {
@@ -266,4 +267,82 @@ main {
 
 .glasses.move-glasses {
     animation: moveGlasses 2s forwards;
+}
+
+
+/* Nose Pin Section */
+.nosepin-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+   
+    /* border-top:2px solid black ; */
+    /* background: #f0e5de; */
+    position: relative;
+    height: 500px; /* Adjust based on your design */
+}
+
+.nosepin-model {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.nosepin-model img {
+    max-width: 15%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+.nosepin-text {
+    width: 55%;
+    display: flex;
+    justify-content:end;
+    align-items:top;
+    font-size: 44px;
+    font-weight: bold;
+    color: #0a0808;
+    margin-bottom: 300px ;
+    
+}
+.nosepin-woman {
+    width: 40%;
+    position: relative;
+}
+
+
+.nosepin-woman img {
+    max-width: 120%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+#nosepin {
+    position: absolute;
+    left: 0;
+    top: 140%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease, transform 2s ease;
+}
+
+@keyframes moveNosepin {
+    from {
+        left: 70px;
+        top: 60%;
+        transform: translate(-50%, -50%);
+    }
+    to {
+        left: calc(160% - 50px); /* Adjust to align with woman's nose */
+        top: 60%;
+        transform: translate(0, -100%);
+    }
+}
+
+#nosepin.move-nosepin {
+    animation: moveNosepin 2s forwards;
 }

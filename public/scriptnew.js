@@ -27,184 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
    
 });
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const glassesSection = document.getElementById('glasses-section');
-//     const glasses = document.getElementById('glasses');
-
-//     const observer = new IntersectionObserver((entries) => {
-//         entries.forEach(entry => {
-//             if (entry.isIntersecting) {
-//                 glasses.classList.add('move-glasses');
-//             }
-//         });
-//     }, {
-//         root: null,
-//         rootMargin: '0px',
-//         threshold: 0.5
-//     });
-
-//     observer.observe(glassesSection);
-// });
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     const glassesSection = document.getElementById('glasses-section');
-//     const glasses = document.getElementById('glasses');
-//     const glassesImages = [
-//         'images/glasses1.png',
-//         'images/glasses2.png',
-//         'images/glasses3.png'
-//     ];
-//     let currentGlasses = 0;
-
-//     const observer = new IntersectionObserver((entries) => {
-//         entries.forEach(entry => {
-//             if (entry.isIntersecting) {
-//                 animateGlasses();
-//                 observer.unobserve(glassesSection);
-//             }
-//         });
-//     }, {
-//         root: null,
-//         rootMargin: '0px',
-//         threshold: 0.5
-//     });
-
-//     observer.observe(glassesSection);
-
-//     function animateGlasses() {
-//         setInterval(() => {
-//             glasses.src = glassesImages[currentGlasses];
-//             glasses.classList.add('move-glasses');
-
-//             setTimeout(() => {
-//                 glasses.classList.remove('move-glasses');
-//                 currentGlasses = (currentGlasses + 1) % glassesImages.length;
-//             }, 2000);
-//         }, 4000);
-//     }
-// });
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     const cards = document.querySelectorAll('.card');
-//     const glasses = document.getElementById('glasses');
-
-//     const animateGlasses = (card, glassesImage) => {
-//         glasses.innerHTML = '';
-//         glasses.appendChild(glassesImage.cloneNode());
-//         glasses.classList.add('move-glasses');
-//         card.innerHTML = '';
-//         setTimeout(() => {
-//             glasses.classList.remove('move-glasses');
-//             card.appendChild(glassesImage);
-//         }, 3000); // Adjust the duration as needed
-//     };
-
-//     cards.forEach(card => {
-//         card.addEventListener('click', () => {
-//             const glassesImage = card.querySelector('img');
-//             animateGlasses(card, glassesImage);
-//         });
-//     });
-// });
-
-
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     const cards = document.querySelectorAll('.card');
-//     const glasses = document.getElementById('glasses');
-//     const glassesSection = document.getElementById('glasses-section');
-    
-//     const observerOptions = {
-//         root: null,
-//         rootMargin: '0px',
-//         threshold: 0.1
-//     };
-
-//     const observer = new IntersectionObserver((entries, observer) => {
-//         entries.forEach(entry => {
-//             if (entry.isIntersecting) {
-//                 let delay = 0;
-//                 cards.forEach((card, index) => {
-//                     setTimeout(() => {
-//                         animateGlasses(card, card.querySelector('img'));
-//                     }, delay);
-//                     delay += 3000; // Adjust the delay between animations as needed
-//                 });
-//                 observer.unobserve(glassesSection);
-//             }
-//         });
-//     }, observerOptions);
-
-//     observer.observe(glassesSection);
-
-//     const animateGlasses = (card, glassesImage) => {
-//         glasses.innerHTML = '';
-//         glasses.appendChild(glassesImage.cloneNode());
-//         glasses.classList.add('move-glasses');
-//         card.innerHTML = '';
-//         setTimeout(() => {
-//             glasses.classList.remove('move-glasses');
-//             card.appendChild(glassesImage);
-//         }, 3000); // Adjust the duration as needed
-//     };
-// });
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     const glassesSection = document.getElementById('glasses-section');
-//     const cards = document.querySelectorAll('.card');
-//     const glasses = document.getElementById('glasses');
-
-//     let currentIndex = 0;
-
-//     const observerOptions = {
-//         root: null,
-//         rootMargin: '0px',
-//         threshold: 0.1
-//     };
-
-//     const observer = new IntersectionObserver((entries, observer) => {
-//         entries.forEach(entry => {
-//             if (entry.isIntersecting) {
-//                 animateGlasses();
-//                 observer.unobserve(glassesSection);
-//             }
-//         });
-//     }, observerOptions);
-
-//     observer.observe(glassesSection);
-
-//     const animateGlasses = () => {
-//         if (currentIndex < cards.length) {
-//             const currentCard = cards[currentIndex];
-//             const glassesImage = currentCard.querySelector('img');
-
-//             // Remove the image from the card
-//             const clonedImage = glassesImage.cloneNode();
-//             currentCard.removeChild(glassesImage);
-
-//             // Add the image to the glasses container
-//             glasses.innerHTML = '';
-//             glasses.appendChild(clonedImage);
-
-//             glasses.classList.add('move-glasses');
-
-//             setTimeout(() => {
-//                 glasses.classList.remove('move-glasses');
-//                 // Add the image back to the card after animation
-//                 currentCard.appendChild(clonedImage);
-//                 currentIndex++;
-//                 animateGlasses(); // Animate the next glasses
-//             }, 3000); // Adjust the duration as needed
-//         }
-//     };
-// });
-
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const glassesSection = document.getElementById('glasses-section');
@@ -279,3 +101,31 @@ document.addEventListener("scroll", () => {
 
     document.body.style.background = `radial-gradient(circle at center, rgba(${newColor.r}, ${newColor.g}, ${newColor.b}, 0) ${newBackgroundSize}%, rgba(${newColor.r}, ${newColor.g}, ${newColor.b}, 1) ${newBackgroundSize}%)`;
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const nosepin = document.getElementById('nosepin');
+    const nosepinSection = document.getElementById('nosepin-section');
+
+    // IntersectionObserver for nosepin animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                nosepin.classList.add('move-nosepin');
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    });
+
+    observer.observe(nosepinSection);
+});
+
+
+
+
+
