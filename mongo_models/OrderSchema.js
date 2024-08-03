@@ -1,11 +1,7 @@
 const mongoose = require('mongoose');
 
 const OrderSchema = new mongoose.Schema({
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: false
-  },
+
   cartId: {
     type: String,
     required: true
@@ -45,13 +41,10 @@ const OrderSchema = new mongoose.Schema({
     enum: ['pending', 'processing', 'delivered', 'cancelled'],
     default: 'pending'
   },
-  createdAt: {
-    type: Date,
-    default: Date.now
-  },
-  updatedAt: {
-    type: Date,
-    default: Date.now
+  method: {
+    type: String,
+    enum: ['card', 'cash'],
+    required: true
   }
 }, { timestamps: true });
 

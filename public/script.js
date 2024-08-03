@@ -486,7 +486,29 @@ document.addEventListener('DOMContentLoaded', () => {
 function toggleSideBar() {
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('hidden');
-    document.getElementsByClassName('cards-sales').classList.toggle('smaller-view');
+    // document.getElementsByClassName('cards-sales').classList.toggle('smaller-view');
 }
 
+
+$(document).ready(function() {
+    function loadContent(url) {
+        $.ajax({
+            url: url,
+            method: 'GET',
+            success: function(data) {
+                $('.main-content').html(data);
+            },
+            error: function(xhr, status, error) {
+                $('.main-content').html("<p>Error loading content: " + error + "</p>");
+            }
+        });
+    }
+
+    $('#Dashboard').click(function() {
+        loadContent('/dashboard');
+    });
+    $('#Orders').click(function () {
+        loadContent('/orders');
+    });
+});
 
