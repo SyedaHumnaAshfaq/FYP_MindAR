@@ -485,8 +485,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function toggleSideBar() {
     const sidebar = document.getElementById('sidebar');
+    const mainContent = document.querySelector('.main-content');
     sidebar.classList.toggle('hidden');
     // document.getElementsByClassName('cards-sales').classList.toggle('smaller-view');
+    if (sidebar.classList.contains('hidden')) {
+        // Sidebar is hidden, remove margin from main content
+        mainContent.style.marginLeft = '0';
+    } else {
+        // Sidebar is visible, add margin to main content
+        mainContent.style.marginLeft = '250px'; // Adjust this to the width of your sidebar
+    }
 }
 
 

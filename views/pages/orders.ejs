@@ -4,43 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body>
+<body class="bg">
     
 
 <h2 id="Ordersh2">Orders</h2>
 <div class="filters">
 
     <input type="text" placeholder="Search by customer name" class="filter-divs">
-   
-        <div class="dropdown filter-divs">
-            <div>Status</div>
-            <div class="dropdown-content">
-                <a href="#" data-value="delivered">Delivered</a>
-                <a href="#" data-value="pending">Pending</a>
-                <a href="#" data-value="processing">Processing</a>
-                <a href="#" data-value="cancelled">Cancelled</a>
-            </div>
+
+    <div class="dropdown filter-divs">
+        <div>Status</div>
+        <div class="dropdown-content">
+            <a href="#" data-value="delivered">Delivered</a>
+            <a href="#" data-value="pending">Pending</a>
+            <a href="#" data-value="processing">Processing</a>
+            <a href="#" data-value="cancelled">Cancelled</a>
         </div>
-        <div class="dropdown filter-divs">
-            <div>Order Limits</div>
-            <div class="dropdown-content">
-                <a href="#" data-value="Last 5 days Orders">Last 5 days Orders</a>
-                <a href="#" data-value="Last 7 days Orders">Last 7 days Orders</a>
-                <a href="#" data-value="Last 15 days Orders">Last 15 days Orders</a>
-                <a href="#" data-value="Last 30 days Orders">Last 30 days Orders</a>
-            </div>
+    </div>
+    <div class="dropdown filter-divs">
+        <div>Order Limits</div>
+        <div class="dropdown-content">
+            <a href="#" data-value="Last 5 days Orders">Last 5 days Orders</a>
+            <a href="#" data-value="Last 7 days Orders">Last 7 days Orders</a>
+            <a href="#" data-value="Last 15 days Orders">Last 15 days Orders</a>
+            <a href="#" data-value="Last 30 days Orders">Last 30 days Orders</a>
         </div>
-        <div class="dropdown filter-divs">
-            <div>Method</div>
-            <div class="dropdown-content">
-                <a href="#" data-value="Card">Card</a>
-                <a href="#" data-value="Cash">Cash</a>
-                
-            </div>
+    </div>
+    <div class="dropdown filter-divs">
+        <div>Method</div>
+        <div class="dropdown-content">
+            <a href="#" data-value="Card">Card</a>
+            <a href="#" data-value="Cash">Cash</a>
+
         </div>
+    </div>
 
     <label for="Startdate">Start Date:</label>
     <input type="date" class="filter-divs date" name="Startdate" id="Startdate">
@@ -49,6 +49,7 @@
     <div class="filter-divs reset">Reset</div>
 
 </div>
+<div class="table-div">
     <table>
         <thead>
             <tr>
@@ -61,32 +62,42 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>2024-08-01 10:30 AM</td>
-                <td>John Doe</td>
-                <td>Credit Card</td>
-                <td>$150.00</td>
-                <td>Shipped</td>
-                <td>
-                    <button class="action-btn view-btn">View</button>
-                    <button class="action-btn edit-btn">Edit</button>
-                    <button class="action-btn delete-btn">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>2024-08-02 01:45 PM</td>
-                <td>Jane Smith</td>
-                <td>PayPal</td>
-                <td>$80.00</td>
-                <td>Processing</td>
-                <td>
-                    <button class="action-btn view-btn">View</button>
-                    <button class="action-btn edit-btn">Edit</button>
-                    <button class="action-btn delete-btn">Delete</button>
-                </td>
-            </tr>
-            <!-- Add more rows as needed -->
+            <% orders.forEach(order=> { %>
+                <tr>
+                    <td>
+                        <%= new Date(order.createdAt).toLocaleString('en-US', { year: 'numeric' , month: '2-digit' ,
+                            day: '2-digit' , hour: '2-digit' , minute: '2-digit' , hour12: true }) %>
+                    </td>
+                    </td>
+                    <td>
+                        <%=order.customerName%>
+                    </td>
+                    <td>
+                        <%=order.method%>
+                    </td>
+                    <td>
+                        <%=order.totalAmount%>
+                    </td>
+                    <td>
+                        <%=order.status%>
+                    </td>
+                    <td>
+                        <div class="dropdown">
+                            <div class="Action">Action</div>
+                            <div class="dropdown-contentforaction">
+                                <a href="#" data-value="Pending">Pending</a>
+                                <a href="#" data-value="Processing">Processing</a>
+                                <a href="#" data-value="Delivered">Delivered</a>
+                                <a href="#" data-value="Cancelled">Cancelled</a>
+                            </div>
+                        </div>
+                        
+                    </td>
+                </tr>
+                <% }) %>
+                    <!-- Add more rows as needed -->
         </tbody>
     </table>
+</div>
 </body>
 </html>
