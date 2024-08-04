@@ -127,26 +127,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-document.addEventListener('DOMContentLoaded', () => {
- 
-
-    // Get elements
-const products = document.querySelectorAll('.product');
-const box = document.getElementById('box');
-
-// Function to animate products
-function animateProducts() {
-  products.forEach((product) => {
-    product.style.transform = `translateX(${box.offsetLeft}px)`;
+document.addEventListener("DOMContentLoaded", function () {
+    const sliderBox = document.querySelector(".slider-box");
+    
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top < window.innerHeight &&
+        rect.bottom >= 0
+      );
+    }
+  
+    function handleScroll() {
+      if (isElementInViewport(sliderBox)) {
+        sliderBox.classList.add("show");
+      } else {
+        sliderBox.classList.remove("show");
+      }
+    }
+  
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
   });
-}
-
-// Check if new section is in viewport and animate products
-window.addEventListener('scroll', () => {
-  if (isElementInViewport(document.getElementById('new-section'))) {
-    animateProducts();
-  }
-});
-
-});
+  

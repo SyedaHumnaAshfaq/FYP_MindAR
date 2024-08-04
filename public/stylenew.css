@@ -438,6 +438,65 @@ main {
     animation: moveNosepin 2s forwards;
 }
 
-
-
-
+/* Style for the new section */
+.slider-section {
+    text-align: center;
+    margin: 40px 0;
+    position: relative;
+    height: 60vh;
+  }
+  
+  .slider-heading {
+    font-size: 44px;
+    margin-bottom: 20px;
+  }
+  
+  .slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100px; /* Adjust height as needed */
+  }
+  
+  .slider-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300px; /* Adjust width as needed */
+    height: 160px; /* Adjust height as needed */
+    background-color: #f2f2f2; /* Background color for visibility */
+    transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 3s ease-in-out;
+    z-index: 1; /* Ensurethe box is above the text */
+    margin-top: 20px;
+  }
+  
+  .slider-text {
+    font-size: 28px;
+    color: #0d0c0c;
+  }
+  
+  .delivery-text {
+    position: absolute;
+    left: 40%;
+    top: 20px; /* Adjust top to place text below the slider box */
+    width: 300px; /* Same width as slider-box */
+    text-align: center;
+    opacity: 0; /* Hide initially */
+    transition: opacity 4s ease-in-out;
+    font-size: 28px;
+    color: #000000;
+    transform: translateX(-50%);
+    z-index: 0; /* Ensure the text is below the slider box */
+  }
+  
+  .slider-box.show {
+    transform: translateX(20%) translateY(-50%); /* Move the box right */
+  }
+  
+  .slider-box.show + .delivery-text {
+    opacity: 1; /* Show text when box slides */
+  }
+  
