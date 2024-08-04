@@ -6,6 +6,7 @@ const path = require('path');
 const connectDB = require('./db');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
+const orderRoutes = require('./routes/orderRoutes');
 const cartRoutes = require('./routes/cartRoutes');
 const cookieParser = require('cookie-parser');
 const { assignCartId } = require('./middlewares/cartMiddleware');
@@ -32,6 +33,7 @@ app.use(assignCartId);
 app.use('/api/auth', userRoutes);
 app.use('/', productRoutes);
 app.use('/', cartRoutes);
+app.use('/', orderRoutes);
 
 // Set the path to your views directory
 app.set('views', path.join(__dirname, 'views'));
@@ -47,6 +49,15 @@ app.get('/', (req, res) => {
 
 app.get('/quickview', (req, res) => {
   res.render('pages/quickview.ejs'); // Render the homepage.ejs file in the pages folder
+});
+app.get('/dashboard', (req, res) => { 
+    res.render('pages/dashboard'); // Render the about.ejs file in the pages folder
+});
+app.get('/customers', (req, res) => { 
+  res.render('pages/customers'); // Render the about.ejs file in the pages folder
+});
+app.get('/orders', (req, res) => { 
+  res.render('pages/orders'); // Render the about.ejs file in the pages folder
 });
 
 app.get('/SignUp', (req, res) => {
