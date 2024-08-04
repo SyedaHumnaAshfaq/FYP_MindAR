@@ -111,11 +111,30 @@ main {
     /* background-color: #333; */
 }
 
-.top-section h1 {
-    font-size: 100px;
+/* .top-section h1 {
+    font-size: 70px;
     position: relative;
     z-index: 1;
-}
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} */
+.pulse-shadow-text {
+    color: #040303;
+    font-size: 64px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    animation: pulseShadow 2s infinite;
+  }
+  
+  @keyframes pulseShadow {
+    0% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+    }
+    100% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+  }
 
 .earring {
     width: 100px;
@@ -135,13 +154,74 @@ main {
     align-items: center;
     padding: 0 50px;
     position: relative;
-    border-top: 2px solid black;
+    /* border-top: 2px solid black; */
     /* background-color: aqua; */
 }
 
 .text-left {
     width: 40%;
+    font-size: 40px;
 }
+
+  
+  .glitch-text {
+    position: relative;
+    font-size: 36px;
+    color: #fff;
+    letter-spacing: 2px;
+  }
+  
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ff00ff;
+    background: linear-gradient(90deg, transparent, #ff00ff);
+    background-size: 100% 100%;
+    z-index: -1;
+    clip: rect(0, 0, 0, 0);
+    animation: glitch 1.5s infinite linear;
+  }
+  
+  .glitch-text::after {
+    color: #00ffff;
+    clip: rect(0, 0, 0, 0);
+    animation: glitch 1.5s infinite linear;
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes glitch {
+    0% {
+      transform: translateX(0) skewX(0);
+      clip: rect(0, 0, 0, 0);
+    }
+    25% {
+      transform: translateX(-5px) skewX(-5deg);
+      clip: rect(0, 100vw, 10px, 0);
+    }
+    50% {
+      transform: translateX(5px) skewX(5deg);
+      clip: rect(10px, 100vw, 20px, 0);
+    }
+    75% {
+      transform: translateX(-5px) skewX(-5deg);
+      clip: rect(20px, 100vw, 30px, 0);
+    }
+    100% {
+      transform: translateX(0) skewX(0);
+      clip: rect(0, 0, 0, 0);
+    }
+  }
+  
+
+
+
+
+
+
+
 
 .woman-right {
     width: 40%;
@@ -182,8 +262,8 @@ main {
 .glasses-section {
     display: flex;
     justify-content: space-between;
-    border-top: 2px dotted teal;
-    border-bottom:  2px dotted teal;;
+    /* border-top: 2px dotted teal; */
+    /* border-bottom:  2px dotted teal;; */
     box-shadow: 5px teal;
     align-items: flex-start; /* Align items at the top */
     padding: 25px;
