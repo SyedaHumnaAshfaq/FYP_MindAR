@@ -16,7 +16,7 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav> -->
-      <nav>
+      <!-- <nav>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -38,7 +38,116 @@
                 <a href="#"><img src="images/icons8-cart.gif" alt="Logo 2"></a>
             </li>
         </ul>
-    </nav>
+        
+    </nav> -->
+    <!-- <nav>
+      <div class="navbar">
+          <button class="sidebar-toggle" onclick="toggleSidebar()" style="left: 0px">☰</button>
+         <ul> <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#about">ADORN EASE</a></li>
+          <li><a href="#collection">Collection</a></li>
+          <li><a href="#contact">Contact</a></li>
+         
+          <li class="nav-menu">
+              <li class="dropdown">
+                  <a href="#" class="dropbtn">
+                      <img src="images/icons8-male-user.gif" alt="Account">
+                  </a>
+                  <div class="dropdown-content">
+                      <a href="/SignUp">Sign Up</a>
+                      <a href="/login">Login</a>
+                  </div>
+              </li>
+              <li class="logo">
+                  <a href="#"><img src="images/icons8-create-order.gif" alt="Logo 1"></a>
+              </li>
+              <li class="logo">
+                  <a href="#"><img src="images/icons8-cart.gif" alt="Logo 2"></a>
+              </li>
+          </ul>
+      </div>
+  </nav> -->
+  <!-- <nav>
+    <div class="navbar">
+        <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+        <ul class="nav-items">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#adorn-ease">ADORN EASE</a></li>
+            <li><a href="#collection">Collection</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <div class="right-items">
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">
+                        <img src="images/icons8-male-user.gif" alt="Account">
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="/SignUp">Sign Up</a>
+                        <a href="/login">Login</a>
+                    </div>
+                </li>
+                <li class="logo">
+                    <a href="#"><img src="images/icons8-create-order.gif" alt="Logo 1"></a>
+                </li>
+                <li class="logo">
+                    <a href="#"><img src="images/icons8-cart.gif" alt="Logo 2"></a>
+                </li>
+            </div>
+        </ul>
+    </div>
+</nav>
+
+  
+  <div id="sidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#collection">Collection</a>
+      <a href="#contact">Contact</a>
+  </div> -->
+
+
+
+  <!-- new -->
+  <nav class="navbar">
+    <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+    <div class="center-content">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#about">ADORN EASE</a>
+        <a href="#collection">Collection</a>
+        <a href="#contact">Contact Us</a>
+    </div>
+    <div class="right-content">
+        <div class="dropdown">
+            <a href="#" class="dropbtn">
+                <img src="images/icons8-male-user-50.png" alt="Account">
+            </a>
+            <div class="dropdown-content">
+                <a href="/SignUp">Sign Up</a>
+                <a href="/login">Login</a>
+            </div>
+        </div>
+        <img src="images/icons8-purchase-order-30.png" alt="Account">
+        <img src="images/icons8-cart-50.png" alt="Account">
+    </div>
+</nav>
+
+<div id="sidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+  <div class="sidebar-item"><a href="#earrings">Earrings</a></div>
+  <div class="sidebar-item"><a href="#glasses">Glasses</a></div>
+  <div class="sidebar-item"><a href="#nosepins">Nosepins</a></div>
+  <div class="sidebar-item"><a href="#new-arrivals">New Arrivals</a></div>
+  <div class="sidebar-item"><a href="#best-sellers">Best Sellers</a></div>
+  <div class="sidebar-item"><a href="#sales">Sales</a></div>
+  <div class="sidebar-item"><a href="#account">My Account</a></div>
+  <div class="sidebar-item"><a href="#wishlist">Wishlist</a></div>
+  <div class="sidebar-item"><a href="#order-history">Order History</a></div>
+  <div class="sidebar-item"><a href="#support">Customer Support</a></div>
+</div>
+
     </header>
 
     <main>
@@ -144,7 +253,42 @@
 
 
 
-
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-left">
+      <img src="images/footer.png" alt="Footer Logo">
+    </div>
+    <div class="footer-about">
+      <h3>About Us</h3>
+      <p>Adorn Ease offers a unique collection of exquisite jewelry, including earrings, glasses, and nosepins. Our mission is to bring elegance and beauty to your everyday life with high-quality pieces that suit every style and occasion.</p>
+    </div>
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <form action="#" method="post" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#terms">Terms of Service</a></li>
+        <li><a href="#privacy">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 Adorn Ease. All Rights Reserved.</p>
+  </div>
+</footer>
 
 
 

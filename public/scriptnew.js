@@ -2,6 +2,8 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    
     const earringTop = document.getElementById('earring1');
     const bottomSection = document.querySelector('.bottom-section');
     const cards = document.querySelectorAll('.card');
@@ -88,8 +90,8 @@ document.addEventListener("scroll", () => {
     const maxScroll = document.body.scrollHeight - window.innerHeight;
     const scrollPercentage = scrollPosition / maxScroll;
 
-    const startColor = { r: 0, g: 102, b: 102 }; // #ff7e5f (228,213,183 140,171,168   (107,169,152)
-    const endColor = { r: 0, g: 76, b: 76 }; // #feb47b 217,185,155 235,218,218         (84,146,125)
+    const startColor = { r: 255, g: 242, b: 225 }; // #ff7e5f (228,213,183 140,171,168   (107,169,152)rgb(255, 242, 225)
+    const endColor = { r: 208, g: 184, b: 168 }; // #feb47b 217,185,155 235,218,218         (84,146,125)
 
     const newColor = {
         r: Math.round(startColor.r + (endColor.r - startColor.r) * scrollPercentage),
@@ -150,3 +152,19 @@ document.addEventListener("DOMContentLoaded", function () {
     handleScroll(); // Initial check
   });
   
+//   function toggleSidebar() {
+//     const sidebar = document.getElementById('sidebar');
+//     if (sidebar.style.width === '250px') {
+//         sidebar.style.width = '0';
+//     } else {
+//         sidebar.style.width = '250px';
+//     }
+// }
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar.style.width === '250px') {
+        sidebar.style.width = '0';
+    } else {
+        sidebar.style.width = '250px';
+    }
+}
