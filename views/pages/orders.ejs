@@ -13,37 +13,37 @@
 <h2 id="Ordersh2">Orders</h2>
 <div class="filters">
 
-    <input type="text" placeholder="Search by customer name" class="filter-divs">
+    <input type="text" id="searchCustomerName" placeholder="Search by customer name" class="filter-divs">
 
     <div class="dropdown filter-divs">
-        <div>Status</div>
+        <div class="currentStatus">Status</div>
         <div class="dropdown-content">
-            <a href="#" data-value="delivered">Delivered</a>
-            <a href="#" data-value="pending">Pending</a>
-            <a href="#" data-value="processing">Processing</a>
-            <a href="#" data-value="cancelled">Cancelled</a>
+            <a href="#" data-value="delivered" class="filter-by-status">Delivered</a>
+            <a href="#" data-value="pending" class="filter-by-status">Pending</a>
+            <a href="#" data-value="processing" class="filter-by-status">Processing</a>
+            <a href="#" data-value="cancelled" class="filter-by-status">Cancelled</a>
         </div>
     </div>
     <div class="dropdown filter-divs">
-        <div>Order Limits</div>
+        <div class="currentDate">Order Limits</div>
         <div class="dropdown-content">
-            <a href="#" data-value="Last 5 days Orders">Last 5 days Orders</a>
-            <a href="#" data-value="Last 7 days Orders">Last 7 days Orders</a>
-            <a href="#" data-value="Last 15 days Orders">Last 15 days Orders</a>
-            <a href="#" data-value="Last 30 days Orders">Last 30 days Orders</a>
+            <a href="#" data-value="Last 5 days Orders" class="filter-by-date">Last 5 days Orders</a>
+            <a href="#" data-value="Last 7 days Orders" class="filter-by-date">Last 7 days Orders</a>
+            <a href="#" data-value="Last 15 days Orders" class="filter-by-date">Last 15 days Orders</a>
+            <a href="#" data-value="Last 30 days Orders" class="filter-by-date">Last 30 days Orders</a>
         </div>
     </div>
     <div class="dropdown filter-divs">
-        <div>Method</div>
+        <div class="currentMethod">Method</div>
         <div class="dropdown-content">
-            <a href="#" data-value="Card">Card</a>
-            <a href="#" data-value="Cash">Cash</a>
+            <a href="#" data-value="card" class="filter-by-method">Card</a>
+            <a href="#" data-value="cash" class="filter-by-method">Cash</a>
 
         </div>
     </div>
 
     <label for="Startdate">Start Date:</label>
-    <input type="date" class="filter-divs date" name="Startdate" id="Startdate">
+    <input type="date" class="filter-divs date"  name="Startdate" id="Startdate">
     <label for="Enddate">End Date:</label>
     <input type="date" class="filter-divs date" name="Enddate" id="Enddate">
     <div class="filter-divs reset">Reset</div>
@@ -63,32 +63,32 @@
         </thead>
         <tbody>
             <% orders.forEach(order=> { %>
-                <tr>
-                    <td>
+                <tr data-order-id="<%=order._id%>" data-status="<%= order.status %>" data-method="<%= order.method %>" data-customer-name="<%= order.customerName %>">
+                    <td class="Date">
                         <%= new Date(order.createdAt).toLocaleString('en-US', { year: 'numeric' , month: '2-digit' ,
                             day: '2-digit' , hour: '2-digit' , minute: '2-digit' , hour12: true }) %>
                     </td>
                     </td>
-                    <td>
+                    <td class="customerName">
                         <%=order.customerName%>
                     </td>
-                    <td>
+                    <td class="method">
                         <%=order.method%>
                     </td>
-                    <td>
+                    <td class="totalAmount">
                         <%=order.totalAmount%>
                     </td>
-                    <td>
+                    <td class="status">
                         <%=order.status%>
                     </td>
                     <td>
                         <div class="dropdown">
                             <div class="Action">Action</div>
                             <div class="dropdown-contentforaction">
-                                <a href="#" data-value="Pending">Pending</a>
-                                <a href="#" data-value="Processing">Processing</a>
-                                <a href="#" data-value="Delivered">Delivered</a>
-                                <a href="#" data-value="Cancelled">Cancelled</a>
+                                <a href="#" data-value="pending" class="status-option">Pending</a>
+                                <a href="#" data-value="processing" class="status-option">Processing</a>
+                                <a href="#" data-value="delivered" class="status-option">Delivered</a>
+                                <a href="#" data-value="cancelled" class="status-option">Cancelled</a>
                             </div>
                         </div>
                         
