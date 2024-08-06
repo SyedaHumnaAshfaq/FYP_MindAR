@@ -645,3 +645,267 @@ main {
     opacity: 1; /* Show text when box slides */
   }
   
+
+  /* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0 20px;
+  }
+  
+  .footer-left img {
+    width: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-about,
+  .footer-contact,
+  .footer-links {
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-about h3,
+  .footer-contact h3,
+  .footer-links h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 2px solid #777;
+    padding-bottom: 5px;
+  }
+  
+  .footer-about p,
+  .footer-contact form,
+  .footer-links ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer-about p {
+    line-height: 1.6;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  .contact-form button {
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #777;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links ul li a:hover {
+    color: #ccc;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #444;
+    font-size: 14px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-left,
+    .footer-about,
+    .footer-contact,
+    .footer-links {
+      max-width: none;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+
+
+  /* nav */
+  /* General Styles */
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    vertical-align: middle;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+.sidebar-toggle {
+    font-size: 30px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: white;
+}
+
+/* Centered Links */
+.center-content {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 0 20px;
+}
+
+.center-content a {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+/* Right-aligned content */
+.right-content {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    display: inline-block;
+    color: white;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+
+
+/* Sidebar Items in Separate Boxes */
+.sidebar-item {
+    background-color: #222;
+    border: 1px solid #444;
+    margin: 10px 15px;
+    border-radius: 5px;
+}
+
+.sidebar-item a {
+    display: block;
+    padding: 15px 20px;
+    font-size: 18px;
+}
+
+.sidebar-item a:hover {
+    background-color: #575757;
+    color: #f1f1f1;
+}
