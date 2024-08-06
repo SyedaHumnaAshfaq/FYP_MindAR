@@ -38,10 +38,6 @@ app.use('/', orderRoutes);
 // Set the path to your views directory
 app.set('views', path.join(__dirname, 'views'));
 
-// Define route to render the homepage
-// app.get('/', (req, res) => {
-//   res.render('pages/Home'); // Render the homepage.ejs file in the pages folder
-// });
 
 app.get('/', (req, res) => {
   res.render('pages/AdornHomePage'); // Render the homepage.ejs file in the pages folder
