@@ -611,7 +611,7 @@ main {
     transition: transform 3s ease-in-out;
     z-index: 1; /* Ensurethe box is above the text */
     margin-top: 20px;
-    border: 2px solid black;
+    border: 2px solid rgb(27, 26, 26);
   }
   
   .slider-text {
