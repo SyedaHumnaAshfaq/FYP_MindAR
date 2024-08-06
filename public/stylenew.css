@@ -13,7 +13,8 @@ body, html {
 header {
     /* position: fixed; */
     width: 100%;
-    background:rgb(29, 94, 94);
+    background:rgb(18, 81, 81);
+    /* background-image: url("images/bgnav.jpg"); */
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -225,7 +226,7 @@ main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 } */
 .pulse-shadow-text {
-    color: #040303;
+    color: rgb(21, 15, 15);
     font-size: 64px;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
     animation: pulseShadow 2s infinite;
@@ -248,7 +249,7 @@ main {
     height: 100px;
     background: url('images/topsnew.png') no-repeat center center/contain;
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -290,17 +291,18 @@ main {
     height: auto;
     position: relative;
     z-index: 1;
+   
 }
 
 @keyframes moveEarring {
     from {
-        top: 50%;
+        top: 70%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
     to {
-        top: calc(100% + 190px); /* Adjust to align with woman's ear */
-        left: calc(82% - 50px); /* Adjust to align with woman's ear */
+        top: calc(100% + 198px); /* Adjust to align with woman's ear */
+        left: calc(79% - 50px); /* Adjust to align with woman's ear */
         transform: translate(0, -50%);
     }
 }
@@ -373,12 +375,12 @@ main {
     width: 400px;
     height: 250px;
     background:transparent;
-    border: 2px solid #333;
+    border: 1px solid #333;
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     transition: transform 0.3s;
     position: relative;
@@ -454,7 +456,7 @@ main {
         opacity: 0;
     }
     to {
-        right: 25%;
+        right: 38%;
         top: 20%;
         transform: translateY(-10px);
         opacity: 1;
@@ -565,7 +567,7 @@ main {
         transform: translate(-50%, -50%);
     }
     to {
-        left: calc(160% - 50px); /* Adjust to align with woman's nose */
+        left: calc(150% - 50px); /* Adjust to align with woman's nose */
         top: 60%;
         transform: translate(0, -100%);
     }
@@ -715,6 +717,10 @@ main {
     padding: 0;
     list-style: none;
 }
+ a:hover{
+    color: rgb(13, 31, 31);
+    transition: 0.5s;
+}
 
 
 a {
@@ -803,13 +809,31 @@ img {
     z-index: 2;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: rgb(17, 55, 55);
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.9s;
     padding-top: 60px;
 }
+.sidebar-item {
+    background-color:rgb(20, 69, 69);
+    border: 1px solid rgb(134, 175, 175);
+    margin: 10px 15px;
+    border-radius: 5px;
+}
 
-.sidebar a {
+.sidebar-item a {
+    display: block;
+    padding: 15px 20px;
+    font-size: 18px;
+}
+
+.sidebar-item a:hover {
+    background-color: rgb(43, 88, 88);
+    color: #f1f1f1;
+}
+
+
+/* .sidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -820,7 +844,7 @@ img {
 
 .sidebar a:hover {
     color: #f1f1f1;
-}
+} */
 
 .sidebar .closebtn {
     position: absolute;
