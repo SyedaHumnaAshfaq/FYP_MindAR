@@ -553,14 +553,7 @@ $(document).ready(function () {
         selectedStatus = $(this).data('value');
         $('.currentStatus').text(selectedStatus || 'Status');
         applyFilters();
-        // $('tbody tr').each(function() {
-        //     var rowStatus = $(this).data('status');
-        //     if (rowStatus === selectedStatus) {
-        //         $(this).show();
-        //     } else {
-        //         $(this).hide();
-        //     }
-        // });
+
     });
     $('.filter-by-method').on('click', function (e) {
         e.preventDefault();
@@ -568,14 +561,7 @@ $(document).ready(function () {
         selectedMethod = $(this).data('value');
         $('.currentMethod').text(selectedMethod || 'Method');
         applyFilters();
-        // $('tbody tr').each(function() {
-        //     var rowmethod = $(this).data('method');
-        //     if (rowmethod === selectedMethod) {
-        //         $(this).show();
-        //     } else {
-        //         $(this).hide();
-        //     }
-        // });
+
     });
     $('.filter-by-date').on('click', function (e) {
         e.preventDefault();

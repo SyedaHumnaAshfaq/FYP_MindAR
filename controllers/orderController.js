@@ -15,7 +15,7 @@ const createOrder = async (req, res) => {
 }
 const getOrders = async (req, res) => {
     try {
-        const orders = await Order.find({});
+      const orders = await Order.find({});
         res.render('pages/orders', { orders });
       } catch (error) {
         res.status(500).json({ message: 'Error fetching orders', error });
@@ -34,15 +34,5 @@ const updateorderstatus = async (req, res) => {
 }
   
 }
-// const fiterbyorderstatus = async (req, res) => {
-//   const { status } = req.body;
-//   try {
-//     const orders = await Order.find({ status });
-//     res.json({ success: true, orders });
 
-//   }
-//   catch (error) {
-//     res.status(500).json({ success: false, message: 'Error fetching orders', error });
-//   }
-// }
 module.exports = { createOrder,getOrders,updateorderstatus};
