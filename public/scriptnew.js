@@ -2,6 +2,8 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    
     const earringTop = document.getElementById('earring1');
     const bottomSection = document.querySelector('.bottom-section');
     const cards = document.querySelectorAll('.card');
@@ -150,3 +152,19 @@ document.addEventListener("DOMContentLoaded", function () {
     handleScroll(); // Initial check
   });
   
+//   function toggleSidebar() {
+//     const sidebar = document.getElementById('sidebar');
+//     if (sidebar.style.width === '250px') {
+//         sidebar.style.width = '0';
+//     } else {
+//         sidebar.style.width = '250px';
+//     }
+// }
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar.style.width === '250px') {
+        sidebar.style.width = '0';
+    } else {
+        sidebar.style.width = '250px';
+    }
+}
