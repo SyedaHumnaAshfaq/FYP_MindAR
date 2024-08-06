@@ -21,4 +21,28 @@ const getOrders = async (req, res) => {
         res.status(500).json({ message: 'Error fetching orders', error });
       }
 }
-module.exports = { createOrder,getOrders };
+const updateorderstatus = async (req, res) => {
+    const { order_id, status } = req.body;
+  try {
+    const order = await Order.findByIdAndUpdate(order_id, { status: status }, { new: true });
+    if (!order) {
+        return res.status(404).json({ success: false, message: 'Order not found' });
+    }
+    res.json({ success: true });
+} catch (error) {
+    res.status(500).json({ success: false, message: 'Update failed', error: error.message });
+}
+  
+}
+// const fiterbyorderstatus = async (req, res) => {
+//   const { status } = req.body;
+//   try {
+//     const orders = await Order.find({ status });
+//     res.json({ success: true, orders });
+
+//   }
+//   catch (error) {
+//     res.status(500).json({ success: false, message: 'Error fetching orders', error });
+//   }
+// }
+module.exports = { createOrder,getOrders,updateorderstatus};

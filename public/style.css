@@ -2219,12 +2219,16 @@ position: fixed;
   background-color: #21201e;
   position: relative;
   top: 10vh;
+  height: 100%;
   /* overflow: ; */
   /* height: calc(100vh - 50px); */
   /* flex-grow: 1; */
   /* height: 100%; */
 }
-
+.reset:hover{
+  cursor: pointer;
+  background-color: teal;
+}
 .main-and-ham h2 {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding-left: 28px;
@@ -2256,6 +2260,7 @@ position: fixed;
   /* background-color: #0056b3; */
   width: 100%;
   overflow-y: auto;
+  height: 100%;
   top: 10vh;
   /* position: fixed; */
   /* display: flex; */

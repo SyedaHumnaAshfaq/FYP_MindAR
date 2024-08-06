@@ -1,7 +1,7 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     document.querySelectorAll('.add-to-cart-btn').forEach(button => {
         button.addEventListener('click', async (event) => {
             console.log('Add to cart button clicked');
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const productName = button.dataset.productName;
             const productPrice = button.dataset.productPrice;
             const quantity = 1; // Default quantity, you can add a quantity selector if needed
-    
+
             try {
                 const response = await fetch('/api/cart/add', {
                     method: 'POST',
@@ -20,14 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: JSON.stringify({ productId, productName, productPrice, quantity })
                 });
 
-    
+
                 if (response.ok) {
                     // Optionally, update UI or notify user
                     window.location.href = '/addtocart'; // Redirect to cart page
                     console.log('Item added to cart successfully');
-                
+
                 }
-    
+
                 else {
                     console.error('Failed to add item to cart');
                 }
@@ -36,13 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    document.querySelectorAll('input[type="number"]').forEach(input => { 
+    document.querySelectorAll('input[type="number"]').forEach(input => {
         input.addEventListener('change', async (event) => {
             console.log('Quantity changed');
             const input = event.target;
             const productId = input.dataset.id;
             const quantity = parseInt(input.value);
-    
+
             try {
                 const response = await fetch('/api/cart/update', {
                     method: 'PUT',
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                     body: JSON.stringify({ productId, quantity })
                 });
-    
+
                 if (response.ok) {
                     // Optionally, update UI or notify user
                     window.location.href = '/addtocart'; // Redirect to cart page
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("Remove button clicked");
             const button = event.target;
             const productId = button.dataset.productId;
-    
+
             try {
                 const response = await fetch("/api/cart/delete", {
                     method: "DELETE",
@@ -78,145 +78,145 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                     body: JSON.stringify({ productId })
                 });
-    
+
                 if (response.ok) {
                     const result = await response.json();
                     const { cartItems, grandTotal } = result;
-                    
-    
+
+
                     // Remove the item from the UI
                     document.querySelector(`#cart-item-${productId}`).remove();
-                    window.location.href = '/addtocart'; 
+                    window.location.href = '/addtocart';
                     // Update the grand total
                     document.querySelector('.cart-grand-total').innerText = `Grand Total: $${grandTotal.toFixed(2)}`;
-                  
-                    
-                    
+
+
+
                 } else {
                     console.error('Failed to remove item from cart');
                 }
             } catch (error) {
                 console.error("Error:", error);
             }
-         });
-     });
-    
+        });
+    });
 
-  // Function to show card section after delay
-  const cardSection = document.querySelector(".card1-section");
 
-  function showCardSection() {
-      cardSection.classList.add("show");
-  }
+    // Function to show card section after delay
+    const cardSection = document.querySelector(".card1-section");
 
-  function isElementInViewport(el) {
-      const rect = el.getBoundingClientRect();
-      return (
-          rect.top >= 0 &&
-          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-      );
-  }
+    function showCardSection() {
+        cardSection.classList.add("show");
+    }
 
-  function handleCardScroll() {
-      if (isElementInViewport(cardSection)) {
-          showCardSection();
-          window.removeEventListener("scroll", handleCardScroll);
-      }
-  }
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+    }
 
-  window.addEventListener("scroll", handleCardScroll);
+    function handleCardScroll() {
+        if (isElementInViewport(cardSection)) {
+            showCardSection();
+            window.removeEventListener("scroll", handleCardScroll);
+        }
+    }
 
-  // Function to show About Us section after delay
-  const aboutSection = document.querySelector('#about');
+    window.addEventListener("scroll", handleCardScroll);
 
-  function showAboutSection() {
-      aboutSection.classList.add('show');
-  }
+    // Function to show About Us section after delay
+    const aboutSection = document.querySelector('#about');
 
-  function handleAboutScroll() {
-      if (isElementInViewport(aboutSection)) {
-          setTimeout(showAboutSection, 100); // Delayed appearance after 1 second
-          window.removeEventListener('scroll', handleAboutScroll);
-      }
-  }
+    function showAboutSection() {
+        aboutSection.classList.add('show');
+    }
 
-  window.addEventListener('scroll', handleAboutScroll);
+    function handleAboutScroll() {
+        if (isElementInViewport(aboutSection)) {
+            setTimeout(showAboutSection, 100); // Delayed appearance after 1 second
+            window.removeEventListener('scroll', handleAboutScroll);
+        }
+    }
 
-  // Video enlargement on scroll
-  const videoContainer = document.getElementById('video-container');
-  const video = document.getElementById('landing-video');
+    window.addEventListener('scroll', handleAboutScroll);
 
-  function isElementInView(el) {
-      const rect = el.getBoundingClientRect();
-      return (
-          rect.top >= 0 &&
-          rect.left >= 0 &&
-          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-  }
+    // Video enlargement on scroll
+    const videoContainer = document.getElementById('video-container');
+    const video = document.getElementById('landing-video');
 
-  function handleVideoScroll() {
-      if (isElementInView(videoContainer)) {
-          videoContainer.style.display = 'block';
-          setTimeout(() => {
-              videoContainer.classList.add('video-enlarged');
-          }, 2000);
-          window.removeEventListener('scroll', handleVideoScroll);
-      }
-  }
+    function isElementInView(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
 
-  handleVideoScroll();
-  window.addEventListener('scroll', handleVideoScroll);
+    function handleVideoScroll() {
+        if (isElementInView(videoContainer)) {
+            videoContainer.style.display = 'block';
+            setTimeout(() => {
+                videoContainer.classList.add('video-enlarged');
+            }, 2000);
+            window.removeEventListener('scroll', handleVideoScroll);
+        }
+    }
 
-  // Scroll event for best selling section
-  const bestSellingSection = document.querySelector('.best-selling');
+    handleVideoScroll();
+    window.addEventListener('scroll', handleVideoScroll);
 
-  function handleImageScroll() {
-      if (isElementInViewport(bestSellingSection)) {
-          bestSellingSection.classList.add('visible');
-          window.removeEventListener('scroll', handleImageScroll);
-      }
-  }
+    // Scroll event for best selling section
+    const bestSellingSection = document.querySelector('.best-selling');
 
-  window.addEventListener('scroll', handleImageScroll);
+    function handleImageScroll() {
+        if (isElementInViewport(bestSellingSection)) {
+            bestSellingSection.classList.add('visible');
+            window.removeEventListener('scroll', handleImageScroll);
+        }
+    }
 
-  // Swiper functionality
-  document.getElementById('next').onclick = function() {
-      const widthItem = document.querySelector('.item').offsetWidth;
-      document.getElementById('formList').scrollLeft += widthItem;
-  };
-  document.getElementById('prev').onclick = function() {
-      const widthItem = document.querySelector('.item').offsetWidth;
-      document.getElementById('formList').scrollLeft -= widthItem;
-  };
+    window.addEventListener('scroll', handleImageScroll);
 
-  // Dropdown functionality
-  document.querySelector('.profile-icon').addEventListener('click', function(event) {
-      event.preventDefault();
-      const dropdown = document.querySelector('.dropdown');
-      dropdown.classList.toggle('show');
-  });
-  window.addEventListener('click', function(event) {
-      if (!event.target.closest('.dropdown')) {
-          const dropdowns = document.querySelectorAll('.dropdown');
-          dropdowns.forEach(dropdown => {
-              dropdown.classList.remove('show');
-          });
-      }
-  });
+    // Swiper functionality
+    document.getElementById('next').onclick = function () {
+        const widthItem = document.querySelector('.item').offsetWidth;
+        document.getElementById('formList').scrollLeft += widthItem;
+    };
+    document.getElementById('prev').onclick = function () {
+        const widthItem = document.querySelector('.item').offsetWidth;
+        document.getElementById('formList').scrollLeft -= widthItem;
+    };
 
-       // Heart icon click event
-       const heartIcons = document.querySelectorAll('.heart-icon');
+    // Dropdown functionality
+    document.querySelector('.profile-icon').addEventListener('click', function (event) {
+        event.preventDefault();
+        const dropdown = document.querySelector('.dropdown');
+        dropdown.classList.toggle('show');
+    });
+    window.addEventListener('click', function (event) {
+        if (!event.target.closest('.dropdown')) {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('show');
+            });
+        }
+    });
 
-       heartIcons.forEach(icon => {
-           icon.addEventListener('click', () => {
-               icon.classList.toggle('clicked');
-           });
-       });
+    // Heart icon click event
+    const heartIcons = document.querySelectorAll('.heart-icon');
 
-       
-  
+    heartIcons.forEach(icon => {
+        icon.addEventListener('click', () => {
+            icon.classList.toggle('clicked');
+        });
+    });
+
+
+
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -473,10 +473,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-    
-    
 
-    
+
+
+
 
 
 
@@ -498,25 +498,176 @@ function toggleSideBar() {
 }
 
 
-$(document).ready(function() {
+$(document).ready(function () {
     function loadContent(url) {
         $.ajax({
             url: url,
             method: 'GET',
-            success: function(data) {
+            success: function (data) {
                 $('.main-content').html(data);
             },
-            error: function(xhr, status, error) {
+            error: function (xhr, status, error) {
                 $('.main-content').html("<p>Error loading content: " + error + "</p>");
             }
         });
     }
 
-    $('#Dashboard').click(function() {
+    $('#Dashboard').click(function () {
         loadContent('/dashboard');
     });
     $('#Orders').click(function () {
         loadContent('/orders');
     });
+
+    $('.status-option').on('click', function (e) {
+        e.preventDefault();
+
+        var newStatus = $(this).data('value');
+        var orderId = $(this).closest('tr').data('order-id');
+
+        $.ajax({
+            url: '/update-order-status',  // Change this to your actual update URL
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ order_id: orderId, status: newStatus }),
+            success: function (response) {
+                $('tr[data-order-id="' + orderId + '"] .status').text(newStatus);
+                alert('Order status updated to ' + newStatus);
+            },
+            error: function (xhr, status, error) {
+                alert('Failed to update order status. Please try again.');
+            }
+        });
+    });
+    let selectedStatus = null;
+    let selectedMethod = null;
+    let selectedDateRange = null;
+    let startDate = null;
+    let endDate = null;
+
+
+
+    $('.filter-by-status').on('click', function (e) {
+        e.preventDefault();
+
+        selectedStatus = $(this).data('value');
+        $('.currentStatus').text(selectedStatus || 'Status');
+        applyFilters();
+        // $('tbody tr').each(function() {
+        //     var rowStatus = $(this).data('status');
+        //     if (rowStatus === selectedStatus) {
+        //         $(this).show();
+        //     } else {
+        //         $(this).hide();
+        //     }
+        // });
+    });
+    $('.filter-by-method').on('click', function (e) {
+        e.preventDefault();
+
+        selectedMethod = $(this).data('value');
+        $('.currentMethod').text(selectedMethod || 'Method');
+        applyFilters();
+        // $('tbody tr').each(function() {
+        //     var rowmethod = $(this).data('method');
+        //     if (rowmethod === selectedMethod) {
+        //         $(this).show();
+        //     } else {
+        //         $(this).hide();
+        //     }
+        // });
+    });
+    $('.filter-by-date').on('click', function (e) {
+        e.preventDefault();
+        selectedDateRange = $(this).data('value');
+        $('.currentDate').text(selectedDateRange || 'Date');
+        applyFilters();
+    });
+    $('#searchCustomerName').on('keyup', function () {
+        applyFilters();
+    });
+    $('.reset').on('click', function () {
+        $('#searchCustomerName').val('');
+        $('.currentStatus').text('Status');
+        $('.currentMethod').text('Method');
+        $('.currentDate').text('Date');
+        $('#Startdate').val('');
+        $('#Enddate').val('');
+        selectedStatus = null;
+        selectedMethod = null;
+        selectedDateRange = null;
+        startDate = null;
+        endDate = null;
+        applyFilters();
+    });
+    $('#Startdate').on('change', function () {
+        startDate = new Date($(this).val());
+        startDate.setHours(0, 0, 0, 0);
+        applyFilters();
+    });
+
+    $('#Enddate').on('change', function () {
+        endDate = new Date($(this).val());
+        endDate.setHours(23, 59, 59, 999);
+        applyFilters();
+    });
+
+    function applyFilters() {
+        const searchText = $('#searchCustomerName').val().toLowerCase();
+        const now = new Date();
+
+        $('tbody tr').each(function () {
+            const rowStatus = $(this).find('.status').text().trim();
+            const rowMethod = $(this).find('.method').text().trim();  // Adjust if method is in a different column
+            const customerName = $(this).find('.customerName').text().toLowerCase();
+            // const now = new Date();
+            const orderDateString = $(this).find('.Date').text().trim();
+            const orderDate = new Date(orderDateString); // Parse the date string
+            let isVisible = true;
+            const dateRanges = {
+                'Last 5 days Orders': 5,
+                'Last 7 days Orders': 7,
+                'Last 15 days Orders': 15,
+                'Last 30 days Orders': 30
+            }
+
+            if (selectedStatus && rowStatus !== selectedStatus) {
+                isVisible = false;
+            }
+
+            if (selectedMethod && rowMethod !== selectedMethod) {
+                isVisible = false;
+            }
+
+            if (searchText && !customerName.includes(searchText)) {
+                isVisible = false;
+            }
+
+            if (selectedDateRange) {
+                const days = dateRanges[selectedDateRange];
+                const pastDate = new Date(now);
+                pastDate.setDate(now.getDate() - days);
+                if (orderDate < pastDate) {
+                    isVisible = false;
+                }
+            }
+            if (startDate && orderDate < startDate) {
+                isVisible = false;
+            }
+
+            if (endDate && orderDate > endDate) {
+                isVisible = false;
+            }
+
+            if (isVisible) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    }
+
 });
+
+
 
