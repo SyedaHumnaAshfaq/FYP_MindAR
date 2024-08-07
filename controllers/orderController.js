@@ -1,4 +1,5 @@
 const Order = require('../mongo_models/OrderSchema');
+const Product = require('../mongo_models/ProductSchema');
 const createOrder = async (req, res) => {
   try {
     const { customerName, products, totalAmount, shippingAddress, method } = req.body;
@@ -106,7 +107,9 @@ const getDashboardData = async (req, res) => {
     ]);
 
     // Format data for the pie chart
-    const productNames = products.map(p => p._id);
+    const productIds = products.map(p => p._id);
+    const productDetails = await Product.find({ _id: { $in: productIds } });
+    const productNames = productDetails.map(pd => pd.Product_name);
     const productSalesData = products.map(p => p.totalSales);
     console.log(productNames);
     console.log(productSalesData);

@@ -2608,5 +2608,7 @@ td {
 
 canvas {
   width: 100% !important;
-  height: 350px !important;
+  height: 370px !important;
+  /* margin: 10px; */
+  padding: 20px;
 }

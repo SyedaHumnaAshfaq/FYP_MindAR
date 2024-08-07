@@ -116,8 +116,10 @@
     </div>
     <div class="graphs-div">
         <h3>Best Selling Products</h3>
-        <div id="best-selling-products-data" data-products="<%- JSON.stringify(productNames) %>"
-            data-sales="<%- JSON.stringify(productSalesData) %>"></div>
+        <div id="best-selling-products-data"
+     data-products='<%- JSON.stringify(productNames).replace(/'/g, "\\'") %>'
+     data-sales='<%- JSON.stringify(productSalesData).replace(/'/g, "\\'") %>'></div>
+
         <canvas id="bestSellingProductsChart"></canvas>
 
     </div>
