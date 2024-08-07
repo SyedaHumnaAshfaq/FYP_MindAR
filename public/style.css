@@ -2606,3 +2606,7 @@ td {
   background-color: #0e0e0f;
 } */
 
+canvas {
+  width: 100% !important;
+  height: 350px !important;
+}

@@ -5,6 +5,8 @@ const orderController = require('../controllers/orderController');
 router.post('/createOrder', orderController.createOrder);
 router.get('/orders', orderController.getOrders);
 router.post('/update-order-status', orderController.updateorderstatus);
+router.get('/dashboard', orderController.getDashboardData);
+// router.get('/dashboard', orderController.getYesterdayOrders);
 
 
 module.exports = router;

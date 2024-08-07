@@ -499,12 +499,93 @@ function toggleSideBar() {
 
 
 $(document).ready(function () {
+    if ($('#bestSellingProductsChart').length) {
+        // Fetch the product names and sales data from the HTML element
+        const productNames = JSON.parse($('#best-selling-products-data').attr('data-products'));
+        const salesData = JSON.parse($('#best-selling-products-data').attr('data-sales'));
+
+        // Create the pie chart
+        const ctx = document.getElementById('bestSellingProductsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: productNames,
+                datasets: [{
+                    label: 'Best Selling Products',
+                    data: salesData,
+                    backgroundColor: [
+                        'rgba(255, 159, 64, 0.2)', // Dark Orange
+                        'rgba(255, 99, 132, 0.2)', // Red
+                        'rgba(54, 162, 235, 0.2)', // Blue
+                        'rgba(75, 192, 192, 0.2)', // Green
+                        'rgba(153, 102, 255, 0.2)', // Purple
+                        'rgba(255, 206, 86, 0.2)'  // Yellow
+                    ],
+                    borderColor: [
+                        'rgba(255, 159, 64, 1)', // Dark Orange
+                        'rgba(255, 99, 132, 1)', // Red
+                        'rgba(54, 162, 235, 1)', // Blue
+                        'rgba(75, 192, 192, 1)', // Green
+                        'rgba(153, 102, 255, 1)', // Purple
+                        'rgba(255, 206, 86, 1)'  // Yellow
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.label + ': ' + tooltipItem.raw;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+    function initializeChart() {
+        const salesData = $('#weekly-sales-data').data('sales');
+        const weeklySalesData = {
+            labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            datasets: [{
+                label: 'Weekly Sales',
+                data: salesData,
+                borderColor: 'rgba(255, 165, 0, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                fill: false,
+                tension: 0.1
+            }]
+        };
+        const config = {
+            type: 'line',
+            data: weeklySalesData,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+        const ctx = document.getElementById('weeklySalesChart').getContext('2d');
+        new Chart(ctx, config);
+    }
+    
     function loadContent(url) {
         $.ajax({
             url: url,
             method: 'GET',
             success: function (data) {
                 $('.main-content').html(data);
+                if (url === '/dashboard') {
+                    initializeChart();
+                }
             },
             error: function (xhr, status, error) {
                 $('.main-content').html("<p>Error loading content: " + error + "</p>");
@@ -653,7 +734,7 @@ $(document).ready(function () {
         });
     }
 
+   
 });
-
 
 
