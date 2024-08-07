@@ -5,7 +5,7 @@ body, html {
     font-family: Arial, sans-serif;
     /* background: linear-gradient(to bottom, #ff7e5f, #feb47b);
     transition: background 0.5s ease; */
-    background: radial-gradient(circle at center, rgb(214, 209, 201) 10%,rgb(209, 187, 158) 50%,rgb(234, 216, 192) 50%);
+    background: radial-gradient(circle at center,rgb(249, 219, 186) 10%,rgb(91, 153, 194) 50%,rgb(26, 72, 112) 50%);
     transition: background 0.5s ease;
     
 }
@@ -13,7 +13,7 @@ body, html {
 header {
     /* position: fixed; */
     width: 100%;
-    background:rgb(167, 146, 119);
+    background:rgb(26, 72, 112);
     /* background-image: url("images/bgnav.jpg"); */
     color: white;
     text-align: center;
@@ -226,21 +226,21 @@ main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 } */
 .pulse-shadow-text {
-    color: rgb(21, 15, 15);
+    color: rgb(240, 240, 240);
     font-size: 64px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    text-shadow: 0 0 10px rgba(150, 147, 147, 0.7);
     animation: pulseShadow 2s infinite;
   }
   
   @keyframes pulseShadow {
     0% {
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+      text-shadow: 0 0 10px rgba(12, 10, 10, 0.7);
     }
     50% {
-      text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+      text-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
     }
     100% {
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+      text-shadow: 0 0 10px rgba(239, 231, 231, 0.7);
     }
   }
 
@@ -648,7 +648,7 @@ main {
 
   /* Footer Styles */
 .footer {
-    background-color: #333;
+    background-color:rgb(11, 40, 64);
     color: white;
     padding: 40px 0;
   }
@@ -715,7 +715,7 @@ main {
   }
   
   .contact-form button {
-    background-color: #555;
+    background-color:rgb(26, 72, 112);
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -792,7 +792,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #333;
+    /* background-color: #333; */
     color: white;
     padding: 10px;
 }

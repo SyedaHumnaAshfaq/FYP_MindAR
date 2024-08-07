@@ -90,8 +90,8 @@ document.addEventListener("scroll", () => {
     const maxScroll = document.body.scrollHeight - window.innerHeight;
     const scrollPercentage = scrollPosition / maxScroll;
 
-    const startColor = { r: 208, g: 184, b: 168 }; // #ff7e5f (228,213,183 140,171,168   (107,169,152)rgb(255, 242, 225)
-    const endColor = { r: 255, g: 242, b: 225 }; // #feb47b 217,185,155 235,218,218         (84,146,125)
+    const startColor = { r: 31, g: 49, b: 111 }; // #ff7e5f (228,213,183 140,171,168   (107,169,152)rgb(255, 242, 225)
+    const endColor = { r: 26, g: 72, b: 142 }; // #feb47b 217,185,155 235,218,218         (84,146,125)
    
     const newColor = {
         r: Math.round(startColor.r + (endColor.r - startColor.r) * scrollPercentage),
