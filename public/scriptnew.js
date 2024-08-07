@@ -85,24 +85,24 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.addEventListener("scroll", () => {
-    const scrollPosition = window.scrollY;
-    const maxScroll = document.body.scrollHeight - window.innerHeight;
-    const scrollPercentage = scrollPosition / maxScroll;
+// document.addEventListener("scroll", () => {
+//     const scrollPosition = window.scrollY;
+//     const maxScroll = document.body.scrollHeight - window.innerHeight;
+//     const scrollPercentage = scrollPosition / maxScroll;
 
-    const startColor = { r: 208, g: 184, b: 168 }; // #ff7e5f (228,213,183 140,171,168   (107,169,152)rgb(255, 242, 225)
-    const endColor = { r: 255, g: 242, b: 225 }; // #feb47b 217,185,155 235,218,218         (84,146,125)
+//     const startColor = { r: 0, g: 60, b: 67 }; // #ff7e5f (228,213,183 140,171,168   (107,169,152)rgb(255, 242, 225)
+//     const endColor = { r: 19, g: 93, b: 102}; // #feb47b 217,185,155 235,218,218         (84,146,125)
    
-    const newColor = {
-        r: Math.round(startColor.r + (endColor.r - startColor.r) * scrollPercentage),
-        g: Math.round(startColor.g + (endColor.g - startColor.g) * scrollPercentage),
-        b: Math.round(startColor.b + (endColor.b - startColor.b) * scrollPercentage),
-    };
+//     const newColor = {
+//         r: Math.round(startColor.r + (endColor.r - startColor.r) * scrollPercentage),
+//         g: Math.round(startColor.g + (endColor.g - startColor.g) * scrollPercentage),
+//         b: Math.round(startColor.b + (endColor.b - startColor.b) * scrollPercentage),
+//     };
 
-    const newBackgroundSize = 50 + (scrollPercentage * 100);
+//     const newBackgroundSize = 50 + (scrollPercentage * 100);
 
-    document.body.style.background = `radial-gradient(circle at center, rgba(${newColor.r}, ${newColor.g}, ${newColor.b}, 0) ${newBackgroundSize}%, rgba(${newColor.r}, ${newColor.g}, ${newColor.b}, 1) ${newBackgroundSize}%)`;
-});
+//     document.body.style.background = `radial-gradient(circle at center, rgba(${newColor.r}, ${newColor.g}, ${newColor.b}, 0) ${newBackgroundSize}%, rgba(${newColor.r}, ${newColor.g}, ${newColor.b}, 1) ${newBackgroundSize}%)`;
+// });
 
 
 
@@ -168,3 +168,21 @@ function toggleSidebar() {
         sidebar.style.width = '250px';
     }
 }
+
+
+// window.addEventListener('scroll', () => {
+//     const scrollPosition = window.scrollY;
+//     const windowHeight = window.innerHeight;
+//     const body = document.body;
+  
+//     if (scrollPosition < windowHeight) {
+//       body.style.background = '#e0f7fa'; // Light teal
+//     } else if (scrollPosition < windowHeight * 2) {
+//       body.style.background = '#b2dfdb'; // Medium light teal
+//     } else if (scrollPosition < windowHeight * 3) {
+//       body.style.background = '#80cbc4'; // Medium teal
+//     } else {
+//       body.style.background = '#4db6ac'; // Dark teal
+//     }
+//   });
+  
