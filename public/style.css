@@ -2612,3 +2612,9 @@ canvas {
   /* margin: 10px; */
   padding: 20px;
 }
+.searchCustomer{
+  width: 70%;
+}
+.resetCustomer{
+  width: 25%;
+}
