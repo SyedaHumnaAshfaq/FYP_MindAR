@@ -570,14 +570,6 @@ $(document).ready(function () {
                             label: 'Best Selling Products',
                             data: productSalesData,
                             backgroundColor: [
-                                'rgba(255, 159, 64, 0.2)', // Dark Orange
-                                'rgba(255, 99, 132, 0.2)', // Red
-                                'rgba(54, 162, 235, 0.2)', // Blue
-                                'rgba(75, 192, 192, 0.2)', // Green
-                                'rgba(153, 102, 255, 0.2)', // Purple
-                                'rgba(255, 206, 86, 0.2)'  // Yellow
-                            ],
-                            borderColor: [
                                 'rgba(255, 159, 64, 1)', // Dark Orange
                                 'rgba(255, 99, 132, 1)', // Red
                                 'rgba(54, 162, 235, 1)', // Blue
@@ -585,7 +577,16 @@ $(document).ready(function () {
                                 'rgba(153, 102, 255, 1)', // Purple
                                 'rgba(255, 206, 86, 1)'  // Yellow
                             ],
-                            borderWidth: 1
+                            borderColor: [
+                                // 'rgba(255, 159, 64, 1)', // Dark Orange
+                                // 'rgba(255, 99, 132, 1)', // Red
+                                // 'rgba(54, 162, 235, 1)', // Blue
+                                // 'rgba(75, 192, 192, 1)', // Green
+                                // 'rgba(153, 102, 255, 1)', // Purple
+                                // 'rgba(255, 206, 86, 1)'  // Yellow
+                                'rgba(255,255,255,1)'
+                            ],
+                            borderWidth: 2
                         }]
                     },
                     options: {
