@@ -8,6 +8,7 @@ const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const cartRoutes = require('./routes/cartRoutes');
+const customerRoutes = require('./routes/customerRoutes');
 const cookieParser = require('cookie-parser');
 const { assignCartId } = require('./middlewares/cartMiddleware');
 const { isAdmin,isAuthenticated } = require('./middlewares/authAdminMiddleware');
@@ -34,7 +35,7 @@ app.use('/api/auth', userRoutes);
 app.use('/', productRoutes);
 app.use('/', cartRoutes);
 app.use('/', orderRoutes);
-
+app.use('/', customerRoutes);
 // Set the path to your views directory
 app.set('views', path.join(__dirname, 'views'));
 
@@ -70,6 +71,7 @@ app.get('/VirtualTryOn', (req, res) => {
 app.get('/adminHomePage', (req, res) => { 
   res.render('pages/adminHomePage'); // Render the about.ejs file in the pages folder
 });
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

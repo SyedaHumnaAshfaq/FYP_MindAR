@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>customers</title>
+    <script src="/script.js"></script>
+</head>
+<body>
+    
+<h2 id="Ordersh2">Customers</h2>
+<div class="filters">
+<input type="text" id="searchCustomerName" placeholder="Search by email or name" class="filter-divs searchCustomer">
+<div class="filter-divs reset resetCustomer">Reset</div>
+</div>
+
+<div class="table-div">
+    <table>
+        <thead>
+            <tr>
+                <th>JOINING DATE</th>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% customers.forEach(customer=> { %>
+                <tr data-customer-id="<%=customer._id%>"  data-customer-name="<%= customer.username %>" data-customer-email="<%=customer.email%>">
+                    <td class="Date">
+                        <%= new Date(customer.createdAt).toLocaleString('en-US', { year: 'numeric' , month: '2-digit' ,
+                            day: '2-digit' , hour: '2-digit' , minute: '2-digit' , hour12: true }) %>
+                    </td>
+                    </td>
+                    <td class="customerName">
+                        <%=customer.username%>
+                    </td>
+                   
+                    <td class="customerEmail">
+                        <%=customer.email%>
+                   
+                    <td>
+                        <div class="dropdown">
+                            <div class="Action">Action</div>
+                            <div class="dropdown-contentforaction">
+                                <a href="#" data-value="delete" class="customer-action">Delete</a>
+                                <a href="#" data-value="email" class="customer-action">Email</a>
+                            </div>
+                        </div>
+                        
+                    </td>
+                </tr>
+                <% }) %>
+                    
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

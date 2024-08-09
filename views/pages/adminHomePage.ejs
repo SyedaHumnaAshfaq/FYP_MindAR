@@ -7,14 +7,13 @@
     <title>Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    
 </head>
 
 <body>
     <div class="navbar">
         <nav>
-
+            
             <div class="hamburger-div">
                 <ul>
                     <span>
@@ -23,12 +22,12 @@
                         </li>
                     </span>
                 </ul>
-
-
+                
+                
             </div>
             <div class="otheroption-div">
                 <ul>
-
+                    
                     <li>
                         <a href=""><i class="fa-solid fa-bell"></i></a>
                     </li>
@@ -41,35 +40,38 @@
     </div>
     <div class="main-and-ham">
         <div class="sidebar-div hidden" id="sidebar">
-
-            <div class="sideoptions-divs" id="Dashboard">
+            
+            <div class="sideoptions-divs" id="Dashboard" data-url="/dashboard">
                 <a href="javascript:void(0)" ><li>Dashboard</li></a>
             </div>
-            <div class="sideoptions-divs">
+            <div class="sideoptions-divs" id="Customers" data-url="/customers">
                 <li>Customers</li>
             </div>
-            <div class="sideoptions-divs" id="Orders">
+            <div class="sideoptions-divs" id="Orders" data-url="/orders">
                 <a href="javascript:void(0)" ><li>Orders</li></a>
             </div>
-            <div class="sideoptions-divs">
+            <div class="sideoptions-divs" id="Products" data-url="/products">
                 <li>Products</li>
             </div>
-            <div class="sideoptions-divs">
+            <div class="sideoptions-divs" id="Categories" data-url="/categories">
                 <li>Categories</li>
             </div>
-            <div class="sideoptions-divs">
+            <div class="sideoptions-divs" id="Ourstaff" data-url="/ourstaff">
                 <li>Our Staff</li>
             </div>
-
-
+            
+            
         </div>
         <div class="main-content">
             
+            
         </div>
-
+        
     </div>
-
+    
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script src="/script.js"></script>
 
