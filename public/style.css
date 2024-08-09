@@ -2618,3 +2618,22 @@ canvas {
 .resetCustomer{
   width: 25%;
 }
+.fa-magnifying-glass-plus{
+  color: white;
+}
+.add-product{
+  width: 50%;
+  background-color: teal;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+}
+.add-product:hover{
+  background-color: black;
+}
+.customer-action{
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}

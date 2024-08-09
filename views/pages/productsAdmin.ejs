@@ -1,0 +1,94 @@
+<h2 id="Ordersh2">Products</h2>
+<div class="filters"><button class=" filter-divs reset add-product">Add Product</button></div>
+<div class="filters">
+    
+
+    <input type="text" id="searchCustomerName" placeholder="Search by product name" class="filter-divs">
+
+    <div class="dropdown filter-divs">
+        <div class="currentCategory">Category</div>
+        <div class="dropdown-content">
+            <a href="#" data-value="nosepin" class="filter-by-category">Nosepin</a>
+            <a href="#" data-value="eyewear" class="filter-by-category">Eyewear</a>
+            <a href="#" data-value="earing" class="filter-by-category">Earing</a>
+            <a href="#" data-value="sunglasses" class="filter-by-category">Sunglasses</a>
+        </div>
+    </div>
+    <div class="dropdown filter-divs">
+        <div class="currentDate">Others</div>
+        <div class="dropdown-content">
+            <a href="#" data-value="Low to High Price" class="filter-by-date">Low to High Price</a>
+            <a href="#" data-value="High to Low Price" class="filter-by-date">High to Low Price</a>
+            <a href="#" data-value="Status-Out of Stock" class="filter-by-date">Status-Out of Stock</a>
+            <a href="#" data-value="Status-Selling" class="filter-by-date">Status-Selling</a>
+            <a href="#" data-value="Published" class="filter-by-date">Published</a>
+            <a href="#" data-value="Unpublished" class="filter-by-date">Unpublished</a>
+            <a href="#" data-value="Date Added (ASC)" class="filter-by-date">Date Added (ASC)</a>
+            <a href="#" data-value="Date Added (DESC)" class="filter-by-date">Date Added (DESC)</a>
+            <a href="#" data-value="Date Updated (ASC)" class="filter-by-date">Date Updated (ASC)</a>
+            <a href="#" data-value="Date Updated (DESC)" class="filter-by-date">Date Updated (DESC)</a>
+
+        </div>
+        
+
+    </div>
+    <div class="filter-divs reset">Reset</div>
+
+</div>
+
+<div class="table-div">
+    <table>
+        <thead>
+            <tr>
+                <th>NAME</th>
+                <th>CATEGORY</th>
+                <th>PRICE</th>
+                <th>STOCK</th>
+                <th>STATUS</th>
+                <th>VIEW</th>
+                <th>PUBLISHED</th>
+                <th>ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach(product=> { %>
+                <tr data-product-id="<%=product._id%>">
+                    <td class="productName">
+                        <%=product.Product_name%>
+                    </td>
+                    <td class="category">
+                        <%=product.Product_category%>
+                    </td>
+                    <td class="price">
+                        <%=product.Product_price%>
+                    </td>
+                    <td class="stock">
+                        <%=product.Product_stock%>
+                    </td>
+                    <td class="status">
+                        <%=product.Product_stock%>
+                    </td>
+                    <td class="view">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </td>
+                    <td class="published">
+                        <%=product.is_Published%>
+                    </td>
+                
+                    
+                    <td>
+                        <div class="dropdown">
+                            <div class="Action">Action</div>
+                            <div class="dropdown-contentforaction">
+                                <a href="#" data-value="delete" class="status-option product-action">Delete</a>
+                                <a href="#" data-value="update" class="status-option product-action">Update</a>
+                            </div>
+                        </div>
+                        
+                    </td>
+                </tr>
+                <% }) %>
+                    
+        </tbody>
+    </table>
+</div>

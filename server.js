@@ -71,7 +71,9 @@ app.get('/VirtualTryOn', (req, res) => {
 app.get('/adminHomePage', (req, res) => { 
   res.render('pages/adminHomePage'); // Render the about.ejs file in the pages folder
 });
-
+app.get('/productsAdmin', (req, res) => {
+  res.render('pages/productsAdmin'); // Render the homepage.ejs file in the pages folder
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
