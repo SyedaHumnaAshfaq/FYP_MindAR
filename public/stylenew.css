@@ -23,7 +23,7 @@ header {
     text-align: center;
     padding: 10px 0;
     z-index: 1000;
-    background-color:rgb(50, 44, 43);
+    background-color:rgb(60, 42, 33);
 }
 
 /* nav ul {
@@ -238,7 +238,7 @@ main {
     max-width: 1100px;
     padding: 10px;
   /* width: 100%; */
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0);
   /* Slightly transparent white */
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -414,13 +414,14 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 14px 18px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     transition: transform 0.3s;
     position: relative;
     overflow: hidden;
-    background-color: rgb(166, 123, 91, 0.5);
+    /* background-color: rgb(166, 123, 91, 0.5); */
     backdrop-filter: blur(30px);
+  
     /* background: rgba(255, 255, 255, 0.2); */
     
 }
@@ -542,12 +543,13 @@ main {
     display: flex;
     justify-content:end;
     align-items:top;
-    font-size: 44px;
+    font-size: 40px;
     font-weight: bold;
     color: #0a0808;
-    margin-bottom: 100px ;
+    margin-bottom: 30px ;
     /* sborder:2px solid black; */
     box-shadow: 21px solid black;
+    /* background-color: rgba(75, 54, 35, 0.2); */
     
     
 }
@@ -844,7 +846,7 @@ img {
     justify-content: space-between;
     /* background-color: #333; */
     color: white;
-    padding: 10px;
+    /* padding: 1px; */
 }
 
 .sidebar-toggle {
