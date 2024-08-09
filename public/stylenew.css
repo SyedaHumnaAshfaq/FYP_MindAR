@@ -13,12 +13,17 @@ body, html {
 header {
     /* position: fixed; */
     width: 100%;
-    background-image: url('images/bg2.jpg');
+    /* background-image: url('images/b2.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
     /* background-image: url("images/bgnav.jpg"); */
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 10px 0;
     z-index: 1000;
+    background-color:rgb(50, 44, 43);
 }
 
 /* nav ul {
@@ -215,7 +220,7 @@ main {
     justify-content: center;
     align-items: center;
     position: relative;
-    background-image: url('images/bg8.jpg');
+    background-image: url('images/b1.jpg');
     /* overflow: hidden; */
 }
 
@@ -226,7 +231,7 @@ main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 } */
 .pulse-shadow-text {
-    color: rgb(240, 240, 240);
+    color: rgb(0, 0, 0);
     font-size: 64px;
     text-shadow: 0 0 10px rgba(150, 147, 147, 0.7);
     animation: pulseShadow 2s infinite;
@@ -256,16 +261,16 @@ main {
       text-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
     }
     100% {
-      text-shadow: 0 0 10px rgba(239, 231, 231, 0.7);
+      text-shadow: 0 0 10px rgba(77, 74, 74, 0.7);
     }
   }
 
 .earring {
-    width: 100px;
-    height: 100px;
-    background: url('images/topsnew.png') no-repeat center center/contain;
+    width: 170px;
+    height: 170px;
+    background: url('images/e22.png') no-repeat center center/contain;
     position: absolute;
-    top: 70%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -280,13 +285,15 @@ main {
     position: relative;
     /* border-top: 2px solid black; */
     /* background-color: aqua; */
-    background-image: url('images/bbg1.jpg');
+    background-image: url('images/b6.jpg');
 }
 
 .text-left {
-    width: 40%;
+    width: 50%;
     font-size: 40px;
-    color: white;
+    color: rgb(0, 0, 0);
+    /* background: rgba(255, 255, 255, 0.2); */
+
 }
 
   
@@ -300,10 +307,10 @@ main {
 
 
 .woman-right {
-    width: 40%;
+    width: 33%;
     position: relative;
     /* overflow: hidden; */
-    margin-bottom: 50px;
+    margin-bottom: 110px;
 }
 
 .woman-right img {
@@ -318,13 +325,13 @@ main {
 
 @keyframes moveEarring {
     from {
-        top: 70%;
+        top: 80%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
     to {
-        top: calc(100% + 198px); /* Adjust to align with woman's ear */
-        left: calc(79% - 50px); /* Adjust to align with woman's ear */
+        top: calc(100% + 167px); /* Adjust to align with woman's ear */
+        left: calc(84% - 50px); /* Adjust to align with woman's ear */
         transform: translate(0, -50%);
     }
 }
@@ -345,20 +352,22 @@ main {
     justify-content: space-between;
     /* border-top: 2px dotted teal; */
     /* border-bottom:  2px dotted teal;; */
-    box-shadow: 5px teal;
+    box-shadow: 5px rgb(0, 0, 0);
     align-items: flex-start; /* Align items at the top */
-    padding: 25px;
+    padding: 0px;
     /* margin-top: 65px; */
     background: #a28383;
     position: relative;
-    background-image: url('images/para17.jpg');
+    background-image: url('images/b12.jpg');
+    height: 100vh;
+    padding-right: 25px;
    
 }
 
 .glasses-text {
     position: absolute;
     top: 0px;
-    left: 350px;
+    left: 650px;
     color: #000000;
     font-size: 34px;
     font-weight: bold;
@@ -374,6 +383,7 @@ main {
     max-width: 100%;
     height: auto;
     display: block;
+   
 }
 
 /* .glasses {
@@ -388,15 +398,16 @@ main {
 
 .glasses-cards {
     width: 65%;
+   
     display: flex;
     flex-direction: row;
     gap: 20px;
-    margin-top: 150px;
+    margin-top: 250px;
 }
 
 .card {
     width: 400px;
-    height: 250px;
+    height: 300px;
     background:transparent;
     border: 1px solid #333;
     padding: 10px;
@@ -408,6 +419,9 @@ main {
     transition: transform 0.3s;
     position: relative;
     overflow: hidden;
+    background-color: rgb(166, 123, 91, 0.5);
+    backdrop-filter: blur(30px);
+    /* background: rgba(255, 255, 255, 0.2); */
     
 }
 .card .card-text {
@@ -473,14 +487,14 @@ main {
 
 @keyframes moveGlasses {
     from {
-        right: 1%;
-        top: 20%;
+        right: -20%;
+        top: 25%;
         transform: translateY(0);
         opacity: 0;
     }
     to {
-        right: 38%;
-        top: 20%;
+        right: 28%;
+        top: 25%;
         transform: translateY(-10px);
         opacity: 1;
     }
@@ -502,7 +516,7 @@ main {
     /* background: #f0e5de; */
     position: relative;
     height: 450px; /* Adjust based on your design */
-    background-image: url('images/para16.jpg');
+    background-image: url('images/b10.jpg');
     margin: 0px;
    
 }
@@ -517,7 +531,7 @@ main {
 }
 
 .nosepin-model img {
-    max-width: 15%;
+    max-width: 20%;
     height: auto;
     position: relative;
     z-index: 1;
@@ -590,14 +604,14 @@ main {
 
 @keyframes moveNosepin {
     from {
-        left: 70px;
-        top: 60%;
+        left: 100px;
+        top: 90%;
         transform: translate(-50%, -50%);
     }
     to {
-        left: calc(150% - 50px); /* Adjust to align with woman's nose */
-        top: 60%;
-        transform: translate(0, -100%);
+        left: calc(178% - 150px); /* Adjust to align with woman's nose */
+        top: -140%;
+        transform: translate(0%, -175%);
     }
 }
 
@@ -612,7 +626,7 @@ main {
     margin-top: 0px;
     position: relative;
     height: 50vh;
-    background-image: url('images/para15.jpeg');
+    background-image: url('images/b11.jpg');
     overflow: hidden;
   }
   
@@ -679,7 +693,12 @@ main {
 
   /* Footer Styles */
 .footer {
-    background-color:rgb(9, 37, 50);
+    /* background-color:rgb(9, 37, 50); */
+    background-image: url('images/b2.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: white;
     padding: 40px 0;
   }
