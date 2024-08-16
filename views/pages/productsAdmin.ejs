@@ -1,7 +1,38 @@
 <h2 id="Ordersh2">Products</h2>
-<div class="filters"><button class=" filter-divs reset add-product">Add Product</button></div>
+<div class="filters" class="add-product"><button class=" filter-divs reset add-product">Add Product</button></div>
+<div id="productFormContainer" class="product-form-container">
+    <form id="addProductForm">
+        <h2>Add Product</h2>
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="Product_name" required>
+
+        <label for="productPrice">Product Price:</label>
+        <input type="number" step="0.01" id="productPrice" name="Product_price" required>
+
+        <label for="productImageURL">Product Image URL:</label>
+        <textarea id="productImageURL" name="Product_image_url" required></textarea>
+
+        <label for="productDescription">Product Description:</label>
+        <textarea id="productDescription" name="Product_description" required></textarea>
+
+        <label for="productCategory">Product Category:</label>
+        <textarea id="productCategory" name="Product_category" required></textarea>
+
+        <label for="productStock">Product Stock:</label>
+        <textarea id="productStock" name="Product_stock" required></textarea>
+
+        <label for="productRating">Product Rating:</label>
+        <textarea id="productRating" name="Product_rating" required></textarea>
+
+        <label for="productModelURL">Product Model URL:</label>
+        <textarea id="productModelURL" name="Product_model_url" required></textarea>
+        
+        <button type="submit" class="btn btn-success" id="addProductBtn">Add Product</button>
+        <button type="button" id="cancelBtn" class="btn btn-secondary">Cancel</button>
+    </form>
+</div>
 <div class="filters">
-    
+
 
     <input type="text" id="searchCustomerName" placeholder="Search by product name" class="filter-divs">
 
@@ -15,21 +46,17 @@
         </div>
     </div>
     <div class="dropdown filter-divs">
-        <div class="currentDate">Others</div>
+        <div class="currentOther">Others</div>
         <div class="dropdown-content">
-            <a href="#" data-value="Low to High Price" class="filter-by-date">Low to High Price</a>
-            <a href="#" data-value="High to Low Price" class="filter-by-date">High to Low Price</a>
-            <a href="#" data-value="Status-Out of Stock" class="filter-by-date">Status-Out of Stock</a>
-            <a href="#" data-value="Status-Selling" class="filter-by-date">Status-Selling</a>
-            <a href="#" data-value="Published" class="filter-by-date">Published</a>
-            <a href="#" data-value="Unpublished" class="filter-by-date">Unpublished</a>
-            <a href="#" data-value="Date Added (ASC)" class="filter-by-date">Date Added (ASC)</a>
-            <a href="#" data-value="Date Added (DESC)" class="filter-by-date">Date Added (DESC)</a>
-            <a href="#" data-value="Date Updated (ASC)" class="filter-by-date">Date Updated (ASC)</a>
-            <a href="#" data-value="Date Updated (DESC)" class="filter-by-date">Date Updated (DESC)</a>
+            <a href="#" data-value="Low to High Price" class="filter-by-other">Low to High Price</a>
+            <a href="#" data-value="High to Low Price" class="filter-by-other">High to Low Price</a>
+            <a href="#" data-value="Status-Out of Stock" class="filter-by-other">Status-Out of Stock</a>
+            <a href="#" data-value="Status-Selling" class="filter-by-other">Status-Selling</a>
+            <a href="#" data-value="Published" class="filter-by-other">Published</a>
+            <a href="#" data-value="Unpublished" class="filter-by-other">Unpublished</a>
 
         </div>
-        
+
 
     </div>
     <div class="filter-divs reset">Reset</div>
@@ -66,29 +93,55 @@
                         <%=product.Product_stock%>
                     </td>
                     <td class="status">
-                        <%=product.Product_stock%>
+                        <%if(product.Product_stock===0){%>
+                            Out of Stock
+                            <%}else{%>
+                                Selling
+                                <%}%>
                     </td>
                     <td class="view">
                         <i class="fa-solid fa-magnifying-glass-plus"></i>
                     </td>
                     <td class="published">
-                        <%=product.is_Published%>
+                        <label class="switch">
+                            <input type="checkbox" class="toggle-publish" data-id="<%= product._id %>" <% if
+                                (product.is_Published) { %> checked <% } %>>
+                                <span class="slider"></span>
+                        </label>
                     </td>
-                
-                    
+
+
                     <td>
                         <div class="dropdown">
                             <div class="Action">Action</div>
                             <div class="dropdown-contentforaction">
                                 <a href="#" data-value="delete" class="status-option product-action">Delete</a>
-                                <a href="#" data-value="update" class="status-option product-action">Update</a>
+                                <a href="#" data-value="update" class="status-option" id="updateBTN">Update</a>
                             </div>
                         </div>
-                        
+
                     </td>
                 </tr>
                 <% }) %>
-                    
+
         </tbody>
     </table>
+</div>
+
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div class="flex-row">
+        <img class="productImage" src="" alt="Product Image" style="width:200px;height:200px;">
+        <div class="flex-col">
+            <h2 class="prodName"></h2>
+            <p><strong>Price:</strong> $<span class="productPrice"></span></p>
+            <p><strong>Description:</strong> <span class="productDescription"></span></p>
+            <p><strong>Rating:</strong> <span class="productRating"></span></p>
+
+        </div>
+        </div>
+        
+     
+    </div>
 </div>

@@ -96,7 +96,7 @@ const getDashboardData = async (req, res) => {
     weeklySales.forEach(order => {
       salesData[order._id - 1] = order.totalSales;
     });
-    console.log(salesData);
+    console.log('sales',salesData);
     const products = await Order.aggregate([
       { $unwind: "$products" }, // Unwind the items array in each order
       { $group: { 
@@ -105,14 +105,18 @@ const getDashboardData = async (req, res) => {
       }},
       { $sort: { totalSales: -1 } } // Sort by total sales in descending order
     ]);
-
+    // console.log("Product IDs: ", products.map(p => p._id));
+    
     // Format data for the pie chart
     const productIds = products.map(p => p._id);
+    // const productIds = products.map(p => mongoose.Types.ObjectId(p._id));
+    console.log("Product IDs: ", productIds);
     const productDetails = await Product.find({ _id: { $in: productIds } });
+    console.log("Product Details: ", productDetails);
     const productNames = productDetails.map(pd => pd.Product_name);
     const productSalesData = products.map(p => p.totalSales);
-    console.log(productNames);
-    console.log(productSalesData);
+    console.log('prodName: ',productNames);
+    console.log('prodSale',productSalesData);
 
     res.render('pages/dashboard', { todayOrders, yesterdayOrders,weekOrders,monthOrders,yearOrders,allOrders,pending,processing,delivered,weeklySales:salesData,productNames:productNames,productSalesData:productSalesData });
   } catch (error) {

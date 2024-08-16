@@ -53,7 +53,7 @@ $(document).ready(function () {
     } catch (e) {
         console.error('Error parsing JSON:', e);
     }
-
+      
     console.log('Parsed Product Names:', productNames);
     console.log('Parsed Product Sales Data:', productSalesData);
 

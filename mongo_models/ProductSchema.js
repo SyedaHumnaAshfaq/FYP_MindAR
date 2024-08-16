@@ -9,7 +9,7 @@ const ProductSchema = new mongoose.Schema({
     Product_stock: { type: Number, required: true },
     Product_rating: { type: Number, required: true },
     Product_model_url: { type: String, required: true },
-    is_Published: { type: Boolean, required: true },
+    is_Published: { type: Boolean, required: true, default:true },
 }, { timestamps: true });
 
 const Product = mongoose.model('Product', ProductSchema);
