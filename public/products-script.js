@@ -162,7 +162,15 @@ $(document).ready(function () {
         $('#productFormContainer').css('left', '0');
         $('#addProductForm').find('h2').text('Add Product');
         $('#addProductBtn').text('Add Product');
-
+        // $('#addProductForm').data('product-id', null);
+        $('#productName').val('');
+        $('#productPrice').val('');
+        $('#productImageURL').val('');
+        $('#productDescription').val('');
+        $('#productCategory').val('');
+        $('#productStock').val('');
+        $('#productRating').val('');
+        $('#productModelURL').val('');
 
     });
     $(document).on('click', '#updateBTN', function (event) {
