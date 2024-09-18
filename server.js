@@ -44,7 +44,7 @@ app.set('views', path.join(__dirname, 'views'));
 //   res.render('pages/AdornHomePage'); // Render the homepage.ejs file in the pages folder
 // });
 app.get('/', (req, res) => {
-  res.render('pages/VirtualTryOn'); // Render the homepage.ejs file in the pages folder
+  res.render('pages/AdornHomePage.ejs'); // Render the homepage.ejs file in the pages folder
 });
 
 app.get('/quickview', (req, res) => {
@@ -68,9 +68,9 @@ app.get('/login', (req, res) => {
   res.render('pages/login'); // Render the homepage.ejs file in the pages folder
 });
 
-// app.get('/VirtualTryOn', (req, res) => { 
-//     res.render('pages/VirtualTryOn'); // Render the about.ejs file in the pages folder
-// });
+app.get('/VirtualTryOn', (req, res) => { 
+    res.render('pages/VirtualTryOn'); // Render the about.ejs file in the pages folder
+});
 app.get('/adminHomePage', (req, res) => { 
   res.render('pages/adminHomePage'); // Render the about.ejs file in the pages folder
 });

@@ -2288,7 +2288,12 @@ i {
 #card-sale-5 {
   background-color: rgb(5 150 105);
 }
-
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .otheroption-div {
   display: flex;
   align-items: right;
@@ -2322,7 +2327,8 @@ i {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: transform 0.5s ease-in;
   transform: translateX(0);
-  top: 10vh;
+  top: 2vh;
+  height: 100%;
 
   /* height: 100vh; */
   position: fixed;
@@ -2343,6 +2349,7 @@ body,html{
   border-bottom: 1px solid turquoise;
   margin: 8px;
   color: white;
+  top: 0px;
 }
 
 .sideoptions-divs:hover {
@@ -2594,3 +2601,225 @@ canvas {
 .resetCustomer{
   width: 25%;
 }
+
+
+
+
+
+  .searchCustomer{
+    width: 70%;
+  }
+  
+
+  .resetCustomer{
+    width: 25%;
+  }
+  
+  .fa-magnifying-glass-plus {
+    color: white;
+  }
+  
+  .add-product {
+    width: 50%;
+    background-color: teal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+  }
+  
+  .add-product:hover {
+    background-color: black;
+  }
+  
+  .customer-action {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+  }
+  
+  /* The switch - the box around the slider */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: red;
+    transition: .4s;
+    border-radius: 24px;
+    width: 45px;
+  }
+  
+  /* Before the slider moves */
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    /* Adjust this value to be slightly smaller than the height */
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  /* When checked, make the slider green */
+  input:checked+.slider {
+    background-color: green;
+  
+  }
+  
+  /* When checked, move the slider */
+  input:checked+.slider:before {
+    transform: translateX(21px);
+  
+  }
+  
+  
+  /* Container for the sliding form */
+  .product-form-container {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Initially hidden off-screen */
+    width: 30%; /* Adjust width as needed */
+    height: 100%;
+    background-color:#21201e;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    z-index: 1000;
+    padding: 20px;
+    transition: left 0.3s ease;
+    overflow-y: auto; /* Ensure form content is scrollable */
+    color: white;
+  }
+  
+  .product-form-container input{
+    color: #000000;
+  }
+  
+  /* Button to open the form */
+  #addProductBtn {
+    margin-bottom: 20px;
+    background-color: teal;
+  }
+  
+  /* Form styling */
+  #addProductForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #addProductForm label {
+    margin-top: 10px;
+  }
+  
+  #addProductForm input,
+  #addProductForm textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #addProductForm button {
+    margin-top: 20px;
+  }
+  #cancelBtn{
+    background-color: Red;
+  }
+  .checkbox-published{
+    display: flex;
+    flex-direction:row;
+    width: 100%;
+  
+  }
+  #productIsPublished{
+    margin-top: 10px;
+    width: 20px;
+    height: 20px;
+    /* padding: 10px; */
+  }
+  /* Modal Background */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: teal;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 60%; /* Could be more or less, depending on screen size */
+    color: black;
+  }
+  
+  /* Close Button */
+  .close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-button:hover,
+  .close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .view{
+    cursor: pointer;
+  }
+  .flex-row{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    /* margin: 20px; */
+  
+  }
+  
+  .flex-col{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px;
+  }
+  .flex-col p{
+    padding-left: 28px;
+    padding-top: 20px;
+  }
+  .productImage{
+    border: 2px solid #268b8b;
+    border-radius: 10px;
+  }
