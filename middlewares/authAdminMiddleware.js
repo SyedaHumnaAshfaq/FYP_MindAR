@@ -2,7 +2,7 @@ const isAuthenticated = (req, res, next) => {
     if (req.session && req.session.user) {
       return next();
     } else {
-        res.redirect('/loginpage?error=unauthorised');
+        res.redirect('/login?error=unauthorised');
       
     }
   };
@@ -12,7 +12,7 @@ const isAdmin = (req, res, next) => {
         next();
     } else {
 
-        res.redirect('/loginpage?error=forbidden');
+        res.redirect('/login?error=forbidden');
     }
 }
 module.exports= { isAdmin ,isAuthenticated};

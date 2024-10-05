@@ -71,7 +71,7 @@ app.get('/login', (req, res) => {
 app.get('/VirtualTryOn', (req, res) => { 
     res.render('pages/VirtualTryOn'); // Render the about.ejs file in the pages folder
 });
-app.get('/adminHomePage', (req, res) => { 
+app.get('/adminHomePage',isAuthenticated,isAdmin, (req, res) => { 
   res.render('pages/adminHomePage'); // Render the about.ejs file in the pages folder
 });
 app.get('/productsAdmin', (req, res) => {
