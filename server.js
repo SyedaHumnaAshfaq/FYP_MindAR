@@ -11,7 +11,9 @@ const cartRoutes = require('./routes/cartRoutes');
 const customerRoutes = require('./routes/customerRoutes');
 const cookieParser = require('cookie-parser');
 const { assignCartId } = require('./middlewares/cartMiddleware');
-const { isAdmin,isAuthenticated } = require('./middlewares/authAdminMiddleware');
+const { isAdmin, isAuthenticated } = require('./middlewares/authAdminMiddleware');
+require('dotenv').config();
+
 
 connectDB();
 
@@ -30,7 +32,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(assignCartId);
 
+//AWS S3
+const AWS = require('aws-sdk');
 
+const s3 = new AWS.S3({
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+});
+
+
+// Routes
 app.use('/api/auth', userRoutes);
 app.use('/', productRoutes);
 app.use('/', cartRoutes);
@@ -40,9 +51,6 @@ app.use('/', customerRoutes);
 app.set('views', path.join(__dirname, 'views'));
 
 
-// app.get('/', (req, res) => {
-//   res.render('pages/AdornHomePage'); // Render the homepage.ejs file in the pages folder
-// });
 app.get('/', (req, res) => {
   res.render('pages/AdornHomePage.ejs'); // Render the homepage.ejs file in the pages folder
 });

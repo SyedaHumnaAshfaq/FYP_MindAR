@@ -11,11 +11,13 @@
   "dependencies": {
     "aframe": "^1.5.0",
     "argon2": "^0.40.3",
+    "aws-sdk": "^2.1691.0",
     "axios": "^1.7.2",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "express-session": "^1.18.0",

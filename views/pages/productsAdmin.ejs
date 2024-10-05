@@ -9,8 +9,11 @@
         <label for="productPrice">Product Price:</label>
         <input type="number" step="0.01" id="productPrice" name="Product_price" required>
 
-        <label for="productImageURL">Product Image URL:</label>
-        <textarea id="productImageURL" name="Product_image_url" required></textarea>
+        <!-- <label for="productImageURL">Product Image URL:</label>
+        <textarea id="productImageURL" name="Product_image_url" required></textarea> -->
+
+        <label for="productImage">Upload Product Image:</label>
+        <input type="file" id="productImage" name="Product_image" accept=".jpg, .jpeg" required>
 
         <label for="productDescription">Product Description:</label>
         <textarea id="productDescription" name="Product_description" required></textarea>
@@ -24,9 +27,13 @@
         <label for="productRating">Product Rating:</label>
         <textarea id="productRating" name="Product_rating" required></textarea>
 
-        <label for="productModelURL">Product Model URL:</label>
-        <textarea id="productModelURL" name="Product_model_url" required></textarea>
-        
+        <!-- <label for="productModelURL">Product Model URL:</label>
+        <textarea id="productModelURL" name="Product_model_url" required></textarea> -->
+
+        <label for="productModelFile">Upload 3D Model:</label>
+        <input type="file" id="productModelFile" name="Product_model_file" accept=".glb, .gltf" required>
+
+
         <button type="submit" class="btn btn-success" id="addProductBtn">Add Product</button>
         <button type="button" id="cancelBtn" class="btn btn-secondary">Cancel</button>
     </form>
@@ -132,16 +139,16 @@
     <div class="modal-content">
         <span class="close-button">&times;</span>
         <div class="flex-row">
-        <img class="productImage" src="" alt="Product Image" style="width:200px;height:200px;">
-        <div class="flex-col">
-            <h2 class="prodName"></h2>
-            <p><strong>Price:</strong> $<span class="productPrice"></span></p>
-            <p><strong>Description:</strong> <span class="productDescription"></span></p>
-            <p><strong>Rating:</strong> <span class="productRating"></span></p>
+            <img class="productImage" src="" alt="Product Image" style="width:200px;height:200px;">
+            <div class="flex-col">
+                <h2 class="prodName"></h2>
+                <p><strong>Price:</strong> $<span class="productPrice"></span></p>
+                <p><strong>Description:</strong> <span class="productDescription"></span></p>
+                <p><strong>Rating:</strong> <span class="productRating"></span></p>
 
+            </div>
         </div>
-        </div>
-        
-     
+
+
     </div>
 </div>
