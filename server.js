@@ -15,7 +15,7 @@ const { isAdmin, isAuthenticated } = require('./middlewares/authAdminMiddleware'
 
 //multer
 const multer = require('multer');
-// const multerS3 = require('multer-s3');
+const multerS3 = require('multer-s3');
 require('dotenv').config();
 
 
@@ -45,20 +45,30 @@ const s3 = new AWS.S3({
   region: "ap-southeast-2"
 });
 
-//multer
-// const upload = multer({
-//   storage: multerS3({
-//     s3: s3,
-//     bucket: 'your-bucket-name', // Replace with your bucket name
-//     acl: 'public-read', // Allows the file to be publicly accessible
-//     metadata: (req, file, cb) => {
-//       cb(null, { fieldName: file.fieldname });
-//     },
-//     key: (req, file, cb) => {
-//       cb(null, `${Date.now().toString()}-${file.originalname}`); // Save the file with a unique name
-//     }
-//   })
-// });
+// multer
+const upload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: 'your-bucket-name', // Replace with your bucket name
+    acl: 'public-read', // Allows the file to be publicly accessible
+    metadata: (req, file, cb) => {
+      cb(null, { fieldName: file.fieldname });
+    },
+    key: (req, file, cb) => {
+      cb(null, `${Date.now().toString()}-${file.originalname}`); // Save the file with a unique name
+    }
+  })
+});
+
+//multer file upload
+app.post('/upload', upload.single('file'), (req, res) => {
+  try {
+    const fileUrl = req.file.location; // Get the S3 URL of the uploaded file
+    res.json({ fileUrl });
+  } catch (error) {
+    res.status(500).json({ error: 'File upload failed', details: error.message });
+  }
+});
 
 
 // Routes
