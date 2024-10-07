@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>products</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/ayeshaproductsstyle.css" />
 </head>
 <header>
-    <div class="logo">Adorn Ease</div>
+    <!-- <div class="logo">Adorn Ease</div>
     <nav>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
@@ -36,7 +36,49 @@
                 </div>
             </div>
         </div>
-    </nav>
+    </nav> -->
+    <header>
+        <nav class="navbar">
+          <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+          <div class="center-content">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#about">ADORN EASE</a>
+            <a href="#collection">Collection</a>
+            <a href="#contact">Contact Us</a>
+          </div>
+          <div class="right-content">
+            <div class="dropdown">
+              <a href="#" class="dropbtn">
+                <img src="images/icons8-male-user-50.png" alt="Account" />
+              </a>
+              <div class="dropdown-content">
+                <a href="/SignUp">Sign Up</a>
+                <a href="/login">Login</a>
+              </div>
+            </div>
+            <img src="images/icons8-purchase-order-30.png" alt="Account" />
+            <img src="images/icons8-cart-50.png" alt="Account" />
+          </div>
+        </nav>
+  
+        <div id="sidebar" class="sidebar">
+          <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()"
+            >&times;</a
+          >
+          <div class="sidebar-item"><a href="#earrings">Earrings</a></div>
+          <div class="sidebar-item"><a href="#glasses">Glasses</a></div>
+          <div class="sidebar-item"><a href="#nosepins">Nosepins</a></div>
+          <div class="sidebar-item"><a href="#new-arrivals">New Arrivals</a></div>
+          <div class="sidebar-item"><a href="#best-sellers">Best Sellers</a></div>
+          <div class="sidebar-item"><a href="#sales">Sales</a></div>
+          <div class="sidebar-item"><a href="#account">My Account</a></div>
+          <div class="sidebar-item"><a href="#wishlist">Wishlist</a></div>
+          <div class="sidebar-item">
+            <a href="#order-history">Order History</a>
+          </div>
+          <div class="sidebar-item"><a href="#support">Customer Support</a></div>
+        </div>
 </header>
 
 <body>
@@ -145,9 +187,9 @@
                             <h4 class="product-title"><%=product.Product_name%></h4>
                             <p class="product-price">$<%=product.Product_price%></p>
                             <div class="product-buttons">
-                                <a class="product-btn" href="#">Buy Now</a>
+                                <!-- <a class="product-btn" href="#">Buy Now</a> -->
                                 <button class="product-btn add-to-cart-btn" data-product-id="<%= product._id %>" data-product-name="<%= product.Product_name %>" data-product-price="<%= product.Product_price %>">Add to Cart</button>
-                                <a class="product-btn try-now-btn" href="#">Try Now</a>
+                                <a class="product-btn try-now-btn1" href="#">Try Now</a>
                                 <span class="heart-icon">&#x2764;</span>
                             </div>
                         </div>
@@ -160,7 +202,7 @@
     
     
     
-    <script src="/script.js"></script>
+    <script src="/scriptnew.js"></script>
 </body>
 
 </html>

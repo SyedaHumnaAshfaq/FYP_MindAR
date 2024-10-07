@@ -1792,22 +1792,22 @@ footer {
   transition: all 0.3s;
 }
 
-.product a:link,
+/* .product a:link,
 .product a:visited {
   color: #ececec;
   display: inline-block;
   text-decoration: none;
-  background-color: #2c3e50;
+  background-color: #a6afb8;
   padding: 0.6rem 1rem;
-  /* Adjusted padding */
+  
   border-radius: 1rem;
   margin-top: 1rem;
   font-size: 14px;
-  /* Adjusted font size */
+  
   transition: all 0.2s;
   white-space: nowrap;
-  /* Prevent text from wrapping */
-}
+  
+} */
 
 .product a:hover {
   transform: scale(1.1);
@@ -1845,37 +1845,46 @@ footer {
   align-items: center;
   margin-top: 1rem;
 }
-
+/* Base styling for product buttons */
 .product-btn {
-  padding: 0.8rem 2rem;
-  /* Reduced padding */
-  /* width: 19px; */
-  /* height: 3px; */
-  background-color: #2c3e50;
-  font-size: 2px;
-  color: white;
-  text-decoration: none;
-  border-radius: 1rem;
-  transition: background-color 0.3s;
-  margin-right: 0.5rem;
-  /* Adjust spacing between buttons */
-  font-size: 12px;
-  /* Reduced font size */
+  display: inline-block; /* Ensures buttons stay inline and respect padding */
+  padding: 10px 20px; /* Padding for spacing within buttons */
+  font-size: 13px; /* Font size for the button text */
+  font-weight: bold; /* Bold text for emphasis */
+  border: none; /* No border for a cleaner look */
+  border-radius: 5px; /* Rounded corners for a modern touch */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underline from anchor tags */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition on hover */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  margin: 10px; /* Margin for spacing between buttons */
+  width: 120px; /* Fixed width for uniform size */
 }
 
+/* Specific styles for "Add to Cart" button */
+.add-to-cart-btn {
+  background-color: #28a745; /* Green background for Add to Cart */
+  color: white; /* White text color */
+}
+
+/* Specific styles for "Try Now" button */
+.try-now-btn1{
+  background-color: #a5aab0; /* Blue background for Try Now */
+  color: white; /* White text color */
+}
+
+/* Hover effects */
 .product-btn:hover {
-  background-color: #555;
-  transform: scale(1.1);
-  /* Keep the scaling effect */
+  opacity: 0.9; /* Slightly transparent on hover for effect */
 }
 
-.try-now-btn {
-  background-color: #0073e6;
+/* Focus styles for accessibility */
+.product-btn:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Outline on focus for better accessibility */
 }
 
-.try-now-btn:hover {
-  background-color: #005bb5;
-}
+
 
 .heart-icon {
   font-size: 1.5em;

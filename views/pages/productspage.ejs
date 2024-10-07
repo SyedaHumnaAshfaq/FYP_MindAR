@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products | Adorn Ease</title>
+    <link rel="stylesheet" href="stylenew.css">
+    <script src="scriptnew.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+          <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+          <div class="center-content">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#about">ADORN EASE</a>
+            <a href="#collection">Collection</a>
+            <a href="#contact">Contact Us</a>
+          </div>
+          <div class="right-content">
+            <div class="dropdown">
+              <a href="#" class="dropbtn">
+                <img src="images/icons8-male-user-50.png" alt="Account" />
+              </a>
+              <div class="dropdown-content">
+                <a href="/SignUp">Sign Up</a>
+                <a href="/login">Login</a>
+              </div>
+            </div>
+            <img src="images/icons8-purchase-order-30.png" alt="Account" />
+            <img src="images/icons8-cart-50.png" alt="Account" />
+          </div>
+        </nav>
+  
+        <div id="sidebar" class="sidebar">
+          <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()"
+            >&times;</a
+          >
+          <div class="sidebar-item"><a href="#earrings">Earrings</a></div>
+          <div class="sidebar-item"><a href="#glasses">Glasses</a></div>
+          <div class="sidebar-item"><a href="#nosepins">Nosepins</a></div>
+          <div class="sidebar-item"><a href="#new-arrivals">New Arrivals</a></div>
+          <div class="sidebar-item"><a href="#best-sellers">Best Sellers</a></div>
+          <div class="sidebar-item"><a href="#sales">Sales</a></div>
+          <div class="sidebar-item"><a href="#account">My Account</a></div>
+          <div class="sidebar-item"><a href="#wishlist">Wishlist</a></div>
+          <div class="sidebar-item">
+            <a href="#order-history">Order History</a>
+          </div>
+          <div class="sidebar-item"><a href="#support">Customer Support</a></div>
+        </div>
+      </header>
+
+    <!-- Slim Image Carousel -->
+    <section class="carousel">
+        <div class="carousel-slide">
+            <img src="images/d1.jpeg" alt="Carousel Image 1">
+            <!-- <img src="images/b3.jpg" alt="Carousel Image 2">
+            <img src="images/b4.jpg" alt="Carousel Image 3">
+            <img src="images/b1.jpg" alt="Carousel Image 1"> -->
+            
+
+        </div>
+    </section>
+
+    <!-- Products Title -->
+    <h1 class="products-title">PRODUCTS</h1>
+
+    <!-- Filter and Sort Section -->
+    <section class="filter-sort">
+        <div class="filter-dropdown">
+            <label for="filter">Filter By:</label>
+            <select id="filter">
+                <option value="all">All</option>
+                <option value="rings">Rings</option>
+                <option value="earrings">Earrings</option>
+                <option value="necklaces">Necklaces</option>
+            </select>
+        </div>
+        <div class="sort-dropdown">
+            <label for="sort">Sort By:</label>
+            <select id="sort">
+                <option value="default">Default</option>
+                <option value="price-low-high">Price: Low to High</option>
+                <option value="price-high-low">Price: High to Low</option>
+                <option value="new-arrivals">New Arrivals</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-grid">
+        <div class="product-card">
+            <img src="images/sung.png" alt="Product 1">
+            <div class="product-info">
+                <h3>Gold Necklace</h3>
+                <p>$350</p>
+                <div class="product-actions">
+                    <button class="quick-view">Quick View</button>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <span class="wishlist-icon">❤️</span>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="images/sung2.png" alt="Product 2">
+            <div class="product-info">
+                <h3>Diamond Earrings</h3>
+                <p>$450</p>
+                <div class="product-actions">
+                    <button class="quick-view">Quick View</button>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <span class="wishlist-icon">❤️</span>
+                </div>
+            </div>
+        </div>
+        <!-- Add more product cards as needed -->
+        <div class="product-card">
+            <img src="images/e1.png" alt="Product 2">
+            <div class="product-info">
+                <h3>Diamond Earrings</h3>
+                <p>$450</p>
+                <div class="product-actions">
+                    <button class="quick-view">Quick View</button>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <span class="wishlist-icon">❤️</span>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="images/nosepin.png" alt="Product 2">
+            <div class="product-info">
+                <h3>Diamond Earrings</h3>
+                <p>$450</p>
+                <div class="product-actions">
+                    <button class="quick-view">Quick View</button>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <span class="wishlist-icon">❤️</span>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="images/nosepin1.png" alt="Product 2">
+            <div class="product-info">
+                <h3>Diamond Earrings</h3>
+                <p>$450</p>
+                <div class="product-actions">
+                    <button class="quick-view">Quick View</button>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <span class="wishlist-icon">❤️</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

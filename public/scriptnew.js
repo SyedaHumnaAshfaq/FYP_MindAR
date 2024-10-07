@@ -186,3 +186,43 @@ function toggleSidebar() {
 //     }
 //   });
   
+
+// for favourites section
+document.addEventListener('DOMContentLoaded', () => {
+    const removeButtons = document.querySelectorAll('.remove-btn');
+    
+    removeButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const item = e.target.closest('.wishlist-item');
+            item.remove();
+            alert('Item removed from wishlist.');
+        });
+    });
+
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+    
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            alert('Item added to cart!');
+        });
+    });
+});
+
+
+// new productspage
+document.addEventListener('DOMContentLoaded', () => {
+    const quickViewButtons = document.querySelectorAll('.quick-view');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+    quickViewButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            alert('Quick view of the product.');
+        });
+    });
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            alert('Product added to cart.');
+        });
+    });
+});

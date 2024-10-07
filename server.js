@@ -102,8 +102,18 @@ app.get('/VirtualTryOn', (req, res) => {
 app.get('/adminHomePage',isAuthenticated,isAdmin, (req, res) => { 
   res.render('pages/adminHomePage'); // Render the about.ejs file in the pages folder
 });
+app.get('/products',isAuthenticated,isAdmin, (req, res) => { 
+  res.render('pages/products'); // Render the about.ejs file in the pages folder
+});
 app.get('/productsAdmin', (req, res) => {
   res.render('pages/productsAdmin'); // Render the homepage.ejs file in the pages folder
+});
+
+app.get('/favourites', (req, res) => {
+  res.render('pages/favourites'); // Render the homepage.ejs file in the pages folder
+});
+app.get('/productspage', (req, res) => {
+  res.render('pages/productspage'); // Render the homepage.ejs file in the pages folder
 });
 
 app.listen(PORT, () => {
