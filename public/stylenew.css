@@ -220,7 +220,8 @@ main {
     justify-content: center;
     align-items: center;
     position: relative;
-    background-image: url('images/b1.jpg');
+    /* background-image: url('images/b1.jpg'); */
+    background-image: url('images/m6.jpeg');
     /* overflow: hidden; */
 }
 
@@ -285,7 +286,8 @@ main {
     position: relative;
     /* border-top: 2px solid black; */
     /* background-color: aqua; */
-    background-image: url('images/b6.jpg');
+    /* background-image: url('images/b6.jpg'); */
+    background-image: url('images/m10.jpeg');
 }
 
 .text-left {
@@ -358,7 +360,8 @@ main {
     /* margin-top: 65px; */
     background: #a28383;
     position: relative;
-    background-image: url('images/b12.jpg');
+    /* background-image: url('images/b12.jpg'); */
+    background-image: url('images/m5.jpeg');
     height: 100vh;
     padding-right: 25px;
    
@@ -517,7 +520,8 @@ main {
     /* background: #f0e5de; */
     position: relative;
     height: 450px; /* Adjust based on your design */
-    background-image: url('images/b10.jpg');
+    /* background-image: url('images/b10.jpg'); */
+    background-image: url('images/m15.jpeg');
     margin: 0px;
    
 }
@@ -628,7 +632,8 @@ main {
     margin-top: 0px;
     position: relative;
     height: 50vh;
-    background-image: url('images/b11.jpg');
+    /* background-image: url('images/b11.jpg'); */
+    background-image: url('images/m13.jpeg');
     overflow: hidden;
   }
   
@@ -697,6 +702,7 @@ main {
 .footer {
     /* background-color:rgb(9, 37, 50); */
     background-image: url('images/b2.jpg');
+    /* background-image: url('images/m8.jpeg'); */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
