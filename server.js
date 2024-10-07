@@ -11,13 +11,7 @@ const cartRoutes = require('./routes/cartRoutes');
 const customerRoutes = require('./routes/customerRoutes');
 const cookieParser = require('cookie-parser');
 const { assignCartId } = require('./middlewares/cartMiddleware');
-const { isAdmin, isAuthenticated } = require('./middlewares/authAdminMiddleware');
-
-//multer
-const multer = require('multer');
-const multerS3 = require('multer-s3');
-require('dotenv').config();
-
+const { isAdmin,isAuthenticated } = require('./middlewares/authAdminMiddleware');
 
 connectDB();
 
@@ -36,42 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(assignCartId);
 
-//AWS S3
-const AWS = require('aws-sdk');
 
-const s3 = new AWS.S3({
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  region: "ap-southeast-2"
-});
-
-// multer
-const upload = multer({
-  storage: multerS3({
-    s3: s3,
-    bucket: 'your-bucket-name', // Replace with your bucket name
-    acl: 'public-read', // Allows the file to be publicly accessible
-    metadata: (req, file, cb) => {
-      cb(null, { fieldName: file.fieldname });
-    },
-    key: (req, file, cb) => {
-      cb(null, `${Date.now().toString()}-${file.originalname}`); // Save the file with a unique name
-    }
-  })
-});
-
-//multer file upload
-app.post('/upload', upload.single('file'), (req, res) => {
-  try {
-    const fileUrl = req.file.location; // Get the S3 URL of the uploaded file
-    res.json({ fileUrl });
-  } catch (error) {
-    res.status(500).json({ error: 'File upload failed', details: error.message });
-  }
-});
-
-
-// Routes
 app.use('/api/auth', userRoutes);
 app.use('/', productRoutes);
 app.use('/', cartRoutes);
@@ -79,7 +38,6 @@ app.use('/', orderRoutes);
 app.use('/', customerRoutes);
 // Set the path to your views directory
 app.set('views', path.join(__dirname, 'views'));
-
 
 app.get('/', (req, res) => {
   res.render('pages/AdornHomePage.ejs'); // Render the homepage.ejs file in the pages folder
