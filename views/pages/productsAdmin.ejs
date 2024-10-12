@@ -1,7 +1,7 @@
 <h2 id="Ordersh2">Products</h2>
 <div class="filters" class="add-product"><button class=" filter-divs reset add-product">Add Product</button></div>
 <div id="productFormContainer" class="product-form-container">
-    <form id="addProductForm">
+    <form id="addProductForm"  action="/products/add" method="POST" enctype="multipart/form-data">
         <h2>Add Product</h2>
         <label for="productName">Product Name:</label>
         <input type="text" id="productName" name="Product_name" required>

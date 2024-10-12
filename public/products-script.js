@@ -228,8 +228,13 @@ $(document).ready(function () {
         e.preventDefault();
 
         // Add your form submission logic here
-        const formData = $(this).serialize();
-        console.log(formData);
+        // const formData = $(this).serialize();
+        // console.log(formData);
+        const formData = new FormData(document.getElementById('addProductForm'));
+        // console.log(formData);
+        for (let [key, value] of formData.entries()) {
+            console.log(`${key}:`, value);
+        }
         const productId = $('#addProductForm').data('product-id');
         const isUpdate = Boolean(productId);
         console.log(isUpdate);
@@ -241,6 +246,8 @@ $(document).ready(function () {
                 url: '/products/update/' + productId,
                 type: 'PUT',
                 data: formData,
+                contentType: false,  // Important: do not set content-type, let jQuery handle it
+                processData: false, // Important: do not process the data, let jQuery handle it
                 success: function (response) {
                     if (response.success) {
                         alert('Product updated successfully!');
@@ -258,6 +265,8 @@ $(document).ready(function () {
                 url: '/products/add',
                 type: 'POST',
                 data: formData,
+                contentType: false,  // Important: do not set content-type, let jQuery handle it
+                processData: false, // Important: do not process the data, let jQuery handle it
                 success: function (response) {
                     if (response.success) {
                         alert('Product added successfully!');

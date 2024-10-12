@@ -1,4 +1,5 @@
 const Product = require('../mongo_models/ProductSchema');
+const {uploadToS3} = require('../s3');    
 
 const getProductsforAdmin = async (req, res) => {
     const products = await Product.find({});
@@ -36,8 +37,9 @@ const updatePublishStatus = async (req, res) => {
     }
 };
 const addProduct = async (req, res) => { 
-    const { Product_name, Product_price, Product_image_url, Product_description, Product_category, Product_stock, Product_rating, Product_model_url } = req.body;
-    // const is_Published = req.body.is_Published ? true : false;
+    const { Product_name, Product_price, Product_description, Product_category, Product_stock, Product_rating } = req.body;
+    const Product_image_url = await uploadToS3(req.files['Product_image'][0], 'images');
+    const Product_model_url = await uploadToS3(req.files['Product_model_file'][0], 'models');
 
     try {
         const newProduct = new Product({ Product_name, Product_price, Product_image_url, Product_description, Product_category, Product_stock, Product_rating, Product_model_url});
