@@ -21,7 +21,7 @@ header {
     /* background-image: url("images/bgnav.jpg"); */
     color: rgb(0, 0, 0);
     text-align: center;
-    padding: 10px 0;
+    padding: 1px 0;
     z-index: 1000;
     background-color:rgb(60, 42, 33);
 }
@@ -880,15 +880,23 @@ img {
 .right-content {
     display: flex;
     align-items: center;
+    color: wheat;
 }
 
 .dropdown {
     position: relative;
+    
 }
+
 
 .dropbtn {
     display: inline-block;
     color: white;
+    
+}
+.dropbtn img{
+    width: 35px;
+    height: 35px;
 }
 
 .dropdown-content {
@@ -899,9 +907,12 @@ img {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-
+.icons1{
+    width: 35px;
+    height: 35px;
+}
 .dropdown-content a {
-    color: black;
+    color: rgb(0, 0, 0);
     padding: 12px 16px;
     display: block;
 }
