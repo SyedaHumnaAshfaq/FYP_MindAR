@@ -83,7 +83,9 @@ app.get('/favourites', (req, res) => {
 app.get('/productspage', (req, res) => {
   res.render('pages/productspage'); // Render the homepage.ejs file in the pages folder
 });
-
+app.get('/VTOAdmin', (req, res) => {
+  res.render('pages/VTOAdmin'); // Render the homepage.ejs file in the pages folder
+});
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

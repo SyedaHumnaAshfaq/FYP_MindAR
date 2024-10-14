@@ -226,10 +226,6 @@ $(document).ready(function () {
     // Handle form submission
     $('#addProductForm').on('submit', function (e) {
         e.preventDefault();
-
-        // Add your form submission logic here
-        // const formData = $(this).serialize();
-        // console.log(formData);
         const formData = new FormData(document.getElementById('addProductForm'));
         // console.log(formData);
         for (let [key, value] of formData.entries()) {
@@ -238,8 +234,6 @@ $(document).ready(function () {
         const productId = $('#addProductForm').data('product-id');
         const isUpdate = Boolean(productId);
         console.log(isUpdate);
-
-
 
         if (isUpdate) {
             $.ajax({
@@ -269,8 +263,10 @@ $(document).ready(function () {
                 processData: false, // Important: do not process the data, let jQuery handle it
                 success: function (response) {
                     if (response.success) {
-                        alert('Product added successfully!');
+                        // alert('Product added successfully!');
                         refreshTable();
+                        window.location.href = `/VTOAdmin?modelUrl=${encodeURIComponent(response.modelUrl)}`;
+
                         $('#productFormContainer').css('left', '-100%'); // Slide out after successful submission
 
                     } else {

@@ -540,4 +540,6 @@ $(document).ready(function () {
     $('.main-content').load('/dashboard', function () {
         loadScript('/dashboard-script.js');
     });
+
+
 });

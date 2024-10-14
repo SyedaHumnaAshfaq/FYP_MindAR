@@ -1,0 +1,47 @@
+<html>
+
+</html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="Ayeshastylesvt.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-face-aframe.prod.js"></script>
+</head>
+
+<body>
+    <div class="example-container">
+
+
+        <a-scene mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights"
+            vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false"
+            mindar-image="filterMinCF:0.00001; filterBeta: 1500">
+            <a-assets>
+                <a-asset-item id="headModel"
+                    src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/sparkar/headOccluder.glb"></a-asset-item>
+                <a-asset-item id="noseOccluder"
+                    src="https://raw.githubusercontent.com/SyedaHumnaAshfaq/FYP_MindAR/main/models/occluders/noseoccluder.glb"></a-asset-item>
+
+            </a-assets>
+            <a-camera active="false" position="0 0 0"></a-camera>
+            <a-entity mindar-face-target="anchorIndex: 168">
+                <a-gltf-model mindar-face-occluder position="0 -0.3 0.15" rotation="0 0 0" scale="0.060 0.060 0.060"
+                    src="#headModel"></a-gltf-model>
+            </a-entity>
+            <a-entity mindar-face-target="anchorIndex: 1">
+                <a-gltf-model mindar-face-occluder scale="0.02 0.02 0.02 " rotation="-90 0 0" position="0 -0.02 -0.05"
+                    src="#noseOccluder"></a-gltf-model>
+            </a-entity>
+            <!-- earings -->
+            <a-entity id="earringEntity" mindar-face-target="anchorIndex: 127">
+                <a-gltf-model id="earringModel" rotation="0 -15 0" position="-0.02 -0.43 -0.1" scale="0.07 0.07 0.07"
+                    visible="false" src="">
+                </a-gltf-model>
+            </a-entity>
+        </a-scene>
+    </div>
+</body>
+<script src="scriptVTOAdmin.js"></script>
+
+</html>
