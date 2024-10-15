@@ -76,6 +76,9 @@ app.get('/products',isAuthenticated,isAdmin, (req, res) => {
 app.get('/productsAdmin', (req, res) => {
   res.render('pages/productsAdmin'); // Render the homepage.ejs file in the pages folder
 });
+app.get('/products2', (req, res) => {
+  res.render('pages/products2'); // Render the homepage.ejs file in the pages folder
+});
 
 app.get('/favourites', (req, res) => {
   res.render('pages/favourites'); // Render the homepage.ejs file in the pages folder
