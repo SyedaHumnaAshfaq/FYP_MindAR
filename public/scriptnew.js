@@ -204,6 +204,8 @@ document.addEventListener('DOMContentLoaded', () => {
     addToCartButtons.forEach(button => {
         button.addEventListener('click', () => {
             alert('Item added to cart!');
+
+
         });
     });
 });
@@ -212,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // new productspage
 document.addEventListener('DOMContentLoaded', () => {
     const quickViewButtons = document.querySelectorAll('.quick-view');
-    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    // const addToCartButtons = document.querySelectorAll('.add-to-cart');
 
     quickViewButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -220,11 +222,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            alert('Product added to cart.');
-        });
-    });
+    // addToCartButtons.forEach(button => {
+    //     button.addEventListener('click', () => {
+    //         alert('Product added to cart.');
+    //     });
+    // });
     var nextBtn = document.querySelector('.next'),
     prevBtn = document.querySelector('.prev'),
     carousel = document.querySelector('.carousel'),

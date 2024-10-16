@@ -5,8 +5,8 @@ const productAdminController = require('../controllers/productAdminController');
 const {upload} = require('../s3');
 
 
-router.get('/products', productController.getAllProducts);
-router.get('/products/:category', productController.getProductsbyCategory);
+router.get('/productspage', productController.getAllProducts);
+router.get('/productspage/:category', productController.getProductsbyCategory);
 router.get('/productsAdmin', productAdminController.getProductsforAdmin);
 router.delete('/products/delete/:id', productAdminController.deleteProduct);
 router.post('/products/update-publish-status/:id', productAdminController.updatePublishStatus);

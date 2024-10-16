@@ -215,7 +215,16 @@ document.addEventListener('DOMContentLoaded', () => {
     //     });
     // });
 
+    document.getElementById('filter').addEventListener('change', function() {
+        const selectedCategory = this.value;
+      
+        if (selectedCategory === 'all') {
+            window.location.href = '/productspage';
+        } else {
 
+            window.location.href = `/productspage/${selectedCategory}`;
+        }
+    });
 
 });
 
