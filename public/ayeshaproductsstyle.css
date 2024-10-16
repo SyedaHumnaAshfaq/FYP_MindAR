@@ -403,10 +403,10 @@ img {
   }
   
   /* Specific styles for "Add to Cart" button */
-  .add-to-cart-btn {
-    background-color: #28a745; /* Green background for Add to Cart */
-    color: white; /* White text color */
-  }
+  /* .add-to-cart-btn { */
+    /* background-color: #28a745;  */
+    /* color: white;  */
+  /* } */
   
   /* Specific styles for "Try Now" button */
   .try-now-btn1{
