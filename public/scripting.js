@@ -1,4 +1,7 @@
 
+
+//not for virtual try on
+
 document.addEventListener("DOMContentLoaded", function () {
     const list = ["earring", "earring1","earring2","earring3","nosepin","glasses"];
     const visibles = [false, true];
