@@ -226,6 +226,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    window.addEventListener('DOMContentLoaded', function() {
+        const filterDropdown = document.getElementById('filter');
+        
+        // Get the current URL path
+        const path = window.location.pathname;
+        
+        // Extract the category from the URL (after "/productspage/")
+        const category = path.split('/productspage/')[1]; // Undefined if it's 'all'
+        
+        // Set the dropdown value based on the current URL
+        if (category) {
+            filterDropdown.value = category; // Set the dropdown to the selected category
+        } else {
+            filterDropdown.value = 'all'; // Set to 'all' if no specific category is in the URL
+        }
+    });
+    
+
 });
 
 document.addEventListener('DOMContentLoaded', () => {
