@@ -995,7 +995,7 @@ img {
 
 
   /* favourites page */
-  .wishlist-header {
+  /* .wishlist-header {
     text-align: center;
     padding: 20px;
     background-color: #faf4f0;
@@ -1087,7 +1087,7 @@ button {
 
 .add-to-cart-btn:hover {
     background-color: #d4a017;
-}
+} */
 
    /* favourites page */
 
@@ -1578,17 +1578,18 @@ button {
   /* login page new styles */
   
   /* login new */
-  .login-body {
+  /* .login-body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     padding: 20px;
-    background-color: rgb(158, 149, 144);
+    
+    background: linear-gradient(90deg, #b1a698 60%, #e7dfd4 40.1%);
 }
 
 .login-container {
-    /* background-color: rgb(255, 255, 255); */
+   
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: row;
@@ -1619,7 +1620,7 @@ button {
 }
 
 .login-right img {
-    /* max-width: 100%; */
+   
     width: 420px;
     height: 500px;
     border-top-right-radius: 2px;
@@ -1645,7 +1646,7 @@ h2 {
 .input-box input {
     width: 95%;
     padding: 10px;
-    /* background: #fff; */
+   
     background: rgba(255, 255, 255, 0.2);
     border: 2px solid #757575;
     border-radius: 2px;
@@ -1655,7 +1656,7 @@ h2 {
 }
 
 .input-box input:focus {
-    /* border-color: #7f8c8d; */
+   
     background: rgba(255, 255, 255, 0.2);
 }
 
@@ -1663,8 +1664,7 @@ h2 {
     position: absolute;
     top: -15px;
     left: 3px;
-    /* background: white; */
-    /* background: rgba(255, 255, 255, 0.2); */
+  
     padding: 0 5px;
     font-size: 14px;
     color: #000000;
@@ -1708,7 +1708,7 @@ button.loginbutton:hover {
   text-decoration: underline;
 }
 
-/* Responsive Design */
+
 @media (max-width: 500px) {
     .login-container {
         flex-direction: column;
@@ -1738,7 +1738,7 @@ button.loginbutton:hover {
 
       font-size: 1em;
     }
-}
+} */
 
 
 /* track order */
@@ -1787,45 +1787,6 @@ button.loginbutton:hover {
     background-color: #FFF2E1;
 
 }
-
-/* Top Bar */
-/* .top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #eaeaea;
-    border-radius: 8px;
-    margin-bottom: 30px;
-}
-
-.top-bar h2 {
-    margin: 0;
-}
-
-.search-bar {
-    display: flex;
-}
-
-.search-bar input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-    width: 200px;
-}
-
-.search-bar button {
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-}
-
-.search-bar button:hover {
-    background-color: #555;
-} */
 
 /* Order Details */
 .order-details {
@@ -2023,5 +1984,417 @@ button.loginbutton:hover {
     .search-bar button {
         width: 100px;
         border-radius: 4px;
+    }
+}
+
+
+/* wishlist */
+/* Basic reset */
+.wishlistbody{
+    /* background-color: #ddcfbc; */
+    background: linear-gradient(90deg, #b1a698 60%, #e7dfd4 40.1%);
+}
+
+/* Styling for wishlist container */
+.wishlist-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.wishlist-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Header styling */
+.wishlist-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-weight: bold;
+    color: #555;
+    border-bottom: 2px solid #ddd;
+}
+
+.wishlist-column {
+    flex: 1;
+    text-align: center;
+}
+
+/* Wishlist items */
+.wishlist-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.wishlist-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.wishlist-item span {
+    vertical-align: middle;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.add-to-cart-btn, .remove-btn {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn {
+    background-color: black;
+    color: white;
+    margin-right: 10px;
+}
+
+.remove-btn {
+    /* background-color: #f44336; */
+    color: rgb(0, 0, 0);
+}
+
+.add-to-cart-btn:hover {
+    background-color: #45a049;
+}
+
+.remove-btn:hover {
+    background-color: #e53935;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wishlist-header, .wishlist-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .wishlist-column {
+        margin-bottom: 10px;
+    }
+
+    .wishlist-item img {
+        margin-bottom: 10px;
+    }
+
+    .add-to-cart-btn, .remove-btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+.back-arrow {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #555;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.back-arrow:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+
+/* signup page */
+/* General Body Styling */
+.signup-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(90deg, #b1a698 60%, #e7dfd4 40.1%);
+    /* background-color: rgb(240, 240, 240); */
+}
+
+/* Container for Signup */
+.signup-container {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Left Section (Form Side) */
+.signup-left {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Input Styling */
+.input-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-box input:focus {
+    border-color: #3498db;
+    background: #fff;
+}
+
+.input-box label {
+    position: absolute;
+    top: -12px;
+    left: 10px;
+    background-color: white;
+    font-size: 14px;
+    padding: 0 5px;
+    color: #555;
+}
+
+/* Signup Button Styling */
+button.signupbutton {
+    width: 100%;
+    background-color: #000000;
+    border: none;
+    padding: 12px 0;
+    font-size: 16px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.signupbutton:hover {
+    background-color: #1c6690;
+}
+
+/* Text Link for Existing Users */
+.already-account {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.already-account a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.already-account a:hover {
+    text-decoration: underline;
+}
+
+/* Right Section (Image Side) */
+.signup-right {
+    flex: 1;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-right img {
+    max-width: 100%;
+    height: auto;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .signup-container {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .signup-right {
+        display: none; /* Hide image on small screens */
+    }
+
+    .signup-left {
+        padding: 20px;
+    }
+}
+
+
+/* login */
+/* General Body Styling */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(90deg, #b1a698 60%, #e7dfd4 40.1%);
+    /* background-color: rgb(240, 240, 240); */
+}
+
+/* Container for Login */
+.login-container {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Left Section (Form Side) */
+.login-left {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Input Styling */
+.input-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-box input:focus {
+    border-color: #000000;
+    background: #fff;
+}
+
+.input-box label {
+    position: absolute;
+    top: -12px;
+    left: 10px;
+    background-color: white;
+    font-size: 14px;
+    padding: 0 5px;
+    color: #555;
+}
+
+/* Login Button Styling */
+button.loginbutton {
+    width: 100%;
+    background-color: #000000;
+    border: none;
+    padding: 12px 0;
+    font-size: 16px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.loginbutton:hover {
+    background-color: #1c6690;
+}
+
+/* Text Link for Sign-Up */
+.sign-up {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.sign-up a {
+    color: #191b1c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sign-up a:hover {
+    text-decoration: underline;
+}
+
+/* Right Section (Image Side) */
+.login-right {
+    flex: 1;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-right img {
+    max-width: 100%;
+    height: auto;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .login-right {
+        display: none; /* Hide image on small screens */
+    }
+
+    .login-left {
+        padding: 20px;
     }
 }
