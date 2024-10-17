@@ -70,3 +70,15 @@ body {
     scrollbar-width: none;
 }
 
+/* VTOAdmin styles by Humna  */
+.VTOAdmindiv{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.VTOAdmincontrols{
+    position: absolute;
+    padding: 10px;
+    border: 2px solid #f1f1f1;
+    margin: 10px;
+}

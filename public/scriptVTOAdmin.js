@@ -42,3 +42,53 @@ $(document).ready(function() {
     // Set mindar-face-target on a-entity (if not already set)
     // $('#earringEntity').attr('mindar-face-target', 'anchorIndex: 127');
 });
+
+$(document).ready(function () {
+    // Left earring controls
+    $('#left-rotation-x, #left-rotation-y, #left-rotation-z').on('input', function () {
+      const rotationX = $('#left-rotation-x').val();
+      const rotationY = $('#left-rotation-y').val();
+      const rotationZ = $('#left-rotation-z').val();
+      $('#earringEntityleft').attr('rotation', `${rotationX} ${rotationY} ${rotationZ}`);
+    });
+  
+    $('#left-position-x, #left-position-y, #left-position-z').on('input', function () {
+      const positionX = $('#left-position-x').val();
+      const positionY = $('#left-position-y').val();
+      const positionZ = $('#left-position-z').val();
+      $('#earringEntityleft').attr('position', `${positionX} ${positionY} ${positionZ}`);
+    });
+  
+    $('#left-scale').on('input', function () {
+      const scale = $('#left-scale').val();
+      $('#earringEntityleft').attr('scale', `${scale} ${scale} ${scale}`);
+    });
+  
+    // Right earring controls
+    $('#right-rotation-x, #right-rotation-y, #right-rotation-z').on('input', function () {
+      const rotationX = $('#right-rotation-x').val();
+      const rotationY = $('#right-rotation-y').val();
+      const rotationZ = $('#right-rotation-z').val();
+      $('#earringEntityright').attr('rotation', `${rotationX} ${rotationY} ${rotationZ}`);
+    });
+  
+    $('#right-position-x, #right-position-y, #right-position-z').on('input', function () {
+      const positionX = $('#right-position-x').val();
+      const positionY = $('#right-position-y').val();
+      const positionZ = $('#right-position-z').val();
+      $('#earringEntityright').attr('position', `${positionX} ${positionY} ${positionZ}`);
+    });
+  
+    $('#right-scale').on('input', function () {
+      const scale = $('#right-scale').val();
+      $('#earringEntityright').attr('scale', `${scale} ${scale} ${scale}`);
+    });
+
+    $('#scale-slider').on('input', function() {
+        var scaleValue = $(this).val();
+        $('#earringEntityleft').attr('scale', `${scaleValue} ${scaleValue} ${scaleValue}`);
+        $('#earringEntityright').attr('scale', `${scaleValue} ${scaleValue} ${scaleValue}`);
+    });
+    
+  });
+  
