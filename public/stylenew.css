@@ -1739,3 +1739,289 @@ button.loginbutton:hover {
       font-size: 1em;
     }
 }
+
+
+/* track order */
+.containertrack {
+    display: flex;
+    min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Left Column: Menu */
+.left-column {
+    width: 10%;
+    /* background-color: #333; */
+    background-color: #543310;
+    padding: 20px;
+    color: white;
+}
+
+.menu {
+    list-style-type: none;
+}
+
+.menu li {
+    margin-bottom: 20px;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    /* border: 2px solid wheat; */
+    padding: 30px;
+}
+
+.menu li a:hover {
+    text-decoration: underline;
+}
+
+/* Middle Column */
+.middle-column {
+    width: 80%;
+    padding: 40px;
+    /* border-radius: 12px; */
+    /* border: 2px solid black; */
+    background-color: #FFF2E1;
+
+}
+
+/* Top Bar */
+/* .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #eaeaea;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.top-bar h2 {
+    margin: 0;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-bar input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    width: 200px;
+}
+
+.search-bar button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #555;
+} */
+
+/* Order Details */
+.order-details {
+    padding: 20px;
+    background-color: #F3EEEA;
+    border-radius: 18px;
+    border: 2px solid rgb(138, 134, 134);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-details h3 {
+    margin-bottom: 20px;
+}
+
+/* Order Status */
+.order-status {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.status-box {
+    background-color: #D1BB9E;
+    padding: 20px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    flex: 1;
+    margin: 0 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border: 2px solid #000;
+}
+
+.status-box:hover {
+    transform: scale(1.05);
+    background-color: #835e42;
+}
+
+/* Shipping Address */
+.shipping-address {
+    margin-bottom: 20px;
+}
+
+.shipping-address h4 {
+    margin-bottom: 10px;
+}
+
+.shipping-address p {
+    font-size: 16px;
+}
+
+/* Order Summary */
+.order-summary h4 {
+    margin-bottom: 10px;
+}
+
+.order-summary ul {
+    list-style-type: none;
+}
+
+.order-summary li {
+    padding: 10px 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.order-summary li img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+/* Pop-up Box */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+    width: 300px;
+    height: 200px;
+    max-width: 100%;
+}
+
+.popup-content {
+    padding: 20px;
+}
+
+.popup-content .close {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.popup-content p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .containertrack {
+        flex-direction: column;
+    }
+
+    .left-column {
+        width: 100%;
+    }
+
+    .middle-column {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .order-status {
+        flex-direction: column;
+    }
+
+    .status-box {
+        margin-bottom: 10px;
+    }
+}
+/* Top Bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #D1BB9E;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.top-bar h2 {
+    margin: 0;
+    flex: 1;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.search-bar input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    width: 250px;
+    max-width: 100%;
+    transition: all 0.3s ease;
+}
+
+.search-bar button {
+    padding: 10px;
+    /* background-color: #333; */
+    background-color: #543310;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #555;
+}
+
+/* Responsive Design for Search Bar */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-bar {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .search-bar input {
+        width: calc(100% - 110px); /* Adjust width based on button size */
+    }
+
+    .search-bar button {
+        width: 100px;
+        border-radius: 4px;
+    }
+}

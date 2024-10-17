@@ -289,3 +289,25 @@ function showSlider(type) {
 // Start the initial animation 
 resetTimeAnimation()
 });
+
+//for tracking order page
+// JavaScript to handle pop-up functionality
+document.querySelectorAll('.status-box').forEach(box => {
+    box.addEventListener('click', function() {
+        const popup = document.getElementById('popup');
+        const popupText = document.getElementById('popup-text');
+        popupText.textContent = `Details for: ${this.dataset.status}`;
+        popup.style.display = 'block';
+    });
+});
+
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('popup').style.display = 'none';
+});
+
+window.addEventListener('click', function(e) {
+    const popup = document.getElementById('popup');
+    if (e.target == popup) {
+        popup.style.display = 'none';
+    }
+});
