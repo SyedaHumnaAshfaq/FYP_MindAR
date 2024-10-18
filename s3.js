@@ -32,18 +32,5 @@ const uploadToS3 = async (file, folder) => {
         throw new Error('Failed to upload file to S3: ' + error.message);
     }
 };
-// const upload = multer({ storage: storage });
-
-// Set up Multer to use S3 for file storage
-// const upload = multer({
-//     storage: multerS3({
-//         s3: s3,
-//         bucket: 'jewellerymodelsandimages',  // Your bucket name
-//         acl: 'public-read',  // Make uploaded files publicly accessible
-//         key: function (req, file, cb) {
-//             cb(null, Date.now().toString() + '-' + file.originalname);  // File name format
-//         }
-//     })
-// });
 
 module.exports = {upload,uploadToS3};

@@ -44,13 +44,15 @@ const addProduct = async (req, res) => {
     try {
         const newProduct = new Product({ Product_name, Product_price, Product_image_url, Product_description, Product_category, Product_stock, Product_rating, Product_model_url});
         await newProduct.save();
-        res.json({ success: true, modelUrl: Product_model_url });
+        console.log(newProduct._id);
+        res.json({ success: true, modelUrl: Product_model_url, product_id: newProduct._id });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
     
 
 };
+
 const getProductById = async (req, res) => {
     // console.log(req.params.id);
     const productId = req.params.id;
