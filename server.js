@@ -55,6 +55,9 @@ app.get('/customers', (req, res) => {
 app.get('/orders', (req, res) => { 
   res.render('pages/orders'); // Render the about.ejs file in the pages folder
 });
+app.get('/trackorder', (req, res) => { 
+  res.render('pages/trackorder'); // Render the about.ejs file in the pages folder
+});
 
 app.get('/SignUp', (req, res) => {
   res.render('pages/SignUp'); // Render the homepage.ejs file in the pages folder
@@ -75,6 +78,9 @@ app.get('/adminHomePage',isAuthenticated,isAdmin, (req, res) => {
 // });
 app.get('/products', (req, res) => {
   res.render('pages/products'); // Render the about.ejs file in the pages folder
+});
+app.get('/wishlist', (req, res) => {
+  res.render('pages/wishlist'); // Render the about.ejs file in the pages folder
 });
 
 app.get('/productsAdmin', (req, res) => {

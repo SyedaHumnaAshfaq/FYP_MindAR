@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking</title>
+    <link rel="stylesheet" href="stylenew.css">
+</head>
+<body>
+
+    <div class="containertrack">
+        <!-- Left Column: Menu -->
+        <div class="left-column">
+            <ul class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/login">Profile</a></li>
+                <li><a href="">Orders</a></li>
+                <li><a href="">Help</a></li>
+            </ul>
+        </div>
+
+        <!-- Middle Column: Order Tracking -->
+        <div class="middle-column">
+            <!-- Top Bar with Transaction and Search -->
+            <div class="top-bar">
+                <h2>Transaction Details</h2>
+                <div class="search-bar">
+                    <input type="text" placeholder="Enter Order Number">
+                    <button type="submit">Search</button>
+                </div>
+            </div>
+
+            <!-- Order Details -->
+            <div class="order-details">
+                <h3>Order ID: #12345</h3>
+
+                <!-- Order Status Boxes -->
+                <div class="order-status">
+                    <div class="status-box" data-status="Order Made">Order Made</div>
+                    <div class="status-box" data-status="Order Paid">Order Paid</div>
+                    <div class="status-box" data-status="Shipped">Shipped</div>
+                    <div class="status-box" data-status="Completed">Completed</div>
+                </div>
+
+                <!-- Shipping Address -->
+                <div class="shipping-address">
+                    <h4>Shipping Address:</h4>
+                    <p>John Doe, 123 Main Street, City, Country, 12345</p>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h4>Order Summary:</h4>
+                    <ul>
+                        <li>
+                            <img src="images/sung2.png" alt="Item 1">
+                            Item 1 - $50.00
+                        </li>
+                        <li>
+                            <img src="images/sung3.png" alt="Item 2">
+                            Item 2 - $30.00
+                        </li>
+                        <li>
+                            <img src="images/earingss.png" alt="Item 3">
+                            Item 3 - $20.00
+                        </li>
+                        <li><strong>Total: $100.00</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up Box -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <p id="popup-text"></p>
+        </div>
+    </div>
+
+    <script src="scriptnew.js"></script>
+</body>
+</html>
