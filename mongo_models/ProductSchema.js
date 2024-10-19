@@ -10,29 +10,28 @@ const ProductSchema = new mongoose.Schema({
     Product_rating: { type: Number, required: true },
     Product_model_url: { type: String, required: true },
     model_rotation_left: { 
-        x: { type: Number, default: 0 }, 
-        y: { type: Number, default: 0 }, 
-        z: { type: Number, default: 0 }
+        type: Object, 
+        default: { x: 0, y: 0, z: 0 } 
     },
     model_position_left: { 
-        x: { type: Number, default: 0 }, 
-        y: { type: Number, default: 0 }, 
-        z: { type: Number, default: 0 }
+        type: Object, 
+        default: { x: 0, y: 0, z: 0 } 
     },
     model_rotation_right: { 
-        x: { type: Number, default: 0 }, 
-        y: { type: Number, default: 0 }, 
-        z: { type: Number, default: 0 }
+        type: Object, 
+        default: { x: 0, y: 0, z: 0 } 
     },
     model_position_right: { 
-        x: { type: Number, default: 0 }, 
-        y: { type: Number, default: 0 }, 
-        z: { type: Number, default: 0 }
+        type: Object, 
+        default: { x: 0, y: 0, z: 0 } 
     },
     model_scale: { 
-        x: { type: Number, default: 1 }, 
-        y: { type: Number, default: 1 }, 
-        z: { type: Number, default: 1 }
+        type: Object, 
+        default: { x: 1, y: 1, z: 1 } 
+    },
+    model_rotation_glasses: {
+        type: Object, 
+        default: { x: 0, y: 0 } 
     },
 
     is_Published: { type: Boolean, required: true, default:false },

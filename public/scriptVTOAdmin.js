@@ -135,13 +135,33 @@ $(document).ready(function () {
 
     // Prepare the data to send to the server
     const data = {
-      model_rotation_left: `${rotationXL} ${rotationYL} ${rotationZL}`,
-      model_position_left: `${positionXL} ${positionYL} ${positionZL}`,
-      model_rotation_right: `${rotationXR} ${rotationYR} ${rotationZR}`,
-      model_position_right: `${positionXR} ${positionYR} ${positionZR}`,
-      model_scale: `${scaleValue} ${scaleValue} ${scaleValue}`
+      model_rotation_left: {
+        x: rotationXL,
+        y: rotationYL,
+        z: rotationZL
+      },
+      model_position_left: {
+        x: positionXL,
+        y: positionYL,
+        z: positionZL
+      },
+      model_rotation_right: {
+        x: rotationXR,
+        y: rotationYR,
+        z: rotationZR
+      },
+      model_position_right: {
+        x: positionXR,
+        y: positionYR,
+        z: positionZR
+      },
+      model_scale: {
+        x: scaleValue,
+        y: scaleValue,
+        z: scaleValue
+      }
     };
-
+    
     // Send the update request
     $.ajax({
       url: `/products/update/${productId}`, // Use the retrieved product ID

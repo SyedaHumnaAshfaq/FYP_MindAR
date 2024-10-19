@@ -14,6 +14,7 @@ router.post('/products/add',upload.fields([{ name: 'Product_image' }, { name: 'P
 router.get('/products/update/:id', productAdminController.getProductById);
 router.put('/products/update/:id', productAdminController.updateProduct);
 router.get('/product/getAll', productAdminController.getRefreshedProducts);
+router.get('/get-product/:id', productAdminController.getProductById);
 
 router.get('/VirtualTryOn', productController.getProductsforVTO);
 

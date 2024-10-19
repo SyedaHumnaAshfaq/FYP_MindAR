@@ -20,5 +20,10 @@ const getProductsforVTO = async (req, res) => {
     res.render('pages/VirtualTryOn', { earings, nosepins, eyewears, noserings,products });
     // res.json({ products });
 };
+const getProductById = async (req, res) => {
+    const { id } = req.params;
+    const product = await Product.findById(id);
+    res.json(product);
+};   
 
-module.exports = { getAllProducts,getProductsbyCategory ,getProductsforVTO};
+module.exports = { getAllProducts,getProductsbyCategory ,getProductsforVTO,getProductById};
