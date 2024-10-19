@@ -15,6 +15,9 @@ router.get('/products/update/:id', productAdminController.getProductById);
 router.put('/products/update/:id', productAdminController.updateProduct);
 router.get('/product/getAll', productAdminController.getRefreshedProducts);
 
+router.get('/VirtualTryOn', productController.getProductsforVTO);
+
+
 
 
 module.exports = router;
