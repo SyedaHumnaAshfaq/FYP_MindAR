@@ -265,7 +265,9 @@ $(document).ready(function () {
                     if (response.success) {
                         // alert('Product added successfully!');
                         refreshTable();
-                        window.location.href = `/VTOAdmin?modelUrl=${encodeURIComponent(response.modelUrl)}`;
+                        const product_id = response.product_id;
+                        console.log(product_id);
+                        window.location.href = `/VTOAdmin?modelUrl=${encodeURIComponent(response.modelUrl)}&product_id=${encodeURIComponent(product_id)}`;
 
                         $('#productFormContainer').css('left', '-100%'); // Slide out after successful submission
 

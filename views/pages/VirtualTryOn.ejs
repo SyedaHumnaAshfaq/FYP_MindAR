@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="Ayeshastylesvt.css">
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-face-aframe.prod.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -13,25 +14,34 @@
     <div class="options-panel">
 
       <h2>Earrings</h2>
-      <img id="earring" src="images/e22.png" />
-      <img id="earring1" src="images/e1.png" />
-      <img id="earring2" src="images/topsnew.png" />
-      <img id="earring3" src="images/earingss.png" />
+      <% earings.forEach(earing=> { %>
+        <div class="earring-card" data-product-id="<%= earing._id %>" >
+          <img id="earring" src="<%= earing.Product_image_url %>" />
+          <p>
+            <%= earing.Product_name %>
+          </p>
+        </div>
+        <% }) %>
 
 
-      <h2>Nose pins</h2>
-      <img id="nosepin" src="images/nosepin.png" />
+
+          <h2>Nose pins</h2>
+          <% nosepins.forEach(nosepin=> { %>
+            <img id="earring" src="<%= nosepin.Product_image_url %>" />
+            <% }) %>
 
 
-      <h2>Nose rings</h2>
-      <img id="noserings" src="images/nosering.png" />
+              <h2>Nose rings</h2>
+              <% noserings.forEach(nosering=> { %>
+                <img id="earring" src="<%= nosering.Product_image_url %>" />
+                <% }) %>
 
 
-      <h2>Glasses</h2>
-      <img id="glasses" src="images/sung.png" />
-      <img id="glasses1" src="images/sung2.png" />
-      <img id="glasses2" src="images/sung3.png" />
-      <img id="glasses3" src="images/sung.png" />
+                  <h2>Glasses</h2>
+                  <% eyewears.forEach(eyewear=> { %>
+                    <img id="earring" src="<%= eyewear.Product_image_url %>" />
+                    <% }) %>
+
 
     </div>
     <a-scene mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights"
@@ -40,29 +50,33 @@
       <a-assets>
         <a-asset-item id="headModel"
           src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/sparkar/headOccluder.glb"></a-asset-item>
-
-        <a-asset-item id="earringModel1"
-          src="https://raw.githubusercontent.com/SyedaHumnaAshfaq/FYP_MindAR/main/models/earrings/silverleaf.glb"></a-asset-item>
-        <!-- <a-asset-item id="earringModel2" src="models/hoopEarring.gltf"></a-asset-item> -->
-        <a-asset-item id="earringModel2"
-          src="https://jewellerymodelsandimages.s3.ap-southeast-2.amazonaws.com/flower.glb"></a-asset-item>
-        <a-asset-item id="earringModel3"
-          src="https://raw.githubusercontent.com/SyedaHumnaAshfaq/FYP_MindAR/main/models/earrings/ballearring.glb"></a-asset-item>
-        <a-asset-item id="earringModel4"
-          src="https://raw.githubusercontent.com/SyedaHumnaAshfaq/FYP_MindAR/main/models/earrings/toruses.glb"></a-asset-item>
-        <a-asset-item id="nosePinModel"
-          src="https://raw.githubusercontent.com/SyedaHumnaAshfaq/FYP_MindAR/main/models/nosepins/diamondnosepin.gltf"></a-asset-item>
         <a-asset-item id="noseOccluder"
           src="https://raw.githubusercontent.com/SyedaHumnaAshfaq/FYP_MindAR/main/models/occluders/noseoccluder.glb"></a-asset-item>
-        <a-asset-item id="glassesModel1"
+
+        <!-- <a-asset-item id="earringModel1"
+          src="https://raw.githubusercontent.com/SyedaHumnaAshfaq/FYP_MindAR/main/models/earrings/silverleaf.glb"></a-asset-item>
+          
+          <a-asset-item id="earringModel2"
+          src="https://jewellerymodelsandimages.s3.ap-southeast-2.amazonaws.com/flower.glb"></a-asset-item>
+          <a-asset-item id="earringModel3"
+          src="https://raw.githubusercontent.com/SyedaHumnaAshfaq/FYP_MindAR/main/models/earrings/ballearring.glb"></a-asset-item>
+          <a-asset-item id="earringModel4"
+          src="https://raw.githubusercontent.com/SyedaHumnaAshfaq/FYP_MindAR/main/models/earrings/toruses.glb"></a-asset-item>
+          <a-asset-item id="nosePinModel"
+          src="https://raw.githubusercontent.com/SyedaHumnaAshfaq/FYP_MindAR/main/models/nosepins/diamondnosepin.gltf"></a-asset-item> -->
+        <!-- <a-asset-item id="glassesModel1"
           src="https://raw.githubusercontent.com/SyedaHumnaAshfaq/FYP_MindAR/main/models/sunglasses/blackSG.glb"></a-asset-item>
         <a-asset-item id="glassesModel2"
           src="https://raw.githubusercontent.com/SyedaHumnaAshfaq/FYP_MindAR/main/models/sunglasses/purpleSG.glb"></a-asset-item>
         <a-asset-item id="glassesModel3"
           src="https://raw.githubusercontent.com/SyedaHumnaAshfaq/FYP_MindAR/main/models/sunglasses/moreblackSG.glb"></a-asset-item>
         <a-asset-item id="glassesModel4"
-          src="https://raw.githubusercontent.com/SyedaHumnaAshfaq/FYP_MindAR/main/models/sunglasses/goldSG.glb"></a-asset-item>
+          src="https://raw.githubusercontent.com/SyedaHumnaAshfaq/FYP_MindAR/main/models/sunglasses/goldSG.glb"></a-asset-item> -->
 
+
+        <% products.forEach(product=> { %>
+          <a-asset-item id="<%= product._id %>" src="<%= product.Product_model_url %>"></a-asset-item>
+          <% }) %>
 
 
       </a-assets>
@@ -71,15 +85,25 @@
         <a-gltf-model mindar-face-occluder position="0 -0.3 0.15" rotation="0 0 0" scale="0.060 0.060 0.060"
           src="#headModel"></a-gltf-model>
       </a-entity>
-      <a-entity mindar-face-target="anchorIndex: 127">
-        <a-gltf-model rotation="0 -90 0" position="0 -0.48 -0.0" scale="0.15 0.15 0.15" src="#earringModel1"
-          class="earring-entity" visible="false"></a-gltf-model>
+      <a-entity mindar-face-target="anchorIndex: 1">
+        <a-gltf-model mindar-face-occluder scale="0.02 0.02 0.02 " rotation="-90 0 0" position="0 -0.02 -0.05"
+          src="#noseOccluder"></a-gltf-model>
       </a-entity>
-      <a-entity mindar-face-target="anchorIndex: 356">
-        <a-gltf-model rotation="0 -90 0" position="0 -0.48 -0.0" scale="0.15 0.15 0.15" src="#earringModel1"
-          class="earring-entity" visible="false"></a-gltf-model>
-      </a-entity>
-      <a-entity mindar-face-target="anchorIndex: 127">
+
+      <!-- <% earings.forEach(earing => { %>
+        <a-entity mindar-face-target="anchorIndex: 127" >
+          <a-gltf-model rotation="<%= Object.values(earing.model_rotation_left).join(' ') %>" position="<%= Object.values(earing.model_rotation_left).join(' ') %>" scale="<%= Object.values(earing.model_scale).join(' ') %>" src="#<%= earing.Product_name %>"
+            class="earring-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 356" >
+          <a-gltf-model rotation="<%= Object.values(earing.model_rotation_right).join(' ') %>" position="<%= Object.values(earing.model_rotation_right).join(' ') %>" scale="<%= Object.values(earing.model_scale).join(' ') %>" src="#<%= earing.Product_name %>"
+            class="earring-entity" visible="false"></a-gltf-model>
+        </a-entity>
+
+      <% }) %>   -->
+
+
+      <!-- <a-entity mindar-face-target="anchorIndex: 127">
         <a-gltf-model rotation="0 0 0" position="-0.04 -0.30 -0.1" scale="0.02 0.02 0.02" src="#earringModel2"
           class="earring1-entity" visible="false"></a-gltf-model>
       </a-entity>
@@ -102,8 +126,11 @@
       <a-entity mindar-face-target="anchorIndex: 356">
         <a-gltf-model rotation="0 -15 0" position="0.02 -0.43 -0.1" scale="0.07 0.07 0.07" src="#earringModel4"
           class="earring3-entity" visible="false"></a-gltf-model>
-      </a-entity>
-      <a-entity mindar-face-target="anchorIndex: 168">
+      </a-entity> -->
+
+
+
+      <!-- <a-entity mindar-face-target="anchorIndex: 168">
         <a-gltf-model rotation="0  0" position="0 -0.07 -0.5" scale="0.150 0.150 0.150" src="#glassesModel1"
           class="glasses-entity" visible="false"></a-gltf-model>
       </a-entity>
@@ -119,15 +146,11 @@
         <a-gltf-model rotation="0  -90" position="0.14 -0.12 -0.0005" scale="0.35 0.35 0.37" src="#glassesModel4"
           class="glasses3-entity" visible="false"></a-gltf-model>
       </a-entity>
-      <a-entity mindar-face-target="anchorIndex: 1">
-        <a-gltf-model mindar-face-occluder scale="0.02 0.02 0.02 " rotation="-90 0 0" position="0 -0.02 -0.05"
-          src="#noseOccluder"></a-gltf-model>
-      </a-entity>
-
+      
       <a-entity mindar-face-target="anchorIndex: 1">
         <a-gltf-model position="0.07 0.04 -0.1" scale="0.4 0.4 0.4" src="#nosePinModel"
           class="nosepin-entity"></a-gltf-model>
-      </a-entity>
+      </a-entity> -->
     </a-scene>
   </div>
 </body>
