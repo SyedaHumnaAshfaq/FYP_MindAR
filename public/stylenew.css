@@ -22,8 +22,9 @@ header {
     color: rgb(0, 0, 0);
     text-align: center;
     padding: 1px 0;
+    font-family: 'lora';
     z-index: 1000;
-    background-color:rgb(60, 42, 33);
+    background-color:rgb(0, 0, 0);
 }
 
 /* nav ul {
@@ -221,16 +222,13 @@ main {
     align-items: center;
     position: relative;
     /* background-image: url('images/b1.jpg'); */
-    background-image: url('images/m6.jpeg');
+    /* background-image: url('images/m6.jpeg'); */
+    background-image: url('images/whitetop.jpg');
+    
     /* overflow: hidden; */
 }
 
-/* .top-section h1 {
-    font-size: 70px;
-    position: relative;
-    z-index: 1;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-} */
+/* 
 .pulse-shadow-text {
     color: rgb(0, 0, 0);
     font-size: 64px;
@@ -238,17 +236,16 @@ main {
     animation: pulseShadow 2s infinite;
     max-width: 1100px;
     padding: 10px;
-  /* width: 100%; */
+ 
   background: rgba(255, 255, 255, 0);
-  /* Slightly transparent white */
+  
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   backdrop-filter: blur(10px);
-  /* Blur effect for the background */
+  
   border: 1px solid rgba(255, 255, 255, 0.3);
-  /* Light border for the mirror effect */
-  /* margin: 20px 20px; */
+  
   }
   
  
@@ -264,7 +261,33 @@ main {
     100% {
       text-shadow: 0 0 10px rgba(77, 74, 74, 0.7);
     }
-  }
+  } */
+
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+.pulse-shadow-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 53px;
+    font-weight: bold;
+    color:rgb(10, 8, 7); /* Gold-like color to complement the brown-beige background */
+    text-shadow: 3px 3px 8px rgb(66, 64, 64,0.9); /* Adds a luxurious shadow effect */
+    text-align: center;
+    letter-spacing: 1.5px;
+    animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 
 .earring {
     width: 170px;
@@ -287,18 +310,52 @@ main {
     /* border-top: 2px solid black; */
     /* background-color: aqua; */
     /* background-image: url('images/b6.jpg'); */
-    background-image: url('images/m10.jpeg');
+    /* background-image: url('images/m10.jpeg'); */
+    background-image: url('images/offwhite3.jpg');
 }
 
-.text-left {
+/* .text-left {
     width: 50%;
     font-size: 40px;
     color: rgb(0, 0, 0);
-    /* background: rgba(255, 255, 255, 0.2); */
+    
 
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Crimson+Text:ital@400&display=swap');
+
+.text-left h3 {
+    font-family: 'Lora', serif;
+    font-size: 36px;
+    font-weight: 700;
+    /* color: #8B4513;  */
+    color:rgb(0, 0, 0);
+    text-align: left;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
 }
 
-  
+.text-left p {
+    /* font-family: 'Crimson Text', serif; */
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    /* font-style: italic; */
+    line-height: 1.6;
+    color: #323131; /* A darker, elegant shade of brown */
+    text-align: left;
+    max-width: 600px;
+}
+
+.text-left {
+    padding: 20px;
+    /* background:rgb(156, 149, 149,0.5) ;  */
+    /* border-left: 5px solid #312808;  */
+    /* border-right:   5px solid #312808;; */
+    margin: 30px 0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
   
 
 
@@ -361,16 +418,37 @@ main {
     background: #a28383;
     position: relative;
     /* background-image: url('images/b12.jpg'); */
-    background-image: url('images/m5.jpeg');
+    /* background-image: url('images/m5.jpeg'); */
+    background-image: url('images/offwhite4.png');
     height: 100vh;
     padding-right: 25px;
    
 }
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400&display=swap');
+
+.glasses-text h2 {
+    font-family: 'Lora', serif;
+    /* font-family: 'Playfair Display', serif; */
+    font-size: 48px;
+    font-weight: 700;
+    color: #000000; /* Dark Slate Gray for elegance */
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Adds boldness and prominence */
+}
+
+/*  */
+
 
 .glasses-text {
     position: absolute;
     top: 0px;
     left: 650px;
+    /* background-color: rgba(255, 255, 255, 0.95); */
+  
+    /* box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); */
     color: #000000;
     font-size: 34px;
     font-weight: bold;
@@ -422,29 +500,28 @@ main {
     transition: transform 0.3s;
     position: relative;
     overflow: hidden;
-    /* background-color: rgb(166, 123, 91, 0.5); */
+   
     backdrop-filter: blur(30px);
   
-    /* background: rgba(255, 255, 255, 0.2); */
+    
     
 }
 .card .card-text {
     position: absolute;
-    bottom: 10px; /* Position text at the bottom */
+    bottom: 10px; 
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7); /* Background color with some transparency */
+    background-color: rgba(0, 0, 0, 0.7); 
     color: #fff;
-    padding: 5px;
+    padding: 25px;
     border-radius: 5px;
     width: 100%;
     text-align: center;
-    opacity: 0; /* Hide the text by default */
-    transition: opacity 0.3s ease; /* Smooth transition */
+    opacity: 0;
+    transition: opacity 0.3s ease; 
 }
 .card:hover .card-text {
-    opacity: 1; /* Show text on hover */
-}
+    opacity: 1; }
 
 .card img {
     max-width: 180px;
@@ -521,7 +598,8 @@ main {
     position: relative;
     height: 450px; /* Adjust based on your design */
     /* background-image: url('images/b10.jpg'); */
-    background-image: url('images/m15.jpeg');
+    /* background-image: url('images/m15.jpeg'); */
+    background-image: url('images/offwhite8.jpeg');
     margin: 0px;
    
 }
@@ -542,28 +620,48 @@ main {
     z-index: 1;
     margin-bottom: 30px;
 }
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300&display=swap');
+
+
+
+.nosepin-text strong {
+    font-family: 'Lora', serif;
+   
+    font-weight: 700;
+    color: #d4af37; /* Gold color for strong emphasis */
+}
+
 .nosepin-text {
+    font-family: 'Lora', serif;
+    /* font-family: 'Playfair Display', serif; */
+    font-size: 34px;
+    line-height: 1.6; /* Enhances readability */
+    font-weight: 200;
+    
+   
+    margin: 40px 0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+
     width: 65%;
     display: flex;
     justify-content:end;
     align-items:top;
-    font-size: 40px;
-    font-weight: bold;
+    /* font-size: 40px; */
+    /* font-weight: bold; */
     color: #0a0808;
     margin-bottom: 30px ;
-    /* sborder:2px solid black; */
+    
     box-shadow: 21px solid black;
-    /* background-color: rgba(75, 54, 35, 0.2); */
-    
-    
+   
 }
-.nosepin-text p {
+/* .nosepin-text p {
     font-size: 18px;
     color: #666;
     margin-top: 10px;
     text-align: center;
     line-height: 1.6;
-}
+} */
 .nosepin-rotating-model {
     display: flex;
     justify-content: center;
@@ -631,15 +729,17 @@ main {
     margin: 0 0;
     margin-top: 0px;
     position: relative;
-    height: 50vh;
+    height: 70vh;
     /* background-image: url('images/b11.jpg'); */
-    background-image: url('images/m13.jpeg');
+    background-image: url('images/offwhite6.jpg');
+    /* background-image: url('images/offwhite7.jpg'); */
     overflow: hidden;
   }
   
   .slider-heading {
+    font-family: 'Lora';
     font-size: 44px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   .slider-wrapper {
@@ -651,10 +751,11 @@ main {
   .slider-box {
     position: absolute;
     left: 48%;
-    top: 60%;
+    top: 128%;
     width: 300px; /* Adjust width as needed */
-    height: 160px; /* Adjust height as needed */
-    background-color:rgb(97, 83, 64); /* Background color for visibility */
+    height: 205px; /* Adjust height as needed */
+    background-color:rgb(0, 0, 0); /* Background color for visibility */
+    background-image: url('images/door.jpeg');
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     transform: translateX(-50%) translateY(-50%);
     display: flex;
@@ -668,25 +769,29 @@ main {
   
   .slider-text {
     font-size: 28px;
-    color: #0d0c0c;
+    color: #f4f4f4;
   }
   
   .delivery-text {
     position: absolute;
     left: 40%;
-    top: 1%; /* Adjust top to place text below the slider box */
+    top: 50%; /* Adjust top to place text below the slider box */
     width: 300px; /* Same width as slider-box */
-    height: 160px;
+    height: 190px;
     text-align: center;
     opacity: 0; /* Hide initially */
     transition: opacity 4s ease-in-out;
     font-size: 28px;
-    color: #000000;
+    color: #fafafa;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     border: 2px solid black;
     transform: translateX(-50%);
     z-index: 0; /* Ensure the text is below the slider box */
-    background-color:rgb(114, 97, 75);
+    /* background-color:rgb(82, 82, 82); */
+    background-image: url('images/doorstep.jpeg');
+    background-size: cover; /* Ensures the image covers the box but maintains its aspect ratio */
+    background-position: center; /* Center the image in the box */
+    background-repeat: no-repeat;
   }
   
   .slider-box.show {
@@ -701,7 +806,7 @@ main {
   /* Footer Styles */
 .footer {
     /* background-color:rgb(9, 37, 50); */
-    background-image: url('images/b2.jpg');
+    background-image: url('images/blackfooter2.jpeg');
     /* background-image: url('images/m8.jpeg'); */
     background-attachment: fixed;
     background-position: center;
@@ -773,8 +878,8 @@ main {
   }
   
   .contact-form button {
-    background-color:rgb(26, 72, 112);
-    color: white;
+    background-color:rgb(255, 255, 255);
+    color: rgb(13, 12, 12);
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
