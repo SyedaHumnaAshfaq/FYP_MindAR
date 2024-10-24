@@ -41,13 +41,13 @@ const getCartItems = async (req, res) => {
     
     const { cartId } = req.cookies;
     if (!cartId) {
-        return res.render('cart', { cartItems: [] ,grandTotal:0 }); // Render empty cart if no cartId
+        return res.render('pages/addtocart', { cartItems: [] ,grandTotal:0 }); // Render empty cart if no cartId
     }
 
     try {
         const cart = await Cart.findOne({ cartId: cartId });
         if (!cart) {
-            return res.render('cart', { cartItems: [],grandTotal:0 }); // Render empty cart if no cart found
+            return res.render('pages/addtocart', { cartItems: [],grandTotal:0 }); // Render empty cart if no cart found
         }
         const grandTotal = cart.items.reduce((total, item) => total + item.productPrice * item.quantity, 0);
 
