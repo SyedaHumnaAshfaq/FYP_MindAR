@@ -93,12 +93,12 @@ app.get('/productsAdmin', (req, res) => {
 app.get('/favourites', (req, res) => {
   res.render('pages/favourites'); // Render the homepage.ejs file in the pages folder
 });
-app.get('/productspage', (req, res) => {
-  res.render('pages/productspage'); // Render the homepage.ejs file in the pages folder
-});
-app.get('/checkoutpage', (req, res) => {
-  res.render('pages/checkoutpage'); // Render the homepage.ejs file in the pages folder
-});
+// app.get('/productspage', (req, res) => {
+//   res.render('pages/productspage'); // Render the homepage.ejs file in the pages folder
+// });
+// app.get('/checkoutpage', (req, res) => { // Assuming cart is stored in session
+//   res.render('pages/checkoutpage');
+// });  
 app.get('/VTOAdmin', (req, res) => {
   res.render('pages/VTOAdmin'); // Render the homepage.ejs file in the pages folder
 });

@@ -1597,6 +1597,7 @@ button {
 /* checkout page */
 .containercheck{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding:35px;
@@ -2504,3 +2505,31 @@ button.loginbutton:hover {
         padding: 20px;
     }
 }
+
+/* some cart styles copied for checkout page */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+   
+  }
+  
+  .cart-table th,
+  .cart-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    color: black;
+  }
+  
+  .cart-table th {
+    background-color: #f2f2f2;
+    color: black;
+  }
+  
+  .cart-table img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+  

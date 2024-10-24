@@ -1,97 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- custom css file link  -->
     <link rel="stylesheet" href="stylenew.css">
 
 </head>
+
 <body>
 
-<div class="containercheck">
+    <div class="containercheck">
+        
+        <form action="">
 
-    <form action="">
+            <div class="row">
 
-        <div class="row">
+                <div class="col">
 
-            <div class="col">
+                    <h3 class="title">billing address</h3>
 
-                <h3 class="title">billing address</h3>
-
-                <div class="inputBox">
-                    <span>full name :</span>
-                    <input type="text" placeholder="Ayesha Rao">
-                </div>
-                <div class="inputBox">
-                    <span>email :</span>
-                    <input type="email" placeholder="example@example.com">
-                </div>
-                <div class="inputBox">
-                    <span>address :</span>
-                    <input type="text" placeholder="room - street - locality">
-                </div>
-                <div class="inputBox">
-                    <span>city :</span>
-                    <input type="text" placeholder="lahore">
-                </div>
-
-                <div class="flex">
                     <div class="inputBox">
-                        <span>state :</span>
-                        <input type="text" placeholder="Pakistan">
+                        <span>full name :</span>
+                        <input type="text" placeholder="Ayesha Rao">
                     </div>
                     <div class="inputBox">
-                        <span>zip code :</span>
-                        <input type="text" placeholder="54682">
+                        <span>email :</span>
+                        <input type="email" placeholder="example@example.com">
                     </div>
+                    <div class="inputBox">
+                        <span>address :</span>
+                        <input type="text" placeholder="room - street - locality">
+                    </div>
+                    <div class="inputBox">
+                        <span>city :</span>
+                        <input type="text" placeholder="lahore">
+                    </div>
+
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>state :</span>
+                            <input type="text" placeholder="Pakistan">
+                        </div>
+                        <div class="inputBox">
+                            <span>zip code :</span>
+                            <input type="text" placeholder="54682">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+
+                    <h3 class="title">payment</h3>
+
+                    <div class="inputBox">
+                        <span>cards accepted :</span>
+                        <img src="images/card_img.png" alt="">
+                    </div>
+                    <div class="inputBox">
+                        <span>name on card :</span>
+                        <input type="text" placeholder="ms. Ayesha Rao">
+                    </div>
+                    <div class="inputBox">
+                        <span>credit card number :</span>
+                        <input type="number" placeholder="1111-2222-3333-4444">
+                    </div>
+                    <div class="inputBox">
+                        <span>exp month :</span>
+                        <input type="text" placeholder="january">
+                    </div>
+
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>exp year :</span>
+                            <input type="number" placeholder="2029">
+                        </div>
+                        <div class="inputBox">
+                            <span>CVV :</span>
+                            <input type="text" placeholder="1234">
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
 
-            <div class="col">
-
-                <h3 class="title">payment</h3>
-
-                <div class="inputBox">
-                    <span>cards accepted :</span>
-                    <img src="images/card_img.png" alt="">
-                </div>
-                <div class="inputBox">
-                    <span>name on card :</span>
-                    <input type="text" placeholder="ms. Ayesha Rao">
-                </div>
-                <div class="inputBox">
-                    <span>credit card number :</span>
-                    <input type="number" placeholder="1111-2222-3333-4444">
-                </div>
-                <div class="inputBox">
-                    <span>exp month :</span>
-                    <input type="text" placeholder="january">
-                </div>
-
-                <div class="flex">
-                    <div class="inputBox">
-                        <span>exp year :</span>
-                        <input type="number" placeholder="2029">
-                    </div>
-                    <div class="inputBox">
-                        <span>CVV :</span>
-                        <input type="text" placeholder="1234">
-                    </div>
-                </div>
-
+            <div>
+                <h2>Order Summary</h2>
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% cartItems.forEach(item=> { %>
+                            <tr>
+                                <td>
+                                    <%= item.productName %>
+                                </td>
+                                <td>Rs.<%= item.productPrice %>
+                                </td>
+                                <td>
+                                    <%= item.quantity %>
+                                </td>
+                                <td>Rs.<%= item.productPrice * item.quantity %>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+    
+                <h3>Total: Rs.<%= total %>
+                </h3>
             </div>
     
-        </div>
 
-        <input type="submit" value="proceed to checkout" class="submit-btn">
+            <input type="submit" value="Confirm Order" class="submit-btn">
 
-    </form>
+        </form>
 
-</div>    
-    
+    </div>
+
 </body>
+
 </html>

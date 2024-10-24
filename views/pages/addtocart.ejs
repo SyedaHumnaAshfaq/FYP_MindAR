@@ -36,23 +36,27 @@
 
     <main class="cart-main">
         <h1>Your Shopping Cart</h1>
-        <table class="cart-table">
-            <thead>
+        <%if(cartItems.length===0){%>
+            <table class="cart-table">
                 <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                    <th>Actions</th>
+                    <td colspan="5" class="NoItems">No items in cart</td>
                 </tr>
-            </thead>
-            <tbody id="cart-items">
-                <!-- Example Cart Item -->
-                <%if(cartItems.length===0){%>
-                    <tr>
-                        <td colspan="5">No items in cart</td>
-                    </tr>
-                    <% } else { %>
+            </table>
+            <% } else { %>
+
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items">
+                        <!-- Example Cart Item -->
+
                         <% cartItems.forEach(item=> { %>
                             <tr class="cart-item" id="cart-item-<%= item.productId %>">
                                 <td>
@@ -78,15 +82,16 @@
                             <% }) %>
                                 <% } %>
                                     <!-- Repeat for more items -->
-            </tbody>
-        </table>
-        <div class="cart-summary">
-            <% if (grandTotal> 0) { %>
-                <!-- <p>Subtotal: <span id="cart-subtotal"></span></p> -->
-                <p>Cart Total: <span id="cart-total">$<%= grandTotal.toFixed(2) %></span></p>
-                <button class="checkout-btn">Proceed to Checkout</button>
-                <% } %>
-        </div>
+                    </tbody>
+                </table>
+                <a href="/productspage">Add more items</a>
+                <div class="cart-summary">
+                    <% if (grandTotal> 0) { %>
+                        <!-- <p>Subtotal: <span id="cart-subtotal"></span></p> -->
+                        <p>Cart Total: <span id="cart-total">Rs.<%= grandTotal.toFixed(0) %></span></p>
+                        <a class="checkout-btn" href="/checkoutpage">Proceed to Checkout</a>
+                        <% } %>
+                </div>
     </main>
 
     <script src="script.js"></script>
