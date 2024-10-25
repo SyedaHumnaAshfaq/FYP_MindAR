@@ -18,46 +18,43 @@
 
     <header>
         <nav class="navbar">
-          <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
-          <div class="center-content">
-            <a href="/">Home</a>
-            <a href="#about">About</a>
-            <a href="#about">ADORN EASE</a>
-            <a href="#collection">Collection</a>
-            <a href="#contact">Contact Us</a>
-          </div>
-          <div class="right-content">
-            <div class="dropdown">
-              <a href="#" class="dropbtn">
-                <img src="images/boy.png" alt="Account" />
-                <!-- <i class="fa-solid fa-user" style="color: #e0d1d1;"></i> -->
-              </a>
-              <div class="dropdown-content">
-                <a href="/SignUp">Sign Up</a>
-                <a href="/login">Login</a>
-              </div>
+            <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+            <div class="center-content">
+                <a href="/">Home</a>
+                <a href="#about">About</a>
+                <a href="#about">ADORN EASE</a>
+                <a href="#collection">Collection</a>
+                <a href="#contact">Contact Us</a>
             </div>
-            <img class="icons1" src="images/icons8-purchase-order-30.png" alt="Account" />
-            <img class="icons1" src="images/icons8-cart-50.png" alt="Account" />
-          </div>
+            <div class="right-content">
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">
+                        <img src="../images/icons8-male-user-50.png" alt="Account" />
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="/SignUp">Sign Up</a>
+                        <a href="/login">Login</a>
+                    </div>
+                </div>
+                <img src="../images/icons8-purchase-order-30.png" alt="Account" />
+                <img src="../images/icons8-cart-50.png" alt="Account" />
+            </div>
         </nav>
   
         <div id="sidebar" class="sidebar">
-          <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()"
-            >&times;</a
-          >
-          <div class="sidebar-item"><a href="/productspage">All Products</a></div>
-          <!-- <div class="sidebar-item"><a href="#glasses">Glasses</a></div> -->
-          <!-- <div class="sidebar-item"><a href="#nosepins">Nosepins</a></div> -->
-          <!-- <div class="sidebar-item"><a href="#new-arrivals">New Arrivals</a></div> -->
-          <!-- <div class="sidebar-item"><a href="#best-sellers">Best Sellers</a></div> -->
-          <div class="sidebar-item"><a href="/checkoutpage">checkout</a></div>
-          <div class="sidebar-item"><a href="#account">My Account</a></div>
-          <div class="sidebar-item"><a href="/wishlist">Wishlist</a></div>
-          <div class="sidebar-item">
-            <a href="/trackorder">Track Order</a>
-          </div>
-          <div class="sidebar-item"><a href="#support">Help</a></div>
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+            <div class="sidebar-item"><a href="/productspage">All Products</a></div>
+            <!-- <div class="sidebar-item"><a href="#glasses">Glasses</a></div> -->
+            <!-- <div class="sidebar-item"><a href="#nosepins">Nosepins</a></div> -->
+            <!-- <div class="sidebar-item"><a href="#new-arrivals">New Arrivals</a></div> -->
+            <!-- <div class="sidebar-item"><a href="#best-sellers">Best Sellers</a></div> -->
+            <div class="sidebar-item"><a href="/checkoutpage">checkout</a></div>
+            <div class="sidebar-item"><a href="#account">My Account</a></div>
+            <div class="sidebar-item"><a href="/wishlist">Wishlist</a></div>
+            <div class="sidebar-item">
+                <a href="#order-history">Order History</a>
+            </div>
+            <div class="sidebar-item"><a href="#support">Customer Support</a></div>
         </div>
       </header>
     <!-- Slim Image Carousel -->
@@ -276,7 +273,7 @@
                         <button class="product-btn add-to-cart-btn add-to-cart" data-product-id="<%= product._id %>"
                             data-product-name="<%= product.Product_name %>"
                             data-product-price="<%= product.Product_price %>">Add to Cart</button>
-                        <span class="wishlist-icon">❤️</span>
+                        <!-- <span class="wishlist-icon">❤️</span> -->
                     </div>
                 </div>
             </div>

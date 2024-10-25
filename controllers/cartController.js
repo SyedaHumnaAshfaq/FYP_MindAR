@@ -29,7 +29,7 @@ const addItemToCart = async(req,res)=>{
             },
             { new: true, upsert: true }
         );
-        res.redirect('/addtocart');
+        // res.redirect('/addtocart');
 
         // res.status(200).json(newCart);
     } catch (error) {
@@ -41,13 +41,13 @@ const getCartItems = async (req, res) => {
     
     const { cartId } = req.cookies;
     if (!cartId) {
-        return res.render('cart', { cartItems: [] ,grandTotal:0 }); // Render empty cart if no cartId
+        return res.render('pages/addtocart', { cartItems: [] ,grandTotal:0 }); // Render empty cart if no cartId
     }
 
     try {
         const cart = await Cart.findOne({ cartId: cartId });
         if (!cart) {
-            return res.render('cart', { cartItems: [],grandTotal:0 }); // Render empty cart if no cart found
+            return res.render('pages/addtocart', { cartItems: [],grandTotal:0 }); // Render empty cart if no cart found
         }
         const grandTotal = cart.items.reduce((total, item) => total + item.productPrice * item.quantity, 0);
 
@@ -105,4 +105,28 @@ const deleteCartItem = async (req, res) => {
         res.status(500).send('Error deleting item from cart');
     }
 };
-module.exports = {addItemToCart, getCartItems, updateQuantity,deleteCartItem};
+const checkout = async (req, res) => {
+    try {
+        // Get the cartId from the cookie
+        const cartId = req.cookies.cartId;
+        
+        // Fetch the cart from the database using cartId
+        const cart = await Cart.findOne({ cartId });
+        
+        // If cart doesn't exist, handle the case (e.g., empty cart)
+        if (!cart || cart.items.length === 0) {
+            return res.render('pages/checkoutpage', { cartItems: [], total: 0 }); // Pass empty cart
+        }
+        
+        // Calculate the total price of the cart
+        const total = cart.items.reduce((acc, item) => acc + (item.productPrice * item.quantity), 0);
+        
+        // Render the checkout page with cart items and total price
+        res.render('pages/checkoutpage', { cartItems: cart.items, total });
+        
+    } catch (error) {
+        console.error('Error fetching cart:', error);
+        res.status(500).send('Internal Server Error');
+    }
+};
+module.exports = {addItemToCart, getCartItems, updateQuantity,deleteCartItem,checkout};
