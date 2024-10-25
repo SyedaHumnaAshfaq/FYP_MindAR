@@ -25,9 +25,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
    
-
+    function loadNavbar() {
+        const navbarContainer = document.getElementById("navbar-component");
+        
+        fetch("views/pages/navbar.ejs") // Make sure this path is correct for your directory structure
+          .then(response => response.text())
+          .then(data => {
+            navbarContainer.innerHTML = data;
+          })
+          .catch(error => console.error('Error loading navbar:', error));
+      }
+    
+      loadNavbar();
    
-});
+}
+);
 
 
 document.addEventListener('DOMContentLoaded', () => {
