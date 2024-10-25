@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylenew.css">
+    <script>
+        function togglePaymentFields() {
+            const cardPaymentFields = document.getElementById('card-payment-fields');
+            const cashPaymentFields = document.getElementById('cash-payment-fields');
+            const cardOption = document.getElementById('card');
+            
+            if (cardOption.checked) {
+                cardPaymentFields.style.display = 'block';
+                cashPaymentFields.style.display = 'none';
+            } else {
+                cardPaymentFields.style.display = 'none';
+                cashPaymentFields.style.display = 'block';
+            }
+        }
+
+        function toggleBillingAddress() {
+            const billingAddressField = document.getElementById('cash-billing-address');
+            const differentAddressOption = document.getElementById('cash-different-address');
+
+            if (differentAddressOption.checked) {
+                billingAddressField.style.display = 'block';
+            } else {
+                billingAddressField.style.display = 'none';
+            }
+        }
+
+        function toggleCardBillingAddress() {
+            const cardBillingAddressField = document.getElementById('card-billing-address');
+            const cardDifferentAddressOption = document.getElementById('card-different-address');
+
+            if (cardDifferentAddressOption.checked) {
+                cardBillingAddressField.style.display = 'block';
+            } else {
+                cardBillingAddressField.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="containercheck">
+        
+        <form action="">
+
+            <div class="row">
+
+                <div class="col">
+
+                    <h3 class="title">billing address</h3>
+                    <div class="inputBox">
+                        <span>full name :</span>
+                        <input type="text" placeholder="Your Name Here">
+                    </div>
+                    <div class="inputBox">
+                        <span>email :</span>
+                        <input type="email" placeholder="example@example.com">
+                    </div>
+                    <div class="inputBox">
+                        <span>address :</span>
+                        <input type="text" placeholder="room - street - locality">
+                    </div>
+                    <div class="inputBox">
+                        <span>city :</span>
+                        <input type="text" placeholder="lahore">
+                    </div>
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>zip code :</span>
+                            <input type="text" placeholder="54682">
+                        </div>
+                    </div>
+
+                    <h3 class="title">payment method</h3>
+                    <div class="inputBox radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="payment" id="cash" value="cash" onclick="togglePaymentFields()" checked>
+                            Cash Payment
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="payment" id="card" value="card" onclick="togglePaymentFields()">
+                            Card Payment
+                        </label>
+                    </div>
+
+                </div>
+
+                <!-- Card payment fields -->
+                <div class="col" id="card-payment-fields" style="display: none;">
+                    <h3 class="title">Method Selected : Card Payment</h3>
+                    <div class="inputBox">
+                        <span>cards accepted :</span>
+                        <img src="images/card_img.png" alt="">
+                    </div>
+                    <div class="inputBox">
+                        <span>name on card :</span>
+                        <input type="text" placeholder="ms. Ayesha Rao">
+                    </div>
+                    <div class="inputBox">
+                        <span>credit card number :</span>
+                        <input type="number" placeholder="1111-2222-3333-4444">
+                    </div>
+                    <div class="inputBox">
+                        <span>exp month :</span>
+                        <input type="text" placeholder="january">
+                    </div>
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>exp year :</span>
+                            <input type="number" placeholder="2029">
+                        </div>
+                        <div class="inputBox">
+                            <span>CVV :</span>
+                            <input type="text" placeholder="1234">
+                        </div>
+                    </div>
+
+                    <!-- Card Billing Address Option -->
+                    <div class="inputBox radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="card-billing" id="card-same-address" value="same" onclick="toggleCardBillingAddress()" checked>
+                            Billing Address: Same as Shipping
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="card-billing" id="card-different-address" value="different" onclick="toggleCardBillingAddress()">
+                            Use a Different Billing Address
+                        </label>
+                    </div>
+
+                    <!-- Conditional Billing Address Field for Card Payment -->
+                    <div class="inputBox" id="card-billing-address" style="display: none;">
+                        <span>billing address :</span>
+                        <input type="text" placeholder="Billing address">
+                    </div>
+                </div>
+
+                <!-- Cash payment fields -->
+                <div class="col" id="cash-payment-fields">
+                    <h3 class="title">Method Selected : Cash On Delivery</h3>
+                    <!-- <div class="inputBox">
+                        <span>shipping address :</span>
+                        <input type="text" placeholder="Shipping address">
+                    </div> -->
+
+                    <!-- Billing Address Options -->
+                    <div class="inputBox radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="cash-billing" id="cash-same-address" value="same" onclick="toggleBillingAddress()" checked>
+                            Billing Address:
+                            Same as Shipping Address
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="cash-billing" id="cash-different-address" value="different" onclick="toggleBillingAddress()">
+                            Use a Different Billing Address
+                        </label>
+                    </div>
+
+                    <!-- Conditional Billing Address Field for Cash Payment -->
+                    <div class="inputBox" id="cash-billing-address" style="display: none;">
+                        <span>billing address :</span>
+                        <input type="text" placeholder="Billing address">
+                    </div>
+                </div>
+
+            </div>
+
+            <input type="submit" value="Confirm Order" class="submit-btn">
+        </form>
+
+    </div>
+
+</body>
+
+</html>

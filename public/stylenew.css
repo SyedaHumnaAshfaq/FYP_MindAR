@@ -990,6 +990,7 @@ img {
 
 .dropdown {
     position: relative;
+    z-index: 1000;
     
 }
 
@@ -1000,8 +1001,8 @@ img {
     
 }
 .dropbtn img{
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
 }
 
 .dropdown-content {
@@ -1013,8 +1014,9 @@ img {
     z-index: 1;
 }
 .icons1{
-    width: 35px;
-    height: 35px;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
 }
 .dropdown-content a {
     color: rgb(0, 0, 0);
@@ -1679,6 +1681,24 @@ button {
   .containercheck form .submit-btn:hover{
     background: #7c7777;
   }
+
+  .radio-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.radio-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.radio-option input[type="radio"] {
+    margin: 0;
+    transform: translateY(1px); /* Adjust for better vertical alignment */
+}
+
 
 
 

@@ -102,6 +102,9 @@ app.get('/favourites', (req, res) => {
 app.get('/VTOAdmin', (req, res) => {
   res.render('pages/VTOAdmin'); // Render the homepage.ejs file in the pages folder
 });
+app.get('/checkout', (req, res) => {
+  res.render('pages/checkout'); // Render the homepage.ejs file in the pages folder
+});
 app.get('/navbar-component', (req, res) => {
   res.render('pages/navbar'); // Render the homepage.ejs file in the pages folder
 });
