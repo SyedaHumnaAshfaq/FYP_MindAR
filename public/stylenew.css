@@ -1603,6 +1603,7 @@ button {
     padding:35px;
     min-height: 100vh;
     background: linear-gradient(90deg, #b1a698 60%, #e7dfd4 40.1%);
+    
     /* background-image: url('images/m11.jpeg'); */
   }
   
