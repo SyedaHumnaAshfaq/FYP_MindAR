@@ -11,7 +11,8 @@ const cartRoutes = require('./routes/cartRoutes');
 const customerRoutes = require('./routes/customerRoutes');
 const cookieParser = require('cookie-parser');
 const { assignCartId } = require('./middlewares/cartMiddleware');
-const { isAdmin,isAuthenticated } = require('./middlewares/authAdminMiddleware');
+const { isAdmin, isAuthenticated } = require('./middlewares/authAdminMiddleware');
+const checkoutRoutes = require('./routes/checkoutRoutes');
 
 connectDB();
 
@@ -36,6 +37,7 @@ app.use('/', productRoutes);
 app.use('/', cartRoutes);
 app.use('/', orderRoutes);
 app.use('/', customerRoutes);
+app.use('/', checkoutRoutes); 
 // Set the path to your views directory
 app.set('views', path.join(__dirname, 'views'));
 

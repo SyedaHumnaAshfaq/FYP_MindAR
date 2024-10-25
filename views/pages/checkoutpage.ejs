@@ -8,13 +8,18 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="stylenew.css">
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="/script.js"></script>
+
 
 </head>
 
 <body>
 
     <div class="containercheck">
-        
+
         <form action="">
 
             <div class="row">
@@ -57,7 +62,7 @@
 
                     <h3 class="title">payment</h3>
 
-                    <div class="inputBox">
+                    <!-- <div class="inputBox">
                         <span>cards accepted :</span>
                         <img src="images/card_img.png" alt="">
                     </div>
@@ -83,7 +88,16 @@
                             <span>CVV :</span>
                             <input type="text" placeholder="1234">
                         </div>
-                    </div>
+                    </div> -->
+                    <form id="payment-form">
+                        <div id="payment-element">
+                          <!-- Elements will create form elements here -->
+                        </div>
+                        <button id="submit">Submit</button>
+                        <div id="error-message">
+                          <!-- Display error message to your customers here -->
+                        </div>
+                      </form>
 
                 </div>
 
@@ -117,11 +131,11 @@
                             <% }) %>
                     </tbody>
                 </table>
-    
+
                 <h3>Total: Rs.<%= total %>
                 </h3>
             </div>
-    
+
 
             <input type="submit" value="Confirm Order" class="submit-btn">
 
