@@ -8,13 +8,18 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="stylenew.css">
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="/script.js"></script>
+
 
 </head>
 
 <body>
 
     <div class="containercheck">
-        
+
         <form action="">
 
             <div class="row">
@@ -41,10 +46,7 @@
                     </div>
 
                     <div class="flex">
-                        <!-- <div class="inputBox">
-                            <span>state :</span>
-                            <input type="text" placeholder="Pakistan">
-                        </div> -->
+
                         <div class="inputBox">
                             <span>zip code :</span>
                             <input type="text" placeholder="54682">
@@ -56,35 +58,19 @@
                 <div class="col">
 
                     <h3 class="title">payment</h3>
+                     <div>
+                        <form id="payment-form">
+                            <div id="payment-element">
+                                <!-- Elements will create form elements here -->
+                            </div>
+                            <button id="submit">Submit</button>
+                            <div id="error-message">
+                                <!-- Display error message to your customers here  -->
+                             </div>
+                        </form>
+                    </div> 
 
-                    <div class="inputBox">
-                        <span>cards accepted :</span>
-                        <img src="images/card_img.png" alt="">
-                    </div>
-                    <div class="inputBox">
-                        <span>name on card :</span>
-                        <input type="text" placeholder="ms. Ayesha Rao">
-                    </div>
-                    <div class="inputBox">
-                        <span>credit card number :</span>
-                        <input type="number" placeholder="1111-2222-3333-4444">
-                    </div>
-                    <div class="inputBox">
-                        <span>exp month :</span>
-                        <input type="text" placeholder="january">
-                    </div>
-
-                    <div class="flex">
-                        <div class="inputBox">
-                            <span>exp year :</span>
-                            <input type="number" placeholder="2029">
-                        </div>
-                        <div class="inputBox">
-                            <span>CVV :</span>
-                            <input type="text" placeholder="1234">
-                        </div>
-                    </div>
-
+                   
                 </div>
 
             </div>
@@ -117,11 +103,11 @@
                             <% }) %>
                     </tbody>
                 </table>
-    
+
                 <h3>Total: Rs.<%= total %>
                 </h3>
             </div>
-    
+
 
             <input type="submit" value="Confirm Order" class="submit-btn">
 
