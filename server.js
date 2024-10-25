@@ -102,6 +102,9 @@ app.get('/checkoutpage', (req, res) => {
 app.get('/VTOAdmin', (req, res) => {
   res.render('pages/VTOAdmin'); // Render the homepage.ejs file in the pages folder
 });
+app.get('/navbar-component', (req, res) => {
+  res.render('pages/navbar'); // Render the homepage.ejs file in the pages folder
+});
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
