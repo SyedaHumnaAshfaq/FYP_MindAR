@@ -44,6 +44,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', (req, res) => {
   res.render('pages/AdornHomePage.ejs'); // Render the homepage.ejs file in the pages folder
 });
+app.get('/Home', (req, res) => {
+  res.render('pages/Home.ejs'); // Render the homepage.ejs file in the pages folder
+});
 
 app.get('/quickview', (req, res) => {
   res.render('pages/quickview.ejs'); // Render the homepage.ejs file in the pages folder
@@ -107,9 +110,10 @@ app.get('/VTOAdmin', (req, res) => {
 app.get('/checkout', (req, res) => {
   res.render('pages/checkout'); // Render the homepage.ejs file in the pages folder
 });
-app.get('/navbar-component', (req, res) => {
-  res.render('pages/navbar'); // Render the homepage.ejs file in the pages folder
+app.get('/Aboutus', (req, res) => {
+  res.render('pages/Aboutus'); // Render the homepage.ejs file in the pages folder
 });
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

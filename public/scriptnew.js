@@ -25,19 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
    
-    function loadNavbar() {
-        const navbarContainer = document.getElementById("navbar-component");
-        
-        fetch("views/pages/navbar.ejs") // Make sure this path is correct for your directory structure
-          .then(response => response.text())
-          .then(data => {
-            navbarContainer.innerHTML = data;
-          })
-          .catch(error => console.error('Error loading navbar:', error));
-      }
     
-      loadNavbar();
-   
 }
 );
 
@@ -322,6 +310,19 @@ window.addEventListener('click', function(e) {
     if (e.target == popup) {
         popup.style.display = 'none';
     }
+});
+
+
+// Animation for "OUR VISION" section on load
+document.addEventListener("DOMContentLoaded", () => {
+    const visionTitle = document.querySelector(".vision-title");
+    visionTitle.style.opacity = 0;
+    visionTitle.style.transition = "opacity 1s ease, transform 1s ease";
+    
+    setTimeout(() => {
+        visionTitle.style.opacity = 1;
+        visionTitle.style.transform = "translateY(0)";
+    }, 500);
 });
 
 
