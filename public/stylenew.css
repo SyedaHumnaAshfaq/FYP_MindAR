@@ -11,20 +11,16 @@ body, html {
     
 }
 header {
-    /* position: fixed; */
+    
     width: 100%;
-    /* background-image: url('images/b2.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
-    /* background-image: url("images/bgnav.jpg"); */
+    
     color: rgb(0, 0, 0);
     text-align: center;
     padding: 1px 0;
     font-family: 'lora';
     z-index: 1000;
     background-color:rgb(0, 0, 0);
+    position: relative;
 }
 
 /* nav ul {
@@ -958,6 +954,7 @@ img {
     /* background-color: #333; */
     color: white;
     /* padding: 1px; */
+    position: relative;
 }
 
 .sidebar-toggle {
@@ -2834,21 +2831,95 @@ select {
     background-color: #000;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .quickview-box {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .content {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .product-display,
-    .product-details {
-        flex: 1 1 100%;
-        text-align: center;
-    }
+/* responsive header */
+/* Menu toggle button for smaller screens */
+.menu-toggle {
+    display: none; /* Hide the menu toggle by default */
+    font-size: 30px; /* Size for the hamburger icon */
+    cursor: pointer; /* Pointer on hover */
+    background: none; /* No background */
+    color: rgb(237, 231, 231); /* Icon color */
+    right: 60px;
+    position: absolute;
 }
+
+/* Dropdown menu for mobile */
+#dropdownMenu {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust according to navbar height */
+    left: 0;
+    background-color: rgb(0, 0, 0); /* Background color */
+    width: 100%; /* Full width */
+    z-index: 999; /* Above other content */
+}
+
+#dropdownMenu a {
+    /* display: none; */
+    padding: 10px 20px; /* Spacing */
+    color: white; /* Link color */
+    display: block; 
+}
+/* Ensure dropdown content is hidden by default */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Show dropdown when .show class is added */
+.dropdown-content.show {
+    display: block;
+}
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .center-content,
+    .right-content {
+        display: none; /* Hide center content and right content */
+    }
+
+    .menu-toggle {
+        display: block; /* Show menu toggle */
+        
+    }
+
+    #dropdownMenu {
+        display: flex; /* Show dropdown on toggle */
+    }
+   
+   
+
+    
+}
+/* Dropdown menu for profile icon */
+.profile-dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position it absolutely */
+    background-color: #333; /* Background color */
+    min-width: 160px; /* Minimum width */
+    z-index: 999; /* Above other content */
+  }
+  
+  /* Links inside the profile dropdown */
+  .profile-dropdown-content a {
+    color: white; /* Link color */
+    padding: 10px 20px; /* Spacing */
+    text-decoration: none; /* No underline */
+    display: block; /* Full width */
+  }
+  
+  /* Show the dropdown when the user clicks on the dropdown button */
+  .dropdown:hover .profile-dropdown-content,
+  .dropdown .profile-dropdown-content.show {
+    display: block; /* Show on hover or toggle */
+  }
+  

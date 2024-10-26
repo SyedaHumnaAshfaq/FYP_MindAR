@@ -326,3 +326,29 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+
+// navbar responsive
+// scripts.js
+// scripts.js
+// Function to toggle the main dropdown menu
+function toggleMenu() { 
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Function to toggle the profile dropdown menu
+function toggleProfileDropdown() {
+    const dropdown = document.getElementById("profileDropdown");
+    dropdown.classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    const profileDropdown = document.getElementById("profileDropdown");
+
+    if (!event.target.closest('.dropbtn') && profileDropdown.classList.contains('show')) {
+        profileDropdown.classList.remove('show');
+    }
+};
+
