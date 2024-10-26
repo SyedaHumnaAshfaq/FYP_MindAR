@@ -113,6 +113,9 @@ app.get('/checkout', (req, res) => {
 app.get('/Aboutus', (req, res) => {
   res.render('pages/Aboutus'); // Render the homepage.ejs file in the pages folder
 });
+app.get('/Quickviewpage', (req, res) => {
+  res.render('pages/Quickviewpage'); // Render the homepage.ejs file in the pages folder
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

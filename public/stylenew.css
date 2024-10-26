@@ -2408,7 +2408,7 @@ button.signupbutton:hover {
     height: 100vh;
     margin: 0;
     padding: 20px;
-    background: linear-gradient(90deg, #232323 60%, #000000 40.1%);
+    background: linear-gradient(90deg, #000000 60%, #232323 40.1%);
     /* background: linear-gradient(90deg, #b1a698 60%, #e7dfd4 40.1%); */
     /* background-color: rgb(240, 240, 240); */
 }
@@ -2574,7 +2574,7 @@ button.loginbutton:hover {
   /* about us section */
 
 .aboutusbody {
-    background-color: #696969;
+    background-color: #b9b9b9;
     color: #000;
 }
 
@@ -2583,9 +2583,7 @@ button.loginbutton:hover {
     justify-content: center;
     align-items: center;
     height: 70vh;
-    /* background-image: url('images/blackfooter.jpg');
-    background-repeat: no-repeat;
-    background-size: cover; */
+    
     background-color: #000;
     color: #fff;
     animation: fadeIn 2s ease;
@@ -2595,6 +2593,7 @@ button.loginbutton:hover {
     font-size: 10rem;
     font-weight: bold;
     letter-spacing: 3px;
+    text-align: center;
 }
 
 @keyframes fadeIn {
@@ -2616,9 +2615,10 @@ button.loginbutton:hover {
 }
 
 .modern-vision h2 {
-    font-size: 2rem;
+    font-size: 2.4rem;
     color: #000;
     margin-bottom: 15px;
+    font-family: 'Lato', sans-serif;
 }
 
 .modern-vision img {
@@ -2631,7 +2631,8 @@ button.loginbutton:hover {
     flex: 2;
     display: flex;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-family: 'Playfair Display', serif;
 }
 
 .team-section {
@@ -2697,5 +2698,157 @@ button.loginbutton:hover {
 
     .vision-title {
         font-size: 2.5rem;
+    }
+}
+
+/* quick view page */
+/* Quick View Overlay */
+.quickview-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Quick View Box */
+.quickview-box {
+    background-color: #fff;
+    color: #333;
+    width: 90%;
+    max-width: 900px;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    position: relative;
+    border-radius: 10px;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Content Flexbox */
+.content {
+    display: flex;
+}
+
+/* Product Display Section */
+.product-display {
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.main-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.thumbnail-container {
+    display: flex;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+}
+
+.thumbnail:hover {
+    border-color: #333;
+}
+
+/* Product Details Section */
+.product-details {
+    flex: 1 1 60%;
+    padding: 10px;
+}
+
+.product-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.product-price {
+    font-size: 1.4rem;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product-options {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+select {
+    margin-left: 5px;
+    padding: 5px;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .quickview-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-display,
+    .product-details {
+        flex: 1 1 100%;
+        text-align: center;
     }
 }
