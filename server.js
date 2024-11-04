@@ -118,6 +118,29 @@ app.get('/Aboutus', (req, res) => {
 app.get('/Quickviewpage', (req, res) => {
   res.render('pages/Quickviewpage'); // Render the homepage.ejs file in the pages folder
 });
+app.post('/create-confirm-intent', async (req, res) => {
+  try {
+    const intent = await stripe.paymentIntents.create({
+      confirm: true,
+      amount: 1099,
+      currency: 'usd',
+      // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
+      automatic_payment_methods: {enabled: true},
+      confirmation_token: req.body.confirmationTokenId, // the ConfirmationToken ID sent by your client
+    });
+    res.json({
+      client_secret: intent.client_secret,
+      status: intent.status
+    });
+  } catch (err) {
+    res.json({
+      error: err
+    })
+  }
+});
+app.get('/checkoutCOD', (req, res) => {
+  res.render('pages/checkoutCOD'); // Render the homepage.ejs file in the pages folder
+});
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
