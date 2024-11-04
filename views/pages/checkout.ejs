@@ -6,7 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylenew.css">
-    <script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/scriptcheckout.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    
+    
+
+
+    <!-- <script>
         function togglePaymentFields() {
             const cardPaymentFields = document.getElementById('card-payment-fields');
             const cashPaymentFields = document.getElementById('cash-payment-fields');
@@ -42,20 +49,20 @@
                 cardBillingAddressField.style.display = 'none';
             }
         }
-    </script>
+    </script> -->
 </head>
 
 <body>
 
-    <div class="containercheck">
-        
-        <form action="">
+    <!-- <div class="containercheck">
+         -->
+        <!-- <form action=""> -->
 
-            <div class="row">
+            <!-- <div class="row">
 
                 <div class="col">
 
-                    <h3 class="title">billing address</h3>
+                    <h3 class="title">shipping address</h3>
                     <div class="inputBox">
                         <span>full name :</span>
                         <input type="text" placeholder="Your Name Here">
@@ -72,14 +79,14 @@
                         <span>city :</span>
                         <input type="text" placeholder="lahore">
                     </div>
-                    <div class="flex">
-                        <div class="inputBox">
+                    <div class="flex"> -->
+                        <!-- <div class="inputBox">
                             <span>zip code :</span>
                             <input type="text" placeholder="54682">
                         </div>
-                    </div>
+                    </div> -->
 
-                    <h3 class="title">payment method</h3>
+                    <!-- <h3 class="title">payment method</h3>
                     <div class="inputBox radio-group">
                         <label class="radio-option">
                             <input type="radio" name="payment" id="cash" value="cash" onclick="togglePaymentFields()" checked>
@@ -89,14 +96,26 @@
                             <input type="radio" name="payment" id="card" value="card" onclick="togglePaymentFields()">
                             Card Payment
                         </label>
-                    </div>
+                    </div> -->
 
-                </div>
+                <!-- </div> -->
+        
 
                 <!-- Card payment fields -->
-                <div class="col" id="card-payment-fields" style="display: none;">
+                <!-- <div class="col" id="card-payment-fields" style="display: none;">
                     <h3 class="title">Method Selected : Card Payment</h3>
-                    <div class="inputBox">
+                    <div>
+                        <form id="payment-form">
+                            <div id="payment-element"> -->
+                                <!-- Elements will create form elements here -->
+                            <!-- </div>
+                            <button id="submit">Submit</button>
+                            <div id="error-message"> -->
+                                <!-- Display error message to your customers here  -->
+                             <!-- </div>
+                        </form>
+                    </div>  -->
+                    <!-- <div class="inputBox">
                         <span>cards accepted :</span>
                         <img src="images/card_img.png" alt="">
                     </div>
@@ -121,10 +140,10 @@
                             <span>CVV :</span>
                             <input type="text" placeholder="1234">
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Card Billing Address Option -->
-                    <div class="inputBox radio-group">
+                    <!-- <div class="inputBox radio-group">
                         <label class="radio-option">
                             <input type="radio" name="card-billing" id="card-same-address" value="same" onclick="toggleCardBillingAddress()" checked>
                             Billing Address: Same as Shipping
@@ -133,25 +152,25 @@
                             <input type="radio" name="card-billing" id="card-different-address" value="different" onclick="toggleCardBillingAddress()">
                             Use a Different Billing Address
                         </label>
-                    </div>
+                    </div> -->
 
                     <!-- Conditional Billing Address Field for Card Payment -->
-                    <div class="inputBox" id="card-billing-address" style="display: none;">
+                    <!-- <div class="inputBox" id="card-billing-address" style="display: none;">
                         <span>billing address :</span>
                         <input type="text" placeholder="Billing address">
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Cash payment fields -->
-                <div class="col" id="cash-payment-fields">
-                    <h3 class="title">Method Selected : Cash On Delivery</h3>
+                <!-- <div class="col" id="cash-payment-fields">
+                    <h3 class="title">Method Selected : Cash On Delivery</h3> -->
                     <!-- <div class="inputBox">
                         <span>shipping address :</span>
                         <input type="text" placeholder="Shipping address">
                     </div> -->
 
                     <!-- Billing Address Options -->
-                    <div class="inputBox radio-group">
+                    <!-- <div class="inputBox radio-group">
                         <label class="radio-option">
                             <input type="radio" name="cash-billing" id="cash-same-address" value="same" onclick="toggleBillingAddress()" checked>
                             Billing Address:
@@ -161,19 +180,56 @@
                             <input type="radio" name="cash-billing" id="cash-different-address" value="different" onclick="toggleBillingAddress()">
                             Use a Different Billing Address
                         </label>
-                    </div>
+                    </div> -->
 
                     <!-- Conditional Billing Address Field for Cash Payment -->
-                    <div class="inputBox" id="cash-billing-address" style="display: none;">
+                    <!-- <div class="inputBox" id="cash-billing-address" style="display: none;">
                         <span>billing address :</span>
-                        <input type="text" placeholder="Billing address">
-                    </div>
+                        <div class="inputBox">
+                            <span>full name :</span>
+                            <input type="text" placeholder="Your Name Here">
+                        </div>
+                        <div class="inputBox">
+                            <span>email :</span>
+                            <input type="email" placeholder="example@example.com">
+                        </div>
+                        <div class="inputBox">
+                            <span>address :</span>
+                            <input type="text" placeholder="room - street - locality">
+                        </div>
+                        <div class="inputBox">
+                            <span>city :</span>
+                            <input type="text" placeholder="lahore">
+                        </div> -->
+                        <!-- <div class="flex"> -->
+                            <!-- <div class="inputBox">
+                                <span>zip code :</span>
+                                <input type="text" placeholder="54682">
+                            </div> -->
+                        <!-- </div> -->
+    
+                    <!-- </div>
                 </div>
 
             </div>
 
-            <input type="submit" value="Confirm Order" class="submit-btn">
-        </form>
+            -->
+            <div class="containercheck">
+            <form id="payment-form">
+                <div id="payment-element">
+                  <!-- Elements will create form elements here -->
+                </div>
+                <button id="submit">Submit</button>
+                <div id="error-message">
+                  <!-- Display error message to your customers here -->
+                </div>
+              </form>
+           
+            <!-- <input type="submit" value="Confirm Order" class="submit-btn"> -->
+        <!-- </form> -->
+    </div>
+
+
 
     </div>
 

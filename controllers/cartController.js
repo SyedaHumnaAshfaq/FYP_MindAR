@@ -115,14 +115,14 @@ const checkout = async (req, res) => {
         
         // If cart doesn't exist, handle the case (e.g., empty cart)
         if (!cart || cart.items.length === 0) {
-            return res.render('pages/checkoutpage', { cartItems: [], total: 0 }); // Pass empty cart
+            return res.render('pages/checkoutCOD', { cartItems: [], total: 0 }); // Pass empty cart
         }
         
         // Calculate the total price of the cart
         const total = cart.items.reduce((acc, item) => acc + (item.productPrice * item.quantity), 0);
         
         // Render the checkout page with cart items and total price
-        res.render('pages/checkoutpage', { cartItems: cart.items, total });
+        res.render('pages/checkoutCOD', { cartItems: cart.items, total });
         
     } catch (error) {
         console.error('Error fetching cart:', error);

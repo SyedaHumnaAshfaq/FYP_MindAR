@@ -14,8 +14,10 @@ const { assignCartId } = require('./middlewares/cartMiddleware');
 const { isAdmin, isAuthenticated } = require('./middlewares/authAdminMiddleware');
 const checkoutRoutes = require('./routes/checkoutRoutes');
 
-connectDB();
+const stripe = require("stripe")("sk_test_51QDn2jLIHxgGTNSVNEx5m9t9JEHW42zYz5oiV0ofv20DJHuUmLZjV8ORJYwpSW5DLiDRx9z9rCgOfwVvMLW51lFl00cJrVPs7b");
 
+connectDB();
+app.set('trust proxy', true);
 app.set('view engine', 'ejs');
 app.use('/models', express.static(path.join(__dirname, 'models')));
 
@@ -109,6 +111,29 @@ app.get('/checkout', (req, res) => {
 });
 app.get('/navbar-component', (req, res) => {
   res.render('pages/navbar'); // Render the homepage.ejs file in the pages folder
+});
+app.post('/create-confirm-intent', async (req, res) => {
+  try {
+    const intent = await stripe.paymentIntents.create({
+      confirm: true,
+      amount: 1099,
+      currency: 'usd',
+      // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
+      automatic_payment_methods: {enabled: true},
+      confirmation_token: req.body.confirmationTokenId, // the ConfirmationToken ID sent by your client
+    });
+    res.json({
+      client_secret: intent.client_secret,
+      status: intent.status
+    });
+  } catch (err) {
+    res.json({
+      error: err
+    })
+  }
+});
+app.get('/checkoutCOD', (req, res) => {
+  res.render('pages/checkoutCOD'); // Render the homepage.ejs file in the pages folder
 });
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

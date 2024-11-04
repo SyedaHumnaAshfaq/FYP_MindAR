@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <!-- <link rel="stylesheet" href="/checkoutstyles.css"> -->
+    <link rel="stylesheet" href="/stylenew.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/scriptcheckout.js"></script>
+</head>
+
+<body>
+    <div class="containercheck">
+        <form action="">
+            <h2>Checkout</h2>
+            <div class="row">
+                <div class="col">
+                    <h3 class="title">shipping address</h3>
+                    <div class="inputBox">
+                        <span>full name :</span>
+                        <input type="text" placeholder="Your Name Here">
+                    </div>
+                    <div class="inputBox">
+                        <span>email :</span>
+                        <input type="email" placeholder="example@example.com">
+                    </div>
+                    <div class="inputBox">
+                        <span>address :</span>
+                        <input type="text" placeholder="room - street - locality">
+                    </div>
+                    <div class="inputBox">
+                        <span>city :</span>
+                        <input type="text" placeholder="lahore">
+                    </div>
+
+                    <div class="inputBox">
+                        <span>zip code :</span>
+                        <input type="text" placeholder="54682">
+                    </div>
+
+                    <!-- Payment Method Section -->
+                    <h3 class="title">Payment Method</h3>
+                    <div class="form-group">
+                        <input type="radio" id="cod" name="payment" value="cod" required>
+                        <label for="cod">Cash on Delivery</label>
+                        <input type="radio" id="card" name="payment" value="card" required>
+                        <label for="card">Credit/Debit Card</label>
+                    </div>
+
+                    <div id="cod-options" class="form-group">
+                        <input type="checkbox" id="same-as-shipping">
+                        <label for="same-as-shipping">Billing Address same as Shipping</label>
+                    </div>
+
+                </div>
+                <!-- <div class="col"> -->
+
+
+
+                <!-- Billing Address Section -->
+                <div id="billing-address" class="billing-address form-group col">
+
+                    <div class="inputBox" id="cash-billing-address">
+                        <h3 class="title">billing address</h3>
+                        <div class="inputBox">
+                            <span>full name :</span>
+                            <input type="text" placeholder="Your Name Here">
+                        </div>
+                        <div class="inputBox">
+                            <span>email :</span>
+                            <input type="email" placeholder="example@example.com">
+                        </div>
+                        <div class="inputBox">
+                            <span>address :</span>
+                            <input type="text" placeholder="room - street - locality">
+                        </div>
+                        <div class="inputBox">
+                            <span>city :</span>
+                            <input type="text" placeholder="lahore">
+                        </div>
+
+                        <div class="inputBox">
+                            <span>zip code :</span>
+                            <input type="text" placeholder="54682">
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+
+            <div>
+                <h2>Order Summary</h2>
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% cartItems.forEach(item=> { %>
+                            <tr>
+                                <td>
+                                    <%= item.productName %>
+                                </td>
+                                <td>Rs.<%= item.productPrice %>
+                                </td>
+                                <td>
+                                    <%= item.quantity %>
+                                </td>
+                                <td>Rs.<%= item.productPrice * item.quantity %>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+
+                <h3>Total: Rs.<%= total %>
+                </h3>
+            </div>
+            <button id="submit-btn" class="submit-btn">Confirm Order</button>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
