@@ -46,6 +46,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', (req, res) => {
   res.render('pages/AdornHomePage.ejs'); // Render the homepage.ejs file in the pages folder
 });
+app.get('/Home', (req, res) => {
+  res.render('pages/Home.ejs'); // Render the homepage.ejs file in the pages folder
+});
 
 app.get('/quickview', (req, res) => {
   res.render('pages/quickview.ejs'); // Render the homepage.ejs file in the pages folder
@@ -109,31 +112,11 @@ app.get('/VTOAdmin', (req, res) => {
 app.get('/checkout', (req, res) => {
   res.render('pages/checkout'); // Render the homepage.ejs file in the pages folder
 });
-app.get('/navbar-component', (req, res) => {
-  res.render('pages/navbar'); // Render the homepage.ejs file in the pages folder
+app.get('/Aboutus', (req, res) => {
+  res.render('pages/Aboutus'); // Render the homepage.ejs file in the pages folder
 });
-app.post('/create-confirm-intent', async (req, res) => {
-  try {
-    const intent = await stripe.paymentIntents.create({
-      confirm: true,
-      amount: 1099,
-      currency: 'usd',
-      // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
-      automatic_payment_methods: {enabled: true},
-      confirmation_token: req.body.confirmationTokenId, // the ConfirmationToken ID sent by your client
-    });
-    res.json({
-      client_secret: intent.client_secret,
-      status: intent.status
-    });
-  } catch (err) {
-    res.json({
-      error: err
-    })
-  }
-});
-app.get('/checkoutCOD', (req, res) => {
-  res.render('pages/checkoutCOD'); // Render the homepage.ejs file in the pages folder
+app.get('/Quickviewpage', (req, res) => {
+  res.render('pages/Quickviewpage'); // Render the homepage.ejs file in the pages folder
 });
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

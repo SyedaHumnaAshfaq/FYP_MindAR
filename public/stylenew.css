@@ -11,20 +11,16 @@ body, html {
     
 }
 header {
-    /* position: fixed; */
+    
     width: 100%;
-    /* background-image: url('images/b2.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
-    /* background-image: url("images/bgnav.jpg"); */
+    
     color: rgb(0, 0, 0);
     text-align: center;
     padding: 1px 0;
     font-family: 'lora';
     z-index: 1000;
     background-color:rgb(0, 0, 0);
+    position: relative;
 }
 
 /* nav ul {
@@ -228,40 +224,6 @@ main {
     /* overflow: hidden; */
 }
 
-/* 
-.pulse-shadow-text {
-    color: rgb(0, 0, 0);
-    font-size: 64px;
-    text-shadow: 0 0 10px rgba(150, 147, 147, 0.7);
-    animation: pulseShadow 2s infinite;
-    max-width: 1100px;
-    padding: 10px;
- 
-  background: rgba(255, 255, 255, 0);
-  
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  backdrop-filter: blur(10px);
-  
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  
-  }
-  
- 
-  
- 
-  @keyframes pulseShadow {
-    0% {
-      text-shadow: 0 0 10px rgba(12, 10, 10, 0.7);
-    }
-    50% {
-      text-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
-    }
-    100% {
-      text-shadow: 0 0 10px rgba(77, 74, 74, 0.7);
-    }
-  } */
 
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
@@ -307,20 +269,11 @@ main {
     align-items: center;
     padding: 0 50px;
     position: relative;
-    /* border-top: 2px solid black; */
-    /* background-color: aqua; */
-    /* background-image: url('images/b6.jpg'); */
-    /* background-image: url('images/m10.jpeg'); */
+   
     background-image: url('images/offwhite3.jpg');
 }
 
-/* .text-left {
-    width: 50%;
-    font-size: 40px;
-    color: rgb(0, 0, 0);
-    
 
-} */
 
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Crimson+Text:ital@400&display=swap');
 
@@ -348,9 +301,7 @@ main {
 
 .text-left {
     padding: 20px;
-    /* background:rgb(156, 149, 149,0.5) ;  */
-    /* border-left: 5px solid #312808;  */
-    /* border-right:   5px solid #312808;; */
+   
     margin: 30px 0;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
@@ -409,16 +360,14 @@ main {
 .glasses-section {
     display: flex;
     justify-content: space-between;
-    /* border-top: 2px dotted teal; */
-    /* border-bottom:  2px dotted teal;; */
+   
     box-shadow: 5px rgb(0, 0, 0);
     align-items: flex-start; /* Align items at the top */
     padding: 0px;
-    /* margin-top: 65px; */
+   
     background: #a28383;
     position: relative;
-    /* background-image: url('images/b12.jpg'); */
-    /* background-image: url('images/m5.jpeg'); */
+   
     background-image: url('images/offwhite4.png');
     height: 100vh;
     padding-right: 25px;
@@ -467,15 +416,7 @@ main {
    
 }
 
-/* .glasses {
-    position: absolute;
-    right: 10%;
-    top: 45%;
-    width: 100px;
-    height: 60px;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-} */
+
 
 .glasses-cards {
     width: 65%;
@@ -958,6 +899,7 @@ img {
     /* background-color: #333; */
     color: white;
     /* padding: 1px; */
+    position: relative;
 }
 
 .sidebar-toggle {
@@ -2251,7 +2193,7 @@ button.loginbutton:hover {
     height: 100vh;
     margin: 0;
     padding: 20px;
-    background: linear-gradient(90deg, #b1a698 60%, #e7dfd4 40.1%);
+    background: linear-gradient(90deg, #232323 60%, #000000 40.1%);
     /* background-color: rgb(240, 240, 240); */
 }
 
@@ -2300,6 +2242,20 @@ h2 {
     font-size: 16px;
     outline: none;
     transition: all 0.3s ease;
+}
+input[type="password"] {
+    width: 100%;
+    padding-right: 30px; /* Space for the eye icon */
+}
+
+.eye-icon {
+    position: absolute;
+    top: 50%;
+    right: -7px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1em;
+    color: #101010; /* Adjust color as needed */
 }
 
 .input-box input:focus {
@@ -2394,7 +2350,8 @@ button.signupbutton:hover {
     height: 100vh;
     margin: 0;
     padding: 20px;
-    background: linear-gradient(90deg, #b1a698 60%, #e7dfd4 40.1%);
+    background: linear-gradient(90deg, #000000 60%, #232323 40.1%);
+    /* background: linear-gradient(90deg, #b1a698 60%, #e7dfd4 40.1%); */
     /* background-color: rgb(240, 240, 240); */
 }
 
@@ -2554,3 +2511,451 @@ button.loginbutton:hover {
     object-fit: cover;
   }
   
+
+
+  /* about us section */
+
+.aboutusbody {
+    background-color: #b9b9b9;
+    color: #000;
+}
+
+.vision-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    
+    background-color: #000;
+    color: #fff;
+    animation: fadeIn 2s ease;
+}
+
+.vision-title {
+    font-size: 10rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modern-vision {
+    display: flex;
+    padding: 50px;
+    gap: 20px;
+}
+
+.modern-vision .left-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.modern-vision h2 {
+    font-size: 2.4rem;
+    color: #000;
+    margin-bottom: 15px;
+    font-family: 'Lato', sans-serif;
+}
+
+.modern-vision img {
+    width: 100%;
+    height: auto;
+    border: 5px solid #000;
+}
+
+.modern-vision .right-section {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.team-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #000;
+    color: #fff;
+}
+
+.team-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-card {
+    width: 250px;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+}
+
+.team-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.team-card p {
+    font-size: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .modern-vision {
+        flex-direction: column;
+    }
+
+    .team-cards {
+        flex-direction: column;
+    }
+
+    .vision-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* quick view page */
+/* Quick View Overlay */
+.quickview-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Quick View Box */
+.quickview-box {
+    background-color: #fff;
+    color: #333;
+    width: 90%;
+    max-width: 900px;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    position: relative;
+    border-radius: 10px;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Content Flexbox */
+.content {
+    display: flex;
+}
+
+/* Product Display Section */
+.product-display {
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.main-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.thumbnail-container {
+    display: flex;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+}
+
+.thumbnail:hover {
+    border-color: #333;
+}
+
+/* Product Details Section */
+.product-details {
+    flex: 1 1 60%;
+    padding: 10px;
+}
+
+.product-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.product-price {
+    font-size: 1.4rem;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product-options {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+select {
+    margin-left: 5px;
+    padding: 5px;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #000;
+}
+
+
+
+/* responsive header */
+/* Menu toggle button for smaller screens */
+.menu-toggle {
+    display: none; /* Hide the menu toggle by default */
+    font-size: 30px; /* Size for the hamburger icon */
+    cursor: pointer; /* Pointer on hover */
+    background: none; /* No background */
+    color: rgb(237, 231, 231); /* Icon color */
+    right: 60px;
+    position: absolute;
+}
+
+/* Dropdown menu for mobile */
+#dropdownMenu {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust according to navbar height */
+    left: 0;
+    background-color: rgb(0, 0, 0); /* Background color */
+    width: 100%; /* Full width */
+    z-index: 999; /* Above other content */
+}
+
+#dropdownMenu a {
+    /* display: none; */
+    padding: 10px 20px; /* Spacing */
+    color: white; /* Link color */
+    display: block; 
+}
+/* Ensure dropdown content is hidden by default */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Show dropdown when .show class is added */
+.dropdown-content.show {
+    display: block;
+}
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .center-content,
+    .right-content {
+        display: none; /* Hide center content and right content */
+    }
+
+    .menu-toggle {
+        display: block; /* Show menu toggle */
+        
+    }
+
+    #dropdownMenu {
+        display: flex; /* Show dropdown on toggle */
+    }
+   
+   
+
+    
+}
+/* Dropdown menu for profile icon */
+.profile-dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position it absolutely */
+    background-color: #333; /* Background color */
+    min-width: 160px; /* Minimum width */
+    z-index: 999; /* Above other content */
+  }
+  
+  /* Links inside the profile dropdown */
+  .profile-dropdown-content a {
+    color: white; /* Link color */
+    padding: 10px 20px; /* Spacing */
+    text-decoration: none; /* No underline */
+    display: block; /* Full width */
+  }
+  
+  /* Show the dropdown when the user clicks on the dropdown button */
+  .dropdown:hover .profile-dropdown-content,
+  .dropdown .profile-dropdown-content.show {
+    display: block; /* Show on hover or toggle */
+  }
+  
+
+
+  /* responsive top section */
+
+/* Media Query for responsive adjustments */
+@media (max-width: 768px) {
+    .pulse-shadow-text {
+        font-size: 40px; /* Decrease font size */
+    }
+
+    .earring {
+        width: 120px; /* Reduce earring size */
+        height: 120px;
+        top: 75%; /* Adjust positioning */
+    }
+}
+
+@media (max-width: 480px) {
+    .pulse-shadow-text {
+        font-size: 20px; /* Further reduce font size */
+    }
+
+    .earring {
+        width: 90px; /* Further reduce earring size */
+        height: 90px;
+        top: 70%; /* Adjust positioning further */
+    }
+}
+
+
+
+/* responsive bottom section */
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .text-left h3 {
+        font-size: 28px;
+    }
+
+    .text-left p {
+        font-size: 22px;
+    }
+
+    .woman-right {
+        width: 48%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bottom-section {
+        padding: 20px;
+    }
+
+    .text-left {
+        padding: 10px;
+        margin: 20px 0;
+    }
+
+    .text-left h3 {
+        font-size: 24px;
+    }
+
+    .text-left p {
+        font-size: 20px;
+    }
+
+    .woman-right {
+        width: 63%; /* Maintain a balanced width to stay on the right */
+    }
+}
+
+@media (max-width: 576px) {
+    .text-left h3 {
+        font-size: 10px;
+    }
+
+    .text-left p {
+        font-size: 12px;
+    }
+
+    .woman-right {
+        width: 100%; /* Adjust width for smallest screens */
+    }
+    .woman-right img{
+        width: 100%; /* Adjust width for smallest screens */
+        margin-bottom: -10px;
+    }
+}
+
+
+/* responsive glasses section */

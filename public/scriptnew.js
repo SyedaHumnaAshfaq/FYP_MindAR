@@ -25,19 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
    
-    function loadNavbar() {
-        const navbarContainer = document.getElementById("navbar-component");
-        
-        fetch("views/pages/navbar.ejs") // Make sure this path is correct for your directory structure
-          .then(response => response.text())
-          .then(data => {
-            navbarContainer.innerHTML = data;
-          })
-          .catch(error => console.error('Error loading navbar:', error));
-      }
     
-      loadNavbar();
-   
 }
 );
 
@@ -324,4 +312,43 @@ window.addEventListener('click', function(e) {
     }
 });
 
+
+// Animation for "OUR VISION" section on load
+document.addEventListener("DOMContentLoaded", () => {
+    const visionTitle = document.querySelector(".vision-title");
+    visionTitle.style.opacity = 0;
+    visionTitle.style.transition = "opacity 1s ease, transform 1s ease";
+    
+    setTimeout(() => {
+        visionTitle.style.opacity = 1;
+        visionTitle.style.transform = "translateY(0)";
+    }, 500);
+});
+
+
+
+
+// navbar responsive
+// scripts.js
+// scripts.js
+// Function to toggle the main dropdown menu
+function toggleMenu() { 
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Function to toggle the profile dropdown menu
+function toggleProfileDropdown() {
+    const dropdown = document.getElementById("profileDropdown");
+    dropdown.classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    const profileDropdown = document.getElementById("profileDropdown");
+
+    if (!event.target.closest('.dropbtn') && profileDropdown.classList.contains('show')) {
+        profileDropdown.classList.remove('show');
+    }
+};
 

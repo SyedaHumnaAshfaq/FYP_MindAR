@@ -37,24 +37,40 @@
                     </div>
                 </div>
                 <img class="icons1" src="images/to3.png" alt="Account" />
-                <a href="/addtocart"><img class="icons1" src="images/cart1.png" alt="Account" /></a>
+                <img class="icons1" src="images/cart1.png" alt="Account" />
             </div>
         </nav>
+        <div id="dropdownMenu" class="dropdown-content">
+          <a href="/">Home</a>
+          <a href="/Aboutus">About</a>
+          <a href="#about">ADORN EASE</a>
+          <a href="/productspage">Collection</a>
+          <a href="#contact">Contact Us</a>
+          <div class="dropdown">
+            <a
+              href="javascript:void(0);"
+              class="dropbtn"
+              onclick="toggleProfileDropdown()"
+            >
+              <img src="images/prof1.png" alt="Account" />
+            </a>
+            <div class="profile-dropdown-content" id="profileDropdown">
+              <a href="/SignUp">Sign Up</a>
+              <a href="/login">Login</a>
+            </div>
+          </div>
+        </div>
   
         <div id="sidebar" class="sidebar">
-            <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
-            <div class="sidebar-item"><a href="/productspage">All Products</a></div>
-            <!-- <div class="sidebar-item"><a href="#glasses">Glasses</a></div> -->
-            <!-- <div class="sidebar-item"><a href="#nosepins">Nosepins</a></div> -->
-            <!-- <div class="sidebar-item"><a href="#new-arrivals">New Arrivals</a></div> -->
-            <!-- <div class="sidebar-item"><a href="#best-sellers">Best Sellers</a></div> -->
-            <div class="sidebar-item"><a href="/checkoutpage">checkout</a></div>
-            <div class="sidebar-item"><a href="#account">My Account</a></div>
-            <div class="sidebar-item"><a href="/wishlist">Wishlist</a></div>
-            <div class="sidebar-item">
-                <a href="#order-history">Order History</a>
-            </div>
-            <div class="sidebar-item"><a href="#support">Customer Support</a></div>
+          <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()"
+            >&times;</a
+          >
+          <div class="sidebar-item"><a href="/productspage">All Products</a></div>
+          <div class="sidebar-item"><a href="/checkoutpage">Checkout</a></div>
+          <div class="sidebar-item"><a href="#account">My Account</a></div>
+          <div class="sidebar-item"><a href="/wishlist">Wishlist</a></div>
+          <div class="sidebar-item"><a href="/trackorder">Track Order</a></div>
+          <div class="sidebar-item"><a href="#support">Help</a></div>
         </div>
       </header>
     <!-- Slim Image Carousel -->
@@ -269,7 +285,7 @@
                     <p>$<%=product.Product_price%>
                     </p>
                     <div class="product-actions">
-                        <button class="quick-view">Quick View</button>
+                        <button class="/quick-view">Quick View</button>
                         <button class="product-btn add-to-cart-btn add-to-cart" data-product-id="<%= product._id %>"
                             data-product-name="<%= product.Product_name %>"
                             data-product-price="<%= product.Product_price %>">Add to Cart</button>
