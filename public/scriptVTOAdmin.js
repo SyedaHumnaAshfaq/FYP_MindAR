@@ -113,7 +113,7 @@ $(document).ready(function () {
     const rotationXL = parseFloat($('#left-rotation-x').val()) || 0;
     const rotationYL = parseFloat($('#left-rotation-y').val()) || 0;
     const rotationZL = parseFloat($('#left-rotation-z').val()) || 0;
-    console.log("rotationXL", rotationXL);
+    console.log("rotationYL", rotationYL);
 
     const positionXL = parseFloat($('#left-position-x').val()) || 0;
     console.log("positionXL", positionXL);
@@ -121,15 +121,15 @@ $(document).ready(function () {
     const positionZL = parseFloat($('#left-position-z').val()) || 0;
 
     const scaleValue = parseFloat($('#scale-slider').val()) || 1;
-    const rotationXR = parseFloat($('#left-rotation-x').val()) || 0;
-    const rotationYR = parseFloat($('#left-rotation-y').val()) || 0;
-    const rotationZR = parseFloat($('#left-rotation-z').val()) || 0;
-    console.log("rotationXR", rotationXL);
+    const rotationXR = parseFloat($('#right-rotation-x').val()) || 0;
+    const rotationYR = parseFloat($('#right-rotation-y').val()) || 0;
+    const rotationZR = parseFloat($('#right-rotation-z').val()) || 0;
+    console.log("rotationYR", rotationYR);
 
-    const positionXR = parseFloat($('#left-position-x').val()) || 0;
+    const positionXR = parseFloat($('#right-position-x').val()) || 0;
     console.log("positionXR", positionXR);
-    const positionYR = parseFloat($('#left-position-y').val()) || 0;
-    const positionZR = parseFloat($('#left-position-z').val()) || 0;
+    const positionYR = parseFloat($('#right-position-y').val()) || 0;
+    const positionZR = parseFloat($('#right-position-z').val()) || 0;
 
    
 
