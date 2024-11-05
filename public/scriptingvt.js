@@ -41,23 +41,25 @@ EarringCards.forEach(card => {
 
     card.addEventListener('click', () => {
         const productId = card.dataset.productId;
+        const productCategory = card.dataset.productCategory;
+        console.log(productCategory);
         console.log("Card clicked!"); // Log to see if the click is detected
 
         if (modelVisible) {
             // On second click, send null to loadModel
             console.log("Sending null to loadModel");
-            loadModel(null);
+            loadModel(null,null);
         } else {
             // On first click, send productId to loadModel
             console.log("Sending Product ID:", productId);
-            loadModel(productId);
+            loadModel(productId,productCategory);
         }
 
         // Toggle the model visibility state
         modelVisible = !modelVisible;
     });
 });
-function loadModel(productId) {
+function loadModel(productId, productCategory) {
     if (productId === null) {
         // Remove all model entities
         $(".earring-entity").remove();
@@ -82,7 +84,8 @@ function loadModel(productId) {
                     // $(".earring-entity").remove();
 
                     // Create new model entities dynamically
-                    const leftEntity = `
+                    if (productCategory == "earing") {
+                        const leftEntity = `
           <a-entity mindar-face-target="anchorIndex: 127">
             <a-gltf-model rotation="${product.model_rotation_left.x} ${product.model_rotation_left.y} ${product.model_rotation_left.z}"
                           position="${product.model_position_left.x} ${product.model_position_left.y} ${product.model_position_left.z}"
@@ -91,7 +94,7 @@ function loadModel(productId) {
                           class="earring-entity" visible="true"></a-gltf-model>
           </a-entity>`;
 
-                    const rightEntity = `
+                        const rightEntity = `
           <a-entity mindar-face-target="anchorIndex: 356">
             <a-gltf-model rotation="${product.model_rotation_right.x} ${product.model_rotation_right.y} ${product.model_rotation_right.z}"
                           position="${product.model_position_right.x} ${product.model_position_right.y} ${product.model_position_right.z}"
@@ -99,17 +102,31 @@ function loadModel(productId) {
                           src="#${product._id}"
                           class="earring-entity" visible="true"></a-gltf-model>
           </a-entity>`;
+          document.querySelector('a-scene').insertAdjacentHTML('beforeend', leftEntity);
+          document.querySelector('a-scene').insertAdjacentHTML('beforeend', rightEntity);
+                    }
+                    else if (productCategory == "eyewear") {
+                        const glassesentity = `
+          <a-entity mindar-face-target="anchorIndex: 168">
+            <a-gltf-model rotation="${product.model_rotation_glasses.x} ${product.model_rotation_glasses.y}"
+                          position="${product.model_position_glasses.x} ${product.model_position_glasses.y} ${product.model_position_glasses.z}"
+                          scale="${product.model_scale.x} ${product.model_scale.y} ${product.model_scale.z}"
+                          src="#${product._id}"
+                          class="earring-entity" visible="true"></a-gltf-model>
+          </a-entity>`;
+          document.querySelector('a-scene').insertAdjacentHTML('beforeend', glassesentity);
+                    }
 
                     // Append the new models to the scene
-                    document.querySelector('a-scene').insertAdjacentHTML('beforeend', leftEntity);
-                    document.querySelector('a-scene').insertAdjacentHTML('beforeend', rightEntity);
+                    
+                   
                 }
 
             },
             error: function (err) {
                 console.log("Error fetching product data:", err);
             }
-        
+
         });
     }
 }

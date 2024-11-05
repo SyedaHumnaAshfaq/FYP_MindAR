@@ -106,7 +106,7 @@
 
       <h2>Earrings</h2>
       <% earings.forEach(earing=> { %>
-        <div class="earring-card" data-product-id="<%= earing._id %>">
+        <div class="earring-card" data-product-id="<%= earing._id %>" data-product-category = "earing">
           <img id="earring" src="<%= earing.Product_image_url %>" />
           <p>
             <%= earing.Product_name %>
@@ -130,6 +130,7 @@
 
                   <h2>Glasses</h2>
                   <% eyewears.forEach(eyewear=> { %>
+                    <div class="earring-card" data-product-id="<%= eyewear._id %>" data-product-category="eyewear">
                     <img id="earring" src="<%= eyewear.Product_image_url %>" />
                     <% }) %>
 

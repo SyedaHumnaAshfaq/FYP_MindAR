@@ -2,6 +2,8 @@
 $(document).ready(function () {
   // Get model URL from query string
   const urlParams = new URLSearchParams(window.location.search);
+  const category = urlParams.get('Product_category');
+  console.log('Category:', category);
   const modelUrl = urlParams.get('modelUrl');
   console.log('Model URL:', modelUrl);
   // Set the model URL in A-Frame along with initial rotation, position, and scale
@@ -16,26 +18,39 @@ $(document).ready(function () {
   if (modelUrl) {
     // Add the asset item for the model URL
     addAssetItem(modelUrl, 'earringModelAsset');
+    if (category == "earing") {
 
-    // Set the model URL in A-Frame along with initial rotation, position, and scale
-    const gltfModel1 = $('a-scene > a-entity > #earringEntityleft'); // Select the a-gltf-model inside earringEntity
-    console.log("tag set to left gltf model", gltfModel1);
-    gltfModel1.attr({
-      'src': '#earringModelAsset', // Reference the asset by ID
-      'rotation': '0 -15 0',           // Initial rotation (adjust as needed)
-      'position': '-0.02 -0.43 -0.1',  // Initial position (adjust as needed)
-      'scale': '0.07 0.07 0.07'        // Initial scale (adjust as needed)
-    });
-    const gltfModel2 = $('#earringEntityright'); // Select the a-gltf-model inside earringEntity
-    console.log("tag set to right gltf model", gltfModel2);
-    gltfModel2.attr({
-      'src': '#earringModelAsset', // Reference the asset by ID
-      'rotation': '0 15 0',           // Initial rotation (adjust as needed)
-      'position': '0.02 -0.43 -0.1',  // Initial position (adjust as needed)
-      'scale': '0.07 0.07 0.07'        // Initial scale (adjust as needed)
+      // Set the model URL in A-Frame along with initial rotation, position, and scale
+      const gltfModel1 = $('a-scene > a-entity > #earringEntityleft'); // Select the a-gltf-model inside earringEntity
+      console.log("tag set to left gltf model", gltfModel1);
+      gltfModel1.attr({
+        'src': '#earringModelAsset', // Reference the asset by ID
+        'rotation': '0 -15 0',           // Initial rotation (adjust as needed)
+        'position': '-0.02 -0.43 -0.1',  // Initial position (adjust as needed)
+        'scale': '0.07 0.07 0.07'        // Initial scale (adjust as needed)
+      });
+      const gltfModel2 = $('#earringEntityright'); // Select the a-gltf-model inside earringEntity
+      console.log("tag set to right gltf model", gltfModel2);
+      gltfModel2.attr({
+        'src': '#earringModelAsset', // Reference the asset by ID
+        'rotation': '0 15 0',           // Initial rotation (adjust as needed)
+        'position': '0.02 -0.43 -0.1',  // Initial position (adjust as needed)
+        'scale': '0.07 0.07 0.07'        // Initial scale (adjust as needed)
 
-    });
+      });
+    }
+    else if (category == "eyewear") {
+      console.log("inside eyewear");
+      const gltfModel3 = $('#glassesmodel');
+      console.log("tag set to glasses gltf model", gltfModel3);
+      gltfModel3.attr({
+        'src': '#earringModelAsset', // Reference the asset by ID
+        'rotation': '0 -90',           // Initial rotation (adjust as needed)
+        'position': '-0.06 -0.12 -0.0005',  // Initial position (adjust as needed)
+        'scale': '0.35 0.35 0.37'        // Initial scale (adjust as needed)
 
+      });
+    }
   } else {
     console.error('Model URL not found in query string');
   }
@@ -76,12 +91,26 @@ $(document).ready(function () {
     const positionZ = parseFloat($('#right-position-z').val()) || 0;
     $('#earringEntityright').attr('position', `${positionX} ${positionY} ${positionZ}`);
   });
+  // for glasses
+  $('#glasses-position-x, #glasses-position-y, #glasses-position-z').on('input', function () {
+    const positionX = parseFloat($('#glasses-position-x').val()) || 0; // Parse to float, fallback to 0
+    const positionY = parseFloat($('#glasses-position-y').val()) || 0;
+    const positionZ = parseFloat($('#glasses-position-z').val()) || 0;
+    $('#glassesmodel').attr('position', `${positionX} ${positionY} ${positionZ}`);
+  });
+  $('#glasses-rotation-x, #glasses-rotation-y').on('input', function () {
+    const rotationX = parseFloat($('#glasses-rotation-x').val()) || 0; // Parse to float, fallback to 0
+    const rotationY = parseFloat($('#glasses-rotation-y').val()) || 0;
+    
+    $('#glassesmodel').attr('rotation', `${rotationX} ${rotationY}`);
+  });
 
   // Scale controls
   $('#scale-slider').on('input', function () {
     var scaleValue = parseFloat($(this).val()) || 1; // Parse to float, fallback to 1
     $('#earringEntityleft').attr('scale', `${scaleValue} ${scaleValue} ${scaleValue}`);
     $('#earringEntityright').attr('scale', `${scaleValue} ${scaleValue} ${scaleValue}`);
+    $('#glassesmodel').attr('scale', `${scaleValue} ${scaleValue} ${scaleValue}`);
   });
 
 
@@ -109,7 +138,7 @@ $(document).ready(function () {
       return;
     }
 
-    // Now you can use the productId for your update functionality
+    // Now you can use the productId for your update functionality for earing
     const rotationXL = parseFloat($('#left-rotation-x').val()) || 0;
     const rotationYL = parseFloat($('#left-rotation-y').val()) || 0;
     const rotationZL = parseFloat($('#left-rotation-z').val()) || 0;
@@ -131,7 +160,15 @@ $(document).ready(function () {
     const positionYR = parseFloat($('#right-position-y').val()) || 0;
     const positionZR = parseFloat($('#right-position-z').val()) || 0;
 
-   
+    //  for glasses
+    const rotationX_glasses = parseFloat($('#glasses-rotation-x').val()) || 0;
+    const rotationY_glasses = parseFloat($('#glasses-rotation-y').val()) || 0;
+
+    const positionX_glasses = parseFloat($('#glasses-position-x').val()) || 0;
+    const positionY_glasses = parseFloat($('#glasses-position-y').val()) || 0;
+    const positionZ_glasses = parseFloat($('#glasses-position-z').val()) || 0;
+
+
 
     // Prepare the data to send to the server
     const data = {
@@ -159,8 +196,17 @@ $(document).ready(function () {
         x: scaleValue,
         y: scaleValue,
         z: scaleValue
+      },
+      model_rotation_glasses: {
+        x: rotationX_glasses,
+        y: rotationY_glasses
+      },
+      model_position_glasses: {
+        x: positionX_glasses,
+        y: positionY_glasses,
+        z: positionZ_glasses
       }
-    };
+      };
     
     // Send the update request
     $.ajax({

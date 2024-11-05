@@ -266,8 +266,10 @@ $(document).ready(function () {
                         // alert('Product added successfully!');
                         refreshTable();
                         const product_id = response.product_id;
+                        const Product_category = response.Product_category;
                         console.log(product_id);
-                        window.location.href = `/VTOAdmin?modelUrl=${encodeURIComponent(response.modelUrl)}&product_id=${encodeURIComponent(product_id)}`;
+                        console.log(Product_category);
+                        window.location.href = `/VTOAdmin?modelUrl=${encodeURIComponent(response.modelUrl)}&product_id=${encodeURIComponent(product_id)}&Product_category=${encodeURIComponent(Product_category)}`;
 
                         $('#productFormContainer').css('left', '-100%'); // Slide out after successful submission
 

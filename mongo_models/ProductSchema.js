@@ -33,6 +33,10 @@ const ProductSchema = new mongoose.Schema({
         type: Object, 
         default: { x: 0, y: 0 } 
     },
+    model_position_glasses: {
+        type: Object, 
+        default: { x: 0, y: 0, z: 0 }
+    },
 
     is_Published: { type: Boolean, required: true, default:false },
 }, { timestamps: true });
