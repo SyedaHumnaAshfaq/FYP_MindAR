@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jewelry Website</title>
     <link rel="stylesheet" href="stylenew.css" />
-   
   </head>
   <body>
-   
     <header>
       <nav class="navbar">
         <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
-        
+
         <div class="center-content" id="navLinks">
           <a href="/">Home</a>
           <a href="/Aboutus">About</a>
@@ -20,7 +18,7 @@
           <a href="/productspage">Collection</a>
           <a href="#contact">Contact Us</a>
         </div>
-        
+
         <div class="right-content">
           <div class="dropdown">
             <a href="#" class="dropbtn">
@@ -34,11 +32,11 @@
           <img class="icons1" src="images/to3.png" alt="Account" />
           <img class="icons1" src="images/cart1.png" alt="Account" />
         </div>
-    
+
         <!-- Hamburger Menu Toggle Button -->
-        <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</button>
-        
-        
+        <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+          ☰
+        </button>
       </nav>
       <div id="dropdownMenu" class="dropdown-content">
         <a href="/">Home</a>
@@ -47,7 +45,11 @@
         <a href="/productspage">Collection</a>
         <a href="#contact">Contact Us</a>
         <div class="dropdown">
-          <a href="javascript:void(0);" class="dropbtn" onclick="toggleProfileDropdown()">
+          <a
+            href="javascript:void(0);"
+            class="dropbtn"
+            onclick="toggleProfileDropdown()"
+          >
             <img src="images/prof1.png" alt="Account" />
           </a>
           <div class="profile-dropdown-content" id="profileDropdown">
@@ -56,9 +58,11 @@
           </div>
         </div>
       </div>
-    
+
       <div id="sidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()"
+          >&times;</a
+        >
         <div class="sidebar-item"><a href="/productspage">All Products</a></div>
         <div class="sidebar-item"><a href="/checkoutpage">Checkout</a></div>
         <div class="sidebar-item"><a href="#account">My Account</a></div>
@@ -67,7 +71,6 @@
         <div class="sidebar-item"><a href="#support">Help</a></div>
       </div>
     </header>
-    
 
     <main>
       <div class="top-section parallax-section" id="top-section">
