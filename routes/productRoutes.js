@@ -11,8 +11,8 @@ router.get('/productsAdmin', productAdminController.getProductsforAdmin);
 router.delete('/products/delete/:id', productAdminController.deleteProduct);
 router.post('/products/update-publish-status/:id', productAdminController.updatePublishStatus);
 router.post('/products/add',upload.fields([{ name: 'Product_image' }, { name: 'Product_model_file' }]), productAdminController.addProduct);
-router.get('/products/update/:id', productAdminController.getProductById);
-router.put('/products/update/:id', productAdminController.updateProduct);
+router.get('/products/update/:id',upload.none(), productAdminController.getProductById);
+router.put('/products/update/:id',upload.none(), productAdminController.updateProduct);
 router.get('/product/getAll', productAdminController.getRefreshedProducts);
 router.get('/get-product/:id', productAdminController.getProductById);
 

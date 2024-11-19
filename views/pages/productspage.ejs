@@ -276,6 +276,7 @@
     <!-- Products Section -->
     <section class="products-grid">
         <% products.forEach(product=> { %>
+            <%if(product.is_Published == true){%>
             <div class="product-card">
                 <img src="<%=product.Product_image_url%>"" alt=" <%=product.Product_name %>">
                 <div class="product-info">
@@ -293,6 +294,7 @@
                     </div>
                 </div>
             </div>
+            <% } %>
             <% }) %>
 
 

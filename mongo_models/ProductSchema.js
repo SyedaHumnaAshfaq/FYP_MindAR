@@ -11,19 +11,19 @@ const ProductSchema = new mongoose.Schema({
     Product_model_url: { type: String, required: true },
     model_rotation_left: { 
         type: Object, 
-        default: { x: 0, y: 0, z: 0 } 
+        default: { x: 0, y: -15, z: 0 } 
     },
     model_position_left: { 
         type: Object, 
-        default: { x: 0, y: 0, z: 0 } 
+        default: { x: -0.02, y: -0.43, z: -0.1 } 
     },
     model_rotation_right: { 
         type: Object, 
-        default: { x: 0, y: 0, z: 0 } 
+        default: { x: 0, y: 15, z: 0 } 
     },
     model_position_right: { 
         type: Object, 
-        default: { x: 0, y: 0, z: 0 } 
+        default: { x: 0.02, y: -0.43, z: -0.1 } 
     },
     model_scale: { 
         type: Object, 
@@ -31,11 +31,11 @@ const ProductSchema = new mongoose.Schema({
     },
     model_rotation_glasses: {
         type: Object, 
-        default: { x: 0, y: 0 } 
+        default: { x: 0, y: 90 } 
     },
     model_position_glasses: {
         type: Object, 
-        default: { x: 0, y: 0, z: 0 }
+        default: { x: -0.06, y: -0.12, z: -0.0005 }
     },
 
     is_Published: { type: Boolean, required: true, default:false },
