@@ -134,14 +134,20 @@
                 <% }) %>
 
 
-                  <h2>Glasses</h2>
+                  <!-- <h2>Glasses</h2>
                   <% eyewears.forEach(eyewear=> { %>
                     <div class="earring-card" data-product-id="<%= eyewear._id %>" data-product-category="eyewear">
                     <img id="earring" src="<%= eyewear.Product_image_url %>" />
                     <% }) %>
 
 
-    </div>
+    </div> -->
+    <% eyewears.forEach(eyewear => { %>
+      <div class="earring-card" data-product-id="<%= eyewear._id %>" data-product-category="eyewear">
+        <img src="<%= eyewear.Product_image_url %>" alt="<%= eyewear.Product_name %>">
+        <p><%= eyewear.Product_name %></p>
+      </div>
+    <% }) %>
   </div>
 </body>
 <script src="scriptingvt.js"></script>

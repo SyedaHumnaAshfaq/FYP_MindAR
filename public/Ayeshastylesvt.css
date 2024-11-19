@@ -21,38 +21,28 @@ body {
 }
 
 /* Options panel for product selection */
-.options-panel {
-    /* display: block; */
+/* .options-panel {
+    
     position: absolute;
     bottom: 0;
     left: 50%;
-    /* right: 50%; */
+   
     transform: translateX(-50%);
     display: flex;
     align-items: center;
     justify-content: flex-start;
     z-index: 2;
-    background-color: rgb(159, 159, 159,0.25); /* No background behind the cards */
+    background-color: rgb(159, 159, 159,0.25); 
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
-    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 1); */
+  
     max-width: 100%;
     overflow-x: auto;
-}
+} */
 
 /* Styling for images in the options panel */
-.options-panel img {
-    margin: 0 20px;
-    width: 100px; /* Increased size */
-    height: 100px; /* Increased size */
-    object-fit:fill;
-    cursor: pointer;
-    border-radius: 12px;
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    border: 2px solid transparent;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Shiny glow effect */
-}
+
 
 /* Highlight selected item */
 .options-panel img.selected {
@@ -85,3 +75,106 @@ body {
     margin: 10px;
     background-color: whitesmoke;
 }
+
+
+
+.options-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* background-color: #fff; */
+    /* background-color: rgba(85, 80, 80, 0.25); */
+    background-color: rgba(159, 159, 159, 0.605);
+    /* background-color: black;  */
+   
+    display: flex;
+    gap: 4px;
+    padding: 5px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    border-top: 1px solid #787474;
+    border-bottom:1px solid #858585 ;
+    z-index: 1000;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    height: 140px;
+    margin-bottom: 5px;
+    
+  }
+
+  .earring-card {
+    flex: 0 0 auto; /* Prevent shrinking */
+    text-align: center;
+    width: 115px; /* Fixed card width */
+    height: 122px; /* Fixed card height */
+    
+    background-color: rgba(197, 192, 192, 0.257); 
+    margin-right: 18px;
+    margin-top: 5px;
+    border: 1px solid gray;
+    
+    border-radius: 5px; /* Optional rounded corners */
+    box-shadow: 0 0 5px rgba(160, 159, 159, 0.7);
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .earring-card img {
+    width: 90%; /* Adjust to fit inside the card */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 80px; 
+    border-radius: 5px;
+    object-fit: contain; /* Ensures images are scaled properly without distortion */
+
+    cursor: pointer;
+    /* border-radius: 12px; */
+    /* transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; */
+    /* border: 2px solid transparent; */
+    /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);  */
+    margin: 0 20px;
+
+  }
+
+  .earring-card p {
+    font-size: 14px;
+    color: #fffbfb; /* Text color */
+    margin: 5px 0 0;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Prevent text from wrapping */
+    width: 100%;
+  }
+  .options-panel h2 {
+    display: inline-block; /* Inline for alignment within the panel */
+    padding: 10px 20px; /* Padding inside the box */
+    margin: 0 10px; /* Space between the headings */
+    /* background-color: #958f8f; */
+    border: 2px solid #575757; /* Subtle border */
+    border-radius: 4px; /* Rounded corners for a pill-like shape */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    color: #d5d2d2; /* Text color */
+    text-align: center; /* Center the text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for a lifted effect */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    transition: all 0.3s ease; /* Smooth hover transition */
+    height: 40px;
+    margin-top: 50px;
+  }
+  .options-panel h2:hover {
+    background-color: #656565; /* Slightly darker background on hover */
+    border-color: #bbb; /* Darker border on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  .earring-card:hover{
+    transform: scale(1.05);
+    background-color: #000000;
+  }
+  
