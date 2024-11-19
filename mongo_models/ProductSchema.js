@@ -39,7 +39,7 @@ const ProductSchema = new mongoose.Schema({
     },
     model_rotation_nosepin: {
         type: Object, 
-        default: { x: 0, y: 0 } 
+        default: { x: 0, y: 0,z: 0 } 
     },
     model_position_nosepin: {
         type: Object, 

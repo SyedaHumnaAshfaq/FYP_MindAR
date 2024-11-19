@@ -103,7 +103,7 @@ $(document).ready(function () {
             gltfModel4.attr({
               'src': '#earringModelAsset',
               position: `${product.model_position_nosepin.x} ${product.model_position_nosepin.y} ${product.model_position_nosepin.z}`,
-              rotation: `${product.model_rotation_nosepin.x} ${product.model_rotation_nosepin.y}`,
+              rotation: `${product.model_rotation_nosepin.x} ${product.model_rotation_nosepin.y } ${product.model_rotation_nosepin.z}`,
               scale: `${product.model_scale.x} ${product.model_scale.y} ${product.model_scale.z}`
             })
           }
