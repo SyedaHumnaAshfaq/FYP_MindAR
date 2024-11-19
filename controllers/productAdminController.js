@@ -66,6 +66,10 @@ const getProductById = async (req, res) => {
 };
 const updateProduct = async (req, res) => {
     const productId = req.params.id;
+    console.log(productId);
+    console.log(req.body);
+
+    console.log('we are entering the controller');
     try {
         if (typeof req.body.is_Published === 'string') {
             req.body.is_Published = req.body.is_Published === 'on';
@@ -76,6 +80,7 @@ const updateProduct = async (req, res) => {
             req.body,
             { new: true, runValidators: true } // Return the updated document and run schema validators
         );
+        console.log(updatedProduct);
 
         // If the product is not found
         if (!updatedProduct) {
@@ -84,6 +89,7 @@ const updateProduct = async (req, res) => {
 
         // Return the updated product in the response
         res.json({ success: true, product: updatedProduct });
+        // console.log('Product updated successfully:', updatedProduct);
     } catch (error) {
         // Log the error to the console and return a 500 Internal Server Error
         console.error('Error updating product:', error);

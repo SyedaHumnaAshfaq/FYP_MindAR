@@ -60,8 +60,8 @@ $(document).ready(function () {
         if (selectedOther === "Published") {
             applyFilters(false, false);
         }
-        if(selectedOther==="Unpublished"){
-            applyFilters(false,false);
+        if (selectedOther === "Unpublished") {
+            applyFilters(false, false);
         }
     });
 
@@ -79,10 +79,10 @@ $(document).ready(function () {
         // applyFilters();
     });
 
-    function applyFilters(sortByPriceASC = false,sortByPriceDESC = false) {
+    function applyFilters(sortByPriceASC = false, sortByPriceDESC = false) {
         const searchText = $('#searchCustomerName').val().toLowerCase();
         let rows = $('tbody tr');
-    
+
         rows.each(function () {
             const productName = $(this).find('.productName').text().toLowerCase();
             const rowCategory = $(this).find('.category').text().toLowerCase();
@@ -90,7 +90,7 @@ $(document).ready(function () {
             const status = $(this).find('.status').text().trim().toLowerCase();
             const publish = $(this).find('.toggle-publish').is(':checked');
 
-            console.log(status);            
+            console.log(status);
             let isVisible = true;
 
             if (searchText && !productName.includes(searchText)) {
@@ -102,7 +102,7 @@ $(document).ready(function () {
             if (selectedOther === "Status-Out of Stock" && status !== "out of stock") {
                 isVisible = false;
             }
-            if (selectedOther === "Status-Selling" && status !== "selling") { 
+            if (selectedOther === "Status-Selling" && status !== "selling") {
                 isVisible = false;
             }
             if (selectedOther === "Published" && !publish) {
@@ -179,6 +179,8 @@ $(document).ready(function () {
         // Change the form title and button text for updating
         $('#addProductForm').find('h2').text('Update Product');
         $('#addProductBtn').text('Update Product');
+        $('#productImage').removeAttr('required');
+        $('#productModelFile').removeAttr('required');
 
         // Display the form by sliding it into view
         $('#productFormContainer').css('left', '0');
@@ -199,12 +201,18 @@ $(document).ready(function () {
                     // $('#productPrice').val(response.product.Product_price);
                     // $('#productPrice').val(parseFloat(response.product.Product_price).toFixed(2));
                     $('#productPrice').val(parseFloat(response.product.Product_price.$numberDecimal));
-                    $('#productImageURL').val(response.product.Product_image_url);
+                    // $('#productImageURL').val(response.product.Product_image_url);
                     $('#productDescription').val(response.product.Product_description);
                     $('#productCategory').val(response.product.Product_category);
                     $('#productStock').val(response.product.Product_stock);
                     $('#productRating').val(response.product.Product_rating);
                     $('#productModelURL').val(response.product.Product_model_url);
+                    const imagePreview = $('#imagePreview');
+                    imagePreview.attr('src', response.product.Product_image_url); // Set the AWS URL
+                    imagePreview.show();
+                  
+    
+                    // $('#productModelURL').val(response.product.Product_model_url);
                     // $('#productIsPublished').prop('checked', response.product.is_Published);
 
                     // Store the product ID in the form as a data attribute
@@ -244,9 +252,13 @@ $(document).ready(function () {
                 processData: false, // Important: do not process the data, let jQuery handle it
                 success: function (response) {
                     if (response.success) {
-                        alert('Product updated successfully!');
+                        console.log("response", response.product);
+                        const product_id = response.product._id;
+                        const Product_category = response.product.Product_category;
+                        // alert('Product updated successfully!');
                         refreshTable();
                         $('#productFormContainer').css('left', '-100%');
+                        window.location.href = `/VTOAdmin?modelUrl=${encodeURIComponent(response.product.Product_model_url)}&product_id=${encodeURIComponent(product_id)}&Product_category=${encodeURIComponent(Product_category)}  `;
                         // window.location.reload();
                     } else {
                         alert('Failed to update product.');
@@ -333,27 +345,27 @@ $(document).ready(function () {
             }
         });
     }
-    
-    $('.close-button').on('click', function() {
+
+    $('.close-button').on('click', function () {
         $('#productModal').hide();
     });
 
 
-    $('.view').on('click', function() {
+    $('.view').on('click', function () {
         const productId = $(this).closest('tr').data('product-id');
 
         // Fetch product details from the server
         $.ajax({
             url: '/products/update/' + productId, // Assuming you have this endpoint
             method: 'GET',
-            success: function(response) {
+            success: function (response) {
                 if (response.success) {
                     openProductModal(response.product);
                 } else {
                     alert('Failed to load product details.');
                 }
             },
-            error: function() {
+            error: function () {
                 alert('An error occurred while fetching the product details.');
             }
         });
@@ -371,5 +383,32 @@ $(document).ready(function () {
         $('#productModal').show(); // Show the modal
     }
 
+    const fileInput = document.getElementById('productImage');
+    const imagePreview = document.getElementById('imagePreview');
+
+    // Add an event listener for the change event
+    fileInput.addEventListener('change', function () {
+        const file = fileInput.files[0]; // Get the selected file
+
+        if (file) {
+            const reader = new FileReader();
+
+            // When the file is read, update the preview image
+            reader.onload = function (e) {
+                imagePreview.src = e.target.result; // Set the image source
+                imagePreview.style.display = 'block'; // Make the image visible
+            };
+
+            reader.readAsDataURL(file); // Read the file as a Data URL
+        } else {
+            // Hide the image if no file is selected
+            imagePreview.style.display = 'none';
+            imagePreview.src = '';
+        }
+    });
+    $('#productModelFile').on('change', function () {
+        // Clear the model URL input when a file is selected
+        $('#productModelURL').val('');
+    });
 
 });

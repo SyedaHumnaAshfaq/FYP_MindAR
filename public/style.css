@@ -2843,5 +2843,10 @@ canvas {
     font-size: 20px;
   }
 
+#previewContainer{
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
 
+}
   
