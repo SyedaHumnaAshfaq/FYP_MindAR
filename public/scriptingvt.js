@@ -119,8 +119,8 @@ function loadModel(productId, productCategory) {
                     else if (productCategory == "nosepin") {
                         const nosepinentity = `
                         <a-entity mindar-face-target="anchorIndex: 1">
-                          <a-gltf-model rotation="${product.model_rotation_glasses.x} ${product.model_rotation_glasses.y}"
-                                        position="${product.model_position_glasses.x} ${product.model_position_glasses.y} ${product.model_position_glasses.z}"
+                          <a-gltf-model rotation="${product.model_rotation_nosepin.x} ${product.model_rotation_nosepin.y}"
+                                        position="${product.model_position_nosepin.x} ${product.model_position_nosepin.y} ${product.model_position_nosepin.z}"
                                         scale="${product.model_scale.x} ${product.model_scale.y} ${product.model_scale.z}"
                                         src="#${product._id}"
                                         class="earring-entity" visible="true"></a-gltf-model>
