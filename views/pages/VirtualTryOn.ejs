@@ -118,7 +118,13 @@
 
           <h2>Nose pins</h2>
           <% nosepins.forEach(nosepin=> { %>
-            <img id="earring" src="<%= nosepin.Product_image_url %>" />
+            <!-- <img id="earring" src="<%= nosepin.Product_image_url %>" /> -->
+            <div class="earring-card" data-product-id="<%= nosepin._id %>" data-product-category = "nosepin">
+              <img id="earring" src="<%= nosepin.Product_image_url %>" />
+              <p>
+                <%= nosepin.Product_name %>
+              </p>
+            </div>
             <% }) %>
 
 

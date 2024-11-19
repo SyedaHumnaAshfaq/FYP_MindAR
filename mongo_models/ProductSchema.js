@@ -37,6 +37,14 @@ const ProductSchema = new mongoose.Schema({
         type: Object, 
         default: { x: -0.06, y: -0.12, z: -0.0005 }
     },
+    model_rotation_nosepin: {
+        type: Object, 
+        default: { x: 0, y: 0 } 
+    },
+    model_position_nosepin: {
+        type: Object, 
+        default: { x: 0.07, y: 0.04, z: -0.1 }
+    },
 
     is_Published: { type: Boolean, required: true, default:false },
 }, { timestamps: true });

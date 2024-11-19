@@ -48,11 +48,11 @@ EarringCards.forEach(card => {
         if (modelVisible) {
             // On second click, send null to loadModel
             console.log("Sending null to loadModel");
-            loadModel(null,null);
+            loadModel(null, null);
         } else {
             // On first click, send productId to loadModel
             console.log("Sending Product ID:", productId);
-            loadModel(productId,productCategory);
+            loadModel(productId, productCategory);
         }
 
         // Toggle the model visibility state
@@ -102,8 +102,8 @@ function loadModel(productId, productCategory) {
                           src="#${product._id}"
                           class="earring-entity" visible="true"></a-gltf-model>
           </a-entity>`;
-          document.querySelector('a-scene').insertAdjacentHTML('beforeend', leftEntity);
-          document.querySelector('a-scene').insertAdjacentHTML('beforeend', rightEntity);
+                        document.querySelector('a-scene').insertAdjacentHTML('beforeend', leftEntity);
+                        document.querySelector('a-scene').insertAdjacentHTML('beforeend', rightEntity);
                     }
                     else if (productCategory == "eyewear") {
                         const glassesentity = `
@@ -114,12 +114,24 @@ function loadModel(productId, productCategory) {
                           src="#${product._id}"
                           class="earring-entity" visible="true"></a-gltf-model>
           </a-entity>`;
-          document.querySelector('a-scene').insertAdjacentHTML('beforeend', glassesentity);
+                        document.querySelector('a-scene').insertAdjacentHTML('beforeend', glassesentity);
+                    }
+                    else if (productCategory == "nosepin") {
+                        const nosepinentity = `
+                        <a-entity mindar-face-target="anchorIndex: 1">
+                          <a-gltf-model rotation="${product.model_rotation_glasses.x} ${product.model_rotation_glasses.y}"
+                                        position="${product.model_position_glasses.x} ${product.model_position_glasses.y} ${product.model_position_glasses.z}"
+                                        scale="${product.model_scale.x} ${product.model_scale.y} ${product.model_scale.z}"
+                                        src="#${product._id}"
+                                        class="earring-entity" visible="true"></a-gltf-model>
+                        </a-entity>`;
+                        document.querySelector('a-scene').insertAdjacentHTML('beforeend', nosepinentity);
+
                     }
 
                     // Append the new models to the scene
-                    
-                   
+
+
                 }
 
             },

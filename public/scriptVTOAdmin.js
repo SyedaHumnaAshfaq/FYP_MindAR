@@ -48,6 +48,12 @@ $(document).ready(function () {
           $('#glasses-position-z').val(product.model_position_glasses.z);
           $('#glasses-rotation-x').val(product.model_rotation_glasses.x);
           $('#glasses-rotation-y').val(product.model_rotation_glasses.y);
+          $('#nosepin-position-x').val(product.model_position_nosepin.x);
+          $('#nosepin-position-y').val(product.model_position_nosepin.y);
+          $('#nosepin-position-z').val(product.model_position_nosepin.z);
+          $('#nosepin-rotation-x').val(product.model_rotation_nosepin.x);
+          $('#nosepin-rotation-y').val(product.model_rotation_nosepin.y);
+          $('#nosepin-rotation-z').val(product.model_rotation_nosepin.z);
 
           $('#scale-slider').val(product.model_scale.x);
 
@@ -85,12 +91,23 @@ $(document).ready(function () {
             const gltfModel3 = $('#glassesmodel');
             console.log("tag set to glasses gltf model", gltfModel3);
             gltfModel3.attr({
-              'src':'#earringModelAsset',
+              'src': '#earringModelAsset',
               position: `${product.model_position_glasses.x} ${product.model_position_glasses.y} ${product.model_position_glasses.z}`,
               rotation: `${product.model_rotation_glasses.x} ${product.model_rotation_glasses.y}`,
               scale: `${product.model_scale.x} ${product.model_scale.y} ${product.model_scale.z}`
             });
+          } else if (category == "nosepin") {
+            console.log("inside nosepin");
+            const gltfModel4 = $('#nosepinmodel');
+            console.log("tag set to nosepin gltf model", gltfModel4);
+            gltfModel4.attr({
+              'src': '#earringModelAsset',
+              position: `${product.model_position_nosepin.x} ${product.model_position_nosepin.y} ${product.model_position_nosepin.z}`,
+              rotation: `${product.model_rotation_nosepin.x} ${product.model_rotation_nosepin.y} ${product.model_rotation_nosepin.z}`,
+              scale: `${product.model_scale.x} ${product.model_scale.y} ${product.model_scale.z}`
+            })
           }
+        
         
         } else {
           console.error('Model URL not found in query string');
@@ -153,6 +170,18 @@ $(document).ready(function () {
     
     $('#glassesmodel').attr('rotation', `${rotationX} ${rotationY}`);
   });
+  $('#nosepin-position-x, #nosepin-position-y, #nosepin-position-z').on('input', function () {
+    const positionX = parseFloat($('#nosepin-position-x').val()) || 0; // Parse to float, fallback to 0
+    const positionY = parseFloat($('#nosepin-position-y').val()) || 0;
+    const positionZ = parseFloat($('#nosepin-position-z').val()) || 0;
+    $('#nosepinmodel').attr('position', `${positionX} ${positionY} ${positionZ}`);
+  });
+  $('#nosepin-rotation-x, #nosepin-rotation-y, #nosepin-rotation-z').on('input', function () {
+    const rotationX = parseFloat($('#nosepin-rotation-x').val()) || 0; // Parse to float, fallback to 0
+    const rotationY = parseFloat($('#nosepin-rotation-y').val()) || 0;
+    const rotationZ = parseFloat($('#nosepin-rotation-z').val()) || 0;
+    $('#nosepinmodel').attr('rotation', `${rotationX} ${rotationY} ${rotationZ}`);
+  });
 
   // Scale controls
   $('#scale-slider').on('input', function () {
@@ -160,6 +189,7 @@ $(document).ready(function () {
     $('#earringEntityleft').attr('scale', `${scaleValue} ${scaleValue} ${scaleValue}`);
     $('#earringEntityright').attr('scale', `${scaleValue} ${scaleValue} ${scaleValue}`);
     $('#glassesmodel').attr('scale', `${scaleValue} ${scaleValue} ${scaleValue}`);
+    $('#nosepinmodel').attr('scale', `${scaleValue} ${scaleValue} ${scaleValue}`);
   });
 
 
@@ -217,6 +247,16 @@ $(document).ready(function () {
     const positionY_glasses = parseFloat($('#glasses-position-y').val()) || 0;
     const positionZ_glasses = parseFloat($('#glasses-position-z').val()) || 0;
 
+    //  for nosepin
+    const rotationX_nosepin = parseFloat($('#nosepin-rotation-x').val()) || 0;
+    const rotationY_nosepin = parseFloat($('#nosepin-rotation-y').val()) || 0;
+    const rotationZ_nosepin = parseFloat($('#nosepin-rotation-z').val()) || 0;
+
+    const positionX_nosepin = parseFloat($('#nosepin-position-x').val()) || 0;
+    const positionY_nosepin = parseFloat($('#nosepin-position-y').val()) || 0;
+    const positionZ_nosepin = parseFloat($('#nosepin-position-z').val()) || 0;
+
+
 
 
     // Prepare the data to send to the server
@@ -254,7 +294,18 @@ $(document).ready(function () {
         x: positionX_glasses,
         y: positionY_glasses,
         z: positionZ_glasses
+      },
+      model_rotation_nosepin: {
+        x: rotationX_nosepin,
+        y: rotationY_nosepin,
+        z: rotationZ_nosepin
+      },
+      model_position_nosepin: {
+        x: positionX_nosepin,
+        y: positionY_nosepin,
+        z: positionZ_nosepin
       }
+
       };
     
     // Send the update request
