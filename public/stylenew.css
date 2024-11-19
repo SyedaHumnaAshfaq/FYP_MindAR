@@ -1546,7 +1546,7 @@ button {
     align-items: center;
     padding:35px;
     min-height: 100vh;
-    background: linear-gradient(90deg, #b1a698 60%, #e7dfd4 40.1%);
+    background: linear-gradient(90deg, #000000 60%, #6e6e6e 40.1%);
     
     /* background-image: url('images/m11.jpeg'); */
   }
@@ -1823,7 +1823,7 @@ button.loginbutton:hover {
 .left-column {
     width: 10%;
     /* background-color: #333; */
-    background-color: #543310;
+    background-color: #100e0d;
     padding: 20px;
     color: white;
 }
@@ -1854,16 +1854,16 @@ button.loginbutton:hover {
     padding: 40px;
     /* border-radius: 12px; */
     /* border: 2px solid black; */
-    background-color: #FFF2E1;
+    background-color: #ffffff;
 
 }
 
 /* Order Details */
 .order-details {
     padding: 20px;
-    background-color: #F3EEEA;
+    background-color: #9b9999;
     border-radius: 18px;
-    border: 2px solid rgb(138, 134, 134);
+    border: 2px solid rgb(129, 124, 124);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -1879,10 +1879,10 @@ button.loginbutton:hover {
 }
 
 .status-box {
-    background-color: #D1BB9E;
+    background-color: #545454;
     padding: 20px;
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: rgb(245, 238, 238);
     flex: 1;
     margin: 0 10px;
     border-radius: 4px;
@@ -1894,7 +1894,7 @@ button.loginbutton:hover {
 
 .status-box:hover {
     transform: scale(1.05);
-    background-color: #835e42;
+    background-color: #444444;
 }
 
 /* Shipping Address */
@@ -1992,7 +1992,7 @@ button.loginbutton:hover {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #D1BB9E;
+    background-color: #949494;
     border-radius: 8px;
     margin-bottom: 30px;
     flex-wrap: wrap;
@@ -2022,7 +2022,7 @@ button.loginbutton:hover {
 .search-bar button {
     padding: 10px;
     /* background-color: #333; */
-    background-color: #543310;
+    background-color: #000000;
     color: white;
     border: none;
     border-radius: 0 4px 4px 0;
