@@ -17,6 +17,7 @@ const OrderSchema = new mongoose.Schema({
         ref: 'Product', // Reference to the Product model
         required: true
       },
+      
       quantity: {
         type: Number,
         required: true
@@ -34,11 +35,15 @@ const OrderSchema = new mongoose.Schema({
   shippingAddress: {
     name: { type: String, required: true },
     addressLine1: { type: String, required: true },
-    addressLine2: { type: String },
     city: { type: String, required: true },
-    state: { type: String, required: true },
     postalCode: { type: String, required: true },
-    country: { type: String, required: true }
+  },
+  billingAddress: {
+
+    addressLine1: { type: String, required: true },
+    city: { type: String, required: true },
+    postalCode: { type: String, required: true },
+
   },
   status: {
     type: String,
@@ -47,7 +52,7 @@ const OrderSchema = new mongoose.Schema({
   },
   method: {
     type: String,
-    enum: ['card', 'cash'],
+    enum: ['card', 'cod'],
     required: true
   }
 }, { timestamps: true });

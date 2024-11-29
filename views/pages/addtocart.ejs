@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
 </head>
 
@@ -67,7 +68,7 @@
                     <% if (grandTotal> 0) { %>
                         <!-- <p>Subtotal: <span id="cart-subtotal"></span></p> -->
                         <p>Cart Total: <span id="cart-total">Rs.<%= grandTotal.toFixed(0) %></span></p>
-                        <a class="checkout-btn" href="/checkout">Proceed to Checkout</a>
+                        <a class="checkout-btn" href="/checkoutCOD">Proceed to Checkout</a>
                         <% } %>
                 </div>
     </main>

@@ -110,9 +110,7 @@ app.get('/favourites', (req, res) => {
 app.get('/VTOAdmin', (req, res) => {
   res.render('pages/VTOAdmin'); // Render the homepage.ejs file in the pages folder
 });
-app.get('/checkout', (req, res) => {
-  res.render('pages/checkout'); // Render the homepage.ejs file in the pages folder
-});
+
 app.get('/Aboutus', (req, res) => {
   res.render('pages/Aboutus'); // Render the homepage.ejs file in the pages folder
 });
@@ -142,6 +140,12 @@ app.post('/create-confirm-intent', async (req, res) => {
 app.get('/checkoutCOD', (req, res) => {
   res.render('pages/checkoutCOD'); // Render the homepage.ejs file in the pages folder
 });
+app.get('/checkout', (req, res) => {
+  res.render('pages/checkout'); // Render the homepage.ejs file in the pages folder
+});
+app.get('/order-confirmation', (req, res) => {
+  res.render('pages/order-confirmation'); // Render the homepage.ejs file in the pages folder
+ });
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

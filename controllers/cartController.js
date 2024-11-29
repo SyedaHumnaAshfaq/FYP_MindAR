@@ -3,6 +3,7 @@ const Cart = require('../mongo_models/CartSchema');
 const addItemToCart = async(req,res)=>{
     const { cartId } = req.cookies; // Retrieve cartId from cookies
     const { productId, productName, productPrice, quantity } = req.body;
+    console.log('req.body',req.body);
 
     try {
         const cart = await Cart.findOneAndUpdate(

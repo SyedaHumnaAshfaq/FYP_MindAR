@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Add to cart button clicked');
             const button = event.target;
             const productId = button.dataset.productId;
+            console.log(productId);
             const productName = button.dataset.productName;
+            console.log(productName);
             const productPrice = button.dataset.productPrice;
             const quantity = 1; // Default quantity, you can add a quantity selector if needed
 

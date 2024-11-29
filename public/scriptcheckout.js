@@ -119,34 +119,3 @@ const handleServerResponse = async (response) => {
 });
 
 
-$(document).ready(function () {
-    // Handle Payment Method Selection
-    $('input[name="payment"]').on('change', function () {
-        if ($('#cod').is(':checked')) {
-            $('#cod-options').show();
-            $('#submit-btn').text('Confirm Order');
-        } else {
-            $('#cod-options').hide();
-            $('#billing-address').hide();
-            $('#submit-btn').text('Pay Now');
-        }
-    });
-
-    // Handle Billing Address Toggle for COD
-    $('#same-as-shipping').on('change', function () {
-        if ($(this).is(':checked')) {
-            $('#billing-address').hide();
-        } else {
-            $('#billing-address').show();
-        }
-    });
-
-    // Handle Form Submission
-    $('#submit-btn').on('click', function () {
-        if ($('#card').is(':checked')) {
-            window.location.href = '/checkout'; // Redirect to "checkput" page for card payment
-        } else {
-            alert('Order confirmed!');
-        }
-    });
-});

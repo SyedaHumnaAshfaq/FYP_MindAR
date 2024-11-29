@@ -2,12 +2,16 @@ const Order = require('../mongo_models/OrderSchema');
 const Product = require('../mongo_models/ProductSchema');
 const createOrder = async (req, res) => {
   try {
-    const { customerName, products, totalAmount, shippingAddress, method } = req.body;
+    const { customerName, products, totalAmount, shippingAddress, billingAddress, method } = req.body;
+    console.log('req.body',req.body);
     const cartId = req.cookies.cartId;
+    console.log('cartId',cartId);
     if (!cartId) {
       return res.status(400).json({ message: 'Cart not found' });
     }
-    const newOrder = new Order({ customerName, cartId, products, totalAmount, shippingAddress, method });
+    
+    const newOrder = new Order({ customerName, cartId, products, totalAmount, shippingAddress ,billingAddress, method });
+    
     await newOrder.save();
     res.status(201).json({ message: 'Order created successfully', order: newOrder });
   } catch (error) {
@@ -105,12 +109,14 @@ const getDashboardData = async (req, res) => {
       }},
       { $sort: { totalSales: -1 } } // Sort by total sales in descending order
     ]);
+    console.log('products',products);
     // console.log("Product IDs: ", products.map(p => p._id));
     
     // Format data for the pie chart
     const productIds = products.map(p => p._id);
     // const productIds = products.map(p => mongoose.Types.ObjectId(p._id));
     console.log("Product IDs: ", productIds);
+    console.log("Product IDs Types:", productIds.map(id => typeof id));
     const productDetails = await Product.find({ _id: { $in: productIds } });
     console.log("Product Details: ", productDetails);
     const productNames = productDetails.map(pd => pd.Product_name);
