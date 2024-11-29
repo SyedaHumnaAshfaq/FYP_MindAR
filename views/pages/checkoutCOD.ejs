@@ -8,36 +8,43 @@
     <!-- <link rel="stylesheet" href="/checkoutstyles.css"> -->
     <link rel="stylesheet" href="/stylenew.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/scriptcheckout.js"></script>
+    <!-- <script src="https://js.stripe.com/v3/"></script> -->
+
+    <script src="/scriptcheckoutCOD.js"></script>
 </head>
 
 <body>
     <div class="containercheck">
         <form action="">
             <h2>Checkout</h2>
+            <div id="cod-options" class="form-group">
+                <input type="checkbox" id="same-as-shipping">
+                <label for="same-as-shipping">Billing Address same as Shipping</label>
+            </div>
             <div class="row">
+                
                 <div class="col">
                     <h3 class="title">shipping address</h3>
                     <div class="inputBox">
                         <span>full name :</span>
-                        <input type="text" placeholder="Your Name Here">
+                        <input type="text" placeholder="Your Name Here" name="name" required>
                     </div>
                     <div class="inputBox">
                         <span>email :</span>
-                        <input type="email" placeholder="example@example.com">
+                        <input type="email" placeholder="example@example.com" name="email" required>
                     </div>
                     <div class="inputBox">
                         <span>address :</span>
-                        <input type="text" placeholder="room - street - locality">
+                        <input type="text" placeholder="room - street - locality" name="address" required>
                     </div>
                     <div class="inputBox">
                         <span>city :</span>
-                        <input type="text" placeholder="lahore">
+                        <input type="text" placeholder="lahore" name="city" required>
                     </div>
 
                     <div class="inputBox">
                         <span>zip code :</span>
-                        <input type="text" placeholder="54682">
+                        <input type="text" placeholder="54682" name="billing-zip">
                     </div>
 
                     <!-- Payment Method Section -->
@@ -49,10 +56,7 @@
                         <label for="card">Credit/Debit Card</label>
                     </div>
 
-                    <div id="cod-options" class="form-group">
-                        <input type="checkbox" id="same-as-shipping">
-                        <label for="same-as-shipping">Billing Address same as Shipping</label>
-                    </div>
+                  
 
                 </div>
                 <!-- <div class="col"> -->
@@ -64,26 +68,26 @@
 
                     <div class="inputBox" id="cash-billing-address">
                         <h3 class="title">billing address</h3>
-                        <div class="inputBox">
+                        <!-- <div class="inputBox">
                             <span>full name :</span>
-                            <input type="text" placeholder="Your Name Here">
+                            <input type="text" placeholder="Your Name Here" required>
                         </div>
                         <div class="inputBox">
                             <span>email :</span>
-                            <input type="email" placeholder="example@example.com">
-                        </div>
+                            <input type="email" placeholder="example@example.com" req>
+                        </div> -->
                         <div class="inputBox">
                             <span>address :</span>
-                            <input type="text" placeholder="room - street - locality">
+                            <input type="text" placeholder="room - street - locality" name="billing-address" required>
                         </div>
                         <div class="inputBox">
                             <span>city :</span>
-                            <input type="text" placeholder="lahore">
+                            <input type="text" placeholder="lahore" required name="billing-city">
                         </div>
 
                         <div class="inputBox">
                             <span>zip code :</span>
-                            <input type="text" placeholder="54682">
+                            <input type="text" placeholder="54682" name="zip">
                         </div>
 
 
@@ -102,6 +106,7 @@
                 <table class="cart-table">
                     <thead>
                         <tr>
+                            
                             <th>Product Name</th>
                             <th>Price</th>
                             <th>Quantity</th>
@@ -110,8 +115,9 @@
                     </thead>
                     <tbody>
                         <% cartItems.forEach(item=> { %>
-                            <tr>
-                                <td>
+                            <% const ProductID = item.productId %>
+                            <tr data-productid="<%= ProductID %>">
+                                <td >
                                     <%= item.productName %>
                                 </td>
                                 <td>Rs.<%= item.productPrice %>
@@ -129,7 +135,7 @@
                 <h3>Total: Rs.<%= total %>
                 </h3>
             </div>
-            <button id="submit-btn" class="submit-btn">Confirm Order</button>
+            <button id="submit-btn" class="submit-btn" type="submit">Confirm Order</button>
         </form>
 
     </div>

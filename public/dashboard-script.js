@@ -1,6 +1,7 @@
 $(document).ready(function () { 
     function initializeChart() {
         const salesData = $('#weekly-sales-data').data('sales');
+        console.log('Sales Data:', salesData);
         const weeklySalesData = {
             labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
             datasets: [{
