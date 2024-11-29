@@ -3,7 +3,12 @@ $(document).ready(function () {
     $('input[name="payment"]').on('change', function () {
         if ($('#cod').is(':checked')) {
             $('#cod-options').show();
-            $('#billing-address').show();
+            if ($('#same-as-shipping').is(':checked')) {
+                $('#billing-address').hide();
+            } else {
+
+                $('#billing-address').show();
+            }
             $('#submit-btn').text('Confirm Order');
         } else if ($('#card').is(':checked')) {
             $('#cod-options').hide();
@@ -32,12 +37,14 @@ $(document).ready(function () {
         const zip = $('input[name="zip"]').val();
         const paymentMethod = $('input[name="payment"]:checked').val();
         const sameAsShipping = $('#same-as-shipping').is(':checked'); // Check if billing address is same as shipping
+        console.log($('input[name="zip"]').val());
         const shippingAddress = {
             name: name,
             addressLine1: address,
             city: city,
-            postalCode: zip,
+            postalCode: zip
         };
+        console.log(shippingAddress);   
 
 
         // Clear previous error messages
@@ -68,11 +75,12 @@ $(document).ready(function () {
             billingAddress = {
                 addressLine1: address,
                 city: city,
-                postalCode: zip,
+                postalCode: zip
             };
+            console.log(billingAddress);
         }
 
-        if (!sameAsShipping) {
+        else {
             const billAddress = $('input[name="billing-address"]').val();
             const billingCity = $('input[name="billing-city"]').val();
             const billingZip = $('input[name="billing-zip"]').val();
@@ -141,7 +149,7 @@ $(document).ready(function () {
                     billingAddress: billingAddress,
                     method: paymentMethod
                 };
-                console.log("order data:",orderData);
+                console.log("order data:", orderData);
                 $.ajax({
                     url: '/createOrder',  // Endpoint for creating an order
                     method: 'POST',
@@ -153,9 +161,14 @@ $(document).ready(function () {
                         window.location.href = '/order-confirmation';  // Redirect to confirmation page
                     },
                     error: function (error) {
-                        // Handle error
-                        alert('Error placing order. Please try again.');
-                    }
+                        if (error.responseJSON && error.responseJSON.message) {
+                          // Show the specific error message
+                          alert(error.responseJSON.message);
+                        } else {
+                          // Default error message
+                          alert('Error placing order. Please try again.');
+                        }
+                      }
                 });
             }
         } else {

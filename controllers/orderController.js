@@ -1,23 +1,84 @@
 const Order = require('../mongo_models/OrderSchema');
 const Product = require('../mongo_models/ProductSchema');
+// const createOrder = async (req, res) => {
+//   try {
+//     const { customerName, products, totalAmount, shippingAddress, billingAddress, method } = req.body;
+//     console.log('req.body',req.body);
+//     const cartId = req.cookies.cartId;
+//     console.log('cartId',cartId);
+//     if (!cartId) {
+//       return res.status(400).json({ message: 'Cart not found' });
+//     }
+    
+//     const newOrder = new Order({ customerName, cartId, products, totalAmount, shippingAddress ,billingAddress, method });
+    
+//     await newOrder.save();
+//     res.status(201).json({ message: 'Order created successfully', order: newOrder });
+//   } catch (error) {
+//     res.status(500).json({ message: 'Error creating order', error });
+//   }
+// }
 const createOrder = async (req, res) => {
   try {
     const { customerName, products, totalAmount, shippingAddress, billingAddress, method } = req.body;
-    console.log('req.body',req.body);
+    console.log('req.body', req.body);
     const cartId = req.cookies.cartId;
-    console.log('cartId',cartId);
+    console.log('cartId', cartId);
+    
     if (!cartId) {
       return res.status(400).json({ message: 'Cart not found' });
     }
-    
-    const newOrder = new Order({ customerName, cartId, products, totalAmount, shippingAddress ,billingAddress, method });
-    
-    await newOrder.save();
-    res.status(201).json({ message: 'Order created successfully', order: newOrder });
+
+    // Start a transaction to ensure atomicity
+    const session = await Order.startSession();
+    session.startTransaction();
+
+    try {
+      // Reduce stock for each product
+      for (const item of products) {
+        const product = await Product.findById(item.productId).session(session);
+
+        if (!product) {
+          throw new Error(`Product with ID ${item.productId} not found.`);
+        }
+
+        if (product.Product_stock < item.quantity) {
+          return res.status(400).json({ message: `Insufficient stock for product: ${product.Product_name}` });
+        }
+
+        product.Product_stock -= item.quantity;
+        await product.save({ session });
+      }
+
+      // Create the order
+      const newOrder = new Order({
+        customerName,
+        cartId,
+        products,
+        totalAmount,
+        shippingAddress,
+        billingAddress,
+        method
+      });
+
+      await newOrder.save({ session });
+
+      // Commit the transaction
+      await session.commitTransaction();
+      session.endSession();
+
+      res.status(201).json({ message: 'Order created successfully', order: newOrder });
+    } catch (error) {
+      // Rollback the transaction if there's an error
+      await session.abortTransaction();
+      session.endSession();
+      throw error;
+    }
   } catch (error) {
-    res.status(500).json({ message: 'Error creating order', error });
+    res.status(500).json({ message: 'Error creating order', error: error.message });
   }
-}
+};
+
 const getOrders = async (req, res) => {
   try {
     const orders = await Order.find({});

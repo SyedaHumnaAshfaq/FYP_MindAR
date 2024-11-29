@@ -287,9 +287,13 @@
                     </p>
                     <div class="product-actions">
                         <button class="/quick-view">Quick View</button>
+                        <%if(product.Product_stock == 0){%>
+                        <button class="product-btn">Out of Stock</button>
+                        <%}else{%>
                         <button class="product-btn add-to-cart-btn add-to-cart" data-product-id="<%= product._id %>"
                             data-product-name="<%= product.Product_name %>"
                             data-product-price="<%= product.Product_price %>">Add to Cart</button>
+                        <%}%>
                         <!-- <span class="wishlist-icon">❤️</span> -->
                     </div>
                 </div>
