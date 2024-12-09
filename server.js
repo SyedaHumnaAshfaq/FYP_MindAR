@@ -74,6 +74,9 @@ app.get('/SignUp', (req, res) => {
 app.get('/login', (req, res) => {
   res.render('pages/login'); // Render the homepage.ejs file in the pages folder
 });
+app.get('/Help', (req, res) => {
+  res.render('pages/Help'); // Render the homepage.ejs file in the pages folder
+});
 
 app.get('/VirtualTryOn', (req, res) => { 
     res.render('pages/VirtualTryOn'); // Render the about.ejs file in the pages folder
@@ -110,6 +113,7 @@ app.get('/favourites', (req, res) => {
 app.get('/VTOAdmin', (req, res) => {
   res.render('pages/VTOAdmin'); // Render the homepage.ejs file in the pages folder
 });
+
 
 app.get('/Aboutus', (req, res) => {
   res.render('pages/Aboutus'); // Render the homepage.ejs file in the pages folder

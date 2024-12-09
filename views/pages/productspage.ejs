@@ -70,7 +70,7 @@
           <div class="sidebar-item"><a href="#account">My Account</a></div>
           <div class="sidebar-item"><a href="/wishlist">Wishlist</a></div>
           <div class="sidebar-item"><a href="/trackorder">Track Order</a></div>
-          <div class="sidebar-item"><a href="#support">Help</a></div>
+          <div class="sidebar-item"><a href="/Help">Help</a></div>
         </div>
       </header>
     <!-- Slim Image Carousel -->
@@ -279,6 +279,7 @@
             <%if(product.is_Published == true){%>
             <div class="product-card">
                 <img src="<%=product.Product_image_url%>"" alt=" <%=product.Product_name %>">
+                <button class="product-btn try-now-btn">Try Now</button>
                 <div class="product-info">
                     <h3>
                         <%=product.Product_name%>
@@ -286,10 +287,14 @@
                     <p>$<%=product.Product_price%>
                     </p>
                     <div class="product-actions">
-                        <button class="/quick-view">Quick View</button>
+                        
+                            <button class="quick-view qv">Quick View</button>
+                      
+                        <!-- <button class="quick-view qv">Quick View</button> -->
                         <button class="product-btn add-to-cart-btn add-to-cart" data-product-id="<%= product._id %>"
                             data-product-name="<%= product.Product_name %>"
                             data-product-price="<%= product.Product_price %>">Add to Cart</button>
+                            
                         <!-- <span class="wishlist-icon">❤️</span> -->
                     </div>
                 </div>
