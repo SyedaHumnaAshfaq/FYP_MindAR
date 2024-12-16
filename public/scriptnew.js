@@ -352,3 +352,30 @@ window.onclick = function(event) {
     }
 };
 
+
+
+//faqs
+document.addEventListener('DOMContentLoaded', function () {
+    // Select all the FAQ question elements
+    const faqQuestions = document.querySelectorAll('.faq-question');
+  
+    // Add event listener to each question
+    faqQuestions.forEach((question) => {
+      question.addEventListener('click', function () {
+        const answer = question.nextElementSibling; // The answer is the next sibling element
+  
+        // Toggle the display of the answer
+        if (answer.style.display === 'none' || answer.style.display === '') {
+          answer.style.display = 'block'; // Show the answer
+        } else {
+          answer.style.display = 'none'; // Hide the answer
+        }
+  
+        // Toggle the plus/minus icon
+        const icon = question.querySelector('.faq-icon');
+        icon.textContent = icon.textContent === '+' ? '−' : '+';
+      });
+    });
+  });
+  
+  
