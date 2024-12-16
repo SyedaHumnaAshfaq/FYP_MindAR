@@ -3367,5 +3367,13 @@ select {
     }
   }
   
-  
+  .outofstock{
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #6f6e6d;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
   

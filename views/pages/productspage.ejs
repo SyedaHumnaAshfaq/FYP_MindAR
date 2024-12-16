@@ -280,7 +280,7 @@
             <%if(product.is_Published == true){%>
             <div class="product-card">
                 <img src="<%=product.Product_image_url%>"" alt=" <%=product.Product_name %>">
-                <button class="product-btn try-now-btn">Try Now</button>
+                <button class="product-btn try-now-btn"><a href="/VirtualTryOn">Try Now</a></button>
                 <div class="product-info">
                     <h3>
                         <%=product.Product_name%>
@@ -288,9 +288,9 @@
                     <p>$<%=product.Product_price%>
                     </p>
                     <div class="product-actions">
-                        <button class="quick-view-btn" data-product-id="<%= product._id %>">Quick View</button>
+                        <button class="quick-view-btn quick-view qv" data-product-id="<%= product._id %>">Quick View</button>
                         <%if(product.Product_stock == 0){%>
-                        <button class="product-btn">Out of Stock</button>
+                        <button class="product-btn outofstock">Out of Stock</button>
                         <%}else{%>
                         <button class="product-btn add-to-cart-btn add-to-cart" data-product-id="<%= product._id %>"
                             data-product-name="<%= product.Product_name %>"

@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/stylenew.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/quickview-script.js"></script>
+    <script src="/script.js"></script>
+    <script src="/scriptnew.js"></script>
 </head>
 <body>
     <div class="quickview-overlay">
@@ -45,7 +47,9 @@
                             <option value="gold">Gold</option>
                         </select>
                     </div> -->
-                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="product-btn add-to-cart-btn add-to-cart" data-product-id="<%= product._id %>"
+                        data-product-name="<%= product.Product_name %>"
+                        data-product-price="<%= product.Product_price %>">Add to Cart</button>
                 </div>
             </div>
         </div>
