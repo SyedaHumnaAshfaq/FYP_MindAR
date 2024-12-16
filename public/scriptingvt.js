@@ -37,7 +37,7 @@
 const EarringCards = document.querySelectorAll('.earring-card');
 
 EarringCards.forEach(card => {
-    let modelVisible = false; // Track visibility state
+    let modelVisible = true; // Track visibility state
 
     card.addEventListener('click', () => {
         const productId = card.dataset.productId;
@@ -45,7 +45,7 @@ EarringCards.forEach(card => {
         console.log(productCategory);
         console.log("Card clicked!"); // Log to see if the click is detected
 
-        if (modelVisible) {
+        if (!modelVisible) {
             // On second click, send null to loadModel
             console.log("Sending null to loadModel");
             loadModel(null, null);
