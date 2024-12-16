@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quick View</title>
-    <link rel="stylesheet" href="stylenew.css">
+    <link rel="stylesheet" href="/stylenew.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/quickview-script.js"></script>
 </head>
 <body>
     <div class="quickview-overlay">
@@ -15,19 +17,19 @@
             <div class="content">
                 <!-- Left Section: Product Images -->
                 <div class="product-display">
-                    <img src="images/topsnew.png" alt="Main Product Image" class="main-image" id="displayedImage">
-                    <div class="thumbnail-container">
+                    <img src="<%=product.Product_image_url%>" alt="Main Product Image" class="main-image" id="displayedImage">
+                    <!-- <div class="thumbnail-container">
                         <img src="images/topsnew.png" alt="Angle 1" class="thumbnail" onclick="changeImage('images/topsnew.png')">
                         <img src="images/topsnew.png" alt="Angle 2" class="thumbnail" onclick="changeImage('images/topsnew.png')">
                         <img src="images/topsnew.png" alt="Angle 3" class="thumbnail" onclick="changeImage('images/topsnew.png')">
-                    </div>
+                    </div> -->
                 </div>
                 
                 <!-- Right Section: Product Details -->
                 <div class="product-details">
-                    <h2 class="product-name">Elegant Silver Necklace</h2>
-                    <p class="product-description">This is a high-quality, elegant silver necklace designed for a classy look. Perfect for any occasion.</p>
-                    <p class="product-price">$89.99</p>
+                    <h2 class="product-name"><%=product.Product_name%></h2>
+                    <p class="product-description"><%=product.Product_description%></p>
+                    <p class="product-price">$<%=product.Product_price%></p>
                     <!-- <div class="product-options">
                         <h3>Options</h3>
                         <label for="size">Size:</label>

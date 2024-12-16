@@ -21,9 +21,24 @@ const getProductsforVTO = async (req, res) => {
     // res.json({ products });
 };
 const getProductById = async (req, res) => {
-    const { id } = req.params;
-    const product = await Product.findById(id);
-    res.json(product);
+    try {
+        const productId = req.params.id;
+
+        if (!productId) {
+            return res.status(400).send('We are sorry. We cannot offer quick view at this time.');
+        }
+
+        const product = await Product.findById(productId);
+
+        if (!product) {
+            return res.status(404).render('pages/error', { message: 'Product not found.' });
+        }
+
+        res.render('pages/Quickviewpage', { product });
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send('Server error.');
+    }
 };   
 
 module.exports = { getAllProducts,getProductsbyCategory ,getProductsforVTO,getProductById};

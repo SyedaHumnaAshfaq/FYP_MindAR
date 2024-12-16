@@ -15,6 +15,7 @@ router.get('/products/update/:id',upload.none(), productAdminController.getProdu
 router.put('/products/update/:id',upload.none(), productAdminController.updateProduct);
 router.get('/product/getAll', productAdminController.getRefreshedProducts);
 router.get('/get-product/:id', productAdminController.getProductById);
+router.get('/quickview/:id', productController.getProductById);
 
 router.get('/VirtualTryOn', productController.getProductsforVTO);
 

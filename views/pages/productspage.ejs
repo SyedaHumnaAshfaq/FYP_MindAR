@@ -11,6 +11,7 @@
     <script src="/scriptnew.js" defer></script>
 
     <script src="/script.js"></script>
+    <script src="/quickview-script.js"></script>
 
 </head>
 
@@ -286,7 +287,7 @@
                     <p>$<%=product.Product_price%>
                     </p>
                     <div class="product-actions">
-                        <button class="/quick-view">Quick View</button>
+                        <button class="quick-view-btn" data-product-id="<%= product._id %>">Quick View</button>
                         <%if(product.Product_stock == 0){%>
                         <button class="product-btn">Out of Stock</button>
                         <%}else{%>

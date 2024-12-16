@@ -52,7 +52,7 @@ app.get('/Home', (req, res) => {
 });
 
 app.get('/quickview', (req, res) => {
-  res.render('pages/quickview.ejs'); // Render the homepage.ejs file in the pages folder
+  res.render('pages/Quickviewpage.ejs'); // Render the homepage.ejs file in the pages folder
 });
 app.get('/dashboard', (req, res) => { 
     res.render('pages/dashboard'); // Render the about.ejs file in the pages folder
@@ -114,9 +114,9 @@ app.get('/VTOAdmin', (req, res) => {
 app.get('/Aboutus', (req, res) => {
   res.render('pages/Aboutus'); // Render the homepage.ejs file in the pages folder
 });
-app.get('/Quickviewpage', (req, res) => {
-  res.render('pages/Quickviewpage'); // Render the homepage.ejs file in the pages folder
-});
+// app.get('/Quickviewpage', (req, res) => {
+//   res.render('pages/Quickviewpage'); // Render the homepage.ejs file in the pages folder
+// });
 app.post('/create-confirm-intent', async (req, res) => {
   try {
     const intent = await stripe.paymentIntents.create({
