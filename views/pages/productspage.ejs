@@ -263,7 +263,7 @@
                 <option value="earing">Earrings</option>
             </select>
         </div>
-        <div class="sort-dropdown">
+        <!-- <div class="sort-dropdown">
             <label for="sort">Sort By:</label>
             <select id="sort">
                 <option value="default">Default</option>
@@ -271,7 +271,7 @@
                 <option value="price-high-low">Price: High to Low</option>
                 <option value="new-arrivals">New Arrivals</option>
             </select>
-        </div>
+        </div> -->
     </section>
 
     <!-- Products Section -->
@@ -280,7 +280,7 @@
             <%if(product.is_Published == true){%>
             <div class="product-card">
                 <img src="<%=product.Product_image_url%>"" alt=" <%=product.Product_name %>">
-                <button class="product-btn try-now-btn"><a href="/VirtualTryOn">Try Now</a></button>
+                <button class="product-btn try-now-btn" data-product-id="<%= product._id %>" data-product-category="<%= product.Product_category %>">Try Now</button>
                 <div class="product-info">
                     <h3>
                         <%=product.Product_name%>

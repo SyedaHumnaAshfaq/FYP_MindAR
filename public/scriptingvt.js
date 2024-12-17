@@ -37,32 +37,47 @@
 const EarringCards = document.querySelectorAll('.earring-card');
 
 EarringCards.forEach(card => {
-    let modelVisible = true; // Track visibility state
+    let modelVisible = true; // Track visibility state for each card
 
     card.addEventListener('click', () => {
         const productId = card.dataset.productId;
         const productCategory = card.dataset.productCategory;
-        console.log(productCategory);
-        console.log("Card clicked!"); // Log to see if the click is detected
 
-        if (!modelVisible) {
-            // On second click, send null to loadModel
-            console.log("Sending null to loadModel");
-            loadModel(null, null);
-        } else {
-            // On first click, send productId to loadModel
-            console.log("Sending Product ID:", productId);
-            loadModel(productId, productCategory);
-        }
+        console.log("Card clicked! Category:", productCategory);
 
-        // Toggle the model visibility state
-        modelVisible = !modelVisible;
+        // Remove existing model of the same category before adding a new one
+       
+
+        // Remove the "selected" class from all other cards in the same category
+        EarringCards.forEach(otherCard => {
+            if (otherCard.dataset.productCategory === productCategory) {
+                otherCard.classList.remove('selected');
+                removeExistingModel(productCategory);
+            }
+        });
+
+        // Add the "selected" class to the clicked card
+        card.classList.add('selected');
+
+        // Load the new model for the selected product
+        loadModel(productId, productCategory);
     });
 });
+function removeExistingModel(category) {
+    // Use data-category attribute to remove only the selected model of the category
+    const selectedModel = document.querySelector(`.earring-entity[data-category="${category}"]`);
+    console.log("Selected Model:", selectedModel);
+    
+    // If there's an existing model, remove it
+    if (selectedModel) {
+        selectedModel.remove();
+    }
+}
 function loadModel(productId, productCategory) {
     if (productId === null) {
         // Remove all model entities
-        $(".earring-entity").remove();
+        // $(".earring-entity").remove();
+        removeExistingModel(productCategory);
         return;
     }
     else {
@@ -86,44 +101,48 @@ function loadModel(productId, productCategory) {
                     // Create new model entities dynamically
                     if (productCategory == "earing") {
                         const leftEntity = `
-          <a-entity mindar-face-target="anchorIndex: 127">
+          <a-entity mindar-face-target="anchorIndex: 127"  >
             <a-gltf-model rotation="${product.model_rotation_left.x} ${product.model_rotation_left.y} ${product.model_rotation_left.z}"
                           position="${product.model_position_left.x} ${product.model_position_left.y} ${product.model_position_left.z}"
                           scale="${product.model_scale.x} ${product.model_scale.y} ${product.model_scale.z}"
                           src="#${product._id}"
-                          class="earring-entity" visible="true"></a-gltf-model>
+                          class="earring-entity" data-category="${productCategory}" 
+                      data-selected="true" visible="true"></a-gltf-model>
           </a-entity>`;
 
                         const rightEntity = `
-          <a-entity mindar-face-target="anchorIndex: 356">
+          <a-entity mindar-face-target="anchorIndex: 356"  >
             <a-gltf-model rotation="${product.model_rotation_right.x} ${product.model_rotation_right.y} ${product.model_rotation_right.z}"
                           position="${product.model_position_right.x} ${product.model_position_right.y} ${product.model_position_right.z}"
                           scale="${product.model_scale.x} ${product.model_scale.y} ${product.model_scale.z}"
                           src="#${product._id}"
-                          class="earring-entity" visible="true"></a-gltf-model>
+                          class="earring-entity" data-category="${productCategory}" 
+                      data-selected="true" visible="true"></a-gltf-model>
           </a-entity>`;
                         document.querySelector('a-scene').insertAdjacentHTML('beforeend', leftEntity);
                         document.querySelector('a-scene').insertAdjacentHTML('beforeend', rightEntity);
                     }
                     else if (productCategory == "eyewear") {
                         const glassesentity = `
-          <a-entity mindar-face-target="anchorIndex: 168">
+          <a-entity mindar-face-target="anchorIndex: 168"  >
             <a-gltf-model rotation="${product.model_rotation_glasses.x} ${product.model_rotation_glasses.y}"
                           position="${product.model_position_glasses.x} ${product.model_position_glasses.y} ${product.model_position_glasses.z}"
                           scale="${product.model_scale.x} ${product.model_scale.y} ${product.model_scale.z}"
                           src="#${product._id}"
-                          class="earring-entity" visible="true"></a-gltf-model>
+                          class="earring-entity" visible="true" data-category="${productCategory}" 
+                      data-selected="true"></a-gltf-model>
           </a-entity>`;
                         document.querySelector('a-scene').insertAdjacentHTML('beforeend', glassesentity);
                     }
                     else if (productCategory == "nosepin") {
                         const nosepinentity = `
-                        <a-entity mindar-face-target="anchorIndex: 1">
+                        <a-entity mindar-face-target="anchorIndex: 1"  >
                           <a-gltf-model rotation="${product.model_rotation_nosepin.x} ${product.model_rotation_nosepin.y} ${product.model_rotation_nosepin.z}"
                                         position="${product.model_position_nosepin.x} ${product.model_position_nosepin.y} ${product.model_position_nosepin.z}"
                                         scale="${product.model_scale.x} ${product.model_scale.y} ${product.model_scale.z}"
                                         src="#${product._id}"
-                                        class="earring-entity" visible="true"></a-gltf-model>
+                                        class="earring-entity" data-category="${productCategory}" 
+                      data-selected="true" visible="true"></a-gltf-model>
                         </a-entity>`;
                         document.querySelector('a-scene').insertAdjacentHTML('beforeend', nosepinentity);
 
@@ -142,3 +161,25 @@ function loadModel(productId, productCategory) {
         });
     }
 }
+$(document).ready(function () {
+    const productId = sessionStorage.getItem('productId');
+    const productCategory = sessionStorage.getItem('productCategory');
+
+    if (productId && productCategory) {
+        console.log('Product ID:', productId);
+        console.log('Product Category:', productCategory);
+
+        // Trigger the logic to load the selected product model
+        loadModel(productId, productCategory);
+        EarringCards.forEach(card => {
+            card.classList.remove('selected');
+            if (card.dataset.productId === productId) {
+                card.classList.add('selected');
+            }
+        });
+
+        // Optionally, clear session storage after use
+        sessionStorage.removeItem('productId');
+        sessionStorage.removeItem('productCategory');
+    }
+});

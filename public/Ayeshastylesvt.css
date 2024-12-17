@@ -177,4 +177,10 @@ body {
     transform: scale(1.05);
     background-color: #000000;
   }
-  
+  .earring-card.selected {
+    border: 2px solid #007bff; /* Blue border to indicate selection */
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.5); /* Blue shadow */
+    background-color: rgba(0, 123, 255, 0.1); /* Light blue background */
+    transform: scale(1.05); /* Slightly enlarge the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
