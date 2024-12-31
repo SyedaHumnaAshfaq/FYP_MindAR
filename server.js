@@ -1,5 +1,7 @@
+require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 const path = require('path');
@@ -15,7 +17,6 @@ const { isAdmin, isAuthenticated } = require('./middlewares/authAdminMiddleware'
 const checkoutRoutes = require('./routes/checkoutRoutes');
 
 const stripe = require("stripe")("sk_test_51QDn2jLIHxgGTNSVNEx5m9t9JEHW42zYz5oiV0ofv20DJHuUmLZjV8ORJYwpSW5DLiDRx9z9rCgOfwVvMLW51lFl00cJrVPs7b");
-
 connectDB();
 app.set('trust proxy', true);
 app.set('view engine', 'ejs');
@@ -23,10 +24,10 @@ app.use('/models', express.static(path.join(__dirname, 'models')));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
-  secret: 'your-secret-key',
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true,
-  cookie: { maxAge: 2 * 60 * 60 * 1000 }, // 2 hours
+  cookie: { maxAge: 24 * 60 * 60 * 1000 }, // 2 hours
 }));
 
 app.use(express.json());
@@ -50,7 +51,15 @@ app.get('/', (req, res) => {
 app.get('/Home', (req, res) => {
   res.render('pages/Home.ejs'); // Render the homepage.ejs file in the pages folder
 });
-
+app.post('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res.status(500).send('Error logging out');
+    }
+    res.clearCookie('connect.sid');
+    return res.redirect('/login');
+  });
+ });
 app.get('/quickview', (req, res) => {
   res.render('pages/Quickviewpage.ejs'); // Render the homepage.ejs file in the pages folder
 });
@@ -149,7 +158,8 @@ app.get('/checkout', (req, res) => {
 });
 app.get('/order-confirmation', (req, res) => {
   res.render('pages/order-confirmation'); // Render the homepage.ejs file in the pages folder
- });
+});
+ 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

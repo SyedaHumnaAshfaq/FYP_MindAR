@@ -3,17 +3,18 @@ const bcrypt = require('bcrypt');
 const User = require('../mongo_models/UserSchema');
 
 const register = async (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, email, password,role } = req.body;
+  
   try {
     const existingUser  = await User.findOne({ email });
     if (existingUser) {
         console.log("User already exists");
         return res.status(400).json({ message: 'User already exists' });
     }
-    // const hashedPassword = await bcrypt.hash(password);
+    const hashedPassword = await bcrypt.hash(password,10);
     // const newUser = new User({ username, email, password: hashedPassword });
     
-    const newUser = new User({ username, email, password });
+    const newUser = new User({ username, email, password:hashedPassword ,role: role || 'customer' });
     await newUser.save();
     console.log('User registered successfully');
     return res.status(201).json({ message: 'User registered successfully' });
@@ -32,8 +33,8 @@ const login = async (req, res) => {
     
     // If the user is found, compare the passwords
     if (user) {
-      // const isPasswordMatch = await bcrypt.compare(password, user.password);
-      const isPasswordMatch = password === user.password;
+      const isPasswordMatch = await bcrypt.compare(password, user.password);
+      // const isPasswordMatch = password === user.password;
       req.session.user = { id: user._id, username: user.username, role: user.role };
       // If the password matches, log in the user
       if (isPasswordMatch) {
@@ -62,4 +63,4 @@ const login = async (req, res) => {
 };
 
 
-module.exports = { register,login };
+module.exports = { register,login};

@@ -2221,7 +2221,8 @@ position: fixed;
   background-color: teal;
 }
 .main-and-ham h2 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: 'Poppins', sans-serif;
   padding-left: 28px;
   padding-top: 10px;
   color: white;
@@ -2271,7 +2272,8 @@ position: fixed;
   font-size: 25px;
   justify-content: center;
   padding-top: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: 'Roboto', sans-serif;
 }
 
 /* .cards-sales.smaller-view{
@@ -2286,22 +2288,31 @@ i {
 
 #card-sale-1 {
   background-color: rgb(13 148 136);
+  /* font-family: 'Poppins', sans-serif; */
 }
 
 #card-sale-2 {
   background-color: rgb(251 146 60);
+  /* font-family: 'Poppins', sans-serif; */
+
 }
 
 #card-sale-3 {
   background-color: rgb(59 130 246);
+  /* font-family: 'Poppins', sans-serif; */
+
 }
 
 #card-sale-4 {
   background-color: rgb(8 145 178);
+  /* font-family: 'Poppins', sans-serif; */
+
 }
 
 #card-sale-5 {
   background-color: rgb(5 150 105);
+  /* font-family: 'Poppins', sans-serif; */
+
 }
 /* Reset some default styles */
 * {
@@ -2316,6 +2327,7 @@ i {
   text-align: right;
   width: 83vw;
   justify-content: flex-end;
+  /* align-items: center; */
 }
 
 .fa-bell {
@@ -2339,7 +2351,8 @@ i {
   text-align: center;
   align-content: center;
   font-size: 18px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: 'Poppins', sans-serif;
   transition: transform 0.5s ease-in;
   transform: translateX(0);
   top: 2vh;
@@ -2391,7 +2404,8 @@ body,html{
   margin: 10px;
   width: 100%;
   background-color: rgb(70, 69, 69);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: 'Roboto', sans-serif;
   color: white;
   width: 25%;
 }
@@ -2435,7 +2449,8 @@ body,html{
   margin: 10px;
   padding: 10px;
   color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: 'Roboto', sans-serif;
 }
 
 .filters {
@@ -2459,6 +2474,7 @@ body,html{
   border-radius: 10px;
   color: white;
   border: 1px solid white;
+  font-family: 'Poppins', sans-serif;
 }
 
 .filters label {
@@ -2472,6 +2488,7 @@ body,html{
 } */
 input::placeholder {
   color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
 .dropdown {
@@ -2575,6 +2592,7 @@ td {
   text-align: left;
   color: whitesmoke;
   border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
   /* overflow: visible; */
 }
 
@@ -2637,7 +2655,8 @@ canvas {
   .add-product {
     width: 50%;
     background-color: teal;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 15px;
     color: white;
@@ -2652,7 +2671,9 @@ canvas {
     list-style: none;
     color: white;
   }
-  
+  #actionth{
+    padding-left: 19px;
+  }
   /* The switch - the box around the slider */
   .switch {
     position: relative;
@@ -2739,6 +2760,7 @@ canvas {
   #addProductForm {
     display: flex;
     flex-direction: column;
+    font-family: 'Roboto', sans-serif;
   }
   
   #addProductForm label {
@@ -2755,9 +2777,12 @@ canvas {
   
   #addProductForm button {
     margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
   }
   #cancelBtn{
     background-color: Red;
+    font-family: 'Roboto', sans-serif;
+
   }
   .checkbox-published{
     display: flex;
@@ -2827,7 +2852,8 @@ canvas {
     flex-direction: column;
     padding: 20px;
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: 'Roboto', sans-serif;
     margin: 10px;
   }
   .flex-col p{
@@ -2846,7 +2872,44 @@ canvas {
 #previewContainer{
   display: flex;
   flex-direction: row;
+  font-family: 'Roboto', sans-serif;
   /* flex-wrap: wrap; */
 
 }
+.signupbtn{
+  font-family: 'Poppins', sans-serif;
+  background-color: teal;
+  color: white;
+  padding: 10px;
+  border: 2px solid rgb(44, 153, 153);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 120%;
+  height: 40px;
+  margin-top: -3px;
+  justify-content: center;
+  align-items: center;
+}
+.logoutbtn{
+  background-color: teal;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  padding: 10px;
+  border: 2px solid rgb(44, 153, 153);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 120%;
+  margin-top: -3px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
   
+.signupbtn:hover{
+  background-color: rgb(44, 153, 153);
+}
+.logoutbtn:hover{
+  background-color: rgb(44, 153, 153);
+}

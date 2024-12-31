@@ -251,12 +251,15 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("signupform").addEventListener("submit", async function handleSignUp(event) {
         event.preventDefault();
+        const urlParams = new URLSearchParams(window.location.search);
+        const role = urlParams.get('role') || 'customer';
         const form = event.target;
         const formData = new FormData(form);
         const data = {
             username: formData.get('username'),
             email: formData.get('email'),
-            password: formData.get('password')
+            password: formData.get('password'),
+            role: role
         };
         try {
             const response = await fetch('/api/auth/register', {
@@ -591,3 +594,25 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+$(document).ready(function () { 
+    $('.signupbtn').click(function () { 
+        const signupUrl = '/SignUp?role=admin';
+        
+        // Redirect to the signup page
+        window.location.href = signupUrl;
+    });
+
+});
+// JavaScript for handling the logout button click using AJAX
+$('.logoutbtn').click(function() {
+    $.ajax({
+        url: '/logout',
+        method: 'POST',
+        success: function() {
+            window.location.href = '/login'; // Redirect to login page after successful logout
+        },
+        error: function() {
+            alert('Error logging out');
+        }
+    });
+});
