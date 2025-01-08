@@ -26,8 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: true,
-  cookie: { maxAge: 24 * 60 * 60 * 1000 }, // 2 hours
+  saveUninitialized: false,
+  cookie: {secure:false, maxAge: 24 * 60 * 60 * 1000 }, // 2 hours
 }));
 
 app.use(express.json());
@@ -51,13 +51,21 @@ app.get('/', (req, res) => {
 app.get('/Home', (req, res) => {
   res.render('pages/Home.ejs'); // Render the homepage.ejs file in the pages folder
 });
-app.post('/logout', (req, res) => {
+app.use((req, res, next) => {
+  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+  res.set('Pragma', 'no-cache');
+  next();
+});
+app.get('/logout', (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       return res.status(500).send('Error logging out');
     }
-    res.clearCookie('connect.sid');
-    return res.redirect('/login');
+    else {
+      res.clearCookie('connect.sid');
+      res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+      return res.redirect('/login');
+    }
   });
  });
 app.get('/quickview', (req, res) => {

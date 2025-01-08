@@ -37,12 +37,12 @@ const updatePublishStatus = async (req, res) => {
     }
 };
 const addProduct = async (req, res) => { 
-    const { Product_name, Product_price, Product_description, Product_category, Product_stock, Product_rating } = req.body;
+    const { Product_name, Product_price, Product_description, Product_category, Product_stock } = req.body;
     const Product_image_url = await uploadToS3(req.files['Product_image'][0], 'images');
     const Product_model_url = await uploadToS3(req.files['Product_model_file'][0], 'models');
 
     try {
-        const newProduct = new Product({ Product_name, Product_price, Product_image_url, Product_description, Product_category, Product_stock, Product_rating, Product_model_url});
+        const newProduct = new Product({ Product_name, Product_price, Product_image_url, Product_description, Product_category, Product_stock,  Product_model_url});
         await newProduct.save();
         console.log(newProduct._id);
         res.json({ success: true, modelUrl: Product_model_url, product_id: newProduct._id, Product_category: newProduct.Product_category });

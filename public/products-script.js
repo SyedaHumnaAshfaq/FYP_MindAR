@@ -70,8 +70,8 @@ $(document).ready(function () {
     });
     $('.reset').on('click', function () {
         $('#searchCustomerName').val('');
-        $('.currentCategory').text('Category');
-        $('.currentOther').text('Other');
+        $('.currentCategory').text('Filter By Category');
+        $('.currentOther').text('Sort By');
         selectedCategory = null;
         selectedOther = null;
 
@@ -169,7 +169,7 @@ $(document).ready(function () {
         $('#productDescription').val('');
         $('#productCategory').val('');
         $('#productStock').val('');
-        $('#productRating').val('');
+        // $('#productRating').val('');
         $('#productModelURL').val('');
 
     });
@@ -205,7 +205,7 @@ $(document).ready(function () {
                     $('#productDescription').val(response.product.Product_description);
                     $('#productCategory').val(response.product.Product_category);
                     $('#productStock').val(response.product.Product_stock);
-                    $('#productRating').val(response.product.Product_rating);
+                    // $('#productRating').val(response.product.Product_rating);
                     $('#productModelURL').val(response.product.Product_model_url);
                     const imagePreview = $('#imagePreview');
                     imagePreview.attr('src', response.product.Product_image_url); // Set the AWS URL
@@ -376,7 +376,7 @@ $(document).ready(function () {
         $('.productImage').attr('src', product.Product_image_url);
         $('.productPrice').text(product.Product_price.$numberDecimal);
         $('.productDescription').text(product.Product_description);
-        $('.productRating').text(product.Product_rating);
+        // $('.productRating').text(product.Product_rating);
         $
         console.log(product.Product_price);
         // $('#productStatus').text(product.Product_status);

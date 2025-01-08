@@ -607,7 +607,7 @@ $(document).ready(function () {
 $('.logoutbtn').click(function() {
     $.ajax({
         url: '/logout',
-        method: 'POST',
+        method: 'GET',
         success: function() {
             window.location.href = '/login'; // Redirect to login page after successful logout
         },

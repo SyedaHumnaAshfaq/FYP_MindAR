@@ -10,7 +10,7 @@ $(document).ready(function () {
                 borderColor: 'rgba(255, 165, 0, 1)',
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 fill: false,
-                tension: 0.1
+                tension: 0.1,
             }]
         };
         const config = {

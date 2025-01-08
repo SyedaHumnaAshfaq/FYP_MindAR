@@ -56,9 +56,9 @@ $(document).ready(function () {
     });
     $('.reset').on('click', function () {
         $('#searchCustomerName').val('');
-        $('.currentStatus').text('Status');
-        $('.currentMethod').text('Method');
-        $('.currentDate').text('Date');
+        $('.currentStatus').text('Filter By Status');
+        $('.currentMethod').text('Filter By Method');
+        $('.currentDate').text('Filter By Days');
         $('#Startdate').val('');
         $('#Enddate').val('');
         selectedStatus = null;

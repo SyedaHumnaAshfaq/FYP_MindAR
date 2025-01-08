@@ -7,7 +7,6 @@ const ProductSchema = new mongoose.Schema({
     Product_description: { type: String, required: true },
     Product_category: { type: String, required: true },
     Product_stock: { type: Number, required: true },
-    Product_rating: { type: Number, required: true },
     Product_model_url: { type: String, required: true },
     model_rotation_left: { 
         type: Object, 
