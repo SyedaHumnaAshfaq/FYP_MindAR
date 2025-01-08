@@ -46,10 +46,10 @@ app.use('/', checkoutRoutes);
 app.set('views', path.join(__dirname, 'views'));
 
 app.get('/', (req, res) => {
-  res.render('pages/AdornHomePage.ejs'); // Render the homepage.ejs file in the pages folder
+  res.render('pages/AdornHomePage.ejs'); 
 });
 app.get('/Home', (req, res) => {
-  res.render('pages/Home.ejs'); // Render the homepage.ejs file in the pages folder
+  res.render('pages/Home.ejs'); 
 });
 app.use((req, res, next) => {
   res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
@@ -69,13 +69,13 @@ app.get('/logout', (req, res) => {
   });
  });
 app.get('/quickview', (req, res) => {
-  res.render('pages/Quickviewpage.ejs'); // Render the homepage.ejs file in the pages folder
+  res.render('pages/Quickviewpage.ejs');
 });
 app.get('/dashboard', (req, res) => { 
-    res.render('pages/dashboard'); // Render the about.ejs file in the pages folder
+    res.render('pages/dashboard'); 
 });
 app.get('/customers', (req, res) => { 
-  res.render('pages/customers'); // Render the about.ejs file in the pages folder
+  res.render('pages/customers'); 
 });
 app.get('/orders', (req, res) => { 
   res.render('pages/orders'); // Render the about.ejs file in the pages folder
