@@ -114,6 +114,9 @@ app.get('/wishlist', (req, res) => {
 app.get('/productsAdmin', (req, res) => {
   res.render('pages/productsAdmin'); // Render the homepage.ejs file in the pages folder
 });
+app.get('/quickviewpage', (req, res) => {
+  res.render('pages/Quickviewpage'); // Render the homepage.ejs file in the pages folder
+});
 // app.get('/products2', (req, res) => {
 //   res.render('pages/products2'); // Render the homepage.ejs file in the pages folder
 // });

@@ -17,63 +17,7 @@
 
 <body>
 
-    <header>
-        <nav class="navbar">
-            <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
-            <div class="center-content">
-                <a href="/">Home</a>
-                <a href="/Aboutus">About</a>
-                <a href="#about">ADORN EASE</a>
-                <a href="#collection">Collection</a>
-                <a href="#contact">Contact Us</a>
-            </div>
-            <div class="right-content">
-                <div class="dropdown">
-                    <a href="#" class="dropbtn">
-                        <img src="images/prof1.png" alt="Account" />
-                    </a>
-                    <div class="dropdown-content">
-                        <a href="/SignUp">Sign Up</a>
-                        <a href="/login">Login</a>
-                    </div>
-                </div>
-                <a href="/trackorder"><img class="icons1" src="images/to3.png" alt="Account" /></a> 
-          <a href="/addtocart"><img class="icons1" src="images/cart1.png" alt="Account" /></a>
-            </div>
-        </nav>
-        <div id="dropdownMenu" class="dropdown-content">
-          <a href="/">Home</a>
-          <a href="/Aboutus">About</a>
-          <a href="#about">ADORN EASE</a>
-          <a href="/productspage">Collection</a>
-          <a href="#contact">Contact Us</a>
-          <div class="dropdown">
-            <a
-              href="javascript:void(0);"
-              class="dropbtn"
-              onclick="toggleProfileDropdown()"
-            >
-              <img src="images/prof1.png" alt="Account" />
-            </a>
-            <div class="profile-dropdown-content" id="profileDropdown">
-              <a href="/SignUp">Sign Up</a>
-              <a href="/login">Login</a>
-            </div>
-          </div>
-        </div>
-  
-        <div id="sidebar" class="sidebar">
-          <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()"
-            >&times;</a
-          >
-          <div class="sidebar-item"><a href="/productspage">All Products</a></div>
-          <div class="sidebar-item"><a href="/checkoutpage">Checkout</a></div>
-          <div class="sidebar-item"><a href="#account">My Account</a></div>
-          <div class="sidebar-item"><a href="/wishlist">Wishlist</a></div>
-          <div class="sidebar-item"><a href="/trackorder">Track Order</a></div>
-          <div class="sidebar-item"><a href="/Help">Help</a></div>
-        </div>
-      </header>
+    <%- include('header.ejs') %>
     <!-- Slim Image Carousel -->
     <!-- <section class="carousel">
         <div class="carousel-slide">
@@ -95,10 +39,10 @@
                     <div class="name" style="color: black;">TO CART</div>
                     <div class="des" style="color: black;">add to cart now and get your favourite product at your
                         doorstep</div>
-                    <div class="btn">
+                    <!-- <div class="btn">
                         <button>Try Now</button>
                         <button>View All</button>
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
@@ -109,10 +53,10 @@
                     <div class="title" style="color: white;">SOMETHING</div>
                     <div class="name">NEW</div>
                     <div class="des">Just for You – Try & Buy at Home!</div>
-                    <div class="btn">
+                    <!-- <div class="btn">
                         <button>Try Now</button>
                         <button>View All</button>
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
@@ -123,13 +67,13 @@
                     <div class="title">A NEW</div>
                     <div class="name" style="color: black;">WAY TO SHOP</div>
                     <div class="des" style="color: black;">Virtually Try On Jewelry from Your Couch!</div>
-                    <div class="btn">
+                    <!-- <div class="btn">
                         <button>Try Now</button>
                         <button style=" background: transparent;
                         color: #000000cb;
                         border: 2px solid #000000;
                         transition: 0.3s;">View All</button>
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
@@ -140,10 +84,10 @@
                     <div class="title">NEW</div>
                     <div class="name">COLLECTION</div>
                     <div class="des">Get your hands on new collection before they go out of stock</div>
-                    <div class="btn">
+                    <!-- <div class="btn">
                         <button>Try Now</button>
                         <button>View All</button>
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
@@ -154,10 +98,10 @@
                     <div class="title">WONDERING</div>
                     <div class="name" style="color: rgb(105, 28, 28);">HOW IT LOOKS?</div>
                     <div class="des" style="color: black;">No problem at all,Try It Virtually – It’s All at Home!</div>
-                    <div class="btn">
+                    <!-- <div class="btn">
                         <button>Try Now</button>
                         <button>View All</button>
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
@@ -168,10 +112,10 @@
                     <div class="title" style="color: rgb(192, 135, 145);">YOU</div>
                     <div class="name">LOOK GOOD</div>
                     <div class="des">what are you waiting for, add your favorite product to cart</div>
-                    <div class="btn">
+                    <!-- <div class="btn">
                         <button>Try Now</button>
                         <button>View All</button>
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
@@ -249,7 +193,7 @@
     </div>
 
     <!-- Products Title -->
-    <h1 class="products-title">PRODUCTS</h1>
+    <h1 class="products-title">Welcome To Our Lavish Jewelry Collection</h1>
 
     <!-- Filter and Sort Section -->
     <section class="filter-sort">
