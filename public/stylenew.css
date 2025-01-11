@@ -351,6 +351,11 @@ main {
     animation: moveEarring 2s forwards;
 }
 
+@media (max-width: 768px) {
+    .earring{
+        display: none;
+    }
+}
 
 /* new section */
 /* New earring section */
@@ -528,6 +533,52 @@ main {
 }
 
 
+/* response */
+@media (max-width: 768px) {
+    .glasses-section {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .glasses-text {
+        position: static;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .glasses-image {
+        display: none; /* Hide the left image */
+    }
+
+    .glasses-cards {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .card {
+        width: 80%; /* Adjust the card width */
+        max-width: 200px; /* Limit the maximum width */
+        padding: 10px;
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+        max-width: 100px; /* Smaller image inside the card */
+        height: auto;
+    }
+
+    .card .card-text {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+
+
 /* Nose Pin Section */
 .nosepin-section {
     display: flex;
@@ -535,12 +586,10 @@ main {
     align-items: center;
     padding: 50px;
    
-    /* border-top:2px solid black ; */
-    /* background: #f0e5de; */
+   
     position: relative;
     height: 450px; /* Adjust based on your design */
-    /* background-image: url('images/b10.jpg'); */
-    /* background-image: url('images/m15.jpeg'); */
+    
     background-image: url('images/offwhite8.jpeg');
     margin: 0px;
    
@@ -597,13 +646,7 @@ main {
     box-shadow: 21px solid black;
    
 }
-/* .nosepin-text p {
-    font-size: 18px;
-    color: #666;
-    margin-top: 10px;
-    text-align: center;
-    line-height: 1.6;
-} */
+
 .nosepin-rotating-model {
     display: flex;
     justify-content: center;
@@ -663,6 +706,39 @@ main {
 
 #nosepin.move-nosepin {
     animation: moveNosepin 2s forwards;
+}
+/* responsive */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nosepin-section {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        padding: 20px; /* Reduce padding */
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    .nosepin-text {
+        font-size: 18px; /* Reduce font size for smaller screens */
+        line-height: 1.4; /* Adjust line height */
+        width: 100%; /* Full width for text */
+        margin: 10px 0; /* Reduce margin */
+        text-align: center; /* Center align text */
+    }
+
+    .nosepin-model,
+    .nosepin-woman {
+        width: 70%; /* Reduce width for images */
+        margin-bottom: 20px; /* Add spacing between sections */
+    }
+
+    .nosepin-model img,
+    .nosepin-woman img {
+        max-width: 100%; /* Ensure images fit within their containers */
+        height: auto;
+    }
+
+    #nosepin {
+        display: none; /* Hide animation for smaller screens */
+    }
 }
 
 /* Style for the new section */
