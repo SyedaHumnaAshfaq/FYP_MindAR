@@ -18,6 +18,9 @@ header {
     text-align: center;
     padding: 1px 0;
     font-family: 'lora';
+    /* font-family: 'Roboto', sans-serif; */
+    /* font-family: 'popins', sans-serif; */
+    
     z-index: 1000;
     background-color:rgb(0, 0, 0);
     position: relative;
@@ -230,10 +233,11 @@ main {
 .pulse-shadow-text {
     font-family: 'Playfair Display', serif;
     /* font-family: lato; */
+    /* font-family: 'Roboto', sans-serif; */
     font-size: 53px;
     font-weight: bold;
     color:rgb(10, 8, 7); /* Gold-like color to complement the brown-beige background */
-    text-shadow: 3px 3px 8px rgb(66, 64, 64,0.9); /* Adds a luxurious shadow effect */
+    /* text-shadow: 3px 3px 8px rgb(66, 64, 64,0.9);  */
     text-align: center;
     letter-spacing: 1.5px;
     animation: pulse 5s infinite;
@@ -279,7 +283,9 @@ main {
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Crimson+Text:ital@400&display=swap');
 
 .text-left h3 {
-    font-family: 'Lora', serif;
+    font-family: 'Playfair Display', serif;
+    /* font-family: 'Lora', serif; */
+    /* font-family: 'Roboto', sans-serif; */
     font-size: 36px;
     font-weight: 700;
     /* color: #8B4513;  */
@@ -291,7 +297,8 @@ main {
 
 .text-left p {
     /* font-family: 'Crimson Text', serif; */
-    font-family: 'Lora', serif;
+    /* font-family: 'Lora', serif; */
+    font-family: 'Poppins', sans-serif;
     font-size: 26px;
     /* font-style: italic; */
     line-height: 1.6;
@@ -351,6 +358,11 @@ main {
     animation: moveEarring 2s forwards;
 }
 
+@media (max-width: 768px) {
+    .earring{
+        display: none;
+    }
+}
 
 /* new section */
 /* New earring section */
@@ -377,7 +389,9 @@ main {
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400&display=swap');
 
 .glasses-text h2 {
-    font-family: 'Lora', serif;
+    /* font-family: 'Lora', serif; */
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Playfair Display', serif;
     /* font-family: 'Playfair Display', serif; */
     font-size: 48px;
     font-weight: 700;
@@ -528,6 +542,52 @@ main {
 }
 
 
+/* response */
+@media (max-width: 768px) {
+    .glasses-section {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .glasses-text {
+        position: static;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .glasses-image {
+        display: none; /* Hide the left image */
+    }
+
+    .glasses-cards {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .card {
+        width: 80%; /* Adjust the card width */
+        max-width: 200px; /* Limit the maximum width */
+        padding: 10px;
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+        max-width: 100px; /* Smaller image inside the card */
+        height: auto;
+    }
+
+    .card .card-text {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+
+
 /* Nose Pin Section */
 .nosepin-section {
     display: flex;
@@ -535,12 +595,10 @@ main {
     align-items: center;
     padding: 50px;
    
-    /* border-top:2px solid black ; */
-    /* background: #f0e5de; */
+   
     position: relative;
     height: 450px; /* Adjust based on your design */
-    /* background-image: url('images/b10.jpg'); */
-    /* background-image: url('images/m15.jpeg'); */
+    
     background-image: url('images/offwhite8.jpeg');
     margin: 0px;
    
@@ -567,7 +625,8 @@ main {
 
 
 .nosepin-text strong {
-    font-family: 'Lora', serif;
+    /* font-family: 'Lora', serif; */
+    font-family: 'Playfair Display', serif;
    
     font-weight: 700;
     color: #d4af37; /* Gold color for strong emphasis */
@@ -575,6 +634,7 @@ main {
 
 .nosepin-text {
     font-family: 'Lora', serif;
+    /* font-family: 'Poppins', sans-serif; */
     /* font-family: 'Playfair Display', serif; */
     font-size: 34px;
     line-height: 1.6; /* Enhances readability */
@@ -597,13 +657,7 @@ main {
     box-shadow: 21px solid black;
    
 }
-/* .nosepin-text p {
-    font-size: 18px;
-    color: #666;
-    margin-top: 10px;
-    text-align: center;
-    line-height: 1.6;
-} */
+
 .nosepin-rotating-model {
     display: flex;
     justify-content: center;
@@ -664,6 +718,39 @@ main {
 #nosepin.move-nosepin {
     animation: moveNosepin 2s forwards;
 }
+/* responsive */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nosepin-section {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        padding: 20px; /* Reduce padding */
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    .nosepin-text {
+        font-size: 18px; /* Reduce font size for smaller screens */
+        line-height: 1.4; /* Adjust line height */
+        width: 100%; /* Full width for text */
+        margin: 10px 0; /* Reduce margin */
+        text-align: center; /* Center align text */
+    }
+
+    .nosepin-model,
+    .nosepin-woman {
+        width: 70%; /* Reduce width for images */
+        margin-bottom: 20px; /* Add spacing between sections */
+    }
+
+    .nosepin-model img,
+    .nosepin-woman img {
+        max-width: 100%; /* Ensure images fit within their containers */
+        height: auto;
+    }
+
+    #nosepin {
+        display: none; /* Hide animation for smaller screens */
+    }
+}
 
 /* Style for the new section */
 .slider-section {
@@ -679,7 +766,9 @@ main {
   }
   
   .slider-heading {
-    font-family: 'Lora';
+    /* font-family: 'Roboto', sans-serif; */
+    /* font-family: 'Lora', sans-serif; */
+    font-family: 'playfair display', serif;
     font-size: 44px;
     margin-bottom: 10px;
   }
@@ -781,6 +870,7 @@ main {
   .footer-about h3,
   .footer-contact h3,
   .footer-links h3 {
+    font-family: 'Roboto', sans-serif;
     margin-bottom: 15px;
     font-size: 18px;
     border-bottom: 2px solid #777;
