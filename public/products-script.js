@@ -241,7 +241,7 @@ $(document).ready(function () {
         }
         const productId = $('#addProductForm').data('product-id');
         const isUpdate = Boolean(productId);
-        console.log(isUpdate);
+        console.log("isUpdate",isUpdate);
 
         if (isUpdate) {
             $.ajax({
