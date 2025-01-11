@@ -8,70 +8,7 @@
   <script src="scriptnew.js"></script>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-          <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
-  
-          <div class="center-content" id="navLinks">
-            <a href="/">Home</a>
-            <a href="/Aboutus">About</a>
-            <a href="#about">ADORN EASE</a>
-            <a href="/productspage">Collection</a>
-            <a href="/VirtualTryOn">Virtual Try-On</a>
-          </div>
-  
-          <div class="right-content">
-            <div class="dropdown">
-              <a href="#" class="dropbtn">
-                <img src="images/prof1.png" alt="Account" />
-              </a>
-              <div class="dropdown-content">
-                <a href="/SignUp">Sign Up</a>
-                <a href="/login">Login</a>
-              </div>
-            </div>
-           <a href="/trackorder"><img class="icons1" src="images/to3.png" alt="Account" /></a> 
-            <a href="/addtocart"><img class="icons1" src="images/cart1.png" alt="Account" /></a>
-          </div>
-  
-          <!-- Hamburger Menu Toggle Button -->
-          <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
-            ☰
-          </button>
-        </nav>
-        <div id="dropdownMenu" class="dropdown-content">
-          <a href="/">Home</a>
-          <a href="/Aboutus">About</a>
-          <a href="#about">ADORN EASE</a>
-          <a href="/productspage">Collection</a>
-          <a href="#contact">Contact Us</a>
-          <div class="dropdown">
-            <a
-              href="javascript:void(0);"
-              class="dropbtn"
-              onclick="toggleProfileDropdown()"
-            >
-              <img src="images/prof1.png" alt="Account" />
-            </a>
-            <div class="profile-dropdown-content" id="profileDropdown">
-              <a href="/SignUp">Sign Up</a>
-              <a href="/login">Login</a>
-            </div>
-          </div>
-        </div>
-  
-        <div id="sidebar" class="sidebar">
-          <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()"
-            >&times;</a
-          >
-          <div class="sidebar-item"><a href="/productspage">All Products</a></div>
-          <div class="sidebar-item"><a href="/checkoutpage">Checkout</a></div>
-          <div class="sidebar-item"><a href="/login">My Account</a></div>
-          <div class="sidebar-item"><a href="/wishlist">Wishlist</a></div>
-          <div class="sidebar-item"><a href="/trackorder">Track Order</a></div>
-          <div class="sidebar-item"><a href="#support">Help</a></div>
-        </div>
-      </header>
+  <%- include('header.ejs') %>
       <section class="help-us">
         <div class="help-us-container">
           <div class="help-us-text">
@@ -117,7 +54,7 @@
                 <p class="faq-text">Is the virtual try-on feature available on all jewelry?</p>
               </div>
               <div class="faq-answer">
-                <p>Currently, the virtual try-on feature is available for most of our jewelry collection, excluding some items like rings that require specific measurements.</p>
+                <p>Currently, the virtual try-on feature is available for most of our jewelry collection.</p>
               </div>
             </div>
       
@@ -127,7 +64,7 @@
                 <p class="faq-text">What are the system requirements for virtual try-on?</p>
               </div>
               <div class="faq-answer">
-                <p>You need a smartphone or tablet with a camera and AR support to use the virtual try-on feature. It works on both iOS and Android devices.</p>
+                <p>You need a laptop or desktop computer with a camera  support to use the virtual try-on feature. </p>
               </div>
             </div>
           </div>
@@ -167,7 +104,7 @@
           <div class="step">
             <div class="step-icon">4</div>
             <div class="step-description">
-              <h3>Step 4: Get Feedback</h3>
+              <h3>Step 4: Make Your Decision</h3>
               <p>Get a clear view of how the jewelry looks on you and decide if it's the one!</p>
             </div>
           </div>

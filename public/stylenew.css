@@ -229,6 +229,7 @@ main {
 
 .pulse-shadow-text {
     font-family: 'Playfair Display', serif;
+    /* font-family: lato; */
     font-size: 53px;
     font-weight: bold;
     color:rgb(10, 8, 7); /* Gold-like color to complement the brown-beige background */
@@ -1167,12 +1168,13 @@ button {
 } */
 
 .products-title {
+    font-family: 'Playfair Display', serif;
     text-align: center;
     font-size: 3.5rem;
-    color: #2b220a;
+    color: #5e5b52;
     margin: 20px 0;
     /* background-color: #cacaca; */
-    background: linear-gradient(145deg, #a7a5a5, #ffffff);
+    /* background: linear-gradient(145deg, #a7a5a5, #ffffff); */
 }
 
 .filter-sort {
@@ -1388,6 +1390,7 @@ button {
 }
 
 .content .title{
+    font-family: 'Playfair Display', serif;
     font-size: 100px;
     text-transform: uppercase;
     color: #000000cb;
@@ -1399,6 +1402,7 @@ button {
 }
 
 .content .name{
+    font-family: 'Playfair Display', serif;
     font-size: 100px;
     text-transform: uppercase;
     font-weight: bold;
@@ -1410,6 +1414,7 @@ button {
 }
 
 .content .des{
+    font-family: 'Playfair Display', serif;
     margin-top: 10px;
     margin-bottom: 20px;
     font-size: 18px;
@@ -2310,7 +2315,7 @@ input[type="password"] {
 
 /* Signup Button Styling */
 button.signupbutton {
-    width: 100%;
+    width: 110%;
     background-color: #000000;
     border: none;
     padding: 12px 0;
@@ -2567,6 +2572,7 @@ button.loginbutton:hover {
 }
 
 .vision-title {
+    font-family: 'Playfair Display', serif;
     font-size: 10rem;
     font-weight: bold;
     letter-spacing: 3px;
@@ -2579,6 +2585,7 @@ button.loginbutton:hover {
 }
 
 .modern-vision {
+    font-family: 'Playfair Display', serif;
     display: flex;
     padding: 50px;
     gap: 20px;
@@ -2592,6 +2599,7 @@ button.loginbutton:hover {
 }
 
 .modern-vision h2 {
+    font-family: 'Playfair Display', serif;
     font-size: 2.4rem;
     color: #000;
     margin-bottom: 15px;
@@ -2620,6 +2628,7 @@ button.loginbutton:hover {
 }
 
 .team-title {
+    font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     margin-bottom: 40px;
 }
@@ -2654,6 +2663,7 @@ button.loginbutton:hover {
 }
 
 .team-card h3 {
+    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     margin-bottom: 5px;
     font-weight: bold;
@@ -3031,6 +3041,7 @@ select {
   }
   
   .faq-heading1{
+    /* font-family: 'Playfair Display', serif; */
     font-size: 38px;
     font-weight: 700;
     margin-bottom: 60px;

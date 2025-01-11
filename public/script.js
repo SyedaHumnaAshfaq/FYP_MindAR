@@ -579,20 +579,20 @@ $(document).ready(function () {
 
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const eyeIcon = document.querySelector(".eye-icon");
-    const passwordField = document.getElementById("password");
+// document.addEventListener("DOMContentLoaded", function() {
+//     const eyeIcon = document.querySelector(".eye-icon");
+//     const passwordField = document.getElementById("password");
 
-    eyeIcon.addEventListener("click", function() {
-        if (passwordField.type === "password") {
-            passwordField.type = "text";
-            eyeIcon.textContent = "🙈"; // Change icon to a closed eye or similar when visible
-        } else {
-            passwordField.type = "password";
-            eyeIcon.textContent = "👁️"; // Change icon back to an open eye
-        }
-    });
-});
+//     eyeIcon.addEventListener("click", function() {
+//         if (passwordField.type === "password") {
+//             passwordField.type = "text";
+//             eyeIcon.textContent = "🙈"; 
+//         } else {
+//             passwordField.type = "password";
+//             eyeIcon.textContent = "👁️"; 
+//         }
+//     });
+// });
 
 $(document).ready(function () { 
     $('.signupbtn').click(function () { 
