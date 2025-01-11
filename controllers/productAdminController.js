@@ -68,6 +68,7 @@ const updateProduct = async (req, res) => {
     const productId = req.params.id;
     console.log(productId);
     console.log(req.body);
+    
 
     console.log('we are entering the controller');
     try {
