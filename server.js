@@ -124,12 +124,7 @@ app.get('/quickviewpage', (req, res) => {
 app.get('/favourites', (req, res) => {
   res.render('pages/favourites'); // Render the homepage.ejs file in the pages folder
 });
-// app.get('/productspage', (req, res) => {
-//   res.render('pages/productspage'); // Render the homepage.ejs file in the pages folder
-// });
-// app.get('/checkoutpage', (req, res) => { // Assuming cart is stored in session
-//   res.render('pages/checkoutpage');
-// });  
+
 app.get('/VTOAdmin', (req, res) => {
   res.render('pages/VTOAdmin'); // Render the homepage.ejs file in the pages folder
 });
@@ -138,9 +133,7 @@ app.get('/VTOAdmin', (req, res) => {
 app.get('/Aboutus', (req, res) => {
   res.render('pages/Aboutus'); // Render the homepage.ejs file in the pages folder
 });
-// app.get('/Quickviewpage', (req, res) => {
-//   res.render('pages/Quickviewpage'); // Render the homepage.ejs file in the pages folder
-// });
+
 app.post('/create-confirm-intent', async (req, res) => {
   try {
     const intent = await stripe.paymentIntents.create({

@@ -57,7 +57,7 @@ $(document).ready(function () {
     $('.reset').on('click', function () {
         $('#searchCustomerName').val('');
         $('.currentStatus').text('Filter By Status');
-        $('.currentMethod').text('Filter By Method');
+        $('.currentMethod').text('Filter By Payment Method');
         $('.currentDate').text('Filter By Days');
         $('#Startdate').val('');
         $('#Enddate').val('');
