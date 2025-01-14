@@ -42,6 +42,13 @@ EarringCards.forEach(card => {
     card.addEventListener('click', () => {
         const productId = card.dataset.productId;
         const productCategory = card.dataset.productCategory;
+        // Check if the clicked card is already selected
+        if (card.classList.contains('selected')) {
+            // If selected, remove the "selected" class and remove the model
+            card.classList.remove('selected');
+            removeExistingModel(productCategory); // Remove the model for this category
+            return; // Stop further execution
+        }
 
         console.log("Card clicked! Category:", productCategory);
 
@@ -58,6 +65,7 @@ EarringCards.forEach(card => {
 
         // Add the "selected" class to the clicked card
         card.classList.add('selected');
+        
 
         // Load the new model for the selected product
         loadModel(productId, productCategory);
@@ -65,13 +73,11 @@ EarringCards.forEach(card => {
 });
 function removeExistingModel(category) {
     // Use data-category attribute to remove only the selected model of the category
-    const selectedModel = document.querySelector(`.earring-entity[data-category="${category}"]`);
-    console.log("Selected Model:", selectedModel);
+    const selectedModels = document.querySelectorAll(`.earring-entity[data-category="${category}"]`);
+    console.log("Selected Models:", selectedModels);
     
-    // If there's an existing model, remove it
-    if (selectedModel) {
-        selectedModel.remove();
-    }
+    // Loop through all matching models and remove them
+    selectedModels.forEach(model => model.remove());
 }
 function loadModel(productId, productCategory) {
     if (productId === null) {
