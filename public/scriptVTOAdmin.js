@@ -315,6 +315,7 @@ $(document).ready(function () {
       contentType: 'application/json',
       data: JSON.stringify(data),
       success: function (response) {
+        alert('Product updated successfully');
         console.log('Product updated successfully:', response);
       },
       error: function (error) {
