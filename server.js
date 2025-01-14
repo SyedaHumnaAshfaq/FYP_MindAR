@@ -3,7 +3,7 @@ const express = require('express');
 const session = require('express-session');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 const path = require('path');
 const connectDB = require('./db');
 const userRoutes = require('./routes/userRoutes');
